@@ -57,8 +57,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-		-- My themes: pyratesoft, algersoft, otherideas
-		beautiful.init("/home/dudley/.config/awesome/themes/pyratesoft/theme.lua")
+		beautiful.init("/home/dudley/.config/awesome/themes/decker-cyan/theme.lua")
 
 		-- This is used later as the default terminal and editor to run.
 		terminal = "urxvt"

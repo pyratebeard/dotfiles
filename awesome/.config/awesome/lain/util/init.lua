@@ -210,20 +210,4 @@ function util.useless_gaps_resize(thatmuch)
     awful.layout.arrange(mouse.screen)
 end
 
--- On the fly global border change
-function util.global_border_resize(thatmuch)
-    beautiful.global_border_width = tonumber(beautiful.global_border_width) + thatmuch
-    awful.layout.arrange(mouse.screen)
-end
-
--- Check if an element exist on a table
-function util.element_in_table(element, tbl)
-    for _, i in pairs(tbl) do
-        if i == element then
-            return true
-        end
-    end
-    return false
-end
-
 return setmetatable(util, { __index = wrequire })

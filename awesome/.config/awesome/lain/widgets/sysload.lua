@@ -12,7 +12,8 @@ local newtimer     = require("lain.helpers").newtimer
 local wibox        = require("wibox")
 
 local io           = { open = io.open }
-local string       = { match  = string.match }
+local string       = { format = string.format,
+                       match  = string.match }
 
 local setmetatable = setmetatable
 
@@ -22,7 +23,7 @@ local sysload = {}
 
 local function worker(args)
     local args = args or {}
-    local timeout = args.timeout or 2
+    local timeout = args.timeout or 5
     local settings = args.settings or function() end
 
     sysload.widget = wibox.widget.textbox('')

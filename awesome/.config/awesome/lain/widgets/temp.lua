@@ -10,7 +10,7 @@ local newtimer     = require("lain.helpers").newtimer
 
 local wibox        = require("wibox")
 
-local io           = { open = io.open }
+local io           = io
 local tonumber     = tonumber
 
 local setmetatable = setmetatable
@@ -21,7 +21,7 @@ local temp = {}
 
 local function worker(args)
     local args     = args or {}
-    local timeout  = args.timeout or 2
+    local timeout  = args.timeout or 5
     local tempfile = args.tempfile or "/sys/class/thermal/thermal_zone0/temp"
     local settings = args.settings or function() end
 
@@ -42,7 +42,6 @@ local function worker(args)
     end
 
     newtimer("coretemp", timeout, update)
-
     return temp.widget
 end
 
