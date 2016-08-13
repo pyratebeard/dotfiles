@@ -1,0 +1,2 @@
+emulate -L zsh
+ls -lA --color=auto

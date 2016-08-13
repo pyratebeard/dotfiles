@@ -1,0 +1,4 @@
+## Config files to allow gtk theme in awesome
+
+# mv all files into /home/<user>
+# Put theme name in .gtkrc.mine

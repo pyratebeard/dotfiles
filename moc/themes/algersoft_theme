@@ -1,0 +1,36 @@
+# digitaljedi theme for MOC by glitch; adapted from the orpheus default color scheme  (version 3)
+# 2015 02 13
+
+
+background		= default	default	normal
+frame			= green		black	bold
+window_title		= black		black	bold
+directory		= green		black	normal
+selected_directory	= blue		black	bold,underline
+playlist		= white		black	normal
+selected_playlist	= blue		black	bold,underline
+file			= white		black	normal
+selected_file		= blue		black	bold,underline
+marked_file		= cyan		black	bold
+marked_selected_file	= cyan		black	bold
+info			= blue		black	bold
+status			= black		white	normal
+title			= cyan		black	bold
+state			= green		black	bold,blink
+current_time		= white		black	normal
+time_left		= black		black	bold
+total_time		= blue		black	bold
+time_total_frames	= black		black	bold
+sound_parameters	= white		black	normal
+legend			= blue		black	bold
+disabled		= black		black	bold
+enabled			= white		black	normal
+empty_mixer_bar		= white		black	normal
+filled_mixer_bar	= black		white	normal
+empty_time_bar		= black		black	normal
+filled_time_bar		= black		white	bold
+entry			= white		black	normal
+entry_title		= black		white	normal
+error			= yellow	black	bold
+message			= yellow	black	bold
+plist_time		= black		white	normal

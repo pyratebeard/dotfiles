@@ -1,0 +1,65 @@
+! pyratesoft Xdefaults
+
+!#include </home/dudley/pyratesoft4.Xcolors>
+
+! geometry
+urxvt.geometry: 85x45
+
+! fonts
+urxvt*font: xft:Tamsyn:pixelsize=15
+urxvt*boldFont:
+urxvt*italicFont:
+urxvt*bolditalicFont:
+
+! interface
+urxvt*transparent: true
+urxvt*shading: 10
+urxvt*scrollBar: false
+urxvt*cursorBlink: true
+
+! clipboard
+urxvt.perl-ext-common: default,clipboard,keyboard-select
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+urxvt.keysym.M-c:   perl:clipboard:copy
+urxvt.keysym.C-v:   perl:clipboard:paste
+urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+urxvt.clipboard.copycmd:  xsel -ib
+urxvt.clipboard.pastecmd: xsel -ob
+
+! special
+*.foreground:   #d9d9d9
+*.background:   #0b0b0b
+*.cursorColor:  #d9d9d9
+
+! black
+*.color0:       #093748
+*.color8:       #245361
+
+! red
+*.color1:       #c33027
+*.color9:       #d85a21
+
+! green
+*.color2:       #61b343
+*.color10:      #33859d
+
+! yellow
+*.color3:       #d9d9d9
+*.color11:      #245361
+
+! blue
+*.color4:       #195465
+*.color12:      #33859d
+
+! magenta
+*.color5:       #4e5165
+*.color13:      #693699
+
+! cyan
+*.color6:       #019cb3
+!*.color6:       #233fe8
+*.color14:      #599caa
+
+! white
+*.color7:       #98d1ce
+*.color15:      #d3ebe9

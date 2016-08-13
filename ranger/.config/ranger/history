@@ -1,0 +1,9 @@
+search 
+open_with unzip
+find 
+search ranger
+search dotfile
+sxiv bind
+open_with sxiv
+set show_hidden=true
+
