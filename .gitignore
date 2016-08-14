@@ -5,6 +5,7 @@ irssi/.irssi/scripts/twirssi.json
 mpd/.config/mpd/mpd.log
 mpd/.mpd/log
 mpd/.mpd/state
+mpd/.mpd/pid
 mutt/.mutt/cache/
 mutt/.mutt/muttrc-gmail
 ncmpcpp/.ncmpcpp/error.log
