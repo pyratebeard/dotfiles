@@ -1,7 +1,9 @@
 # ~/.tmuxinator/decker.yml
 
-name: one_terminal
+name: decker-1
 root: ~/
+
+tmux_options: -2
 
 # Optional. tmux socket
 # socket_name: foo
@@ -25,12 +27,12 @@ windows:
   - master:
       layout: 271b,197x60,0,0{105x60,0,0,0,91x60,106,0[91x20,106,0,8,91x39,106,21,10]}
       panes:
-        - zsh
+        - 
         - ncmpcpp
-        - ranger
+        - irssi
   - net:
       layout: 271b,197x60,0,0{105x60,0,0,0,91x60,106,0[91x20,106,0,8,91x39,106,21,10]}
       panes:
-        - irssi
+        - 
         - mutt
         - snownews

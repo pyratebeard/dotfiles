@@ -1,6 +1,6 @@
-# ~/.tmuxinator/decker.yml
+# ~/.tmuxinator/decker-2.yml
 
-name: decker
+name: decker-2
 root: ~/
 
 # Optional. tmux socket
