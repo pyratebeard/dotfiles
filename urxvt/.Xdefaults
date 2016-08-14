@@ -40,7 +40,7 @@ urxvt*lineSpace: -1
 ! █▓▒░ interface
 urxvt*scrollBar: false
 urxvt*transparent: true
-urxvt*shading: 10
+urxvt*shading: 05
 urxvt*cursorBlink: true
 
 ! █▓▒░ clipboard
