@@ -21,7 +21,9 @@ servers = (
     address = "irc.freenode.net";
     chatnet = "freenode";
     port = "6665";
+    password = "uberp/word9";
     use_ssl = "no";
+    ssl_verify = "no";
     autoconnect = "yes";
   }
 );
@@ -29,8 +31,7 @@ servers = (
 chatnets = { freenode = { type = "IRC"; nick = "pyratebeard"; }; };
 
 channels = (
-  { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; }
+  { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; }
 );
 
 aliases = {
