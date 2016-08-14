@@ -12,16 +12,16 @@
 -- █▓▒░ interface settings
 modkey 			= "Mod4"
 altkey 			= "Mod1"
-bar_position 	= "bottom"
+bar_position 	= "top"
 tag_count		= 4
 tag_icon 		= "◊"
 tag_icon_active = "◆"
-clock_format 	= " %a %m/%d %H:%M " -- http://linux.die.net/man/3/strftime
+clock_format 	= " %a %d/%m %H:%M " -- http://linux.die.net/man/3/strftime
 battery_id 		= "BAT1"
 sloppy_focus 	= false
 
 -- █▓▒░ preffered apps
-terminal 		= "urxvt"
+terminal 		= "urxvtc"
 rootterm 		= "urxvtc -hold -e sudo "
 term_exec 		= "urxvtc -hold -e "
 filegui 		= "thunar"
@@ -40,7 +40,7 @@ volumecontrol 	= terminal.. " -T sound -e alsamixer"
 irc 			= terminal.." -T weechat -e weechat-curses"
 iptraf 			= terminal.." -g -e sudo iptraf-ng -i all"
 burner 			= "xfburn"
-webgui 			= "chromium"
+webgui 			= "google-chrome"
 webcli 			= terminal.." -e links2"
 ftpgui 			= "filezilla"
 torrent 		= "transmission-gtk"

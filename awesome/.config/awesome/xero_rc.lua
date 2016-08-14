@@ -69,7 +69,7 @@ run_once("urxvtd")
 run_once("unclutter")
 
 -- █▓▒░ theme
-beautiful.init(os.getenv("HOME").."/.config/awesome/themes/decker_cyan/theme.lua")
+beautiful.init(os.getenv("HOME").."/.config/awesome/themes/ghost/theme.lua")
 
 -- █▓▒░ layouts
 local layouts = {
@@ -272,7 +272,7 @@ clockicon = wibox.widget.imagebox(beautiful.widget_clock)
 mytextclock = wibox.widget.background(awful.widget.textclock(markup("#FFFFFF",clock_format)), "#000000")
 
 -- █▓▒░ calendar
-lain.widgets.calendar:attach(mytextclock, { font_size = 10, fg = "#FFFFFF", position = "bottom_right" })
+lain.widgets.calendar:attach(mytextclock, { font_size = 10, fg = "#FFFFFF", position = "top_right" })
 
 -- █▓▒░ MPD
 -- mpdicon = wibox.widget.imagebox(beautiful.widget_music)
