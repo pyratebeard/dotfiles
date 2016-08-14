@@ -7,6 +7,6 @@
 		"Vintage"
 	],
 	"theme": "Wombat2.sublime-theme",
-	"wombat_color_blue": true,
+  "wombat_color_blue": true,
 	"wombat_dirty_bottom_bar_blue": true
 }
