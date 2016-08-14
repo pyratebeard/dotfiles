@@ -14,3 +14,5 @@ unset imap_passive
 set imap_keepalive	= 300
 set mail_check		= 120
 set editor		= vim
+set sort=reverse-threads
+set sort_aux=date-received
