@@ -1,5 +1,5 @@
 if [ -n "$__CURRENT_GIT_BRANCH" ]; then
-    local s="${USER_LEVEL}-[%F{white}"
+    local s="-["
     s+="$__CURRENT_GIT_BRANCH"
     case "$__CURRENT_GIT_BRANCH_STATUS" in
         ahead)
@@ -15,7 +15,7 @@ if [ -n "$__CURRENT_GIT_BRANCH" ]; then
     if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
         s+="⚡"
     fi
-    s+="${USER_LEVEL}]"
+    s+="]"
  
     printf "%s%s" $s
 fi
