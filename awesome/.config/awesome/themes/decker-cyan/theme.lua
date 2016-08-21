@@ -41,7 +41,7 @@ else
 end
 --}}}
 
-theme.font          = "tamsyn 11"
+theme.font          = "tamsyn 09"
 
 theme.bg_normal     = "#121212"
 theme.bg_focus      = "#212121"

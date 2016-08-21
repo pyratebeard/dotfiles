@@ -18,7 +18,7 @@
 #include </home/xero/sourcerer.Xcolors>
 
 ! █▓▒░ fonts
-urxvt*font: xft:tamsyn:size=11:antialias=false, \
+urxvt*font: xft:tamsyn:size=09:antialias=false, \
             xft:Symbola:pixelsize=14:antialias=true:hinting=slight
 !urxvt*font: -*-creep-regular-*-*--16-*-*-*-*-*-*-1
 !urxvt*font: -*-lime-*-*-*--11-*-*-*-*-*-*-1
@@ -30,7 +30,8 @@ urxvt*font: xft:tamsyn:size=11:antialias=false, \
 !urxvt*font: xft:perfect dos vga 437:size=11:antialias=false
 !urxvt*font: xft:tewi:size=11:antialias=false
 
-urxvt*boldFont: xft:tamsyn:size=11:antialias=false:bold
+urxvt*boldFont: 
+!xft:tamsyn:size=11:antialias=false:bold
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
 
@@ -40,7 +41,7 @@ urxvt*lineSpace: -1
 ! █▓▒░ interface
 urxvt*scrollBar: false
 urxvt*transparent: true
-urxvt*shading: 05
+urxvt*shading: 20
 urxvt*cursorBlink: true
 
 ! █▓▒░ clipboard
