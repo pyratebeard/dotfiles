@@ -57,7 +57,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-		beautiful.init("/home/pyratebeard/.config/awesome/themes/decker-cyan/theme.lua")
+		beautiful.init("/home/pyratebeard/.config/awesome/themes/pyratemono/theme.lua")
 
 		-- This is used later as the default terminal and editor to run.
 		terminal = "urxvt"
