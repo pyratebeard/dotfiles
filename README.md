@@ -1,33 +1,21 @@
 ```
-      ██            ██     ████ ██  ██                
-     ░██           ░██    ░██░ ░░  ░██                
-     ░██  ██████  ██████ ██████ ██ ░██  █████   ██████
-  ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ 
- ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ 
-░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██
-░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ 
- ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
- 
-  ▓▓▓▓▓▓▓▓▓▓
- ░▓ about  ▓ custom linux config files
- ░▓ author ▓ pyratebeard <root@pyratebeard.net>
- ░▓ code   ▓ http://code.pyratebeard.net/dotfiles
- ░▓▓▓▓▓▓▓▓▓▓
- ░░░░░░░░░░
+  about     custom linux config files
+  author    pyratebeard <root@pyratebeard.net>
+  code      http://code.pyratebeard.net/dotfiles
 
- awesome        > awesome wm config and pyratebeard theme
- bash	        > bash settings, aliases, and functions
- dwb			> dynamic web browser settings
- gtk			> mod of mist theme for gtk
- irssi          > nixers irc theme
- moc			> music on console custom theme and settings
+ awesome        > awesome wm config and collection of themes
+ bash 	        > bash settings, aliases, and functions
+ dwb	       		> dynamic web browser settings
+ gtk		      	> mod of mist theme for gtk
+ irssi          > custom irc settings
+ moc		      	> music on console custom theme and settings
  mpd            > music player daemon setup
  mutt           > minimal mutt setup
  ncmpcpp        > ncurses mpc++ ui/color settings
  ranger         > file manager with image previews and z3bra theme
- sublime        > sublime text 2 with greybeard, monokai, and gohu
+ sublime        > sublime text 2 and 3 with custom themes
  tmux           > terminal multiplexer with custom status bar
- urxvt          > sourcerer terminal colors and keyboard settings
+ urxvt          > various terminal colors and keyboard settings
  vim            > wizard status bar and sourcerer color scheme
  zsh            > zshell settings, aliases, and custom prompts
 
@@ -44,6 +32,9 @@
  - [previews](#previews)
 
 #dotfiles
+a lot of the settings and themes within these dotfiles are heavily borrowed from xero harrison <http://code.xero.nu/dotfiles>.  i have stripped out anything i don't use, and modified a lot to my personal preference.
+
+
 in the unix world programs are commonly configured in two different ways, via shell arguments or text based configuration files. programs with many options like window managers or text editors are configured on a per-user basis with files in your home directory `~`. in unix like operating systems any file or directory name that starts with a period or full stop character is considered hidden, and in a default view will not be displayed. thus the name dotfiles. 
 
 it's been said of every console user: 
