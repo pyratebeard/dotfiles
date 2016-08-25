@@ -16,3 +16,4 @@ set mail_check		= 120
 set editor		= vim
 set sort=reverse-threads
 set sort_aux=date-received
+color normal default default
