@@ -1,19 +1,7 @@
-#                 ██                    
-#                ░██                    
-#  ██████  ██████░██      ██████  █████ 
-# ░░░░██  ██░░░░ ░██████ ░░██░░█ ██░░░██
-#    ██  ░░█████ ░██░░░██ ░██ ░ ░██  ░░ 
-#   ██    ░░░░░██░██  ░██ ░██   ░██   ██
-#  ██████ ██████ ░██  ░██░███   ░░█████ 
-# ░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░  
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+# author    pyratebeard <root@pyratebeard.net>
+# code      http://code.pyratebeard.net/dotfiles
 #
-#█▓▒░ load configs
+# load configs
 for config (~/.zsh/*.zsh) source $config
 setopt auto_cd
