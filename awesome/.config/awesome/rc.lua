@@ -1,6 +1,9 @@
 --[[
 
-	pyratesoft awesomewm config
+	pyratebeard awesomewm config
+
+	author:		pyratebeard <root@pyratebeard.net>
+	code:			http://code.pyratebeard.net/awesome
 
 --]]
 
