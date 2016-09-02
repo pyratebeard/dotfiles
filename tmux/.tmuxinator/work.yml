@@ -11,6 +11,8 @@ windows:
       panes:
         - ncmpcpp
         - mutt
+  - twitter:
+      - turses
   - news:
       layout: 0ac7,98x55,0,0[98x17,0,0,4,98x37,0,18,5]
       panes:
