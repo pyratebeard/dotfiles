@@ -98,7 +98,7 @@ editor_bg = dark blue
 [styles]
 statuses_in_user_info = 3
 tab_template = {timeline_name} [{unread}]
-url_format = display
+url_format = shortened
 box_around_status = True
 status_divider = False
 reply_indicator = @
