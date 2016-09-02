@@ -107,7 +107,7 @@ status_divider_char = ─
 dm_template =  {sender_screen_name} => {recipient_screen_name} - {time} 
 status_bar = True
 retweet_indicator = RT
-header_template =  {username}{retweeted}{retweeter} - {time}{reply}{retweet_count} 
+header_template =  {username}{retweeted}{retweeter} - {time}{reply}
 editor_vertical_align = bottom
 
 [debug]
