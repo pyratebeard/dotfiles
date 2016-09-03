@@ -1,4 +1,5 @@
 dwb/.config/dwb/default
+dwb/.config/dwb/keys*
 icons/
 irssi/.irssi/scripts/twirssi.ids
 irssi/.irssi/scripts/twirssi.json
