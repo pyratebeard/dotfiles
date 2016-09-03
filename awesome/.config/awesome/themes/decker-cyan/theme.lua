@@ -1,4 +1,4 @@
--- futuremyth-min, awesome3 theme, by pyratebeard
+-- decker-cyan, awesome3 theme, by pyratebeard
 -- A minimal theme
 
 --{{{ Main
@@ -41,7 +41,7 @@ else
 end
 --}}}
 
-theme.font          = "tamsyn 11"
+theme.font          = "tamsyn 10"
 
 theme.bg_normal     = "#121212"
 theme.bg_focus      = "#212121"
