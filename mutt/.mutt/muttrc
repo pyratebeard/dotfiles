@@ -1,13 +1,12 @@
 set imap_user		= "root@pyratebeard.net"
 set imap_pass		= ""
-set smtp_url		= "smtp://smtp.domain.com:587/"
-set smtp_pass		= ""
+set smtp_url		= "smtp://dudley@smtp.domain.com:587/"
 set from		= "root@pyratebeard.net"
 set realname		= "pyratebeard"
 set header_cache	= "~/.mutt/cache/headers"
 set message_cachedir	= "~/.mutt/cache/"
 set certificate_file 	= "~/.mutt/certificates"
-set folder		= imaps://imap.domain.com/
+set folder		= imaps://imap.domain.com
 set spoolfile		= +INBOX
 mailboxes		= +INBOX
 unset imap_passive
