@@ -137,7 +137,7 @@ end
 		vicious.register(memwidget, vicious.widgets.mem, "m:$1%", 10)
 		-- netwidget (#5eaefe = pale blue)
 		netwidget = wibox.widget.textbox()
-		vicious.register(netwidget, vicious.widgets.net, "u:${enp0s3 up_kb} d:${enp0s3 down_kb}", 3)
+		vicious.register(netwidget, vicious.widgets.net, "u:${wlp2s0 up_kb} d:${wlp2s0 down_kb}", 3)
 		-- batwidget
 		batwidget = wibox.widget.textbox()
 		vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT0")

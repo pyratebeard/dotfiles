@@ -1,4 +1,4 @@
--- futuremyth-min, awesome3 theme, by pyratebeard
+-- decker-cyan, awesome3 theme, by pyratebeard
 -- A minimal theme
 
 --{{{ Main
@@ -22,7 +22,7 @@ if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
 end
 themedir = themes .. themename
 
-wallpaper1    = themedir .. "/background.jpg"
+wallpaper1    = themedir .. "/wires.jpg"
 wallpaper2    = themedir .. "/background.png"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
@@ -41,7 +41,7 @@ else
 end
 --}}}
 
-theme.font          = "tamsyn 11"
+theme.font          = "tamsyn 10"
 
 theme.bg_normal     = "#121212"
 theme.bg_focus      = "#212121"

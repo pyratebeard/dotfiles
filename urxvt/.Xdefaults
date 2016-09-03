@@ -1,49 +1,24 @@
-!  ██     ██      ██           ████                    ██   ██          
-! ░░██   ██      ░██          ░██░                    ░██  ░██          
-!  ░░██ ██       ░██  █████  ██████  ██████   ██   ██ ░██ ██████  ██████
-!   ░░███     ██████ ██░░░██░░░██░  ░░░░░░██ ░██  ░██ ░██░░░██░  ██░░░░ 
-!    ██░██   ██░░░██░███████  ░██    ███████ ░██  ░██ ░██  ░██  ░░█████ 
-!   ██ ░░██ ░██  ░██░██░░░░   ░██   ██░░░░██ ░██  ░██ ░██  ░██   ░░░░░██
-!  ██   ░░██░░██████░░██████  ░██  ░░████████░░██████ ███  ░░██  ██████ 
-! ░░     ░░  ░░░░░░  ░░░░░░   ░░    ░░░░░░░░  ░░░░░░ ░░░    ░░  ░░░░░░  
-!
-!  ▓▓▓▓▓▓▓▓▓▓
-! ░▓ author ▓ xero <x@xero.nu>
-! ░▓ code   ▓ http://code.xero.nu/dotfiles
-! ░▓ mirror ▓ http://git.io/.files
-! ░▓▓▓▓▓▓▓▓▓▓
-! ░░░░░░░░░░
+! author  pyratebeard <root@pyratebeard.net>
+! code    http://code.pyratebeard.net/dotfiles
 !
 
-#include </home/xero/sourcerer.Xcolors>
-
-! █▓▒░ fonts
-urxvt*font: xft:tamsyn:size=11:antialias=false, \
+! fonts
+urxvt*font: xft:tamsyn:size=10:antialias=false, \
             xft:Symbola:pixelsize=14:antialias=true:hinting=slight
-!urxvt*font: -*-creep-regular-*-*--16-*-*-*-*-*-*-1
-!urxvt*font: -*-lime-*-*-*--11-*-*-*-*-*-*-1
-!urxvt*font: xft:creep:size=16:antialias=true
-!urxvt*font: xft:envy code r:size=9:antialias=false
-!urxvt*font: xft:lemon:size=16:antialias=false
-!urxvt*font: xft:lime:size=16:antialias=false
-!urxvt*font: xft:neep:size=11:antialias=false
-!urxvt*font: xft:perfect dos vga 437:size=11:antialias=false
-!urxvt*font: xft:tewi:size=11:antialias=false
-
-urxvt*boldFont: xft:tamsyn:size=11:antialias=false:bold
+urxvt*boldFont: xft:tamsyn:size=10:antialias=false:bold
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
 
 urxvt*letterSpace: 0
 urxvt*lineSpace: -1
 
-! █▓▒░ interface
+! interface
 urxvt*scrollBar: false
 urxvt*transparent: true
-urxvt*shading: 05
+urxvt*shading: 20
 urxvt*cursorBlink: true
 
-! █▓▒░ clipboard
+! clipboard
 urxvt.perl-ext-common: default,clipboard,keyboard-select
 urxvt.keysym.M-Escape: perl:keyboard-select:activate
 urxvt.keysym.M-c:   perl:clipboard:copy
@@ -52,16 +27,17 @@ urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt.clipboard.copycmd:  xsel -ib
 urxvt.clipboard.pastecmd: xsel -ob
 
-! █▓▒░ clickable urls
+! clickable urls
 urxvt.perl-ext-common: default,matcher
 urxvt.url-launcher: /usr/bin/xdg-open
 urxvt.matcher.button: 1
 
-! █▓▒░ misc
+! misc
 urxvt.saveLines: 9999
 urxvt.iso14755: false
-!URxvt*altSendsEscape: true
 
+
+! decker-cyan Xcolours
 ! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
