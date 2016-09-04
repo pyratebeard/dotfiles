@@ -3,6 +3,7 @@ icons/
 irssi/.irssi/scripts/twirssi.ids
 irssi/.irssi/scripts/twirssi.json
 mpd/.config/mpd/mpd.log
+mpd/.mpd/database
 mpd/.mpd/log
 mpd/.mpd/state
 mpd/.mpd/pid
