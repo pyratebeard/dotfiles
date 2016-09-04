@@ -6,12 +6,14 @@ root: ~/
 tmux_options: -2
 
 windows:
-  - irc:
+  - mail:
       layout: 0abe,98x55,0,0[98x17,0,0,2,98x37,0,18,3]
       panes:
         - ncmpcpp
         - mutt
-  - mail:
+  - twitter:
+      - turses
+  - news:
       layout: 0ac7,98x55,0,0[98x17,0,0,4,98x37,0,18,5]
       panes:
         - ranger

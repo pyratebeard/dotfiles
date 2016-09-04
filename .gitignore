@@ -1,4 +1,5 @@
 dwb/.config/dwb/default
+dwb/.config/dwb/keys*
 icons/
 irssi/.irssi/scripts/twirssi.ids
 irssi/.irssi/scripts/twirssi.json
@@ -16,4 +17,5 @@ ranger/.config/ranger/colorschemes/__pycache__/
 ranger/.config/ranger/history
 ranger/.config/ranger/tagged
 ranger/.config/ranger/colorschemes/*.pyo
+turses/.turses/log
 vim/.vim/bundle/
