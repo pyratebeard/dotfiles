@@ -3,7 +3,7 @@
 !
 
 ! fonts
-urxvt*font: xft:tamsyn:size=11:antialias=false, \
+urxvt*font: xft:tamsyn:size=10:antialias=false, \
             xft:Symbola:pixelsize=14:antialias=true:hinting=slight
 urxvt*boldFont: xft:tamsyn:size=10:antialias=false:bold
 urxvt*italicFont: 
