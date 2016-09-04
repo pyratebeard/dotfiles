@@ -24,13 +24,24 @@ servers = (
     use_ssl = "no";
     autoconnect = "yes";
   }
+  {
+    address = "irc.nixers.net";
+    chatnet = "nixers";
+    port = "6667";
+    use_ssl = "no";
+    autoconnect = "yes";
+  }
 );
 
-chatnets = { freenode = { type = "IRC"; nick = "pyratebeard"; }; };
+chatnets = {
+  freenode = { type = "IRC"; nick = "pyratebeard"; };
+  nixers = { type = "IRC"; nick = "pyrtbrd"; };
+};
 
 channels = (
   { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; }
+  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#nixers"; chatnet = "nixers"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -82,6 +93,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec" );
+    channels = ( "##linux", "#r_netsec", "#nixers" );
   }
 );
