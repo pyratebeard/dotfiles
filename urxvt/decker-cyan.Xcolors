@@ -1,32 +1,4 @@
-! pyratesoft Xdefaults
-
-!#include </home/dudley/pyratesoft4.Xcolors>
-
-! geometry
-urxvt.geometry: 85x45
-
-! fonts
-!urxvt*font: xft:Tamsyn:pixelsize=15
-urxvt*font: xft:gohufont:size=10:antialias=false
-urxvt*boldFont:
-urxvt*italicFont:
-urxvt*bolditalicFont:
-
-! interface
-urxvt*transparent: true
-urxvt*shading: 10
-urxvt*scrollBar: false
-urxvt*cursorBlink: true
-
-! clipboard
-urxvt.perl-ext-common: default,clipboard,keyboard-select
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-c:   perl:clipboard:copy
-urxvt.keysym.C-v:   perl:clipboard:paste
-urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-urxvt.clipboard.copycmd:  xsel -ib
-urxvt.clipboard.pastecmd: xsel -ob
-
+! decker colorscheme
 ! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
