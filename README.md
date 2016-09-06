@@ -1,4 +1,12 @@
 ```
+  __          __       ___      ___                    
+ /\ \        /\ \__  /'___\ __ /\_ \                   
+ \_\ \    ___\ \ ,_\/\ \__//\_\\//\ \      __    ____  
+ /'_` \  / __`\ \ \/\ \ ,__\/\ \ \ \ \   /'__`\ /',__\ 
+/\ \L\ \/\ \L\ \ \ \_\ \ \_/\ \ \ \_\ \_/\  __//\__, `\
+\ \___,_\ \____/\ \__\\ \_\  \ \_\/\____\ \____\/\____/
+ \/__,_ /\/___/  \/__/ \/_/   \/_/\/____/\/____/\/___/ 
+
   about     custom linux config files
   author    pyratebeard <root@pyratebeard.net>
   code      http://code.pyratebeard.net/dotfiles
@@ -163,3 +171,4 @@ when you learn vim it's best to use a more vanilla config. if helps you focus on
 
 ![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/scrot_nightcity-5.png)
 - [color scripts](http://git.io/.fun)
+                                                                      
