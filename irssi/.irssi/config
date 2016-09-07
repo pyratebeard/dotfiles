@@ -41,7 +41,7 @@ chatnets = {
 channels = (
   { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "#nixers"; chatnet = "nixers"; autojoin = "Yes"; }
+  { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -93,6 +93,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec", "#nixers" );
+    channels = ( "##linux", "#r_netsec", "#unix" );
   }
 );
