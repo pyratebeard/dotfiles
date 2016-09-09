@@ -1,37 +1,44 @@
---[[
+--
+--		   __     __  __  __     __    ____    ___     ___ ___      __   
+--		 /'__`\  /\ \/\ \/\ \  /'__`\ /',__\  / __`\ /' __` __`\  /'__`\ 
+--		/\ \L\.\_\ \ \_/ \_/ \/\  __//\__, `\/\ \L\ \/\ \/\ \/\ \/\  __/ 
+--		\ \__/.\_\\ \___x___/'\ \____\/\____/\ \____/\ \_\ \_\ \_\ \____\
+--		 \/__/\/_/ \/__//__/   \/____/\/___/  \/___/  \/_/\/_/\/_/\/____/
+--		                                                                 
+--    awesome wm config
+--    
+--    author:		pyratebeard <root@pyratebeard.net>
+--    code:			http://code.pyratebeard.net/awesome
+--
 
-	pyratebeard awesomewm config
+-- standard libraries
+gears         = require("gears")
+awful         = require("awful")
+awful.rules   = require("awful.rules")
+require("awful.autofocus")
 
-	author:		pyratebeard <root@pyratebeard.net>
-	code:			http://code.pyratebeard.net/awesome
+-- widget library
+wibox         = require("wibox")
 
---]]
+-- theme library
+beautiful     = require("beautiful")
 
--- Standard awesome library
-local gears		= require("gears")
-local awful 	= require("awful")
-awful.rules 	= require("awful.rules")
-				  require("awful.autofocus")
+-- notification libraries
+naughty       = require("naughty")
+menubar       = require("menubar")
 
--- Widget and layout library
-local wibox 	= require("wibox")
+-- menubar widget library
+vicious       = require("vicious")
 
--- Theme handling library
-local beautiful = require("beautiful")
+-- dropdown terminal libraries
+drop          = require("scratchdrop")
 
--- Notification library
-local naughty 	= require("naughty")
-local menubar 	= require("menubar")
+-- extra layouts library
+lain          = require("lain")
 
--- Dropdown terminal
-local drop 		= require("scratchdrop")
-
--- Extra layouts
-local lain 		= require("lain")
-
+-- <not sure what this does...>
 awful.util.spawn_with_shell("xcompmgr -cF &")
 
-vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -60,7 +67,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-		beautiful.init("/home/pyratebeard/.config/awesome/themes/decker-cyan/theme.lua")
+		beautiful.init("/home/dudley/.config/awesome/themes/decker-cyan/theme.lua")
 
 		-- This is used later as the default terminal and editor to run.
 		terminal = "urxvt"
