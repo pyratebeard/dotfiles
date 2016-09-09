@@ -66,6 +66,14 @@ end
 home          = os.getenv("HOME")
 config_dir    = awful.util.getdir("config")
 
+-- user config
+terminal = "urxvt"
+editor = os.getenv("EDITOR") or "vi"
+editor_cmd = terminal .. " -e " .. editor
+
+-- modkey
+modkey = "Mod4"
+
 -- theme
 beautiful.init(home.."/.config/awesome/themes/decker-cyan/theme.lua")
 
@@ -95,17 +103,6 @@ for s = 1, screen.count() do
   s,
   layouts[1])
 end
-
-terminal = "urxvt"
-editor = os.getenv("EDITOR") or "vi"
-editor_cmd = terminal .. " -e " .. editor
-
-  -- Default modkey.
-  modkey = "Mod4"
-
-  -- Table of layouts to cover with awful.layout.inc, order matters.
-
-
 
 		-- {{{ Menu
 		-- Create a laucher widget and a main menu
