@@ -62,49 +62,50 @@ do
   end)
 end
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-		beautiful.init("/home/dudley/.config/awesome/themes/decker-cyan/theme.lua")
+-- variables 
+home          = os.getenv("HOME")
+config_dir    = awful.util.getdir("config")
 
-		-- This is used later as the default terminal and editor to run.
-		terminal = "urxvt"
-		-- terminal = "st -f Tamsyn:pixelsize=15"
-		editor = os.getenv("EDITOR") or "vi"
-		editor_cmd = terminal .. " -e " .. editor
+-- theme
+beautiful.init(home.."/.config/awesome/themes/decker-cyan/theme.lua")
 
-		-- Default modkey.
-		-- Usually, Mod4 is the key with a logo between Control and Alt.
-		-- If you do not like this or do not have such a key,
-		-- I suggest you to remap Mod4 to another key using xmodmap or other tools.
-		-- However, you can use another modifier like Mod1, but it may interact with others.
-		modkey = "Mod4"
+-- wallpaper
+if beautiful.wallpaper then
+  for s = 1, screen.count() do
+    gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+  end
+end
 
-		-- Table of layouts to cover with awful.layout.inc, order matters.
-		local layouts =
-		{
-			awful.layout.suit.floating,
-			lain.layout.uselesstile,
-			awful.layout.suit.tile,
-			-- awful.layout.suit.magnifier
-		}
-		-- }}}
+-- layouts
+local layouts = {
+  awful.layout.suit.floating,
+  lain.layout.uselesstile,
+  awful.layout.suit.tile
+}
 
-		-- {{{ Wallpaper
-		if beautiful.wallpaper then
-			for s = 1, screen.count() do
-				gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-			end
-		end
-		-- }}}
+-- tag list
+tags = {}
+for s = 1, screen.count() do
+  tags[s] = awful.tag({
+    " terminal ",
+    " web ",
+    " code ",
+    " other"
+  },
+  s,
+  layouts[1])
+end
 
-		-- {{{ Tags
-		-- Define a tag table which hold all screen tags.
-		tags = {}
-		for s = 1, screen.count() do
-			-- Each screen has its own tag table.
-			tags[s] = awful.tag({" terminal ", " web ", " code ", " other"}, s, layouts[1])
-		end
-		-- }}}
+terminal = "urxvt"
+editor = os.getenv("EDITOR") or "vi"
+editor_cmd = terminal .. " -e " .. editor
+
+  -- Default modkey.
+  modkey = "Mod4"
+
+  -- Table of layouts to cover with awful.layout.inc, order matters.
+
+
 
 		-- {{{ Menu
 		-- Create a laucher widget and a main menu
