@@ -72,13 +72,13 @@ etc...
 #terminal
 ever since i started using linux i have loved working in the terminal. i find it faster and easier than most graphical interfaces.
 
-i have tried a number of terminal emulators over the years but i'm currently using [urxvt](). i have recently started using [zsh]() over [bash]() for my shell.
+i have tried a number of terminal emulators over the years but i'm currently using [urxvt](). i have recently started using [zsh](http://zsh.sourceforge.net/) over [bash](https://www.gnu.org/software/bash/) for my shell.
 
-i've also come to love [tmux]() for running multiple sessions in one window.
+i've also come to love [tmux](https://tmux.github.io/) for running multiple sessions in one window.
 
 because i work in the terminal i try to use as many terminal based apps as i can. here is a list of my current chosen apps:
 
- - audio          = [ncmpcpp]() ([mpd]() backend)
+ - audio          = [ncmpcpp](http://rybczak.net/ncmpcpp/) ([mpd]() backend)
  - irc            = [irssi]()
  - twitter        = [turses]()
  - email          = [mutt]()
