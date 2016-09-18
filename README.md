@@ -12,7 +12,6 @@
   code      http://code.pyratebeard.net/dotfiles
 
  awesome        > awesome wm config and collection of themes
- bash 	        > bash settings, aliases, and functions
  dwb	       		> dynamic web browser settings
  gtk		      	> mod of mist theme for gtk
  irssi          > custom irc settings
@@ -171,4 +170,3 @@ when you learn vim it's best to use a more vanilla config. if helps you focus on
 
 ![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/scrot_nightcity-5.png)
 - [color scripts](http://git.io/.fun)
-                                                                      
