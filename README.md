@@ -103,9 +103,4 @@ also thanks to [xero](https://github.com/xero/dotfiles) for having such well doc
 #disclaimer
 feel free to clone or fork my repo but you use these files at your own risk!
 
-<<<<<<< HEAD
-![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/scrot_nightcity-5.png)
-- [color scripts](http://git.io/.fun)
-=======
 i will be happy to receive details of any bugs.
->>>>>>> refs/remotes/origin/master
