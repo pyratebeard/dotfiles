@@ -14,8 +14,8 @@ urxvt*lineSpace: -1
 
 ! interface
 urxvt*scrollBar: false
-urxvt*transparent: true
-urxvt*shading: 05
+!urxvt*transparent: true
+!urxvt*shading: 05
 urxvt*cursorBlink: true
 
 ! clipboard
@@ -36,8 +36,6 @@ urxvt.matcher.button: 1
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-
-! decker colorscheme
 ! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
@@ -49,7 +47,7 @@ urxvt.iso14755: false
 
 ! red
 *.color1:       #c33027
-*.color9:       #d85a21
+*.color9:       #21bed8
 
 ! green
 *.color2:       #61b343
@@ -64,8 +62,8 @@ urxvt.iso14755: false
 *.color12:      #33859d
 
 ! magenta
-*.color5:       #4e5165
-*.color13:      #693699
+*.color5:       #3c6465
+*.color13:      #246184
 
 ! cyan
 *.color6:       #019cb3
