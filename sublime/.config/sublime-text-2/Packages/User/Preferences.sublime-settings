@@ -1,7 +1,7 @@
 {
-	"color_scheme": "Packages/Colorsublime-Themes/decker-dark.tmTheme",
+	"color_scheme": "Packages/Neka Theme/Neka.tmTheme",
 	"font_face": "tamsyn",
-	"font_size": 11,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
