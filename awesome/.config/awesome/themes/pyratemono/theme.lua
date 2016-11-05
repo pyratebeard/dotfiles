@@ -22,7 +22,7 @@ if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
 end
 themedir = themes .. themename
 
-wallpaper1    = themedir .. "/background.jpg"
+wallpaper1    = themedir .. "/plain_black_wallpaper.png"
 wallpaper2    = themedir .. "/background.png"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
@@ -48,14 +48,14 @@ theme.bg_focus      = "#212121"
 theme.bg_urgent     = "#212121"
 theme.bg_minimize   = "#121212"
 
-theme.fg_normal     = "#d9d9d9"
-theme.fg_focus      = "#d9d9d9"
+theme.fg_normal     = "#d3d3d3"
+theme.fg_focus      = "#d3d3d3"
 theme.fg_urgent     = "#ff0056"
 theme.fg_minimize   = "#ababab"
 
-theme.border_width  = "2"
+theme.border_width  = "1"
 theme.border_normal = "#515151"
-theme.border_focus  = "#d9d9d9"
+theme.border_focus  = "#d3d3d3"
 theme.border_marked = "#ff0056"
 
 -- There are other variable sets

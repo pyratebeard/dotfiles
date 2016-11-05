@@ -75,7 +75,7 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- theme
-beautiful.init(home.."/.config/awesome/themes/decker-cyan/theme.lua")
+beautiful.init(home.."/.config/awesome/themes/boneyard/theme.lua")
 
 -- wallpaper
 if beautiful.wallpaper then

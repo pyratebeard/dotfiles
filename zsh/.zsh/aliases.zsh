@@ -70,6 +70,7 @@ alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙──�
 alias todo="bash ~/code/sys/todo"
 alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
 alias nexus="jmtpfs ~/nexus"
+alias gifview="gifview -a"
 tmx() {
   [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
 }

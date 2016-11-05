@@ -12,4 +12,4 @@
 #
 #█▓▒░ minial prompt
 # PROMPT='${USER_LEVEL}[%F{white}%1~${USER_LEVEL}]$(prompt_git_info)── -%f '
-PROMPT='${USERNAME}@[$HOSTNAME]:%1~$(prompt_git_info)%f# '
+PROMPT='%F{red}${USERNAME}@%F{white}[$HOSTNAME] : %~# '
