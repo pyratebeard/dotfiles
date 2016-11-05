@@ -51,7 +51,7 @@ urxvt.iso14755: false
 *.color9:       #d9d9d9
 
 ! green
-*.color2:       #88eeff
+*.color2:       #667788
 *.color10:      #d9d9d9
 
 ! yellow
@@ -63,11 +63,11 @@ urxvt.iso14755: false
 *.color12:      #d9d9d9
 
 ! magenta
-*.color5:       #d9d9d9
+*.color5:       #361b51
 *.color13:      #d9d9d9
 
 ! cyan
-*.color6:       #55ddff
+*.color6:       #88aaaa
 *.color14:      #d9d9d9
 
 ! white
