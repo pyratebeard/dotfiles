@@ -88,7 +88,8 @@ end
 local layouts = {
   awful.layout.suit.floating,
   lain.layout.uselesstile,
-  awful.layout.suit.tile
+  awful.layout.suit.tile,
+  awful.layout.suit.tile.bottom
 }
 
 -- tag list
