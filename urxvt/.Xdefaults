@@ -47,11 +47,11 @@ urxvt.iso14755: false
 *.color8:       #656565
 
 ! red
-*.color1:       #aa00ff
+*.color1:       #ee1122
 *.color9:       #d9d9d9
 
 ! green
-*.color2:       #55ccff
+*.color2:       #aa00ff
 *.color10:      #d9d9d9
 
 ! yellow
