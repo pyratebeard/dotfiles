@@ -70,6 +70,11 @@ urxvt.iso14755: false
 *.color14:      #019cb3
 
 ! white
+<<<<<<< HEAD
 *.color7:       #9c9c9c
 *.color15:      #9c9c9c
 
+=======
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
+>>>>>>> parent of 09eded6... nothing has changed...
