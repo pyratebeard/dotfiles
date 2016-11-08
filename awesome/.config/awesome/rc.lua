@@ -75,7 +75,7 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- theme
-beautiful.init(home.."/.config/awesome/themes/decker-cyan/theme.lua")
+beautiful.init(home.."/.config/awesome/themes/boneyard/theme.lua")
 
 -- wallpaper
 if beautiful.wallpaper then
@@ -88,7 +88,8 @@ end
 local layouts = {
   awful.layout.suit.floating,
   lain.layout.uselesstile,
-  awful.layout.suit.tile
+  awful.layout.suit.tile,
+  awful.layout.suit.tile.bottom
 }
 
 -- tag list
