@@ -11,21 +11,23 @@
     author    pyratebeard <root@pyratebeard.net>
     code      http://code.pyratebeard.net/dotfiles
 
-    awesome   > awesome wm config and collection of themes
-    bash      > bash settings, aliases, and functions
-    dwb       > dynamic web browser settings
-    gtk       > mod of mist theme for gtk
-    irssi     > custom irc settings
-    moc       > music on console custom theme and settings
-    mpd       > music player daemon setup
-    mutt      > minimal mutt setup
-    ncmpcpp   > ncurses mpc++ ui/color settings
-    ranger    > file manager with image previews and z3bra theme
-    sublime   > sublime text 2 and 3 with custom themes
-    tmux      > terminal multiplexer with custom status bar
-    urxvt     > various terminal colors and keyboard settings
-    vim       > wizard status bar and sourcerer color scheme
-    zsh       > zshell settings, aliases, and custom prompts
+    awesome         > awesome wm config and collection of themes
+    bash            > bash settings, aliases, and functions
+    dwb             > dynamic web browser settings
+    gtk             > mod of mist theme for gtk
+    herbstluftwm    > 
+    irssi           > custom irc settings
+    moc             > music on console custom theme and settings
+    mpd             > music player daemon setup
+    mutt            > minimal mutt setup
+    ncmpcpp         > ncurses mpc++ ui/color settings
+    qutebrowser     >
+    ranger          > file manager with image previews and z3bra theme
+    sublime         > sublime text 2 and 3 with custom themes
+    tmux            > terminal multiplexer with custom status bar
+    urxvt           > various terminal colors and keyboard settings
+    vim             > wizard status bar and sourcerer color scheme
+    zsh             > zshell settings, aliases, and custom prompts
 
 ```
 
