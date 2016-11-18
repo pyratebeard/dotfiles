@@ -1,4 +1,4 @@
--- encom_os12, awesome3 theme, by pyratebeard
+-- decker-cyan, awesome3 theme, by pyratebeard
 -- A minimal theme
 
 --{{{ Main
@@ -16,7 +16,7 @@ end
 sharedicons   = shared .. "/icons"
 sharedthemes  = shared .. "/themes"
 themes        = config .. "/themes"
-themename     = "/encom_os12"
+themename     = "/decker"
 if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
   themes = sharedthemes
 end
@@ -48,14 +48,14 @@ theme.bg_focus      = "#212121"
 theme.bg_urgent     = "#212121"
 theme.bg_minimize   = "#121212"
 
-theme.fg_normal     = "#cceeff"
-theme.fg_focus      = "#cceeff"
+theme.fg_normal     = "#d9d9d9"
+theme.fg_focus      = "#01c8e5"
 theme.fg_urgent     = "#ff0056"
 theme.fg_minimize   = "#ababab"
 
 theme.border_width  = "2"
 theme.border_normal = "#515151"
-theme.border_focus  = "#cceeff"
+theme.border_focus  = "#01c8e5"
 theme.border_marked = "#ff0056"
 
 -- There are other variable sets
