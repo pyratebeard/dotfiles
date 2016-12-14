@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Theme - Cyanide/Cyanide.tmTheme",
+	"font_face": "Tamsyn",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"spacefunk_folder_icons": true,
+	"theme": "Cyanide.sublime-theme"
+}
