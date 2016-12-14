@@ -43,15 +43,15 @@ urxvt.iso14755: false
 *.cursorColor:  #d9d9d9
 
 ! black
-*.color0:       #0b0b0b
+*.color0:       #212121
 *.color8:       #656565
 
 ! red
-*.color1:       #285079
+*.color1:       #aa1111
 *.color9:       #d9d9d9
 
 ! green
-*.color2:       #33bbee
+*.color2:       #116677
 *.color10:      #d9d9d9
 
 ! yellow
@@ -67,7 +67,7 @@ urxvt.iso14755: false
 *.color13:      #d9d9d9
 
 ! cyan
-*.color6:       #55ddff
+*.color6:       #33aaaa
 *.color14:      #d9d9d9
 
 ! white
