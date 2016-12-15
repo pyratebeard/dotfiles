@@ -41,6 +41,7 @@ chatnets = {
 channels = (
   { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "##ArcherScavengerHunt"; chatnet = "freenode"; autojoin = "Yes";},
   { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
 );
 
