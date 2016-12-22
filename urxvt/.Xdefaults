@@ -3,6 +3,9 @@
 !
 !#include </home/dudley/decker-cyan.Xcolors>
 
+! geometry
+urxvt*geometry: 80x45
+
 ! fonts
 urxvt*font: xft:tamsyn:size=10:antialias=false, \
             xft:Symbola:pixelsize=14:antialias=true:hinting=slight
