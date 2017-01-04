@@ -89,7 +89,8 @@ local layouts = {
   awful.layout.suit.floating,
   lain.layout.uselesstile,
   awful.layout.suit.tile,
-  awful.layout.suit.tile.bottom
+  awful.layout.suit.tile.bottom,
+  lain.layout.uselessfair
 }
 
 -- tag list
@@ -124,7 +125,7 @@ vicious.register(memwidget, vicious.widgets.mem, "m:$1%", 10)
 
 -- network
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "u:${wlp2s0 up_kb} d:${wlp2s0 down_kb}", 3)
+vicious.register(netwidget, vicious.widgets.net, "u:${enp0s3 up_kb} d:${enp0s3 down_kb}", 3)
 
 -- battery
 batwidget = wibox.widget.textbox()
@@ -248,10 +249,10 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Control" }, "r", awesome.restart),
 	awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-	-- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
-	-- awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
-	awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
-	awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
+	awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+	awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incmwfact(-0.05)    end),
+	-- awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
+	-- awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
 	awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
 	awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
 	awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
