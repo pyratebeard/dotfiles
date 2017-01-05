@@ -59,7 +59,7 @@ redraw = ctrl l
 
 [colors]
 active_tab = white
-active_tab_bg = dark blue
+active_tab_bg = black
 visible_tab = yellow
 visible_tab_bg = dark blue
 inactive_tab = dark blue
