@@ -1,3 +1,4 @@
+! fray colors
 #bgfg
 URxvt*foreground: #FFFFFF
 URxvt*background: #111111
