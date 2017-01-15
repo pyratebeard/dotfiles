@@ -91,9 +91,9 @@ url_bg =
 error = white
 error_bg = dark red
 info = white
-info_bg = dark blue
+info_bg = black
 editor = white
-editor_bg = dark blue
+editor_bg = black
 
 [styles]
 statuses_in_user_info = 3
