@@ -2,10 +2,19 @@
 	"color_scheme": "Packages/Theme - Cyanide/Cyanide.tmTheme",
 	"font_face": "Tamsyn",
 	"font_size": 10,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"rulers":
+	[
+		50,
+		72,
+		80
+	],
 	"spacefunk_folder_icons": true,
-	"theme": "Cyanide.sublime-theme"
+	"theme": "Cyanide.sublime-theme",
+	"word_wrap": true,
+	"wrap_width": 80
 }
