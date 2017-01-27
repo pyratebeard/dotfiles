@@ -1,0 +1,39 @@
+# Snownews keybindings configfile
+# Main menu bindings
+add feed:a
+delete feed:D
+reload all feeds:R
+change default browser:B
+move item up:P
+move item down:N
+change feedname:c
+sort feeds:s
+categorize feed:C
+apply filter:f
+only current category:g
+mark all as read:m
+remove filter:F
+per feed filter:e
+toggle AND/OR filtering:X
+quit:q
+# Feed display menu bindings
+show feedinfo:i
+mark feed as read:m
+mark item unread:M
+# General keybindungs
+next item:n
+previous item:p
+return to previous menu:q
+reload feed:r
+force reload feed:T
+open url:o
+open item url in overview:O
+page up:b
+page down: 
+top:<
+bottom:>
+enter:l
+show new headlines:H
+help menu:h
+about:A
+type ahead find:/
