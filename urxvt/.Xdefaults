@@ -3,10 +3,13 @@
 !
 !#include </home/dudley/decker-cyan.Xcolors>
 
+! geometry
+!urxvt*geometry: 80x45
+
 ! fonts
 urxvt*font: xft:tamsyn:size=10:antialias=false, \
             xft:Symbola:pixelsize=14:antialias=true:hinting=slight
-urxvt*boldFont: xft:tamsyn:size=10:antialias=false:bold
+urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
 
@@ -16,7 +19,7 @@ urxvt*lineSpace: -1
 ! interface
 urxvt*scrollBar: false
 !urxvt*transparent: true
-!urxvt*shading: 05
+!urxvt*shading: 10
 urxvt*cursorBlink: true
 
 ! clipboard
@@ -37,6 +40,7 @@ urxvt.matcher.button: 1
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
+! boneyard colors
 ! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b

@@ -89,7 +89,8 @@ local layouts = {
   awful.layout.suit.floating,
   lain.layout.uselesstile,
   awful.layout.suit.tile,
-  awful.layout.suit.tile.bottom
+  awful.layout.suit.tile.bottom,
+  lain.layout.uselessfair
 }
 
 -- tag list
@@ -124,7 +125,7 @@ vicious.register(memwidget, vicious.widgets.mem, "m:$1%", 10)
 
 -- network
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "u:${wlp2s0 up_kb} d:${wlp2s0 down_kb}", 3)
+vicious.register(netwidget, vicious.widgets.net, "u:${enp0s3 up_kb} d:${enp0s3 down_kb}", 3)
 
 -- battery
 batwidget = wibox.widget.textbox()
@@ -384,6 +385,10 @@ awful.rules.rules = {
 	{ rule = { class = "pinentry" },
 	  properties = { floating = true } },
 	{ rule = { class = "gimp" },
+	  properties = { floating = true } },
+	{ rule = { class = "qpdfview" },
+	  properties = { floating = true } },
+	{ rule = { class = "Qpdfview" },
 	  properties = { floating = true } },
 	{ rule = { class = "sxiv" },
 	  properties = { floating = true } },

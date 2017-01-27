@@ -1,0 +1,120 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+    alignment = 'top_right',
+    background = true,
+    border_width = 0,
+    cpu_avg_samples = 8,
+  	default_color = 'd9d9d9',
+    default_outline_color = '001a25',
+    default_shade_color = 'a7360c',
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'Tamsyn:size=10',
+    gap_x = 20,
+    gap_y = 10,
+    minimum_height = 850,
+  	minimum_width = 160,
+  	maximum_width = 180,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'Desktop',
+    own_window_title = 'conky',
+    own_window_colour = '292929',
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+    short_units = true
+}
+
+conky.text = [[
+ /Hostname: $nodename
+ /System: $sysname
+ /Kernel: $kernel
+${color 0b0b0b}${hr 2}${color d9d9d9}
+${alignc}${offset -8}${execpi 600 cal -m | sed -e 's|'`date +%d`'|\$\{color 33aaaa}'`date +%d`'\$\{color d9d9d9}|' | sed s/^/'${alignc}'/}${offset 37}${color 33aaaa}
+ /Time: ${time %H:%M:%S}
+ /${time %a %d.%m.%Y}
+${color 0b0b0b}${hr 2}${color 33aaaa}
+ /Uptime ${color 33aaaa}$uptime${color d9d9d9}
+ /Batt   $battery_percent%
+${alignc}${color 33aaaa}${battery_bar 5,160}
+${color 0b0b0b}${hr 2}${color d9d9d9}
+ /$machine
+ CPU Usage:  ${cpu cpu0}%
+${alignc}${color 33aaaa}${cpubar cpu0 5,160}
+${alignc}${color 000000}${cpugraph cpu0 20,160 33aaaa 33aaaa -l}${color d9d9d9}
+ Heavy Load:  
+${color 0b0b0b}${hr 2}${color d9d9d9}
+ /RAM Usage: $memperc% $mem/$memmax 
+${alignc}${color 33aaaa}${membar 5,140}
+${color d9d9d9}
+ /Swap Usage: $swapperc% $swap/$swapmax 
+${alignc}${color 33aaaa}${swapbar 5,140}
+${color 0b0b0b}${hr 2}${color d9d9d9}
+ Processes $processes Running: $running_processes
+ ${color 0b0b0b}Name${alignr}CPU% MEM%${color d9d9d9}  
+  ${top name 1}${alignr}${top cpu 1} ${top mem 1}
+  ${top name 2}${alignr}${top cpu 2} ${top mem 2}
+  ${top name 3}${alignr}${top cpu 3} ${top mem 3}
+  ${top name 4}${alignr}${top cpu 4} ${top mem 4}
+  ${top name 5}${alignr}${top cpu 5} ${top mem 5}
+${color 0b0b0b}${hr 2}${color d9d9d9}
+
+ /Address:  ${addr enp0s3}
+${alignr}${exec nmcli d | grep connected | awk -F\ \  '{print $4}'}
+ /Downstream:  ${downspeed enp0s3} 
+ /Upstream:  ${upspeed enp0s3}
+
+${alignc}${color 000000}${downspeedgraph enp0s3 20,160 33aaaa 33aaaa -l}
+${alignc}${color 000000}${upspeedgraph enp0s3 20,160 33aaaa 33aaaa -l}${color d9d9d9}
+
+ /File systems:
+  /${alignr}${fs_used /}/${fs_size /}   
+${alignc}${color 33aaaa}${fs_bar 5,160 /}${color d9d9d9}
+
+  /var${alignr}${fs_used /var}/${fs_size /var}   
+${alignc}${color 33aaaa}${fs_bar 5,160 /var}${color d9d9d9}
+
+  /home${alignr}${fs_used /home}/${fs_size /home}   
+${alignc}${color 33aaaa}${fs_bar 5,160 /home}${color d9d9d9}
+
+  data_01${alignr}${fs_used /media/data_01}/${fs_size /media/data_01}  
+${alignc}${color 33aaaa}${fs_bar 5,160 /media/data_01}${color d9d9d9}
+]]

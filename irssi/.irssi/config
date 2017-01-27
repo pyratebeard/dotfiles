@@ -94,6 +94,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec", "#unix" );
+    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#unix" );
   }
 );

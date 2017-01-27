@@ -18,4 +18,4 @@ set sort_aux=date-received
 color normal default default
 color indicator black cyan
 color tree default default
-color status black white
+color status white black

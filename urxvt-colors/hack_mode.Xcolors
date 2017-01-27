@@ -1,3 +1,4 @@
+! hack mode colors
 *.foreground:   #bcbcbc
 *.background:   #000000
 *.cursorColor:  #bcbcbc
