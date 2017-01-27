@@ -75,6 +75,10 @@ vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
 nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 
+" switch tabs
+nnoremap <C-n> :tabn<CR>
+nnoremap <C-p> :tabp<CR>
+
 " ┏━╸┏━┓┏┳┓┏┳┓┏━┓┏┓╻╺┳┓┏━┓
 " ┃  ┃ ┃┃┃┃┃┃┃┣━┫┃┗┫ ┃┃┗━┓
 " ┗━╸┗━┛╹ ╹╹ ╹╹ ╹╹ ╹╺┻┛┗━┛
