@@ -99,6 +99,7 @@ for s = 1, screen.count() do
   tags[s] = awful.tag({
     " terminal ",
     " web ",
+    " comms ",
     " code ",
     " other"
   },
