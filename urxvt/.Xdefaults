@@ -7,8 +7,9 @@
 !urxvt*geometry: 80x45
 
 ! fonts
-urxvt*font: xft:tamsyn:size=10:antialias=false, \
-            xft:Symbola:pixelsize=14:antialias=true:hinting=slight
+urxvt*font: -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
+#urxvt*font: xft:tamsyn:size=10:antialias=false, \
+#xft:Symbola:pixelsize=14:antialias=true:hinting=slight
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
