@@ -1,20 +1,9 @@
-#                 ██      
-#                ░██      
-#  ██████  ██████░██      
-# ░░░░██  ██░░░░ ░██████  
-#    ██  ░░█████ ░██░░░██ 
-#   ██    ░░░░░██░██  ░██ 
-#  ██████ ██████ ░██  ░██ 
-# ░░░░░░ ░░░░░░  ░░   ░░  
+#   Alias list for zsh
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+#   ABOUT     Custom aliases for zsh
+#   AUTHOR    pyratebeard <root@pyratebeard.net>
+#   CODE      https://github.com/pyratebeard/dotfiles
 #
-#█▓▒░ aliases
 alias ll="ls -lahF --color=auto"
 alias ls="ls -hF --color=auto"
 alias lsl="ls -lhF --color=auto"
@@ -73,28 +62,29 @@ alias nexus="jmtpfs ~/nexus"
 alias gifview="gifview -a"
 alias reboot="sudo reboot"
 alias connect="sudo wpa_supplicant -B -i wlp2s0 -c"
+alias vh="nc vhbin.net 9999"
 tmx() {
   [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
 }
 email() {
 	echo $3 | mutt -s $2 $1
 }
-# colorized cat
+# Colorised cat
 c() {
   for file in "$@"
   do
     pygmentize -O style=sourcerer -f console256 -g "$file" 
   done
 }
-# colorized less
+# Colorised less
 l() {
   pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
 }
-# read markdown files like manpages
+# Read markdown files like manpages
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
-# nullpointer url shortener
+# nullpointer URL shortener
 short() {
   curl -F"shorten=$*" https://0x0.st
 }
