@@ -5,46 +5,46 @@
 --		\ \__/.\_\\ \___x___/'\ \____\/\____/\ \____/\ \_\ \_\ \_\ \____\
 --		 \/__/\/_/ \/__//__/   \/____/\/___/  \/___/  \/_/\/_/\/_/\/____/
 --		                                                                 
---    awesome wm config
 --    
---    author:		pyratebeard <root@pyratebeard.net>
---    code:			http://code.pyratebeard.net/awesome
+--    ABOUT:	Main config file for awesomewm setup
+--    AUTHOR:	pyratebeard <root@pyratebeard.net>
+--    CODE:	http://github.com/pyratebeard/dotfiles/tree/master/awesome
 --
 
--- standard libraries
+-- Standard libraries
 gears         = require("gears")
 awful         = require("awful")
 awful.rules   = require("awful.rules")
 require("awful.autofocus")
 
--- widget library
+-- Widget library
 wibox         = require("wibox")
 
--- theme library
+-- Theme library
 beautiful     = require("beautiful")
 
--- notification libraries
+-- Notification libraries
 naughty       = require("naughty")
 menubar       = require("menubar")
 
--- menubar widget library
+-- Menubar widget library
 vicious       = require("vicious")
 
--- dropdown terminal libraries
+-- Dropdown terminal libraries
 drop          = require("scratchdrop")
 
--- extra layouts library
+-- Extra layouts library
 lain          = require("lain")
 
 -- <not sure what this does...>
 awful.util.spawn_with_shell("xcompmgr -cF &")
 
 
--- error handling
+-- Error handling
 if awesome.startup_errors then
   naughty.notify({
     preset = naughty.config.presets.critical,
-    title = "arrgh! there was mutiny during startup!",
+    title = "ARRGH! There was mutiny during startup!",
     text = awesome.startup_errors
   })
 end
@@ -55,36 +55,36 @@ do
     in_error = true
     naughty.notify({
       preset = naughty.config.presets.critical,
-      title = "to err is human...",
+      title = "To ERR is human...",
       text = err
     })
     in_error = false
   end)
 end
 
--- variables 
+-- Variables 
 home          = os.getenv("HOME")
 config_dir    = awful.util.getdir("config")
 
--- user config
+-- User config
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
--- modkey
+-- Modkey
 modkey = "Mod4"
 
--- theme
+-- Theme
 beautiful.init(home.."/.config/awesome/themes/boneyard/theme.lua")
 
--- wallpaper
+-- Wallpaper
 if beautiful.wallpaper then
   for s = 1, screen.count() do
     gears.wallpaper.maximized(beautiful.wallpaper, s, true)
   end
 end
 
--- layouts
+-- Layouts
 local layouts = {
   awful.layout.suit.floating,
   lain.layout.uselesstile,
@@ -93,50 +93,50 @@ local layouts = {
   lain.layout.uselessfair
 }
 
--- tag list
+-- Tag list
 tags = {}
 for s = 1, screen.count() do
   tags[s] = awful.tag({
-    " terminal ",
-    " web ",
-    " comms ",
-    " code ",
-    " other"
+    " TERMINAL ",
+    " WEB ",
+    " COMMS ",
+    " CODE ",
+    " OTHER"
   },
   s,
   layouts[1])
 end
 
--- menubar configuration
+-- Menubar configuration
 menubar.utils.terminal = terminal
 
--- wibox
+-- Wibox
 seperator			= wibox.widget.textbox()
 seperator:set_markup("|")
 spacer				= wibox.widget.textbox()
 spacer:set_markup(" ")
 
--- cpu
+-- CPU
 cpuwidget = wibox.widget.textbox()
-vicious.register(cpuwidget, vicious.widgets.cpu, "c:$1%")
+vicious.register(cpuwidget, vicious.widgets.cpu, "C:$1%")
 
--- memory
+-- Memory
 memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem, "m:$1%", 10)
+vicious.register(memwidget, vicious.widgets.mem, "M:$1%", 10)
 
--- network
+-- Network
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "u:${wlp2s0 up_kb} d:${wlp2s0 down_kb}", 3)
+vicious.register(netwidget, vicious.widgets.net, "U:${wlp2s0 up_kb} D:${wlp2s0 down_kb}", 3)
 
--- battery
+-- Battery
 batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT0")
 
--- date and time
+-- Date and time
 datewidget = wibox.widget.textbox()
 vicious.register(datewidget, vicious.widgets.date, "%a %F %R", 60)
 
--- create a wibox for each screen and add it
+-- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
@@ -377,7 +377,7 @@ awful.rules.rules = {
 					 keys = clientkeys,
 					 buttons = clientbuttons } },
 	-- 
-	-- use `xprop` to find WM_CLASS
+	-- Use `xprop` to find WM_CLASS
 	--
 	{ rule = { class = "MPlayer" },
 	  properties = { floating = true } },
@@ -434,7 +434,7 @@ end
 
 local titlebars_enabled = false
 if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
-    -- buttons for the titlebar
+    -- Buttons for the titlebar
     local buttons = awful.util.table.join(
             awful.button({ }, 1, function()
                 client.focus = c
