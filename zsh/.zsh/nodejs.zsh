@@ -1,23 +1,19 @@
-#                 ██      
-#                ░██      
-#  ██████  ██████░██      
-# ░░░░██  ██░░░░ ░██████  
-#    ██  ░░█████ ░██░░░██ 
-#   ██    ░░░░░██░██  ░██ 
-#  ██████ ██████ ░██  ░██ 
-# ░░░░░░ ░░░░░░  ░░   ░░  
+# '########::'######::'##::::'##:
+# ..... ##::'##... ##: ##:::: ##:
+# :::: ##::: ##:::..:: ##:::: ##:
+# ::: ##::::. ######:: #########:
+# :: ##::::::..... ##: ##.... ##:
+# : ##::::::'##::: ##: ##:::: ##:
+#  ########:. ######:: ##:::: ##:
+# ........:::......:::..:::::..::
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+# AUTHOR  pyratebeard <root@pyratebeard.net>
+# CODE    http://github.com/pyratebeard/dotfiles
 #
-#█▓▒░ node version manager
+# Node version manager
 source ~/.nvm/nvm.sh
 
-#█▓▒░ aliases
+# Aliases
 alias node="sudo node"
 alias npm="sudo npm"
 alias npminstall="sudo rm -rf node_modules && sudo npm cache clear && sudo npm cache clean && npm install"

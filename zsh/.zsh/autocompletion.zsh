@@ -1,20 +1,16 @@
-#                 ██      
-#                ░██      
-#  ██████  ██████░██      
-# ░░░░██  ██░░░░ ░██████  
-#    ██  ░░█████ ░██░░░██ 
-#   ██    ░░░░░██░██  ░██ 
-#  ██████ ██████ ░██  ░██ 
-# ░░░░░░ ░░░░░░  ░░   ░░  
+# '########::'######::'##::::'##:
+# ..... ##::'##... ##: ##:::: ##:
+# :::: ##::: ##:::..:: ##:::: ##:
+# ::: ##::::. ######:: #########:
+# :: ##::::::..... ##: ##.... ##:
+# : ##::::::'##::: ##: ##:::: ##:
+#  ########:. ######:: ##:::: ##:
+# ........:::......:::..:::::..::
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+# AUTHOR  pyratebeard <root@pyratebeard.net>
+# CODE    http://github.com/pyratebeard/dotfiles
 #
-#█▓▒░ autocompletion systems
+# Autocompletion systems
 autoload -Uz compinit
 compinit
 autoload -U ~/.zsh/completion/*(:t)

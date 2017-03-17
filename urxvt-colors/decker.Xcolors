@@ -1,37 +1,40 @@
-! decker colors
-! special
+! ___  ____ ____ _  _ ____ ____ 
+! |  \ |___ |    |_/  |___ |__/ 
+! |__/ |___ |___ | \_ |___ |  \ 
+!                              
+! Special
 *.foreground:   #c2c2b0
 *.background:   #000000
 *.cursorColor:  #c2c2b0
 
-! black
+! Black
 *.color0:       #222222
 *.color8:       #272822
 
-! red
+! Red
 *.color1:       #cd0000
 *.color9:       #ff0000
 
-! green
+! Green
 *.color2:       #00cd00
 *.color10:      #00ff00
 
-! yellow
+! Yellow
 *.color3:       #cdcd00
 *.color11:      #ffff00
 
-! blue
+! Blue
 *.color4:       #0000cd
 *.color12:      #5c5cff
 
-! magenta
+! Magenta
 *.color5:       #cd00cd
 *.color13:      #ff00ff
 
-! cyan
+! Cyan
 *.color6:       #00cdcd
 *.color14:      #00ffff
 
-! white
+! White
 *.color7:       #cdcdcd
 *.color15:      #ffffff

@@ -1,12 +1,19 @@
-! author  pyratebeard <root@pyratebeard.net>
-! code    http://code.pyratebeard.net/dotfiles
+! '##::::'##:'########::'########:'########::::'###::::'##::::'##:'##:::::::'########::'######::
+! . ##::'##:: ##.... ##: ##.....:: ##.....::::'## ##::: ##:::: ##: ##:::::::... ##..::'##... ##:
+! :. ##'##::: ##:::: ##: ##::::::: ##::::::::'##:. ##:: ##:::: ##: ##:::::::::: ##:::: ##:::..::
+! ::. ###:::: ##:::: ##: ######::: ######:::'##:::. ##: ##:::: ##: ##:::::::::: ##::::. ######::
+! :: ## ##::: ##:::: ##: ##...:::: ##...:::: #########: ##:::: ##: ##:::::::::: ##:::::..... ##:
+! : ##:. ##:: ##:::: ##: ##::::::: ##::::::: ##.... ##: ##:::: ##: ##:::::::::: ##::::'##::: ##:
+!  ##:::. ##: ########:: ########: ##::::::: ##:::: ##:. #######:: ########:::: ##::::. ######::
+! ..:::::..::........:::........::..::::::::..:::::..:::.......:::........:::::..::::::......:::
 !
-!#include </home/dudley/decker-cyan.Xcolors>
-
-! geometry
+! AUTHOR  pyratebeard <root@pyratebeard.net>
+! CODE    http://github.com/pyratebeard/dotfiles
+!
+! Geometry
 !urxvt*geometry: 80x45
 
-! fonts
+! Fonts
 urxvt*font: -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
 #urxvt*font: xft:tamsyn:size=10:antialias=false, \
 #xft:Symbola:pixelsize=14:antialias=true:hinting=slight
@@ -17,13 +24,13 @@ urxvt*bolditalicFont:
 urxvt*letterSpace: 0
 urxvt*lineSpace: -1
 
-! interface
+! Interface
 urxvt*scrollBar: false
 !urxvt*transparent: true
 !urxvt*shading: 10
 urxvt*cursorBlink: true
 
-! clipboard
+! Clipboard
 urxvt.perl-ext-common: default,clipboard,keyboard-select
 urxvt.keysym.M-Escape: perl:keyboard-select:activate
 urxvt.keysym.M-c:   perl:clipboard:copy
@@ -32,49 +39,52 @@ urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt.clipboard.copycmd:  xsel -ib
 urxvt.clipboard.pastecmd: xsel -ob
 
-! clickable urls
+! Clickable urls
 urxvt.perl-ext-common: default,matcher
 urxvt.url-launcher: /usr/bin/xdg-open
 urxvt.matcher.button: 1
 
-! misc
+! Misc
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-! boneyard colors
-! special
+! ___  ____ _  _ ____ _   _ ____ ____ ___  
+! |__] |  | |\ | |___  \_/  |__| |__/ |  \ 
+! |__] |__| | \| |___   |   |  | |  \ |__/ 
+! 
+! Special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
 *.cursorColor:  #d9d9d9
 
-! black
+! Black
 *.color0:       #212121
 *.color8:       #656565
 
-! red
+! Red
 *.color1:       #aa1111
 *.color9:       #d9d9d9
 
-! green
+! Green
 *.color2:       #116677
 *.color10:      #d9d9d9
 
-! yellow
+! Yellow
 *.color3:       #aaaaaa
 *.color11:      #d9d9d9
 
-! blue
+! Blue
 *.color4:       #aaaaaa
 *.color12:      #d9d9d9
 
-! magenta
+! Magenta
 *.color5:       #aaaaaa
 *.color13:      #d9d9d9
 
-! cyan
+! Cyan
 *.color6:       #33aaaa
 *.color14:      #d9d9d9
 
-! white
+! White
 *.color7:       #d9d9d9
 *.color15:      #d9d9d9

@@ -1,6 +1,6 @@
-# ~/.tmuxinator/decker-3.yml
+# ~/.tmuxinator/decker.yml
 
-name: decker-3
+name: decker
 root: ~/
 
 tmux_options: -2

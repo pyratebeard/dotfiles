@@ -1,7 +1,15 @@
+# '########::'######::'##::::'##:
+# ..... ##::'##... ##: ##:::: ##:
+# :::: ##::: ##:::..:: ##:::: ##:
+# ::: ##::::. ######:: #########:
+# :: ##::::::..... ##: ##.... ##:
+# : ##::::::'##::: ##: ##:::: ##:
+#  ########:. ######:: ##:::: ##:
+# ........:::......:::..:::::..::
 #
-# author    pyratebeard <root@pyratebeard.net>
-# code      http://code.pyratebeard.net/dotfiles
+# AUTHOR  pyratebeard <root@pyratebeard.net>
+# CODE    http://github.com/pyratebeard/dotfiles
 #
-# load configs
+# Load configs
 for config (~/.zsh/*.zsh) source $config
 setopt auto_cd

@@ -1,33 +1,38 @@
 ```
-      __          __       ___      ___                    
-     /\ \        /\ \__  /'___\ __ /\_ \                   
-     \_\ \    ___\ \ ,_\/\ \__//\_\\//\ \      __    ____  
-     /'_` \  / __`\ \ \/\ \ ,__\/\ \ \ \ \   /'__`\ /',__\ 
-    /\ \L\ \/\ \L\ \ \ \_\ \ \_/\ \ \ \_\ \_/\  __//\__, `\
-    \ \___,_\ \____/\ \__\\ \_\  \ \_\/\____\ \____\/\____/
-     \/__,_ /\/___/  \/__/ \/_/   \/_/\/____/\/____/\/___/ 
+          __          __       ___      ___                    
+    '########:::'#######::'########:'########:'####:'##:::::::'########::'######::
+     ##.... ##:'##.... ##:... ##..:: ##.....::. ##:: ##::::::: ##.....::'##... ##:
+     ##:::: ##: ##:::: ##:::: ##:::: ##:::::::: ##:: ##::::::: ##::::::: ##:::..::
+     ##:::: ##: ##:::: ##:::: ##:::: ######:::: ##:: ##::::::: ######:::. ######::
+     ##:::: ##: ##:::: ##:::: ##:::: ##...::::: ##:: ##::::::: ##...:::::..... ##:
+     ##:::: ##: ##:::: ##:::: ##:::: ##:::::::: ##:: ##::::::: ##:::::::'##::: ##:
+     ########::. #######::::: ##:::: ##:::::::'####: ########: ########:. ######::
+    ........::::.......::::::..:::::..::::::::....::........::........:::......:::
 
     ABOUT     Custom Linux configuration files
     AUTHOR    pyratebeard <root@pyratebeard.net>
     CODE      https://github.com/pyratebeard/dotfiles
 
-    awesome         > awesomewm config and collection of themes
-    bash            > bash settings, aliases, and functions
-    dwb             > dynamic web browser settings
-    gtk             > mod of mist theme for gtk
-    herbstluftwm    > 
-    irssi           > custom irc settings
-    moc             > music on console custom theme and settings
-    mpd             > music player daemon setup
-    mutt            > minimal mutt setup
-    ncmpcpp         > ncurses mpc++ ui/color settings
-    qutebrowser     >
-    ranger          > file manager with image previews and z3bra theme
-    sublime         > sublime text 2 and 3 with custom themes
-    tmux            > terminal multiplexer with custom status bar
-    urxvt           > various terminal colors and keyboard settings
-    vim             > wizard status bar and sourcerer color scheme
-    zsh             > zshell settings, aliases, and custom prompts
+    awesome         > Window manager
+    bash            > Shell
+    calcurse        > Calendar and organiser
+    conky           > System monitor
+    gtk             > GUI toolkit
+    herbstluftwm    > Window manager
+    irssi           > IRC client
+    moc             > Audio player interface
+    mpd             > Audio player daemon
+    mutt            > Email client
+    ncmpcpp         > UI for mpd 
+    qutebrowser     > Web browser
+    ranger          > File manager
+    snownews        > RSS reader
+    sublime         > Text editor
+    tmux            > Terminal multiplexer
+    turses          > Twitter client
+    urxvt           > Terminal emulator
+    vim             > Text editor
+    zsh             > Shell
 
 ```
 

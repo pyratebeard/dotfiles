@@ -1,144 +1,141 @@
-"           ██
-"          ░░
-"  ██    ██ ██ ██████████  ██████  █████
-" ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
-" ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
-"  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
-"   ░░██   ░██ ███ ░██ ░██░███   ░░█████
-"    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
+" '##::::'##:'####:'##::::'##:
+"  ##:::: ##:. ##:: ###::'###:
+"  ##:::: ##:: ##:: ####'####:
+"  ##:::: ##:: ##:: ## ### ##:
+" . ##:: ##::: ##:: ##. #: ##:
+" :. ## ##:::: ##:: ##:.:: ##:
+" ::. ###::::'####: ##:::: ##:
+" :::...:::::....::..:::::..::
 "
-"  ▓▓▓▓▓▓▓▓▓▓
-" ░▓ author ▓ xero <x@xero.nu>
-" ░▓ code   ▓ http://code.xero.nu/dotfiles
-" ░▓ mirror ▓ http://git.io/.files
-" ░▓▓▓▓▓▓▓▓▓▓
-" ░░░░░░░░░░
+" AUTHOR  pyratebeard <root@pyratebeard.net>
+" CODE    http://github.com/pyratebeard/dotfiles
 "
-" use vim settings, rather than vi settings
-" must be first, because it changes other options as a side effect
+" Use vim settings, rather than vi settings
+" Must be first, because it changes other options as a side effect
 set nocompatible
 
-" security
+" Security
 set modelines=0
 
-" paste without auto indentation
+" Paste without auto indentation
 set paste
 
-" hide buffers, not close them
+" Hide buffers, not close them
 set hidden
 
-" maintain undo history between sessions
+" Maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
-" lazy file name tab completion
+" Lazy file name tab completion
 set wildmode=longest,list,full
 set wildmenu
 set wildignorecase
 
-" case insensitive search
+" Case insensitive search
 set ignorecase
 set smartcase
 set infercase
 
-" the /g flag on :s substitutions by default
+" The /g flag on :s substitutions by default
 set gdefault
 
-" make backspace behave in a sane manner
+" Make backspace behave in a sane manner
 set backspace=indent,eol,start
 
-" searching
+" Searching
 set hlsearch
 set incsearch
 
-" use indents of 4 spaces
+" Use indents of 4 spaces
 set shiftwidth=2
 
-" tabs are spaces, not tabs
+" Tabs are spaces, not tabs
 set expandtab
 
-" an indentation every four columns
+" An indentation every four columns
 set tabstop=2
 
-" let backspace delete indent
+" Let backspace delete indent
 set softtabstop=2
 
-" enable auto indentation
+" Enable auto indentation
 set autoindent
 
-" remove trailing whitespaces and ^M chars
+" Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-" let mapleader=","
+" Let mapleader=","
 vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
 nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 
-" switch tabs
+" Switch tabs
 nnoremap <C-n> :tabn<CR>
 nnoremap <C-p> :tabp<CR>
 
-" ┏━╸┏━┓┏┳┓┏┳┓┏━┓┏┓╻╺┳┓┏━┓
-" ┃  ┃ ┃┃┃┃┃┃┃┣━┫┃┗┫ ┃┃┗━┓
-" ┗━╸┗━┛╹ ╹╹ ╹╹ ╹╹ ╹╺┻┛┗━┛
+" ____ ____ _  _ _  _ ____ _  _ ___  ____ 
+" |    |  | |\/| |\/| |__| |\ | |  \ [__  
+" |___ |__| |  | |  | |  | | \| |__/ ___] 
+                                        
 
-" json pretty print
+" Json pretty print
 command J :%!python -mjson.tool
 
-" remove trailing white space
+" Remove trailing white space
 command Nows :%s/\s\+$//
 
-" remove blank lines
+" Remove blank lines
 command Nobl :g/^\s*$/d
 
-" toggle spellcheck
+" Toggle spellcheck
 command Spell :setlocal spell! spell?
 
-" make current buffer executable
+" Make current buffer executable
 command Chmodx :!chmod a+x %
 
-" ╻┏┓╻╺┳╸┏━╸┏━┓┏━╸┏━┓┏━╸┏━╸
-" ┃┃┗┫ ┃ ┣╸ ┣┳┛┣╸ ┣━┫┃  ┣╸ 
-" ╹╹ ╹ ╹ ┗━╸╹┗╸╹  ╹ ╹┗━╸┗━╸
+" _ _  _ ___ ____ ____ ____ ____ ____ ____ 
+" | |\ |  |  |___ |__/ |___ |__| |    |___ 
+" | | \|  |  |___ |  \ |    |  | |___ |___ 
 
-" show matching brackets/parenthesis
+" Show matching brackets/parenthesis
 set showmatch
 
-" disable startup message
+" Disable startup message
 set shortmess+=I
 
-" syntax highlighting and colors
+" Syntax highlighting and colors
 syntax on
 colorscheme sourcerer
 filetype off
 
-" stop unnecessary rendering
+" Stop unnecessary rendering
 set lazyredraw
 
-" show line numbers
+" Show line numbers
 set number
 
-" no line wrapping
+" No line wrapping
 set nowrap
 
-" no folding
+" No folding
 set foldlevel=99
 set foldminlines=99
 
-" don't wrap long lines
+" Don't wrap long lines
 set nowrap
 
-" highlight column
+" Highlight column
 set cursorcolumn
 
-" ┏━┓╻  ╻ ╻┏━╸╻┏┓╻   ┏━┓╺┳╸╻ ╻┏━╸┏━╸
-" ┣━┛┃  ┃ ┃┃╺┓┃┃┗┫   ┗━┓ ┃ ┃ ┃┣╸ ┣╸ 
-" ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛ ╹ ┗━┛╹  ╹  
-" i struggle with the decision to use plugins or a more vanilla vim. but right now i'm feeling sytanx completion, linting, and visual git diffs. don't judge me.
-" to install from the shell run:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim && vim +BundleInstall +qall && PYTHON=/usr/bin/python2 ~/dotfiles/vim/.vim/bundle/YouCompleteMe/install.sh --clang-completer && pacman -S the_silver_searcher
-if 1 " boolean for plugin loading
+" ___  _    _  _ ____ _ _  _ ____ 
+" |__] |    |  | | __ | |\ | [__  
+" |    |___ |__| |__] | | \| ___] 
+                                
+" To install from the shell run:
+" `git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim && vim +BundleInstall +qall && PYTHON=/usr/bin/python2 ~/dotfiles/vim/.vim/bundle/YouCompleteMe/install.sh --clang-completer && pacman -S the_silver_searcher`
+if 1 " Boolean for plugin loading
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
@@ -153,8 +150,8 @@ if 1 " boolean for plugin loading
   call vundle#end()
   filetype plugin indent on
 
-  " syntatic http://git.io/syntastic.vim
-  " linters: (from aur) nodejs-jshint, nodejs-jsonlint, csslint, checkbashisms
+  " Syntatic http://git.io/syntastic.vim
+  " Linters: (from aur) nodejs-jshint, nodejs-jsonlint, csslint, checkbashisms
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
   let g:syntastic_check_on_open = 1
@@ -183,14 +180,15 @@ if 1 " boolean for plugin loading
   " ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
   let g:agprg="ag -i --vimgrep"
   let g:ag_highlight=1
-  " map \ to the ag command for quick searching
+  " Map \ to the ag command for quick searching
   nnoremap \ :Ag<SPACE>
 
-  " ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
-  " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
-  " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
-  " lightline http://git.io/lightline
-  " █▓▒░ wizard status line
+  " ____ ___ ____ ___ _  _ ____ _    _ _  _ ____ 
+  " [__   |  |__|  |  |  | [__  |    | |\ | |___ 
+  " ___]  |  |  |  |  |__| ___] |___ | | \| |___ 
+  
+  " Lightline http://git.io/lightline
+  " Wizard status line
   set laststatus=2
   let g:lightline = {
     \ 'colorscheme': 'sourcerer',

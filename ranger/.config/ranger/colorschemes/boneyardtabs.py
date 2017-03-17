@@ -1,9 +1,11 @@
-#decker
-
+# ___  ____ _  _ ____ _   _ ____ ____ ___  
+# |__] |  | |\ | |___  \_/  |__| |__/ |  \ 
+# |__] |__| | \| |___   |   |  | |  \ |__/ 
+# 
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
-class deckertabs(ColorScheme):
+class boneyardtabs(ColorScheme):
     progress_bar_color = 8
 
     def use(self, context):

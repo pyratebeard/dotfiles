@@ -1,8 +1,14 @@
-#   Alias list for zsh
+# '########::'######::'##::::'##:
+# ..... ##::'##... ##: ##:::: ##:
+# :::: ##::: ##:::..:: ##:::: ##:
+# ::: ##::::. ######:: #########:
+# :: ##::::::..... ##: ##.... ##:
+# : ##::::::'##::: ##: ##:::: ##:
+#  ########:. ######:: ##:::: ##:
+# ........:::......:::..:::::..::
 #
-#   ABOUT     Custom aliases for zsh
-#   AUTHOR    pyratebeard <root@pyratebeard.net>
-#   CODE      https://github.com/pyratebeard/dotfiles
+# AUTHOR  pyratebeard <root@pyratebeard.net>
+# CODE    http://github.com/pyratebeard/dotfiles
 #
 alias ll="ls -lahF --color=auto"
 alias ls="ls -hF --color=auto"

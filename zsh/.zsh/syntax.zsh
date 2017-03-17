@@ -1,23 +1,19 @@
-#                 ██      
-#                ░██      
-#  ██████  ██████░██      
-# ░░░░██  ██░░░░ ░██████  
-#    ██  ░░█████ ░██░░░██ 
-#   ██    ░░░░░██░██  ░██ 
-#  ██████ ██████ ░██  ░██ 
-# ░░░░░░ ░░░░░░  ░░   ░░  
+# '########::'######::'##::::'##:
+# ..... ##::'##... ##: ##:::: ##:
+# :::: ##::: ##:::..:: ##:::: ##:
+# ::: ##::::. ######:: #########:
+# :: ##::::::..... ##: ##.... ##:
+# : ##::::::'##::: ##: ##:::: ##:
+#  ########:. ######:: ##:::: ##:
+# ........:::......:::..:::::..::
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+# AUTHOR  pyratebeard <root@pyratebeard.net>
+# CODE    http://github.com/pyratebeard/dotfiles
 #
-#█▓▒░ source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
+# Source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#█▓▒░ color overrides
+# Colour overrides
 ZSH_HIGHLIGHT_STYLES[default]='none'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
