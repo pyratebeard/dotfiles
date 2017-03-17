@@ -82,19 +82,23 @@ I've also come to love [tmux](https://tmux.github.io/) for running multiple sess
 
 Because I work in the terminal I try to use as many terminal based applications as I can. Here is a list of my current chosen apps:
 
- - AUDIO          = [ncmpcpp](http://rybczak.net/ncmpcpp/) ([mpd](https://www.musicpd.org/) backend)
- - IRC            = [irssi](https://irssi.org/)
- - TWITTER        = [turses](http://turses.readthedocs.io/en/latest/)
- - EMAIL          = [mutt](http://www.mutt.org/)
- - RSS            = [snownews](https://kiza.eu/software/snownews/)
- - EDITOR         = [vim](http://www.vim.org/)
- - FILE MANAGER   = [ranger](http://ranger.nongnu.org/)
+APP | PKG
+--- | ---
+AUDIO | [ncmpcpp](http://rybczak.net/ncmpcpp/) ([mpd](https://www.musicpd.org/) backend)
+IRC | [irssi](https://irssi.org/)
+TWITTER | [turses](http://turses.readthedocs.io/en/latest/)
+EMAIL | [mutt](http://www.mutt.org/)
+RSS | [snownews](https://kiza.eu/software/snownews/)
+EDITOR | [vim](http://www.vim.org/)
+FILE MANAGER | [ranger](http://ranger.nongnu.org/)
 
-Here are some other apps I run from the terminal:
+Here are some other commands I run from the terminal:
 
- - VIDEO PLAYER   = [mpv](https://mpv.io/)
- - IMAGE VIEWER   = [sxiv]()
- - SCREENSHOT     = [scrot]()
+APP | PKG
+--- | ---
+VIDEO PLAYER | [mpv](https://mpv.io/)
+IMAGE VIEWER | [sxiv]()
+SCREENSHOT | [scrot]()
 
 ### Previews
 Coming soon..!
