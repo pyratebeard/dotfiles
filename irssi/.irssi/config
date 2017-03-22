@@ -28,18 +28,28 @@ servers = (
     use_ssl = "yes";
     autoconnect = "yes";
   }
+  {
+    address = "irc.rizon.net";
+    chatnet = "rizon";
+    port = "6667";
+    use_ssl = "no";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
   freenode = { type = "IRC"; nick = "pyratebeard"; };
   nixers = { type = "IRC"; nick = "pyrtbrd"; };
+  rizon = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = (
   { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "##ArcherScavengerHunt"; chatnet = "freenode"; autojoin = "Yes";},
+  { name = "#reddit-comicbooks"; chatnet = "freenode"; autojoin = "Yes"; }
   { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
+  { name = "#comic-scans"; chatnet = "rizon"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -91,6 +101,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#unix" );
+    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#unix", "#comic-scans" );
   }
 );
