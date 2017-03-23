@@ -37,13 +37,13 @@
 ```
 
 ### Contents
- - [Introduction](#Dotfiles)
- - [Managing](#Managing)
- - [How to use](#Using)
- - [Terminal](#Terminal)
- - [Previews](#Previews)
- - [Citations](#Citations)
- - [Disclaimer](#Disclaimer)
+ - [Introduction](#dotfiles)
+ - [Managing](#managing)
+ - [How to use](#using)
+ - [Terminal](#terminal)
+ - [Previews](#previews)
+ - [Citations](#citations)
+ - [Disclaimer](#disclaimer)
 
 ### Dotfiles
 
@@ -102,7 +102,7 @@ Here are some other commands I run from the terminal:
 APP | PKG
 --- | ---
 VIDEO PLAYER | [mpv](https://mpv.io/)
-IMAGE VIEWER | [sxiv]()
+IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
 ### Previews
