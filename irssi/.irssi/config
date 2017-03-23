@@ -20,27 +20,43 @@ servers = (
     port = "6665";
     use_ssl = "no";
     autoconnect = "yes";
-  }
+  };
   {
     address = "irc.nixers.net";
     chatnet = "nixers";
     port = "6697";
     use_ssl = "yes";
     autoconnect = "yes";
-  }
+  };
   {
     address = "irc.rizon.net";
     chatnet = "rizon";
     port = "6667";
     use_ssl = "no";
     autoconnect = "yes";
-  }
+  };
+  {
+    address = "irc.geekshed.net";
+    chatnet = "geekshed";
+    port = "6667";
+    use_ssl = "no";
+    autoconnect = "yes";
+  };
+  {
+    address = "irc.snoonet.org";
+    chatnet = "snoonet";
+    port = "6667";
+    use_ssl = "no";
+    autoconnect = "yes";
+  };
 );
 
 chatnets = {
   freenode = { type = "IRC"; nick = "pyratebeard"; };
   nixers = { type = "IRC"; nick = "pyrtbrd"; };
   rizon = { type = "IRC"; nick = "pyratebeard"; };
+  geekshed = { type = "IRC"; nick = "pyratebeard"; };
+  snoonet = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = (
@@ -50,6 +66,8 @@ channels = (
   { name = "#reddit-comicbooks"; chatnet = "freenode"; autojoin = "Yes"; }
   { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
   { name = "#comic-scans"; chatnet = "rizon"; autojoin = "Yes"; }
+  { name = "#jupiterbroadcasting"; chatnet = "geekshed"; autojoin = "Yes"; }
+  { name = "#linuxmasterrace"; chatnet = "snoonet"; autojoin = "Yes"; }
 );
 
 aliases = {
