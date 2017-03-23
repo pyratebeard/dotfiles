@@ -69,6 +69,7 @@ alias gifview="gifview -a"
 alias reboot="sudo reboot"
 alias connect="sudo wpa_supplicant -B -i wlp2s0 -c"
 alias vh="nc vhbin.net 9999"
+alias kb="keybase"
 tmx() {
   [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
 }
