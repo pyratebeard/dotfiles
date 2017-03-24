@@ -119,6 +119,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#unix", "#comic-scans" );
+    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#unix", "#comic-scans", "#jupiterbroadcasting", "linuxmasterrace" );
   }
 );
