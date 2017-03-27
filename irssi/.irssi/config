@@ -33,21 +33,21 @@ servers = (
     chatnet = "rizon";
     port = "6667";
     use_ssl = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   };
   {
     address = "irc.geekshed.net";
     chatnet = "geekshed";
     port = "6667";
     use_ssl = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   };
   {
     address = "irc.snoonet.org";
     chatnet = "snoonet";
     port = "6667";
     use_ssl = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   };
 );
 
