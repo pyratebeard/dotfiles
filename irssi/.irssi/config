@@ -15,56 +15,56 @@ utf8 = "on";
 
 servers = (
   {
-    address = "irc.freenode.net";
-    chatnet = "freenode";
-    port = "6665";
-    use_ssl = "no";
-    autoconnect = "yes";
-  };
-  {
     address = "irc.nixers.net";
     chatnet = "nixers";
     port = "6697";
     use_ssl = "yes";
     autoconnect = "yes";
-  };
+  },
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6665";
+    use_ssl = "no";
+    autoconnect = "no";
+  },
   {
     address = "irc.rizon.net";
     chatnet = "rizon";
     port = "6667";
     use_ssl = "no";
     autoconnect = "no";
-  };
+  },
   {
     address = "irc.geekshed.net";
     chatnet = "geekshed";
     port = "6667";
     use_ssl = "no";
     autoconnect = "no";
-  };
+  },
   {
     address = "irc.snoonet.org";
     chatnet = "snoonet";
     port = "6667";
     use_ssl = "no";
     autoconnect = "no";
-  };
+  },
 );
 
 chatnets = {
-  freenode = { type = "IRC"; nick = "pyratebeard"; };
   nixers = { type = "IRC"; nick = "pyrtbrd"; };
+  freenode = { type = "IRC"; nick = "pyratebeard"; };
   rizon = { type = "IRC"; nick = "pyratebeard"; };
   geekshed = { type = "IRC"; nick = "pyratebeard"; };
   snoonet = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = (
+  { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
   { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "##ArcherScavengerHunt"; chatnet = "freenode"; autojoin = "Yes";},
   { name = "#reddit-comicbooks"; chatnet = "freenode"; autojoin = "Yes"; }
-  { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
   { name = "#comic-scans"; chatnet = "rizon"; autojoin = "Yes"; }
   { name = "#jupiterbroadcasting"; chatnet = "geekshed"; autojoin = "Yes"; }
   { name = "#linuxmasterrace"; chatnet = "snoonet"; autojoin = "Yes"; }
@@ -119,6 +119,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#unix", "#comic-scans", "#jupiterbroadcasting", "linuxmasterrace" );
+    channels = ( "#unix", "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#comic-scans", "#jupiterbroadcasting", "linuxmasterrace" );
   }
 );
