@@ -118,13 +118,11 @@ set number
 
 " No line wrapping
 set nowrap
+set linebreak
 
 " No folding
 set foldlevel=99
 set foldminlines=99
-
-" Don't wrap long lines
-set nowrap
 
 " Highlight column
 set cursorcolumn
