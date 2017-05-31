@@ -28,3 +28,7 @@ color normal default default
 color indicator black cyan
 color tree default default
 color status white black
+
+# handling for multi-part and html messages
+alternative_order text/plain text/html
+auto_view text/html
