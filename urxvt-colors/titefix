@@ -1,0 +1,37 @@
+! https://a.fsdn.com/con/app/proj/linuxbbq/screenshots/platine2.png/182/137/1 
+! special
+*.foreground:   #d7d7d7
+*.background:   #0b0b0b
+*.cursorColor:  #d7d7d7
+
+! black
+*.color0:       #000000
+*.color8:       #005555
+
+! red
+*.color1:       #000000
+*.color9:       #005555
+
+! green
+*.color2:       #002222
+*.color10:      #11aaaa
+
+! yellow
+*.color3:       #11aaaa
+*.color11:      #005555
+
+! blue
+*.color4:       #005555
+*.color12:      #005555
+
+! magenta
+*.color5:       #002222
+*.color13:      #11aaaa
+
+! cyan
+*.color6:       #005555
+*.color14:      #005555
+
+! white
+*.color7:       #11aaaa
+*.color15:      #d7d7d7
