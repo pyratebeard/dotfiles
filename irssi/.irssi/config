@@ -61,13 +61,14 @@ chatnets = {
 
 channels = (
   { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
-  { name = "##linux"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "##ArcherScavengerHunt"; chatnet = "freenode"; autojoin = "Yes";},
-  { name = "#reddit-comicbooks"; chatnet = "freenode"; autojoin = "Yes"; }
-  { name = "#comic-scans"; chatnet = "rizon"; autojoin = "Yes"; }
-  { name = "#jupiterbroadcasting"; chatnet = "geekshed"; autojoin = "Yes"; }
-  { name = "#linuxmasterrace"; chatnet = "snoonet"; autojoin = "Yes"; }
+  { name = "##linux"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "##ArcherScavengerHunt"; chatnet = "freenode"; autojoin = "No";},
+  { name = "#reddit-comicbooks"; chatnet = "freenode"; autojoin = "No"; }
+  { name = "#tog"; chatnet = "freenode"; autojoin = "No"; }
+  { name = "#comic-scans"; chatnet = "rizon"; autojoin = "No"; }
+  { name = "#jupiterbroadcasting"; chatnet = "geekshed"; autojoin = "No"; }
+  { name = "#linuxmasterrace"; chatnet = "snoonet"; autojoin = "No"; }
 );
 
 aliases = {
@@ -119,6 +120,6 @@ ignores = (
   { mask = "channels"; level = "ALL"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "#unix", "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#comic-scans", "#jupiterbroadcasting", "linuxmasterrace" );
+    channels = ( "#unix", "##linux", "#r_netsec", "##ArcherScavengerHunt", "#reddit-comicbooks", "#comic-scans", "#jupiterbroadcasting", "#linuxmasterrace", "#tog" );
   }
 );
