@@ -14,7 +14,7 @@
 !urxvt*geometry: 80x45
 
 ! Fonts
-urxvt*font: xft:tamsyn:size=10:antialias=false, \
+urxvt*font: xft:tamzen:size=9:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
