@@ -1,40 +1,47 @@
-# '########::'######::'##::::'##:
-# ..... ##::'##... ##: ##:::: ##:
-# :::: ##::: ##:::..:: ##:::: ##:
-# ::: ##::::. ######:: #########:
-# :: ##::::::..... ##: ##.... ##:
-# : ##::::::'##::: ##: ##:::: ##:
-#  ########:. ######:: ##:::: ##:
-# ........:::......:::..:::::..::
-#
-# AUTHOR  pyratebeard <root@pyratebeard.net>
-# CODE    http://github.com/pyratebeard/dotfiles
-#
+#ICO_DIRTY="⚡"
+#ICO_DIRTY="↯"
+ICO_DIRTY="*"
+#ICO_AHEAD="↑"
+ICO_AHEAD="🠙"
+#ICO_AHEAD="▲"
+#ICO_BEHIND="↓"
+ICO_BEHIND="🠛"
+#ICO_BEHIND="▼"
+ICO_DIVERGED="⥮"
+COLOR_ROOT="%F{red}"
+COLOR_USER="%F{cyan}"
+COLOR_NORMAL="%F{white}"
+PROMPT_STYLE="classic"
+
+#█▓▒░ allow functions in the prompt
 setopt PROMPT_SUBST
-#???? colors for permissions
+autoload -Uz colors && colors
+
+#█▓▒░ colors for permissions
 if [[ "$EUID" -ne "0" ]]
 then  # if user is not root
-  USER_LEVEL="${COLOR_USER}"
+	USER_LEVEL="${COLOR_USER}"
 else # root!
-  USER_LEVEL="${COLOR_ROOT}"
+	USER_LEVEL="${COLOR_ROOT}"
 fi
 
+#█▓▒░ git prompt
 GIT_PROMPT() {
   test=$(git rev-parse --is-inside-work-tree 2> /dev/null)
   if [ ! "$test" ]
   then
     case "$PROMPT_STYLE" in
       ascii)
-        echo "$reset_color%F{cyan}??"
+        echo "$reset_color%F{cyan}▒░"
       ;;
       arrows)
-        echo "$reset_color%F{cyan}?"
+        echo "$reset_color%F{cyan}"
       ;;
     esac
     return
   fi
   ref=$(git name-rev --name-only HEAD | sed 's!remotes/!!' 2> /dev/null)
-  dirty="" && [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] &&     dirty=$ICO_DIRTY
+  dirty="" && [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && dirty=$ICO_DIRTY
   stat=$(git status | sed -n 2p)
   case "$stat" in
     *ahead*)
@@ -50,7 +57,38 @@ GIT_PROMPT() {
       stat=""
     ;;
   esac
-  echo "${USER_LEVEL}[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}] "
+  case "$PROMPT_STYLE" in
+    ninja)
+      echo "${COLOR_NORMAL}${ref}${dirty}${stat}"
+    ;;
+    ascii)
+      echo "%{$bg[magenta]%}%F{cyan}▓▒░ %F{black}${ref}${dirty}${stat} $reset_color%F{magenta}▒░"
+    ;;
+    arrows)
+      echo "%{$bg[magenta]%}%F{cyan} %F{black}${ref}${dirty}${stat} $reset_color%F{magenta}"
+    ;;
+    *)
+    echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
+    ;;
+  esac
 }
-# Minimal prompt
-PROMPT='%F{cyan}${USERNAME}@%F{white}[archee] $(GIT_PROMPT): %~# '
+case "$PROMPT_STYLE" in
+# ascii
+ascii)
+PROMPT='%{$bg[cyan]%} %F{black}%~ $(GIT_PROMPT)$reset_color 
+%f'
+;;
+# dual line
+dual)
+PROMPT='${USER_LEVEL}┌[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)
+${USER_LEVEL}└─ - %f'
+;;
+# mini
+mini)
+PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
+;;
+# classic
+*)
+PROMPT='%F{cyan}${USERNAME}@%F{white}[archee]$(GIT_PROMPT)%F{white} : %~# '
+;;
+esac
