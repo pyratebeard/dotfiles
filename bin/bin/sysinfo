@@ -1,21 +1,4 @@
 #!/bin/sh
-#                           ██            ████                
-#                          ░░            ░██░                 
-#   ██████  ██   ██  ██████ ██ ███████  ██████  ██████ 
-#  ██░░░░  ░░██ ██  ██░░░░ ░██░░██░░░██░░░██░  ██░░░░██
-# ░░█████   ░░███  ░░█████ ░██ ░██  ░██  ░██  ░██   ░██
-#  ░░░░░██   ░██    ░░░░░██░██ ░██  ░██  ░██  ░██   ░██
-#  ██████    ██     ██████ ░██ ███  ░██  ░██  ░░██████ 
-# ░░░░░░   ██      ░░░░░░  ░░ ░░░   ░░   ░░    ░░░░░░  
-#        ░░      
-#
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
-#
 #█▓▒░ vars
 #FULL=▓
 #EMPTY=░
@@ -26,14 +9,14 @@ FULL=━
 EMPTY=┄
 
 name=$USER
-host=`hostname`
+host=$(hostname)
 battery=/sys/class/power_supply/BAT1
 distro="arch linux"
-kernel=`uname -r`
-pkgs=`pacman -Qqs | wc -l`
-colors='miasma'
-font='gohufont 11'
-wm='2bwm'
+kernel=$(uname -r)
+pkgs=$(pacman -Qqs | wc -l)
+colors='boneyard'
+font='tamzen 9'
+wm='awesome'
 
 #█▓▒░ progress bar
 draw()
