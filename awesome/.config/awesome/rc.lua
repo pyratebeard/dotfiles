@@ -99,7 +99,7 @@ for s = 1, screen.count() do
   tags[s] = awful.tag({
     " TERMINAL ",
     " WEB ",
-    " COMMS ",
+--    " COMMS ",
     " CODE ",
     " OTHER"
   },
@@ -126,7 +126,7 @@ vicious.register(memwidget, vicious.widgets.mem, "M:$1%", 10)
 
 -- Network
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "U:${wlp2s0 up_kb} D:${wlp2s0 down_kb}", 3)
+vicious.register(netwidget, vicious.widgets.net, "U:${enp8s0 up_kb} D:${enp8s0 down_kb}", 3)
 
 -- Battery
 batwidget = wibox.widget.textbox()
