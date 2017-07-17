@@ -12,8 +12,4 @@
 #
 # Load configs
 for config (~/.zsh/*.zsh) source $config
-#setopt auto_cd
-function chpwd() {
-  emulate -L zsh
-  ls -lA --color=auto
-}
+setopt auto_cd
