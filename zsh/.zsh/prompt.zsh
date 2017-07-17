@@ -89,6 +89,6 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 ;;
 # classic
 *)
-PROMPT='%F{cyan}${USERNAME}@%F{white}[archee]$(GIT_PROMPT)%F{white} : %~# '
+PROMPT='%F{cyan}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
 ;;
 esac
