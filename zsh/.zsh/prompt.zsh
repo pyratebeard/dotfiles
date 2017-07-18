@@ -58,17 +58,11 @@ GIT_PROMPT() {
     ;;
   esac
   case "$PROMPT_STYLE" in
-    ninja)
-      echo "${COLOR_NORMAL}${ref}${dirty}${stat}"
-    ;;
-    ascii)
-      echo "%{$bg[magenta]%}%F{cyan}▓▒░ %F{black}${ref}${dirty}${stat} $reset_color%F{magenta}▒░"
-    ;;
-    arrows)
-      echo "%{$bg[magenta]%}%F{cyan} %F{black}${ref}${dirty}${stat} $reset_color%F{magenta}"
+    classic)
+      echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
     *)
-    echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
+      echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
     ;;
   esac
 }
