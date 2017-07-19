@@ -262,7 +262,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
 	-- Lock screen
-	awful.key({ modkey, 		  }, "#94", function () awful.util.spawn("i3lock -u -c 000000") end),
+	awful.key({ modkey, 		  }, "#94", function () awful.util.spawn("i3lock -u -i /home/pyratebeard/dot/wallpapers/manatee_wallpaper.png -t") end),
 
 	-- Audio
 	awful.key({ modkey, 		  }, "#174", function () awful.util.spawn("mocp -P") end), -- Fn Stop (pauses)
