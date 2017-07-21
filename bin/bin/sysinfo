@@ -75,7 +75,7 @@ ram=`free | awk '/Mem:/ {print int($3/$2 * 100.0)}'`
 printf "   \e[0;36m%-4s \e[1;36m%-5s %-25s \n" " ram" "$ram%" `draw $ram 15` 
 
 #█▓▒░ battery
-if [ -f $batter/charge_full ] ; then
+if [ -f $battery/charge_full ] ; then
   b_full=$battery/charge_full
   b_now=$battery/charge_now
   bf=`cat $b_full`
@@ -94,7 +94,7 @@ if [ -f $batter/charge_full ] ; then
 fi
 
 #█▓▒░ volume
-vol=`amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]%'`
+vol=`amixer get Master | awk '$0~/%/{print $4}' | head -n1 | tr -d '[]%'`
 if amixer get Master | grep -q '\[off\]' 
 then
   color='31'
