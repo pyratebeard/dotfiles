@@ -17,6 +17,16 @@ PROMPT_STYLE="classic"
 setopt PROMPT_SUBST
 autoload -Uz colors && colors
 
+#█▓▒░ autoload zsh functions
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
+#█▓▒░ enable auto-execution of functions
+typeset -ga chpwd_functions
+
+#█▓▒░ prepend functions
+chpwd_functions+=('chpwd_auto_cd')
+
 #█▓▒░ colors for permissions
 if [[ "$EUID" -ne "0" ]]
 then  # if user is not root
