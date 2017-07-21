@@ -107,7 +107,7 @@ set shortmess+=I
 
 " Syntax highlighting and colors
 syntax on
-colorscheme sourcerer
+colorscheme blaquemagick
 filetype off
 
 " Stop unnecessary rendering
@@ -125,7 +125,7 @@ set foldlevel=99
 set foldminlines=99
 
 " Highlight column
-set cursorcolumn
+"set cursorcolumn
 
 " ___  _    _  _ ____ _ _  _ ____ 
 " |__] |    |  | | __ | |\ | [__  
