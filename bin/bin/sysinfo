@@ -17,6 +17,7 @@ pkgs=$(pacman -Qqs | wc -l)
 colors='boneyard'
 font='tamzen 9'
 wm='awesome'
+upgrade=$(sudo pacman -Sy >/dev/null ; pacman -Qu | wc -l)
 
 #█▓▒░ progress bar
 draw()
@@ -58,6 +59,7 @@ printf " \e[0m\n"
 printf " \e[1;33m      distro \e[0m$distro\n"
 printf " \e[1;33m      kernel \e[0m$kernel\n"
 printf " \e[1;33m    packages \e[0m$pkgs\n"
+printf " \e[1;33m     upgrade \e[0m$upgrade\n"
 printf " \e[1;33m          wm \e[0m$wm\n"
 printf " \e[1;33m        font \e[0m$font\n"
 printf " \e[1;33m      colors \e[0m$colors\n"
