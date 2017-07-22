@@ -42,6 +42,10 @@ urxvt.perl-ext-common: default,matcher
 urxvt.url-launcher: /usr/bin/xdg-open
 urxvt.matcher.button: 1
 
+! Dynamic colors
+xterm*dynamicColors: true
+urxvt*dynamicColors: on
+
 ! Misc
 urxvt.saveLines: 9999
 urxvt.iso14755: false
