@@ -13,3 +13,5 @@
 # Load configs
 for config (~/.zsh/*.zsh) source $config
 setopt auto_cd
+export PATH="$HOME/.dynamic-colors/bin:$PATH"
+source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
