@@ -107,7 +107,7 @@ set shortmess+=I
 
 " Syntax highlighting and colors
 syntax on
-colorscheme blaquemagick
+colorscheme badblood
 filetype off
 
 " Stop unnecessary rendering
