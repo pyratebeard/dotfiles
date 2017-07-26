@@ -1,0 +1,40 @@
+!  ___  ____ ___  ___  _    ____ ____ ___  
+!  |__] |__| |  \ |__] |    |  | |  | |  \ 
+!  |__] |  | |__/ |__] |___ |__| |__| |__/ 
+!                                          
+! special
+*.foreground:   #d9d9d9
+*.background:   #0b0b0b
+*.cursorColor:  #d9d9d9
+
+! black
+*.color0:       #212121
+*.color8:       #656565
+
+! red
+*.color1:       #a71c1f
+*.color9:       #d9d9d9
+
+! green
+*.color2:       #344961
+*.color10:      #d9d9d9
+
+! yellow
+*.color3:       #aaaaaa
+*.color11:      #d9d9d9
+
+! blue
+*.color4:       #2f5599
+*.color12:      #d9d9d9
+
+! magenta
+*.color5:       #aaaaaa
+*.color13:      #d9d9d9
+
+! cyan
+*.color6:       #6afdfd
+*.color14:      #d9d9d9
+
+! white
+*.color7:       #d9d9d9
+*.color15:      #d9d9d9

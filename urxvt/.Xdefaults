@@ -50,43 +50,43 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-! ___  ____ _  _ ____ _   _ ____ ____ ___  
-! |__] |  | |\ | |___  \_/  |__| |__/ |  \ 
-! |__] |__| | \| |___   |   |  | |  \ |__/ 
-! 
-! Special
+!  ___  ____ ___  ___  _    ____ ____ ___  
+!  |__] |__| |  \ |__] |    |  | |  | |  \ 
+!  |__] |  | |__/ |__] |___ |__| |__| |__/ 
+!                                          
+! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
 *.cursorColor:  #d9d9d9
 
-! Black
+! black
 *.color0:       #212121
 *.color8:       #656565
 
-! Red
-*.color1:       #aa1111
+! red
+*.color1:       #a71c1f
 *.color9:       #d9d9d9
 
-! Green
-*.color2:       #116677
+! green
+*.color2:       #344961
 *.color10:      #d9d9d9
 
-! Yellow
+! yellow
 *.color3:       #aaaaaa
 *.color11:      #d9d9d9
 
-! Blue
-*.color4:       #aaaaaa
+! blue
+*.color4:       #2f5599
 *.color12:      #d9d9d9
 
-! Magenta
+! magenta
 *.color5:       #aaaaaa
 *.color13:      #d9d9d9
 
-! Cyan
-*.color6:       #33aaaa
+! cyan
+*.color6:       #6afdfd
 *.color14:      #d9d9d9
 
-! White
+! white
 *.color7:       #d9d9d9
 *.color15:      #d9d9d9
