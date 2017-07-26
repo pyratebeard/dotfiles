@@ -45,7 +45,7 @@ hi StatusLine   term=NONE cterm=NONE ctermfg=8    ctermbg=NONE
 hi String       term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
 hi TabLineSel   term=NONE cterm=NONE ctermfg=5    ctermbg=NONE
 hi Todo         term=NONE cterm=NONE ctermfg=5    ctermbg=NONE
-hi Type         term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
+hi Type         term=NONE cterm=NONE ctermfg=2    ctermbg=NONE
 hi VertSplit    term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Visual       term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi WarningMsg   term=NONE cterm=NONE ctermfg=242  ctermbg=NONE
