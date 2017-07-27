@@ -50,6 +50,7 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
+
 !  ___  ____ ___  ___  _    ____ ____ ___  
 !  |__] |__| |  \ |__] |    |  | |  | |  \ 
 !  |__] |  | |__/ |__] |___ |__| |__| |__/ 
@@ -84,7 +85,7 @@ urxvt.iso14755: false
 *.color13:      #d9d9d9
 
 ! cyan
-*.color6:       #6afdfd
+*.color6:       #55cccc
 *.color14:      #d9d9d9
 
 ! white
