@@ -71,6 +71,9 @@ GIT_PROMPT() {
     classic)
       echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
+    tiny)
+      echo "${COLOR_NORMAL} ["${ref}${dirty}${stat}"]"
+    ;;
     *)
       echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
     ;;
@@ -93,10 +96,11 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 ;;
 # tiny
 tiny)
-PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT) >> %f'
+PROMPT='${COLOR_NORMAL} % : '
+RPROMPT='%~ $(GIT_PROMPT)'
 ;;
 # classic
 *)
-PROMPT='%F{cyan}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
+PROMPT='%F{blue}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
 ;;
 esac
