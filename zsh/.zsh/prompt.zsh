@@ -26,6 +26,7 @@ typeset -ga chpwd_functions
 
 #█▓▒░ prepend functions
 chpwd_functions+=('chpwd_auto_cd')
+mpv_functions+=('mm')
 
 #█▓▒░ colors for permissions
 if [[ "$EUID" -ne "0" ]]
