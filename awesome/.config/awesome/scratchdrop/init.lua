@@ -41,10 +41,10 @@ local dropdown = {}
 -- Create a new window for the drop-down application when it doesn't
 -- exist, or toggle between hidden and visible states when it does
 function toggle(prog, vert, horiz, width, height, sticky, screen)
-    vert   = vert   or "top"
+    vert   = vert   or "center"
     horiz  = horiz  or "center"
-    width  = width  or 1
-    height = height or 0.25
+    width  = width  or 0.5
+    height = height or 0.5
     sticky = sticky or false
     screen = screen or capi.mouse.screen
 
