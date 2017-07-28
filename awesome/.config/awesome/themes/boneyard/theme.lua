@@ -49,19 +49,19 @@ end
 
 theme.font          = "tamzen 9"
 
-theme.bg_normal     = "#121212"
-theme.bg_focus      = "#212121"
-theme.bg_urgent     = "#212121"
-theme.bg_minimize   = "#121212"
+theme.bg_normal     = "#0b0b0b"
+theme.bg_focus      = "#0b0b0b"
+theme.bg_urgent     = "#0b0b0b"
+theme.bg_minimize   = "#0b0b0b"
 
 theme.fg_normal     = "#d9d9d9"
-theme.fg_focus      = "#66ccdd"
-theme.fg_urgent     = "#aa1111"
-theme.fg_minimize   = "#557777"
+theme.fg_focus      = "#55cccc"
+theme.fg_urgent     = "#a71c1f"
+theme.fg_minimize   = "#656565"
 
 theme.border_width  = "2"
-theme.border_normal = "#212121"
-theme.border_focus  = "#33aaaa"
+theme.border_normal = "#656565"
+theme.border_focus  = "#55cccc"
 theme.border_marked = "#ff0056"
 
 -- There are other variable sets
