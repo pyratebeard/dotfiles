@@ -50,10 +50,6 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-!  ___  ____ ___  ___  _    ____ ____ ___  
-!  |__] |__| |  \ |__] |    |  | |  | |  \ 
-!  |__] |  | |__/ |__] |___ |__| |__| |__/ 
-!                                          
 ! special
 *.foreground:   #d9d9d9
 *.background:   #0b0b0b
@@ -68,7 +64,7 @@ urxvt.iso14755: false
 *.color9:       #d9d9d9
 
 ! green
-*.color2:       #344961
+*.color2:       #2c6684
 *.color10:      #d9d9d9
 
 ! yellow
@@ -76,7 +72,7 @@ urxvt.iso14755: false
 *.color11:      #d9d9d9
 
 ! blue
-*.color4:       #2f5599
+*.color4:       #1d4458
 *.color12:      #d9d9d9
 
 ! magenta
@@ -84,9 +80,10 @@ urxvt.iso14755: false
 *.color13:      #d9d9d9
 
 ! cyan
-*.color6:       #6afdfd
+*.color6:       #33aaaa
 *.color14:      #d9d9d9
 
 ! white
 *.color7:       #d9d9d9
 *.color15:      #d9d9d9
+
