@@ -11,7 +11,7 @@ ICO_DIVERGED="⥮"
 COLOR_ROOT="%F{red}"
 COLOR_USER="%F{cyan}"
 COLOR_NORMAL="%F{white}"
-PROMPT_STYLE="tiny"
+PROMPT_STYLE="classic"
 
 #█▓▒░ allow functions in the prompt
 setopt PROMPT_SUBST
@@ -102,6 +102,6 @@ RPROMPT='%~ $(GIT_PROMPT)'
 ;;
 # classic
 *)
-PROMPT='%F{blue}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
+PROMPT='%F{cyan}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
 ;;
 esac
