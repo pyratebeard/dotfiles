@@ -55,13 +55,13 @@ theme.bg_urgent     = "#0b0b0b"
 theme.bg_minimize   = "#0b0b0b"
 
 theme.fg_normal     = "#d9d9d9"
-theme.fg_focus      = "#33aaaa"
+theme.fg_focus      = "#01c8e5"
 theme.fg_urgent     = "#a71c1f"
 theme.fg_minimize   = "#656565"
 
 theme.border_width  = "2"
 theme.border_normal = "#212121"
-theme.border_focus  = "#33aaaa"
+theme.border_focus  = "#01c8e5"
 theme.border_marked = "#ff0056"
 
 -- There are other variable sets
