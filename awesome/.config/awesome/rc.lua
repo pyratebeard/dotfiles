@@ -399,6 +399,10 @@ awful.rules.rules = {
 	  properties = { floating = true } },
 	{ rule = { class = "Gifview" },
 	  properties = { floating = true } },
+	{ rule = { class = "keepass2" },
+	  properties = { floating = true } },
+	{ rule = { class = "KeePass2" },
+	  properties = { floating = true } },
 	-- Set Chrome to always map on tags number 2 of screen 1.
 	-- { rule = { class = "Chrome" },
 	--   properties = { tag = tags[1][2] } },
