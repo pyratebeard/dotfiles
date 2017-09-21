@@ -93,7 +93,7 @@ settings = {
     indent = "12";
   };
   "fe-common/core" = {
-    theme = "nixers.theme";
+    theme = "rev1.theme";
     bell_beeps = "no";
     autolog_path = "/var/logs/irc/$tag/$0.log";
     autolog = "yes";
