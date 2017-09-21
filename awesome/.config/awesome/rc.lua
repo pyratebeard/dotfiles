@@ -312,6 +312,10 @@ clientkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "m",
     function (c)
       c.maximized = not c.maximized
+    end),
+  awful.key({ modkey, "Shift"   }, "s",
+    function (c)
+      c.stick = not c.sticky
     end)
 )
 
