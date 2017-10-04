@@ -11,7 +11,7 @@ ICO_DIVERGED="⥮"
 COLOR_ROOT="%F{red}"
 COLOR_USER="%F{cyan}"
 COLOR_NORMAL="%F{white}"
-PROMPT_STYLE="mini"
+PROMPT_STYLE="tiny"
 
 #█▓▒░ allow functions in the prompt
 setopt PROMPT_SUBST
