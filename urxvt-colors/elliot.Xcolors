@@ -1,0 +1,38 @@
+! elliot
+! special
+*.foreground:   #8b8b8b
+*.background:   #131313
+*.cursorColor:  #8b8b8b
+
+! black
+*.color0:       #212121
+*.color8:       #3a3a3a
+
+! red
+*.color1:       #8b8b8b
+*.color9:       #8b8b8b
+
+! green
+*.color2:       #8b8b8b
+*.color10:      #8b8b8b
+
+! yellow
+*.color3:       #8b8b8b
+*.color11:      #8b8b8b
+
+! blue
+*.color4:       #444444
+*.color12:      #8b8b8b
+
+! magenta
+*.color5:       #8b8b8b
+*.color13:      #8b8b8b
+
+! cyan
+*.color6:       #305484
+*.color14:      #8b8b8b
+
+! white
+*.color7:       #8b8b8b
+*.color15:      #8b8b8b
+
