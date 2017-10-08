@@ -36,3 +36,43 @@
 *.color7:       #0f8c61
 *.color15:      #198873
 
+
+
+
+! special
+*.foreground:   #198873
+*.background:   #060e17
+*.cursorColor:  #198873
+
+! black
+*.color0:       #060e17
+*.color8:       #14273d
+
+! red
+*.color1:       #104f4e
+*.color9:       #198873
+
+! green
+*.color2:       #106d6c
+*.color10:      #198873
+
+! yellow
+*.color3:       #0f8c61
+*.color11:      #198873
+
+! blue
+*.color4:       #035036
+*.color12:      #198873
+
+! magenta
+*.color5:       #0f8c61
+*.color13:      #198873
+
+! cyan
+*.color6:       #b54d19
+*.color14:      #198873
+
+! white
+*.color7:       #198873
+*.color15:      #198873
+
