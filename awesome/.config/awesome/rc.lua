@@ -125,8 +125,27 @@ memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, "M:$1%", 10)
 
 -- Network
+eths = { 'eno1', 'wlp2s0' }
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, "U:${enp8s0 up_kb} D:${enp8s0 down_kb}", 3)
+vicious.register(netwidget, vicious.widgets.net, 
+  function(widget,args)
+    t=''
+    for i = 1, #eths do
+      e = eths[i]
+      if args["{"..e.." carrier}"] == 1 then
+        if e == 'wlp2s0' then
+          t=t..'|'..'wifi: u '..args['{'..e..' up_kb}']..' d '..args['{'..e..' down_kb}']
+        else
+          t=t..'|'..'eth: u '..args['{'..e..' up_kb}']..' d '..args['{'..e..' down_kb}']
+        end
+      end
+    end
+    if string.len(t)>0 then -- remove leading |
+      return string.sub(t,2,-1)
+    end
+    return 'no network'
+  end
+  , 1 )
 
 -- Battery
 batwidget = wibox.widget.textbox()
