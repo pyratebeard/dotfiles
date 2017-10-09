@@ -97,11 +97,11 @@ local layouts = {
 tags = {}
 for s = 1, screen.count() do
   tags[s] = awful.tag({
-    " TERMINAL ",
-    " WEB ",
+    " terminal ",
+    " web ",
 --    " COMMS ",
-    " CODE ",
-    " OTHER"
+    " code ",
+    " other "
   },
   s,
   layouts[1])
@@ -118,11 +118,11 @@ spacer:set_markup(" ")
 
 -- CPU
 cpuwidget = wibox.widget.textbox()
-vicious.register(cpuwidget, vicious.widgets.cpu, "C:$1%")
+vicious.register(cpuwidget, vicious.widgets.cpu, "cpu: $1%")
 
 -- Memory
 memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem, "M:$1%", 10)
+vicious.register(memwidget, vicious.widgets.mem, "mem: $1%", 10)
 
 -- Network
 eths = { 'eno1', 'wlp2s0' }
@@ -153,7 +153,7 @@ vicious.register(batwidget, vicious.widgets.bat, "$1$2", 32, "BAT0")
 
 -- Date and time
 datewidget = wibox.widget.textbox()
-vicious.register(datewidget, vicious.widgets.date, "%a %F %R", 60)
+vicious.register(datewidget, vicious.widgets.date, "%F %R", 60)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
