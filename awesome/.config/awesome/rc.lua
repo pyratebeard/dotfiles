@@ -125,7 +125,7 @@ memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, "mem: $1%", 10)
 
 -- Network
-eths = { 'eno1', 'wlp2s0' }
+eths = { 'enp8s0', 'eno1', 'wlp2s0' }
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net, 
   function(widget,args)
