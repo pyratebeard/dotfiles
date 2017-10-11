@@ -85,6 +85,5 @@ urxvt.iso14755: false
 *.color14:      #42717b
 
 ! white
-*.color7:       #dddddd
-*.color15:      #dddddd
-
+*.color7:       #d8d0c7
+*.color15:      #d8d0c7
