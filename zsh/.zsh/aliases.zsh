@@ -72,6 +72,7 @@ alias vh="nc vhbin.net 9999"
 alias kb="keybase"
 alias dd="dd status=progress"
 alias mpv="mpv --audio-device=pulse/1"
+alias docker="sudo docker"
 tmx() {
   [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
 }
