@@ -60,7 +60,7 @@ theme.fg_urgent     = "#a71c1f"
 theme.fg_minimize   = "#656565"
 
 theme.border_width  = "2"
-theme.border_normal = "#212121"
+theme.border_normal = "#0b0b0b"
 theme.border_focus  = "#01c8e5"
 theme.border_marked = "#ff0056"
 
