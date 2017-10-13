@@ -1,20 +1,12 @@
 {
-	"color_scheme": "Packages/Theme - Cyanide/Cyanide.tmTheme",
-	"font_face": "Tamsyn",
-	"font_size": 10,
-	"highlight_line": true,
+	"color_scheme": "Packages/1337 Color Scheme/1337.tmTheme",
+	"font_face": "tamzen",
+	"font_size": 9,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"rulers":
-	[
-		50,
-		72,
-		80
-	],
-	"spacefunk_folder_icons": true,
-	"theme": "Cyanide.sublime-theme",
-	"word_wrap": true,
-	"wrap_width": 80
+	"theme": "Wombat.sublime-theme",
+	"wombat_color_blue": true,
+	"wombat_dirty_bottom_bar_blue": true
 }
