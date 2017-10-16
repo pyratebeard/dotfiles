@@ -23,6 +23,7 @@ ranger/.config/ranger/tagged
 ranger/.config/ranger/colorschemes/*.pyo
 sublime/.config/sublime-text-3/Cache/
 sublime/.config/sublime-text-3/Index/
+sublime/.config/sublime-text-3/Index/LOG
 sublime/.config/sublime-text-3/Local/Session.sublime_session
 sublime/.config/sublime-text-3/Packages/User/Package Control.last-run
 sublime/.config/sublime-text-3/Local/Auto Save Session.sublime_session
