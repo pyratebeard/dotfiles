@@ -1,0 +1,22 @@
+#tabbrowser-tabs,
+#urlbar,
+#urlbar-container,
+#bookmarks-menu-button,
+#downloads-button,
+#stylish-toolbar-button,
+#nav-bar-overflow-button,
+#PanelUI-button,
+#new-tab-button,
+#alltabs-button,
+.scrollbutton-up,
+.scrollbutton-down {
+  font-family: "tamzen" !important;
+  background-color: #151515 !important;
+  color: #d8d0c7 !important;
+}
+
+#tabbrowser-tabs tab[selected] {
+  background-color: #a0cf5d !important;
+  color: #151515 !important;
+  font-family: "tamzen" !important;
+}
