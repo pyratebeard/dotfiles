@@ -125,7 +125,9 @@ set foldlevel=99
 set foldminlines=99
 
 " Highlight column
-set cursorcolumn
+"set cursorcolumn
+" Highlight line
+set cursorline
 
 " ___  _    _  _ ____ _ _  _ ____ 
 " |__] |    |  | | __ | |\ | [__  
