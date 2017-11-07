@@ -25,7 +25,7 @@ hi FoldColumn   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Folded       term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Function     term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
 hi Identifier   term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
-hi IncSearch    term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
+hi IncSearch    term=NONE cterm=NONE ctermfg=0    ctermbg=8
 hi NonText      term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
 hi Normal       term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
 hi PreProc      term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
