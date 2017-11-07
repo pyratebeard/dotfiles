@@ -42,18 +42,18 @@ end
 
 theme.font          = "tamzen 9"
 
-theme.bg_normal     = "#0e0e0e"
-theme.bg_focus      = "#0e0e0e"
-theme.bg_urgent     = "#0e0e0e"
-theme.bg_minimize   = "#0e0e0e"
+theme.bg_normal     = "#0b0b0b"
+theme.bg_focus      = "#0b0b0b"
+theme.bg_urgent     = "#0b0b0b"
+theme.bg_minimize   = "#0b0b0b"
 
-theme.fg_normal     = "#fff"
+theme.fg_normal     = "#d9d9d9"
 theme.fg_focus      = "#01c8e5"
 theme.fg_urgent     = "#a71c1f"
 theme.fg_minimize   = "#656565"
 
 theme.border_width  = "1"
-theme.border_normal = "#0e0e0e"
+theme.border_normal = "#0b0b0b"
 theme.border_focus  = "#252525"
 theme.border_marked = "#277896"
 
