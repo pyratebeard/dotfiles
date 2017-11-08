@@ -1,0 +1,37 @@
+! donatello
+! special
+*.foreground:   #f5f5ef
+*.background:   #000000
+*.cursorColor:  #f5f5ef
+
+! black
+*.color0:       #151515
+*.color8:       #75715e
+
+! red
+*.color1:       #6200ff
+*.color9:       #f5f5ef
+
+! green
+*.color2:       #a6e22e
+*.color10:      #f5f5ef
+
+! yellow
+*.color3:       #e6db74
+*.color11:      #f5f5ef
+
+! blue
+*.color4:       #6203fa
+*.color12:      #f5f5ef
+
+! magenta
+*.color5:       #af24f0
+*.color13:      #f5f5ef
+
+! cyan
+*.color6:       #00ff22
+*.color14:      #f5f5ef
+
+! white
+*.color7:       #e0e0db
+*.color15:      #f5f5ef
