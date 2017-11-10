@@ -25,7 +25,7 @@ set editor		= vim
 set sort=reverse-threads
 set sort_aux=date-received
 color normal default default
-color indicator black cyan
+color indicator white blue
 color tree default default
 color status white black
 
