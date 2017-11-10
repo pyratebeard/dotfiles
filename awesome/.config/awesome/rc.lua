@@ -402,6 +402,7 @@ awful.rules.rules = {
 					 focus = awful.client.focus.filter,
 					 raise = true,
 					 keys = clientkeys,
+           screen = awful.screen.focused,
 					 buttons = clientbuttons } },
 	-- 
 	-- Use `xprop` to find WM_CLASS
