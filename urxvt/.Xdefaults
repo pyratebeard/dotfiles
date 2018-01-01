@@ -14,7 +14,7 @@
 !urxvt*geometry: 80x45
 
 ! Fonts
-urxvt*font: xft:tamzen:size=9:antialias=false
+urxvt*font: xft:Hermit:regular:medium:size=9
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -50,43 +50,40 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-!  ___  ____ ___  ___  _    ____ ____ ___  
-!  |__] |__| |  \ |__] |    |  | |  | |  \ 
-!  |__] |  | |__/ |__] |___ |__| |__| |__/ 
-!                                          
 ! special
-*.foreground:   #d9d9d9
-*.background:   #0b0b0b
-*.cursorColor:  #d9d9d9
+*.foreground:   #938ea6
+*.background:   #121317
+*.cursorColor:  #938ea6
 
 ! black
-*.color0:       #151515
-*.color8:       #656565
+*.color0:       #282a2e
+*.color8:       #373b41
 
 ! red
-*.color1:       #a92e36
-*.color9:       #d9d9d9
+*.color1:       #9e212f
+*.color9:       #9e212f
 
 ! green
-*.color2:       #d9d9d9
-*.color10:      #d9d9d9
+*.color2:       #353051
+*.color10:      #353051
 
 ! yellow
-*.color3:       #d9d9d9
-*.color11:      #d9d9d9
+*.color3:       #503154
+*.color11:      #503154
 
 ! blue
-*.color4:       #305484
-*.color12:      #d9d9d9
+*.color4:       #4b4574
+*.color12:      #4b4574
 
 ! magenta
-*.color5:       #d9d9d9
-*.color13:      #d9d9d9
+*.color5:       #53569b
+*.color13:      #53569b
 
 ! cyan
-*.color6:       #01c8e5
-*.color14:      #d9d9d9
+*.color6:       #ca3b31
+*.color14:      #ca3b31
 
 ! white
-*.color7:       #d9d9d9
-*.color15:      #d9d9d9
+*.color7:       #938ea6
+*.color15:      #938ea6
+
