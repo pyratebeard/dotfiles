@@ -14,7 +14,7 @@
 !urxvt*geometry: 80x45
 
 ! Fonts
-urxvt*font: xft:Hermit:regular:medium:size=9
+urxvt*font: xft:tamzen:size=11:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -50,6 +50,7 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
+! dwarf
 ! special
 *.foreground:   #938ea6
 *.background:   #121317

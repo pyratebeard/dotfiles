@@ -1,4 +1,4 @@
--- badblood
+-- dwarf
 -- 
 --{{{ Main
 local awful = require("awful")
@@ -15,7 +15,7 @@ end
 sharedicons   = shared .. "/icons"
 sharedthemes  = shared .. "/themes"
 themes        = config .. "/themes"
-themename     = "/badblood"
+themename     = "/dwarf"
 if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
   themes = sharedthemes
 end
@@ -40,7 +40,7 @@ else
 end
 --}}}
 
-theme.font          = "tamzen 9"
+theme.font          = "tamzen 11"
 
 theme.bg_normal     = "#121317"
 theme.bg_focus      = "#121317"
