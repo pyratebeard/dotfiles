@@ -97,11 +97,10 @@ local layouts = {
 tags = {}
 for s = 1, screen.count() do
   tags[s] = awful.tag({
-    " terminal ",
-    " web ",
---    " COMMS ",
-    " code ",
-    " other "
+    " 01 ",
+    " 02 ",
+    " 03 ",
+    " 04 "
   },
   s,
   layouts[1])
