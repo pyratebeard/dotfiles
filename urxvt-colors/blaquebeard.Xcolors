@@ -1,0 +1,38 @@
+! blaque beard
+! special
+*.foreground:   #c2c2b0
+*.background:   #222222
+*.cursorColor:  #c2c2b0
+
+! black
+*.color0:       #222222
+*.color8:       #222222
+
+! red
+*.color1:       #923a45
+*.color9:       #923a45
+
+! green
+*.color2:       #666666
+*.color10:      #666666
+
+! yellow
+*.color3:       #ba9153
+*.color11:      #ba9153
+
+! blue
+*.color4:       #888888
+*.color12:      #888888
+
+! magenta
+*.color5:       #3c7e96
+*.color13:      #3c7e96
+
+! cyan
+*.color6:       #777777
+*.color14:      #777777
+
+! white
+*.color7:       #c2c2b0
+*.color15:      #c2c2b0
+
