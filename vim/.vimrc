@@ -107,7 +107,7 @@ set shortmess+=I
 
 " Syntax highlighting and colors
 syntax on
-colorscheme badblood
+colorscheme lychnobite
 filetype off
 
 " Stop unnecessary rendering

@@ -14,7 +14,7 @@
 !urxvt*geometry: 80x45
 
 ! Fonts
-urxvt*font: xft:tamzen:size=11:antialias=false
+urxvt*font: xft:tamzen:size=9:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -50,41 +50,41 @@ urxvt*dynamicColors: on
 urxvt.saveLines: 9999
 urxvt.iso14755: false
 
-! dwarf
+! lychnobite
 ! special
-*.foreground:   #938ea6
+*.foreground:   #cdcdcd
 *.background:   #121317
-*.cursorColor:  #938ea6
+*.cursorColor:  #cdcdcd
 
 ! black
 *.color0:       #282a2e
 *.color8:       #373b41
 
 ! red
-*.color1:       #9e212f
-*.color9:       #9e212f
+*.color1:       #922230
+*.color9:       #923a45
 
 ! green
-*.color2:       #353051
-*.color10:      #353051
+*.color2:       #0f8c61
+*.color10:      #198873
 
 ! yellow
-*.color3:       #503154
-*.color11:      #503154
+*.color3:       #ba883d
+*.color11:      #ba9153
 
 ! blue
-*.color4:       #4b4574
-*.color12:      #4b4574
+*.color4:       #277896
+*.color12:      #3c7e96
 
 ! magenta
-*.color5:       #53569b
+*.color5:       #4b4574
 *.color13:      #53569b
 
 ! cyan
-*.color6:       #ca3b31
-*.color14:      #ca3b31
+*.color6:       #638b83
+*.color14:      #7dbfb8
 
 ! white
-*.color7:       #938ea6
-*.color15:      #938ea6
+*.color7:       #cdcdcd
+*.color15:      #cdcdcd
 
