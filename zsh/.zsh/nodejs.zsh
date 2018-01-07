@@ -11,7 +11,7 @@
 # CODE    http://github.com/pyratebeard/dotfiles
 #
 # Node version manager
-source ~/.nvm/nvm.sh
+#source ~/.nvm/nvm.sh
 
 # Aliases
 alias node="sudo node"
