@@ -21,7 +21,7 @@ if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
 end
 themedir = themes .. themename
 
-wallpaper1    = home .. "/dot/wallpapers/pyratebeard_wallpaper_05.png"
+wallpaper1    = home .. "/dot/wallpapers/pyratebeard_sml_cntr_blaquebeard_dark.png"
 wallpaper2    = themedir .. "/background.png"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
@@ -42,10 +42,10 @@ end
 
 theme.font          = "tamzen 9"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#222222"
-theme.bg_urgent     = "#222222"
-theme.bg_minimize   = "#222222"
+theme.bg_normal     = "#181818"
+theme.bg_focus      = "#181818"
+theme.bg_urgent     = "#181818"
+theme.bg_minimize   = "#181818"
 
 theme.fg_normal     = "#c2c2b0"
 theme.fg_focus      = "#ba9153"
