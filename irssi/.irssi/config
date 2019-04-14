@@ -1,11 +1,6 @@
-# '####:'########:::'######:::'######::'####:
-# . ##:: ##.... ##:'##... ##:'##... ##:. ##::
-# : ##:: ##:::: ##: ##:::..:: ##:::..::: ##::
-# : ##:: ########::. ######::. ######::: ##::
-# : ##:: ##.. ##::::..... ##::..... ##:: ##::
-# : ##:: ##::. ##::'##::: ##:'##::: ##:: ##::
-# '####: ##:::. ##:. ######::. ######::'####:
-# ....::..:::::..:::......::::......:::....::
+#░▀█▀░█▀▄░█▀▀░█▀▀░▀█▀░░
+#░░█░░█▀▄░▀▀█░▀▀█░░█░░░
+#░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░
 #
 # AUTHOR    pyratebeard <root@pyratebeard.net>
 # CODE      https://github.com/pyratebeard/dotfiles
@@ -20,75 +15,18 @@ servers = (
     port = "6697";
     use_ssl = "yes";
     autoconnect = "yes";
-  },
-  {
-    address = "irc.freenode.net";
-    chatnet = "freenode";
-    port = "6665";
-    use_ssl = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.rizon.net";
-    chatnet = "rizon";
-    port = "6667";
-    use_ssl = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.geekshed.net";
-    chatnet = "geekshed";
-    port = "6667";
-    use_ssl = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.snoonet.org";
-    chatnet = "snoonet";
-    port = "6667";
-    use_ssl = "no";
-    autoconnect = "no";
   }
 );
 
 chatnets = {
   nixers = { type = "IRC"; nick = "pyrtbrd"; };
-  freenode = { type = "IRC"; nick = "pyratebeard"; };
-  rizon = { type = "IRC"; nick = "pyratebeard"; };
-  geekshed = { type = "IRC"; nick = "pyratebeard"; };
-  snoonet = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = (
-  { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; },
-  { name = "##linux"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "#r_netsec"; chatnet = "freenode"; autojoin = "No"; },
-  {
-    name = "##ArcherScavengerHunt";
-    chatnet = "freenode";
-    autojoin = "No";
-  },
-  { 
-    name = "#reddit-comicbooks";
-    chatnet = "freenode";
-    autojoin = "No";
-  },
-  { name = "#tog"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "#comic-scans"; chatnet = "rizon"; autojoin = "No"; },
-  {
-    name = "#jupiterbroadcasting";
-    chatnet = "geekshed";
-    autojoin = "No";
-  },
-  { name = "#linuxmasterrace"; chatnet = "snoonet"; autojoin = "No"; }
+  { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; }
 );
 
 aliases = {
-  emote = "exec -o emote";
-  ascii = "exec -o toilet -f future --irc";
-  rusto = "exec -o toilet -f rusto --irc";
-  rustofat = "exec -o toilet -f rustofat --irc";
-  gay = "exec -o toilet -f term --gay --irc";
   toilet = "exec -o toilet";
 };
 
@@ -127,19 +65,3 @@ statusbar = {
     };
   };
 };
-ignores = (
-  { mask = "channels"; level = "ALL"; },
-  {
-    level = "JOINS PARTS QUITS NICKS";
-    channels = (
-      "##linux",
-      "#r_netsec",
-      "##ArcherScavengerHunt",
-      "#reddit-comicbooks",
-      "#comic-scans",
-      "#jupiterbroadcasting",
-      "#linuxmasterrace",
-      "#tog"
-    );
-  }
-);
