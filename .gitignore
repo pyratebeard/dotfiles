@@ -1,3 +1,9 @@
+cmus/.cmus/cache
+cmus/.cmus/command-history
+cmus/.cmus/lib.pl
+cmus/.cmus/search-history
+cmus/.cmus/playlists
+cmus/.cmus/autosave
 mpd/.config/mpd/mpd.log
 mpd/.mpd/database
 mpd/.mpd/log
