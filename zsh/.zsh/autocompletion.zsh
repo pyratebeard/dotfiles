@@ -1,16 +1,4 @@
-# '########::'######::'##::::'##:
-# ..... ##::'##... ##: ##:::: ##:
-# :::: ##::: ##:::..:: ##:::: ##:
-# ::: ##::::. ######:: #########:
-# :: ##::::::..... ##: ##.... ##:
-# : ##::::::'##::: ##: ##:::: ##:
-#  ########:. ######:: ##:::: ##:
-# ........:::......:::..:::::..::
-#
-# AUTHOR  pyratebeard <root@pyratebeard.net>
-# CODE    http://github.com/pyratebeard/dotfiles
-#
-# Autocompletion systems
+# AUTOCOMPLETION
 autoload -Uz compinit
 compinit
 autoload -U ~/.zsh/completion/*(:t)

@@ -1,17 +1,10 @@
-# '########::'######::'##::::'##:
-# ..... ##::'##... ##: ##:::: ##:
-# :::: ##::: ##:::..:: ##:::: ##:
-# ::: ##::::. ######:: #########:
-# :: ##::::::..... ##: ##.... ##:
-# : ##::::::'##::: ##: ##:::: ##:
-#  ########:. ######:: ##:::: ##:
-# ........:::......:::..:::::..::
-#
-# AUTHOR  pyratebeard <root@pyratebeard.net>
-# CODE    http://github.com/pyratebeard/dotfiles
-#
-# SSH keys
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# KEYCHAIN
+
+# ssh key dir
+SSH_KEY_DIR="$HOME/.ssh"
 
 # funtoo keychain
-eval `keychain -q --eval ~/.ssh/id_rsa`
+eval $(keychain -q --agents ssh,gpg --nogui --eval $SSH_KEY_DIR/*.prv 0xC7877C715113A16D)
+
+GPG_TTY=$(tty)
+export GPG_TTY

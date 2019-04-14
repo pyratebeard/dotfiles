@@ -1,34 +1,30 @@
-#ICO_DIRTY="⚡"
-#ICO_DIRTY="↯"
-ICO_DIRTY="*"
-#ICO_AHEAD="↑"
+# PROMPT
+
+ICO_DIRTY="⚡"
 ICO_AHEAD="🠙"
-#ICO_AHEAD="▲"
-#ICO_BEHIND="↓"
 ICO_BEHIND="🠛"
-#ICO_BEHIND="▼"
 ICO_DIVERGED="⥮"
 COLOR_ROOT="%F{red}"
 COLOR_USER="%F{cyan}"
 COLOR_NORMAL="%F{white}"
 PROMPT_STYLE="tiny"
 
-#█▓▒░ allow functions in the prompt
+# allow functions in the prompt
 setopt PROMPT_SUBST
 autoload -Uz colors && colors
 
-#█▓▒░ autoload zsh functions
+# autoload zsh functions
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
-#█▓▒░ enable auto-execution of functions
+# enable auto-execution of functions
 typeset -ga chpwd_functions
 
-#█▓▒░ prepend functions
+# prepend functions
 chpwd_functions+=('chpwd_auto_cd')
 mpv_functions+=('mm')
 
-#█▓▒░ colors for permissions
+# colors for permissions
 if [[ "$EUID" -ne "0" ]]
 then  # if user is not root
 	USER_LEVEL="${COLOR_USER}"
@@ -36,21 +32,9 @@ else # root!
 	USER_LEVEL="${COLOR_ROOT}"
 fi
 
-#█▓▒░ git prompt
+# git prompt
 GIT_PROMPT() {
   test=$(git rev-parse --is-inside-work-tree 2> /dev/null)
-  if [ ! "$test" ]
-  then
-    case "$PROMPT_STYLE" in
-      ascii)
-        echo "$reset_color%F{cyan}▒░"
-      ;;
-      arrows)
-        echo "$reset_color%F{cyan}"
-      ;;
-    esac
-    return
-  fi
   ref=$(git name-rev --name-only HEAD | sed 's!remotes/!!' 2> /dev/null)
   dirty="" && [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && dirty=$ICO_DIRTY
   stat=$(git status | sed -n 2p)
@@ -73,7 +57,7 @@ GIT_PROMPT() {
       echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
     tiny)
-      echo "${COLOR_NORMAL} ["${ref}${dirty}${stat}"]"
+      echo "%F{yellow} ["${ref}${dirty}${stat}"]"
     ;;
     *)
       echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
@@ -98,7 +82,7 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 # tiny
 tiny)
 PROMPT='${COLOR_NORMAL} % : '
-RPROMPT='%~ $(GIT_PROMPT)'
+RPROMPT='%~ $(GIT_PROMPT) %F{magenta}swordphish${COLOR_NORMAL}'
 ;;
 # classic
 *)
