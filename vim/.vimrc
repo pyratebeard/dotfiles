@@ -1,165 +1,153 @@
-" '##::::'##:'####:'##::::'##:
-"  ##:::: ##:. ##:: ###::'###:
-"  ##:::: ##:: ##:: ####'####:
-"  ##:::: ##:: ##:: ## ### ##:
-" . ##:: ##::: ##:: ##. #: ##:
-" :. ## ##:::: ##:: ##:.:: ##:
-" ::. ###::::'####: ##:::: ##:
-" :::...:::::....::..:::::..::
-"
-" AUTHOR  pyratebeard <root@pyratebeard.net>
-" CODE    http://github.com/pyratebeard/dotfiles
-"
-" Use vim settings, rather than vi settings
-" Must be first, because it changes other options as a side effect
+" ░█░█░▀█▀░█▄█░░
+" ░▀▄▀░░█░░█░█░░
+" ░░▀░░▀▀▀░▀░▀░░
+
+" use vim settings, rather than vi settings
+" must be first, because it changes other options as a side effect
 set nocompatible
 
-" Security
+" security
 set modelines=0
 
-" Paste without auto indentation
+" paste without auto indentation
 set paste
 
-" Hide buffers, not close them
+" hide buffers, not close them
 set hidden
 
-" Maintain undo history between sessions
+" maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
-" Lazy file name tab completion
+" lazy file name tab completion
 set wildmode=longest,list,full
 set wildmenu
 set wildignorecase
 
-" Case insensitive search
+" case insensitive search
 set ignorecase
 set smartcase
 set infercase
 
-" The /g flag on :s substitutions by default
-set gdefault
-
-" Make backspace behave in a sane manner
+" make backspace behave in a sane manner
 set backspace=indent,eol,start
 
-" Searching
+" searching
 set hlsearch
 set incsearch
 
-" Use indents of 4 spaces
-set shiftwidth=2
+" use indents of 4 spaces
+set shiftwidth=4
 
-" Tabs are spaces, not tabs
-set expandtab
+" tabs are spaces, not tabs
+set noexpandtab
 
-" An indentation every four columns
-set tabstop=2
+" an indentation every four columns
+set tabstop=4
 
-" Let backspace delete indent
-set softtabstop=2
+" let backspace delete indent
+set softtabstop=4
 
-" Enable auto indentation
+" enable auto indentation
 set autoindent
 
-" Remove trailing whitespaces and ^M chars
+" remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+set list
+set listchars=
+set listchars+=tab:·\ 
+set listchars+=trail:·
+set listchars+=extends:»
+set listchars+=precedes:«
 
-" Let mapleader=","
+" let mapleader=","
 vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
 nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 
-" Switch tabs
+" switch tabs
 nnoremap <C-n> :tabn<CR>
 nnoremap <C-p> :tabp<CR>
 
-" ____ ____ _  _ _  _ ____ _  _ ___  ____ 
-" |    |  | |\/| |\/| |__| |\ | |  \ [__  
-" |___ |__| |  | |  | |  | | \| |__/ ___] 
-                                        
+" NERDTreeToggle
+nnoremap <C-j> :NERDTreeToggle<CR>
 
-" Json pretty print
+" noh
+nnoremap <C-c> :noh<CR>
+
+" toggle autoindent
+nnoremap <F8> :setl noai<CR>
+nnoremap <F9> :setl ai<CR>
+
+" columns
+" 80 soft 120 hard
+let &colorcolumn="80"
+
+" COMMANDS
+" json pretty print
 command J :%!python -mjson.tool
 
-" Remove trailing white space
+" remove trailing white space
 command Nows :%s/\s\+$//
 
-" Remove blank lines
+" remove blank lines
 command Nobl :g/^\s*$/d
 
-" Toggle spellcheck
+" toggle spellcheck
 command Spell :setlocal spell! spell?
 
-" Make current buffer executable
+" make current buffer executable
 command Chmodx :!chmod a+x %
 
-" _ _  _ ___ ____ ____ ____ ____ ____ ____ 
-" | |\ |  |  |___ |__/ |___ |__| |    |___ 
-" | | \|  |  |___ |  \ |    |  | |___ |___ 
-
-" Show matching brackets/parenthesis
+" INTERFACE
+" show matching brackets/parenthesis
 set showmatch
 
-" Disable startup message
+" disable startup message
 set shortmess+=I
 
-" Syntax highlighting and colors
+" syntax highlighting and colors
 syntax on
-colorscheme lychnobite
+colorscheme venganza
 filetype off
 
-" Stop unnecessary rendering
+" stop unnecessary rendering
 set lazyredraw
 
-" Show line numbers
+" show line numbers
 set number
 
-" No line wrapping
+" no line wrapping
 set nowrap
 set linebreak
 
-" No folding
+" no folding
 set foldlevel=99
 set foldminlines=99
 
-" Highlight column
-"set cursorcolumn
-" Highlight line
+" highlight line
 set cursorline
 
-" ___  _    _  _ ____ _ _  _ ____ 
-" |__] |    |  | | __ | |\ | [__  
-" |    |___ |__| |__] | | \| ___] 
-                                
-" To install from the shell run:
+" PLUGINS
+filetype plugin indent on
+" to install from the shell run:
 " `git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim && vim +BundleInstall +qall && PYTHON=/usr/bin/python2 ~/dotfiles/vim/.vim/bundle/YouCompleteMe/install.sh --clang-completer && pacman -S the_silver_searcher`
-if 1 " Boolean for plugin loading
+" `mkdir ~/dot/vim/.vim/bundle ; git clone https://github.com/gmarik/Vundle.vim.git ~/dot/vim/.vim/bundle/Vundle.vim && vim +BundleInstall +qall`
+if 1 " boolean for plugin loading
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'scrooloose/syntastic'
   Plugin 'airblade/vim-gitgutter'
-  Plugin 'isa/vim-matchit'
-  Plugin 'shawncplus/phpcomplete.vim'
-  Plugin 'rking/ag.vim'
-  Plugin 'itchyny/lightline.vim'
   Plugin 'tpope/vim-fugitive'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'vimwiki/vimwiki'
+  Plugin 'itchyny/lightline.vim'
+  Plugin 'rking/ag.vim'
   call vundle#end()
-  filetype plugin indent on
 
-  " Syntatic http://git.io/syntastic.vim
-  " Linters: (from aur) nodejs-jshint, nodejs-jsonlint, csslint, checkbashisms
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  highlight SyntasticErrorSign ctermfg=red ctermbg=237
-  highlight SyntasticWarningSign ctermfg=yellow ctermbg=237
-  highlight SyntasticStyleErrorSign ctermfg=red ctermbg=237
-  highlight SyntasticStyleWarningSign ctermfg=yellow ctermbg=237
+  " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
+  let g:NERDTreeDirArrows = 1
 
   " git-gutter http://git.io/vimgitgutter
   let g:gitgutter_realtime = 1
@@ -178,46 +166,42 @@ if 1 " Boolean for plugin loading
   highlight GitGutterChangeDelete ctermfg=red ctermbg=237
 
   " ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
-  let g:agprg="ag -i --vimgrep"
+  let g:ag_prg="ag -i --vimgrep"
   let g:ag_highlight=1
-  " Map \ to the ag command for quick searching
+  " map \ to the ag command for quick searching
   nnoremap \ :Ag<SPACE>
 
-  " ____ ___ ____ ___ _  _ ____ _    _ _  _ ____ 
-  " [__   |  |__|  |  |  | [__  |    | |\ | |___ 
-  " ___]  |  |  |  |  |__| ___] |___ | | \| |___ 
-  
-  " Lightline http://git.io/lightline
-  " Wizard status line
+  " vimwiki https://vimwiki.github.io
+  let pyratewiki = {}
+  let pyratewiki.path = '~/lib/doc/pyratewiki'
+  let pyratewiki.path_html = '~/lib/doc/pyratewiki/html'
+  let pyratewiki.syntax = 'markdown'
+  let pyratewiki.ext = '.md'
+
+  let g:vimwiki_list = [pyratewiki]
+
+  " lightline
   set laststatus=2
   let g:lightline = {
-    \ 'colorscheme': 'sourcerer',
-    \ 'active': {
-    \   'left': [ [ 'filename' ],
-    \             [ 'readonly', 'fugitive' ] ],
-    \   'right': [ [ 'percent', 'lineinfo' ],
-    \              [ 'fileencoding', 'filetype' ],
-    \              [ 'fileformat', 'syntastic' ] ]
-    \ },
-    \ 'component_function': {
-    \   'modified': 'WizMod',
-    \   'readonly': 'WizRO',
-    \   'fugitive': 'WizGit',
-    \   'filename': 'WizName',
-    \   'filetype': 'WizType',
-    \   'fileformat' : 'WizFormat',
-    \   'fileencoding': 'WizEncoding',
-    \   'mode': 'WizMode',
-    \ },
-    \ 'component_expand': {
-    \   'syntastic': 'SyntasticStatuslineFlag',
-    \ },
-    \ 'component_type': {
-    \   'syntastic': 'error',
-    \ },
-    \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-    \ 'subseparator': { 'left': '▒', 'right': '░' }
-    \ }
+  \ 'colorscheme': 'venganza',
+  \ 'active': {
+  \   'left': [ [ 'filename' ],
+  \             [ 'readonly', 'fugitive' ] ],
+  \   'right': [ [ 'percent', 'lineinfo' ],
+  \              [ 'fileencoding', 'filetype' ],
+  \              [ 'fileformat', 'syntastic' ] ]
+  \ },
+  \ 'component_function': {
+  \   'modified': 'WizMod',
+  \   'readonly': 'WizRO',
+  \   'fugitive': 'WizGit',
+  \   'filename': 'WizName',
+  \   'filetype': 'WizType',
+  \   'fileformat' : 'WizFormat',
+  \   'fileencoding': 'WizEncoding',
+  \   'mode': 'WizMode',
+  \ },
+  \ }
 
   function! WizMod()
     return &ft =~ 'help\|vimfiler' ? '' : &modified ? '»' : &modifiable ? '' : ''
@@ -251,15 +235,4 @@ if 1 " Boolean for plugin loading
     return winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
   endfunction
 
-  augroup AutoSyntastic
-    autocmd!
-    autocmd BufWritePost *.c,*.cpp call s:syntastic()
-  augroup END
-  function! s:syntastic()
-    SyntasticCheck
-    call lightline#update()
-  endfunction
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  autocmd BufWinEnter * NERDTreeMirror
 endif
