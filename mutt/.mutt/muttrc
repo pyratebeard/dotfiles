@@ -1,35 +1,90 @@
-# '##::::'##:'##::::'##:'########:'########:
-#  ###::'###: ##:::: ##:... ##..::... ##..::
-#  ####'####: ##:::: ##:::: ##::::::: ##::::
-#  ## ### ##: ##:::: ##:::: ##::::::: ##::::
-#  ##. #: ##: ##:::: ##:::: ##::::::: ##::::
-#  ##:.:: ##: ##:::: ##:::: ##::::::: ##::::
-#  ##:::: ##:. #######::::: ##::::::: ##::::
-# ..:::::..:::.......::::::..::::::::..:::::
-#
-set imap_user		= "root@pyratebeard.net"
-set imap_pass		= ""
-set smtp_url		= "smtp://root@pyratebeard.net@smtp.domain.com:587/"
-set from		= "root@pyratebeard.net"
-set realname		= "pyratebeard"
-set header_cache	= "~/.mutt/cache/headers"
-set message_cachedir	= "~/.mutt/cache/"
-set certificate_file 	= "~/.mutt/certificates"
-set folder		= imaps://imap.domain.com
-set spoolfile		= +INBOX
-mailboxes		= +INBOX
+# ░█▄█░█░█░▀█▀░▀█▀░░
+# ░█░█░█░█░░█░░░█░░░
+# ░▀░▀░▀▀▀░░▀░░░▀░░░
+
+# imap
+set imap_user = ""
+set imap_pass = ""
 unset imap_passive
-set imap_keepalive	= 300
-set mail_check		= 120
-set editor		= vim
-set signature = "~/.mutt/sig"
-set sort=reverse-threads
-set sort_aux=date-received
+set imap_keepalive = 300
+
+# smtp
+set smtp_url = ""
+set smtp_authenticators=”login”
+
+# user details
+set from = ""
+set realname = "pyratebeard"
+
+# mailbox
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/"
+set certificate_file = "~/.mutt/certificates"
+set folder = imaps://imap.domain
+set spoolfile = +INBOX
+set record  = "~/.mutt/sent"
+mailboxes = =INBOX =INBOX/action
+set mail_check = 120
+
+# colours
 color normal default default
-color indicator white blue
+color indicator magenta black
 color tree default default
 color status white black
+
+# pgp
+source "~/.mutt/gpg.rc"
+set pgp_autosign = no
+set pgp_use_gpg_agent = yes
+
+# compose
+set editor = vim
+set askcc = yes
+set askbcc = yes
+set autoedit = yes
+set edit_headers = yes
+
+# display
+set index_format = "%Z %-30.30L %M %s"
+folder-hook . "push <collapse-all>\n"
+bind index - collapse-thread
+set sort=reverse-threads
+set sort_aux=date-received
 
 # handling for multi-part and html messages
 alternative_order text/plain text/html
 auto_view text/html
+
+# sidebar
+set sidebar_visible = no
+set sidebar_folder_indent = yes
+set sidebar_indent_string = ".."
+set sidebar_short_path = yes
+bind index,pager B sidebar-toggle-visible
+
+# move the highlight to the previous mailbox
+bind index,pager \Cp sidebar-prev
+
+# move the highlight to the next mailbox
+bind index,pager \Cn sidebar-next
+
+# open the highlighted mailbox
+bind index,pager \Co sidebar-open
+
+# move the highlight to the previous page
+# this is useful if you have a LOT of mailboxes.
+bind index,pager <F3> sidebar-page-up
+
+# move the highlight to the next page
+# this is useful if you have a LOT of mailboxes.
+bind index,pager <F4> sidebar-page-down
+
+# move the highlight to the previous mailbox containing new, or flagged,
+# mail.
+bind index,pager <F5> sidebar-prev-new
+
+# move the highlight to the next mailbox containing new, or flagged, mail.
+bind index,pager <F6> sidebar-next-new
+
+# toggle the visibility of the sidebar.
+bind index,pager B sidebar-toggle-visible
