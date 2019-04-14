@@ -92,7 +92,7 @@ IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
 ### PREVIEWS
-![](https://github.com/pyratebeard/dotfiles/master/previews/venganza.png)
+![](https://raw.githubusercontent.com/pyratebeard/dotfiles/master/previews/venganza.png)
 
 ### CITATIONS
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
