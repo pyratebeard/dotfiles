@@ -1,6 +1,0 @@
-http://feeds.feedburner.com/comiclistfeed|||
-http://www.dccomics.com/feed|dc comics||
-http://pyratebeard.net/feed.xml|||
-exec:wget -q -O - https://www.newsarama.com/home/feed/site.xml|||
-http://craphound.com/feed/|craphound.com||
-http://feeds.xero.nu/rss/blog/newest|||

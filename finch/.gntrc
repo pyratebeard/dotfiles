@@ -1,7 +1,0 @@
-[Finch]
-color-offline = black; default
-color-message-received = blue; default
-color-timestamp = white; default
-[colorpairs]
-title = cyan; black
-text = white; black
