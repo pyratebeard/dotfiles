@@ -1,42 +1,30 @@
 ```
-          __          __       ___      ___                    
-    '########:::'#######::'########:'########:'####:'##:::::::'########::'######::
-     ##.... ##:'##.... ##:... ##..:: ##.....::. ##:: ##::::::: ##.....::'##... ##:
-     ##:::: ##: ##:::: ##:::: ##:::: ##:::::::: ##:: ##::::::: ##::::::: ##:::..::
-     ##:::: ##: ##:::: ##:::: ##:::: ######:::: ##:: ##::::::: ######:::. ######::
-     ##:::: ##: ##:::: ##:::: ##:::: ##...::::: ##:: ##::::::: ##...:::::..... ##:
-     ##:::: ##: ##:::: ##:::: ##:::: ##:::::::: ##:: ##::::::: ##:::::::'##::: ##:
-     ########::. #######::::: ##:::: ##:::::::'####: ########: ########:. ######::
-    ........::::.......::::::..:::::..::::::::....::........::........:::......:::
 
-    ABOUT     Custom Linux configuration files
+	░█▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀░░
+	░█░█░█░█░░█░░█▀▀░░█░░█░░░█▀▀░▀▀█░░
+	░▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░
+
+    ABOUT     custom Linux configuration files
     AUTHOR    pyratebeard <root@pyratebeard.net>
     CODE      https://github.com/pyratebeard/dotfiles
 
-    awesome         > Window manager
-    bash            > Shell
-    calcurse        > Calendar and organiser
-    conky           > System monitor
-    gtk             > GUI toolkit
-    herbstluftwm    > Window manager
-    irssi           > IRC client
-    moc             > Audio player interface
-    mpd             > Audio player daemon
-    mutt            > Email client
-    ncmpcpp         > UI for mpd 
-    qutebrowser     > Web browser
-    ranger          > File manager
-    snownews        > RSS reader
-    sublime         > Text editor
-    tmux            > Terminal multiplexer
-    turses          > Twitter client
-    urxvt           > Terminal emulator
-    vim             > Text editor
-    zsh             > Shell
+    2bwm            > window manager
+    cmus            > music player
+    dunst           > notification daemon
+    irssi           > irc client
+    gpg             > gpg agent config
+    mpd             > audio player daemon
+    mutt            > email client
+    newsboat        > rss reader
+    ncmpcpp         > ui for mpd
+    tmux            > terminal multiplexer
+    urxvt           > terminal emulator
+    vim             > text editor
+    zsh             > shell
 
 ```
 
-### Contents
+### CONTENTS
  - [Introduction](#dotfiles)
  - [Managing](#managing)
  - [How to use](#using)
@@ -45,17 +33,17 @@
  - [Citations](#citations)
  - [Disclaimer](#disclaimer)
 
-### Dotfiles
+### DOTFILES
 
 In the world of Linux everything is a file and you can create a incredibly personalised environment by modifying your dotfiles.
 
 This is known as 'ricing' and can become very, very obsessive...
 
-### Managing
+### MANAGING
 
 I manage my dotfiles using [stow](http://www.gnu.org/software/stow/).  The stow package should be available in your preferred package manager.
 
-### Using
+### USING
 Clone the repo into your home directory:
 
 `git clone http://github.com/pyratebeard/dotfiles.git ~/dotfiles`
@@ -68,17 +56,17 @@ Install the zsh settings
 
 `stow zsh`
 
-Install awesomewm configuration
+Install vim configuration
 
-`stow awesome`
+`stow vim`
 
-Uninstall awesomewm configuration
+Uninstall vim configuration
 
-`stow -D awesome`
+`stow -D vim`
 
 etc...
 
-### Terminal
+### TERMINAL
 Ever since I started using Linux I have loved working in the terminal. I find it faster and easier than most graphical interfaces.
 
 I have tried a number of terminal emulators over the years but I'm currently using [urxvt](). I have recently started using [zsh](http://zsh.sourceforge.net/) over [bash](https://www.gnu.org/software/bash/) for my shell.
@@ -91,11 +79,9 @@ APP | PKG
 --- | ---
 AUDIO | [ncmpcpp](http://rybczak.net/ncmpcpp/) ([mpd](https://www.musicpd.org/) backend)
 IRC | [irssi](https://irssi.org/)
-TWITTER | [turses](http://turses.readthedocs.io/en/latest/)
 EMAIL | [mutt](http://www.mutt.org/)
-RSS | [snownews](https://kiza.eu/software/snownews/)
+RSS | [newsboat](https://newsboat.org/)
 EDITOR | [vim](http://www.vim.org/)
-FILE MANAGER | [ranger](http://ranger.nongnu.org/)
 
 Here are some other commands I run from the terminal:
 
@@ -107,7 +93,7 @@ SCREENSHOT | [scrot]()
 
 ### Previews
 Coming soon..!
-                                                            
+
 ### Citations
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
 
@@ -117,3 +103,4 @@ Also thanks to [xero](https://github.com/xero/dotfiles) for having such well doc
 Feel free to clone or fork my repo but you use these files at your own risk!
 
 I will be happy to receive details of any bugs.
+
