@@ -91,15 +91,15 @@ VIDEO PLAYER | [mpv](https://mpv.io/)
 IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
-### Previews
-Coming soon..!
+### PREVIEWS
+![](https://github.com/pyratebeard/dotfiles/master/previews/venganza.png)
 
-### Citations
+### CITATIONS
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
 
 Also thanks to [xero](https://github.com/xero/dotfiles) for having such well documented dotfiles they enabled me to make an awesome set up, and it convinced me to release my files!
 
-### Disclaimer
+### DISCLAIMER
 Feel free to clone or fork my repo but you use these files at your own risk!
 
 I will be happy to receive details of any bugs.
