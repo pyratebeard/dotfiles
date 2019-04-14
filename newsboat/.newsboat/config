@@ -1,0 +1,9 @@
+# ░█▀█░█▀▀░█░█░█▀▀░█▀▄░█▀█░█▀█░▀█▀░░
+# ░█░█░█▀▀░█▄█░▀▀█░█▀▄░█░█░█▀█░░█░░░
+# ░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░▀░▀░░▀░░░
+auto-reload yes
+color info blue black
+color listfocus_unread color5 black
+color listfocus color1 black
+save-path ~/tmp
+text-width 0

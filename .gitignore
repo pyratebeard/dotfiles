@@ -10,5 +10,9 @@ mpd/.mpd/log
 mpd/.mpd/state
 mpd/.mpd/pid
 mutt/.mutt/cache/
+newsboat/.newsboat/cache.db
+newsboat/.newsboat/history.cmdline
+newsboat/.newsboat/history.search
+newsboat/.newsboat/urls
 ncmpcpp/.ncmpcpp/error.log
 vim/.vim/bundle/
