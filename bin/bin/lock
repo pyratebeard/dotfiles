@@ -1,0 +1,2 @@
+#pkill ssh-agent ; pkill gpg-agent
+/home/pyratebeard/src/warez/i3lock-fancy-multimonitor/lock -p -n
