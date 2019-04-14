@@ -1,20 +1,10 @@
-! '##::::'##:'########::'########:'########::::'###::::'##::::'##:'##:::::::'########::'######::
-! . ##::'##:: ##.... ##: ##.....:: ##.....::::'## ##::: ##:::: ##: ##:::::::... ##..::'##... ##:
-! :. ##'##::: ##:::: ##: ##::::::: ##::::::::'##:. ##:: ##:::: ##: ##:::::::::: ##:::: ##:::..::
-! ::. ###:::: ##:::: ##: ######::: ######:::'##:::. ##: ##:::: ##: ##:::::::::: ##::::. ######::
-! :: ## ##::: ##:::: ##: ##...:::: ##...:::: #########: ##:::: ##: ##:::::::::: ##:::::..... ##:
-! : ##:. ##:: ##:::: ##: ##::::::: ##::::::: ##.... ##: ##:::: ##: ##:::::::::: ##::::'##::: ##:
-!  ##:::. ##: ########:: ########: ##::::::: ##:::: ##:. #######:: ########:::: ##::::. ######::
-! ..:::::..::........:::........::..::::::::..:::::..:::.......:::........:::::..::::::......:::
-!
-! AUTHOR  pyratebeard <root@pyratebeard.net>
-! CODE    http://github.com/pyratebeard/dotfiles
-!
-! Geometry
-!urxvt*geometry: 80x45
+! ░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█░█░░░▀█▀░█▀▀░░
+! ░▄▀▄░█░█░█▀▀░█▀▀░█▀█░█░█░█░░░░█░░▀▀█░░
+! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
-! Fonts
-urxvt*font: xft:tamzen:size=9:antialias=false
+! fonts
+urxvt*font: xft:tamzen:size=13:antialias=false, \
+			xft:Symbola:size=11:antialias=true:hinting=full
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -22,13 +12,12 @@ urxvt*bolditalicFont:
 urxvt*letterSpace: 0
 urxvt*lineSpace: -1
 
-! Interface
+! interface
 urxvt*scrollBar: false
-!urxvt*transparent: true
-!urxvt*shading: 10
+urxvt*cursorUnderline: false
 urxvt*cursorBlink: true
 
-! Clipboard
+! clipboard
 urxvt.perl-ext-common: default,clipboard,keyboard-select
 urxvt.keysym.M-Escape: perl:keyboard-select:activate
 urxvt.keysym.M-c:   perl:clipboard:copy
@@ -37,54 +26,50 @@ urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt.clipboard.copycmd:  xsel -ib
 urxvt.clipboard.pastecmd: xsel -ob
 
-! Clickable urls
-urxvt.perl-ext-common: default,matcher
+! clickable urls
+urxvt.perl-ext-common: default,matcher,resize-font
 urxvt.url-launcher: /usr/bin/xdg-open
 urxvt.matcher.button: 1
 
-! Dynamic colors
-xterm*dynamicColors: true
-urxvt*dynamicColors: on
-
-! Misc
+! misc
 urxvt.saveLines: 9999
 urxvt.iso14755: false
+urxvt.iso14755_52: false
 
-! lychnobite
+! venganza colours
 ! special
-*.foreground:   #cdcdcd
-*.background:   #121317
-*.cursorColor:  #cdcdcd
+*.foreground:   #e6e3c6
+*.background:   #212121
+*.cursorColor:  #e6e3c6
 
 ! black
-*.color0:       #282a2e
-*.color8:       #373b41
+*.color0:       #2e2c2a
+*.color8:       #3e3c3a
 
 ! red
-*.color1:       #922230
+*.color1:       #c73d2f
 *.color9:       #923a45
 
 ! green
-*.color2:       #0f8c61
-*.color10:      #198873
+*.color2:       #1dc189
+*.color10:      #2a936b
 
 ! yellow
-*.color3:       #ba883d
-*.color11:      #ba9153
+*.color3:      #a0ac6b
+*.color11:       #997358
 
 ! blue
-*.color4:       #277896
-*.color12:      #3c7e96
+*.color4:      #3a7885
+*.color12:       #366696
 
 ! magenta
-*.color5:       #4b4574
-*.color13:      #53569b
+*.color5:       #776e89
+*.color13:      #4f5090
 
 ! cyan
-*.color6:       #638b83
-*.color14:      #7dbfb8
+*.color6:      #35abbb
+*.color14:       #5a7588
 
 ! white
-*.color7:       #cdcdcd
-*.color15:      #cdcdcd
-
+*.color7:       #e6e3c6
+*.color15:      #eeeeec
