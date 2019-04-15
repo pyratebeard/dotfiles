@@ -94,7 +94,7 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 # tiny
 tiny)
 PROMPT='${COLOR_NORMAL} % : '
-RPROMPT='%~ $(GIT_PROMPT) %F{magenta}swordphish${COLOR_NORMAL}'
+RPROMPT='%~ $(GIT_PROMPT) %F{magenta}${HOSTNAME}${COLOR_NORMAL}'
 ;;
 # classic
 *)
