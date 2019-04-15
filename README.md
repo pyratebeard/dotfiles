@@ -25,13 +25,13 @@
 ```
 
 ### CONTENTS
- - [Introduction](#dotfiles)
- - [Managing](#managing)
- - [How to use](#using)
- - [Terminal](#terminal)
- - [Previews](#previews)
- - [Citations](#citations)
- - [Disclaimer](#disclaimer)
+ - [introduction](#dotfiles)
+ - [managing](#managing)
+ - [how to use](#using)
+ - [terminal](#terminal)
+ - [screenshots](#screenshots)
+ - [citations](#citations)
+ - [disclaimer](#disclaimer)
 
 ### DOTFILES
 
@@ -91,8 +91,8 @@ VIDEO PLAYER | [mpv](https://mpv.io/)
 IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
-### PREVIEWS
-![](https://raw.githubusercontent.com/pyratebeard/dotfiles/master/previews/venganza.png)
+### SCREENSHOTS
+![](https://raw.githubusercontent.com/pyratebeard/dotfiles/master/scrots/venganza.png)
 
 ### CITATIONS
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
