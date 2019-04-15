@@ -1,0 +1,6 @@
+# this is git's per-user configuration file.
+[user]
+	email = root@pyratebeard.net
+	name = pyratebeard
+	username = pyratebeard
+	signingkey = 0xC7877C715113A16D
