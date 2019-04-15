@@ -35,6 +35,18 @@ fi
 # git prompt
 GIT_PROMPT() {
   test=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+  if [ ! "$test" ]
+  then
+    case "$PROMPT_STYLE" in
+      ascii)
+        echo "$reset_color%F{cyan}▒░"
+      ;;
+      arrows)
+        echo "$reset_color%F{cyan}"
+      ;;
+    esac
+    return
+  fi
   ref=$(git name-rev --name-only HEAD | sed 's!remotes/!!' 2> /dev/null)
   dirty="" && [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && dirty=$ICO_DIRTY
   stat=$(git status | sed -n 2p)
