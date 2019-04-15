@@ -1,4 +1,4 @@
-# This is git's per-user configuration file.
+# this is git's per-user configuration file.
 [user]
 	email = root@pyratebeard.net
 	name = pyratebeard
