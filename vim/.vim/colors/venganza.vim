@@ -11,7 +11,7 @@ let g:colors_name="venganza"
 
 hi ColorColumn  term=NONE cterm=NONE ctermfg=NONE ctermbg=0
 hi Comment      term=NONE cterm=NONE ctermfg=8    ctermbg=NONE
-hi Constant     term=NONE cterm=NONE ctermfg=2    ctermbg=NONE
+hi Constant     term=NONE cterm=NONE ctermfg=3    ctermbg=NONE
 hi Conditional  term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
 hi Cursor       term=NONE cterm=NONE ctermfg=15   ctermbg=NONE
 hi CursorLine   term=NONE cterm=NONE ctermfg=NONE ctermbg=0
@@ -24,7 +24,7 @@ hi Error        term=NONE cterm=NONE ctermfg=1    ctermbg=NONE
 hi ErrorMsg     term=NONE cterm=NONE ctermfg=0    ctermbg=1
 hi FoldColumn   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Folded       term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
-hi Function     term=NONE cterm=NONE ctermfg=11   ctermbg=NONE
+hi Function     term=NONE cterm=NONE ctermfg=2    ctermbg=NONE
 hi Identifier   term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
 hi IncSearch    term=NONE cterm=NONE ctermfg=0    ctermbg=14
 hi MatchParen   term=NONE cterm=NONE ctermfg=1    ctermbg=NONE
@@ -36,12 +36,12 @@ hi Special      term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
 hi SpecialKey   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi SpellBad     term=NONE cterm=NONE ctermfg=1    ctermbg=8
 hi Statement    term=NONE cterm=NONE ctermfg=5    ctermbg=NONE
-hi StatusLine   term=NONE cterm=NONE ctermfg=0    ctermbg=2
+hi StatusLine   term=NONE cterm=NONE ctermfg=8    ctermbg=0
 hi String       term=NONE cterm=NONE ctermfg=6    ctermbg=NONE
 hi TabLineSel   term=NONE cterm=NONE ctermfg=251  ctermbg=NONE
 hi Todo         term=NONE cterm=NONE ctermfg=251  ctermbg=66
 hi Type         term=NONE cterm=NONE ctermfg=15   ctermbg=NONE
-hi VertSplit    term=NONE cterm=NONE ctermfg=6    ctermbg=NONE
+hi VertSplit    term=NONE cterm=NONE ctermfg=0    ctermbg=0
 hi Visual       term=NONE cterm=NONE ctermfg=0    ctermbg=6
 hi WarningMsg   term=NONE cterm=NONE ctermfg=242  ctermbg=NONE
 hi LineNr       term=NONE cterm=NONE ctermfg=8    ctermbg=NONE
