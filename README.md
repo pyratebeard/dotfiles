@@ -46,7 +46,7 @@ I manage my dotfiles using [stow](http://www.gnu.org/software/stow/).  The stow 
 ### USING
 Clone the repo into your home directory:
 
-`git clone http://github.com/pyratebeard/dotfiles.git ~/dotfiles`
+`git clone http://gitlab.com/pyratebeard/dotfiles.git ~/dotfiles`
 
 Enter the dotfiles directory
 
