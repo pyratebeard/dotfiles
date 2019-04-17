@@ -10,6 +10,7 @@ mpd/.mpd/log
 mpd/.mpd/state
 mpd/.mpd/pid
 mutt/.mutt/cache/
+mutt/.mutt/sent
 newsboat/.newsboat/cache.db
 newsboat/.newsboat/history.cmdline
 newsboat/.newsboat/history.search
