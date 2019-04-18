@@ -10,7 +10,7 @@ endif
 let g:colors_name="venganza"
 
 hi ColorColumn  term=NONE cterm=NONE ctermfg=NONE ctermbg=0
-hi Comment      term=NONE cterm=NONE ctermfg=8    ctermbg=NONE
+hi Comment      term=NONE cterm=NONE ctermfg=10   ctermbg=NONE
 hi Constant     term=NONE cterm=NONE ctermfg=3    ctermbg=NONE
 hi Conditional  term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
 hi Cursor       term=NONE cterm=NONE ctermfg=15   ctermbg=NONE
@@ -46,8 +46,8 @@ hi Visual       term=NONE cterm=NONE ctermfg=0    ctermbg=6
 hi WarningMsg   term=NONE cterm=NONE ctermfg=242  ctermbg=NONE
 hi LineNr       term=NONE cterm=NONE ctermfg=8    ctermbg=NONE
 hi CursorLineNr term=NONE cterm=NONE ctermfg=3    ctermbg=0
-hi Pmenu        term=NONE cterm=NONE ctermfg=7  ctermbg=8
-hi PmenuSel     term=NONE cterm=NONE ctermfg=15  ctermbg=4
+hi Pmenu        term=NONE cterm=NONE ctermfg=7    ctermbg=8
+hi PmenuSel     term=NONE cterm=NONE ctermfg=15   ctermbg=4
 hi PmenuSbar    term=NONE cterm=NONE ctermfg=238  ctermbg=14
 hi PmenuThumb   term=NONE cterm=NONE ctermfg=238  ctermbg=66
 hi Underlined   term=underline cterm=underline ctermfg=NONE   ctermbg=NONE
