@@ -10,7 +10,8 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # set caps to escape
-setxkbmap -option caps:escape
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape'
 
 # add fonts
 xset +fp /usr/share/fonts/local
