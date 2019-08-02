@@ -16,7 +16,7 @@ static const float    resize_keep_aspect_ratio= 1.03;
 ///---Offsets---///
 /*0)offsetx          1)offsety
  *2)maxwidth         3)maxheight */
-static const uint8_t offsets[] = {0,0,0,0};
+static const uint8_t offsets[] = {20,20,40,40};
 ///---Colors---///
 /*0)focuscol         1)unfocuscol
  *2)fixedcol         3)unkilcol
@@ -53,6 +53,13 @@ static void halfandcentered(const Arg *arg)
 	maxhalf(&arg2);
 	Arg arg3 = {.i=TWOBWM_TELEPORT_CENTER};
 	teleport(&arg3);
+}
+static void maxwithborders(const Arg *arg)
+{
+	Arg arg2 = {.i=TWOBWM_MAXHALF_VERTICAL_LEFT};
+	maxhalf(&arg2);
+	Arg arg3 = {.i=TWOBWM_MAXIMIZE_HORIZONTALLY};
+	maxvert_hor(&arg3);
 }
 ///---Shortcuts---///
 /* Check /usr/include/X11/keysymdef.h for the list of all keys
@@ -129,7 +136,9 @@ static key keys[] = {
     {  MOD ,              XK_Home,       resizestep_aspect, {.i=TWOBWM_RESIZE_KEEP_ASPECT_GROW}},
     {  MOD ,              XK_End,        resizestep_aspect, {.i=TWOBWM_RESIZE_KEEP_ASPECT_SHRINK}},
     // Maximize (ignore offset and no EWMH atom)
-    {  MOD ,              XK_x,          maximize,          {}},
+    //{  MOD ,              XK_x,          maximize,          {}},
+	// Maximize with borders
+    {  MOD ,              XK_x,          maxwithborders,          {.i=0}},
     // Full screen (disregarding offsets and adding EWMH atom)
     {  MOD |SHIFT ,       XK_x,          fullscreen,        {}},
     // Maximize vertically
