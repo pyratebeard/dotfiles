@@ -8,4 +8,4 @@ setopt auto_cd
 
 export PATH=$PATH:/home/pyratebeard/bin:/home/pyratebeard/.local/bin
 
-source ~/.zsh/venganza.zsh
+source ~/.zsh/futuremyth.zsh

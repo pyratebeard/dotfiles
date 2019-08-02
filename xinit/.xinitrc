@@ -10,7 +10,7 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # set caps to escape
-setxkbmap -option caps:escape
+setxkbmap -option ctrl:nocaps
 
 # add fonts
 xset +fp /usr/share/fonts/local
@@ -43,7 +43,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # set nice background.
-xsetroot -bg
+xsetroot -solid '#3d4047'
 
 # set nice pointer cursor.
 xsetroot -cursor_name left_ptr &
