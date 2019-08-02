@@ -22,6 +22,5 @@ script() {
 set -o vi
 cat ~/tmp/pyratebeard_ansi_md
 if [[ ${PTS} -lt "2" ]] ; then 
-  hashwall -b '#2e2c2a' -f '#4f5090' -s 12
   script
 fi
