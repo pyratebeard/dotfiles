@@ -45,7 +45,7 @@ set autoedit = yes
 set edit_headers = yes
 
 # display
-set index_format = "%Z %-30.30L %M %s"
+set index_format = "%4C %Z %-30.30L %M %s"
 folder-hook . "push <collapse-all>\n"
 bind index - collapse-thread
 set sort=reverse-threads
@@ -88,3 +88,6 @@ bind index,pager <F6> sidebar-next-new
 
 # toggle the visibility of the sidebar.
 bind index,pager B sidebar-toggle-visible
+
+# macros
+macro attach W "<save-entry><bol>~/tmp/<eol>"
