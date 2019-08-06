@@ -109,7 +109,7 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme venganza
+colorscheme futuremyth
 filetype off
 
 " stop unnecessary rendering

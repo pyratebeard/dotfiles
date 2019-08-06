@@ -36,40 +36,40 @@ urxvt.saveLines: 9999
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 
-! venganza colours
+! futuremyth colours
 ! special
-*.foreground:   #e6e3c6
-*.background:   #212121
-*.cursorColor:  #e6e3c6
+*.foreground:   #dceef1
+*.background:   #161719
+*.cursorColor:  #dceef1
 
 ! black
-*.color0:       #2e2c2a
-*.color8:       #3e3c3a
+*.color0:       #202224
+*.color8:       #3d4047
 
 ! red
-*.color1:       #c73d2f
-*.color9:       #923a45
+*.color1:       #8d3636
+*.color9:       #813939
 
 ! green
-*.color2:       #1dc189
-*.color10:      #2a936b
+*.color2:       #76b660
+*.color10:      #629052
 
 ! yellow
-*.color3:      #a0ac6b
-*.color11:       #997358
+*.color3:       #cd6e42
+*.color11:      #b36846
 
 ! blue
-*.color4:      #3a7885
-*.color12:       #366696
+*.color4:       #33708c
+*.color12:      #32657c
 
 ! magenta
-*.color5:       #776e89
-*.color13:      #4f5090
+*.color5:       #646086
+*.color13:      #535071
 
 ! cyan
-*.color6:      #35abbb
-*.color14:       #5a7588
+*.color6:       #62a8b2
+*.color14:      #58929b
 
 ! white
-*.color7:       #e6e3c6
-*.color15:      #eeeeec
+*.color7:       #dceef1
+*.color15:      #beced0
