@@ -92,16 +92,12 @@ IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
 ### SCREENSHOTS
-![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/venganza-01.png)
+![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/futuremyth.png)
 - zsh
 - tmux
-- rtv
-- figlet
-
-![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/venganza-02.png)
-- irssi
-- ncmpcpp
 - vim
+- cmus
+- firefox
 
 ### CITATIONS
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
