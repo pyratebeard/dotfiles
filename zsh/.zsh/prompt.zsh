@@ -69,7 +69,7 @@ GIT_PROMPT() {
       echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
     tiny)
-      echo "%F{yellow} ["${ref}${dirty}${stat}"]"
+      echo "%F{magenta} [%F{yellow}"${ref}${dirty}${stat}"%F{magenta}]"
     ;;
     *)
       echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
