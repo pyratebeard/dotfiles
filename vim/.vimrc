@@ -70,8 +70,8 @@ nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 nnoremap <C-n> :tabn<CR>
 nnoremap <C-p> :tabp<CR>
 
-" NERDTreeToggle
-nnoremap <C-j> :NERDTreeToggle<CR>
+" netrw
+nnoremap <C-j> :Ex<CR>
 
 " noh
 nnoremap <C-c> :noh<CR>
@@ -129,6 +129,10 @@ set foldminlines=99
 " highlight line
 set cursorline
 
+" netrw config
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+
 " PLUGINS
 filetype plugin indent on
 " to install from the shell run:
@@ -140,14 +144,10 @@ if 1 " boolean for plugin loading
   Plugin 'gmarik/Vundle.vim'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-fugitive'
-  Plugin 'scrooloose/nerdtree'
   Plugin 'vimwiki/vimwiki'
   Plugin 'itchyny/lightline.vim'
   Plugin 'rking/ag.vim'
   call vundle#end()
-
-  " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
-  let g:NERDTreeDirArrows = 1
 
   " git-gutter http://git.io/vimgitgutter
   let g:gitgutter_realtime = 1
