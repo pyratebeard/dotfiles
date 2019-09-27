@@ -1,0 +1,69 @@
+# ░▀█▀░█▀█░▀█▀░█▀▀░█▀▄░█▀▄░█▀█░█▀▄░█▀█░█▀█░█▀▀░░
+# ░░█░░█░█░░█░░█▀▀░█▀▄░█▀▄░█░█░█▀▄░█▀█░█░█░█░█░░
+# ░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀░░▀░▀░▀░▀░▀▀▀░░
+
+## BASIC CONFIGURATION
+
+#set font      = fixed
+set font      = -misc-tamzen-medium-r-normal-*-15-108-100-100-c-80-iso8859-1
+#set geometry  = top
+set geometry  = 250x30+570+320
+set colors	  = #dceef1 #161719 #535071 #202224 #cd6e42 #3d4047
+set border    = 3px #76b660
+set bangchar  = !
+set run_hook  = %s
+#set run_hook  = %s || (notify-send "Error: command not found";interrobang)
+#set autocomp  = 1
+set list      = true
+set last      = true
+set margin    = -80
+#set shell     = /bin/sh
+#set flags     = -c
+
+
+## COMMON BANGS AND COMPLETITON OPTIONS
+
+bang term     = urxvtc -e %s
+bang web      = firefox %s
+bang pdf      = mupdf %s
+bang man      = urxvtc -e man %s
+bang ddg      = firefox https://duckduckgo.com/?q=%s
+bang calc     = echo "interrobang ignored \"%s\""
+bang ?        = echo "interrobang ignored \"%s\""
+
+tab default   = percontation "%s" %s | sort -u
+tab calc      = str="%s%s"; echo "!calc $(echo ${str#\!calc} | bc -l)"
+tab ?         = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.interrobangrc
+
+
+## EXAMPLES OF COMPLEX COMPLETION OR SCRIPTING
+
+#####
+## percontation can find .desktop files:
+##   path: (default) show binaries in $PATH
+##   desktop: list desktop files that match
+##   desktop+: same as above, plus substring matching with comments
+##  NOTE: see the desktop bang definition below
+## compgen uses bash's default completion
+#tab default   = percontation desktop path "%s" %s | sort -u
+#tab default   = percontation desktop+ path "%s" %s | sort -u
+#tab default   = compgen -P "%s" -cf %s
+
+#####
+## Example logout tool:
+##   uncomment the following bang and tab lines
+#bang logout   = case "%s" in shutdown) sudo systemctl poweroff ;; sleep) sudo systemctl suspend ;; reboot) sudo systemctl reboot ;; logout) killall xinit ;; cancel) exit ;; esac
+
+#tab logout    = echo -e "cancel\nshutdown\nsleep\nreboot\nlogout" | grep "^%s%s"
+
+#####
+## desktop bangs
+##   The first version ignores any parameters to the desktop file and
+##     just executes the associated binary
+##   The second version passes parameters and parses the desktop file
+##     properly, but requires an external tool to do so.  This tool
+##     is not included in the interrobang package.
+#bang desktop  = ARG="%s"; FILE=$(find /usr/share/applications/ -name ${ARG%% *}.desktop | head -1); $(awk '/^Exec=/ {sub(/Exec=/,"",$1); print $1;}' $FILE)
+
+#bang desktop  = ARG="%s"; FILE=$(find /usr/share/applications/ -name ${ARG%% *}.desktop | head -1); PARAM=${ARG#* }; desktop-exec $FILE $PARAM
+

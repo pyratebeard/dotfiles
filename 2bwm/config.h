@@ -43,7 +43,7 @@ static const uint8_t borders[] = {4,8,4,4};
 #define LOOK_INTO "WM_NAME"
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
-static const char *menucmd[]   = { "gmrun", NULL };
+static const char *menucmd[]   = { "interrobang", NULL };
 static const char *terminal[]  = { "urxvtc", NULL };
 static const char *lock[]  = { "/home/pyratebeard/bin/lock", NULL };
 ///--Custom foo---///
