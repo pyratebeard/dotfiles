@@ -5,7 +5,7 @@
 ## BASIC CONFIGURATION
 
 #set font      = fixed
-set font      = -misc-tamzen-medium-r-normal-*-15-108-100-100-c-80-iso8859-1
+set font      = -misc-tamzen-medium-r-normal-*-17-120-100-100-c-0-iso8859-1
 #set geometry  = top
 set geometry  = 250x30+570+320
 set colors	  = #dceef1 #161719 #535071 #202224 #cd6e42 #3d4047
