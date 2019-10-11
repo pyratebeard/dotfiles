@@ -42,7 +42,6 @@ alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙──�
 alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
 alias gifview="gifview -a"
 alias reboot="sudo reboot"
-alias connect="sudo wpa_supplicant -B -i wlp3s0 -c"
 alias vh="nc vhbin.net 9999"
 alias kb="keybase"
 alias dd="dd status=progress"

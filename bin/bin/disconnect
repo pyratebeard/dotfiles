@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+WIFI_DEV="wlp3s0"
+
+killit() {
+	if $(pidof ${1} >/dev/null) ; then
+		echo "killing $1"
+		sudo kill -9 $(pidof ${1}) 
+	fi
+}
+
+sudo ip link set ${WIFI_DEV} down
+killit wpa_supplicant 
+killit dhcpcd
+killit openvpn
