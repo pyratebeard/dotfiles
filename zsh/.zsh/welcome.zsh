@@ -16,7 +16,7 @@ audio_vol() {
 # script run on first terminal
 script() {
   audio_vol
-  tmux new -s main
+  tmux new -s main -n '~'
 }
 
 set -o vi
