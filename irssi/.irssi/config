@@ -31,6 +31,15 @@ servers = (
     use_tls = "no";
     tls_verify = "no";
     autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "rizon";
+    password = "pyratebeard/rizon";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
   }
 );
 
@@ -38,17 +47,18 @@ chatnets = {
   nixers = { type = "IRC"; nick = "beard"; };
   freenode = { type = "IRC"; };
   geekshed = { type = "IRC"; };
+  rizon = { type = "IRC"; };
 };
 
 channels = ( { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; } );
 
-aliases = { 
-	emote = "exec -o emote";
-	ascii = "exec -o toilet -f future --irc";
-	rusto = "exec -o toilet -f rusto --irc";
-	rustofat = "exec -o toilet -f rustofat --irc";
-	gay = "exec -o toilet -f term --gay --irc";
-	toilet = "exec -o toilet";
+aliases = {
+  emote = "exec -o emote";
+  ascii = "exec -o toilet -f future --irc";
+  rusto = "exec -o toilet -f rusto --irc";
+  rustofat = "exec -o toilet -f rustofat --irc";
+  gay = "exec -o toilet -f term --gay --irc";
+  toilet = "exec -o toilet";
 };
 
 settings = {
