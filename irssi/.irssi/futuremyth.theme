@@ -274,13 +274,10 @@ formats = {
   };
   "Irssi::Script::ichat" = { ichat_timestamp = "%Y>%W>      $1 %y>%n"; };
   "Irssi::Script::adv_windowlist" = { 
-    awl_viewer = "no";
     awl_mouse = "no";
     awl_display_key = "%C$H $N $C $S";
     awl_display_key_active = "$H %g$N $C $S";
     awl_display_header = "%M$C";
-    awl_placement = "top";
     awl_separator = " ";
-    awl_shared_sbar = "OFF";
 	};
 };

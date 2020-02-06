@@ -78,6 +78,12 @@ settings = {
     autolog_path = "/var/log/irc/$tag/$0.log";
     autolog = "yes";
   };
+  "perl/core/scripts" = {
+    splitlong_max_length = "60";
+    awl_viewer = "no";
+    awl_placement = "top";
+    awl_shared_sbar = "OFF";
+  };
 };
 logs = { };
 statusbar = {
