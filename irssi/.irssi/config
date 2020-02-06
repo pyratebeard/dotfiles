@@ -8,7 +8,7 @@ servers = (
   {
     address = "pyratebouncer";
     chatnet = "nixers";
-    password = "pyratebeard/nixers";
+    password = "";
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
@@ -17,7 +17,7 @@ servers = (
   {
     address = "pyratebouncer";
     chatnet = "geekshed";
-    password = "pyratebeard/geekshed";
+    password = "";
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
@@ -26,7 +26,7 @@ servers = (
   {
     address = "pyratebouncer";
     chatnet = "freenode";
-    password = "pyratebeard/freenode";
+    password = "";
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
@@ -35,7 +35,7 @@ servers = (
   {
     address = "pyratebouncer";
     chatnet = "rizon";
-    password = "pyratebeard/rizon";
+    password = "";
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
@@ -45,9 +45,9 @@ servers = (
 
 chatnets = {
   nixers = { type = "IRC"; nick = "beard"; };
-  freenode = { type = "IRC"; };
-  geekshed = { type = "IRC"; };
-  rizon = { type = "IRC"; };
+  freenode = { type = "IRC"; nick = "pyratebeard"; };
+  geekshed = { type = "IRC"; nick = "pyratebeard"; };
+  rizon = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = ( { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; } );
@@ -81,16 +81,94 @@ settings = {
 };
 logs = { };
 statusbar = {
+  items = {
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    topic = " $topic";
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+  };
   default = {
     window = {
+      disabled = "yes";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
       items = {
         barstart = { priority = "100"; };
+        time = { };
         user = { };
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "0";
+      visible = "inactive";
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+      disabled = "yes";
+    };
+    awl_0 = {
+      placement = "top";
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
