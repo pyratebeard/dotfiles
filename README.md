@@ -6,7 +6,7 @@
 
     ABOUT     custom Linux configuration files
     AUTHOR    pyratebeard <root@pyratebeard.net>
-    CODE      https://github.com/pyratebeard/dotfiles
+    CODE      https://gitlab.com/pyratebeard/dotfiles
 
     2bwm            > window manager
     cmus            > music player
