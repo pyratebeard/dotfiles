@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+filename=$1
+
+/usr/bin/scrot -s $HOME/tmp/$(date +%Y%m%d)-${filename}.png
