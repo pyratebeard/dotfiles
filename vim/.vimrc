@@ -70,8 +70,8 @@ nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 nnoremap <C-n> :tabn<CR>
 nnoremap <C-p> :tabp<CR>
 
-" netrw
-nnoremap <C-j> :Ex<CR>
+" nerdtree
+nnoremap <C-j> :NERDTreeToggle<CR>
 
 " noh
 nnoremap <C-c> :noh<CR>
@@ -129,10 +129,6 @@ set foldminlines=99
 " highlight line
 set cursorline
 
-" netrw config
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-
 " PLUGINS
 filetype plugin indent on
 " to install from the shell run:
@@ -143,11 +139,17 @@ if 1 " boolean for plugin loading
   call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   Plugin 'airblade/vim-gitgutter'
-  Plugin 'tpope/vim-fugitive'
+  Plugin 'scrooloose/nerdtree'
   Plugin 'vimwiki/vimwiki'
   Plugin 'itchyny/lightline.vim'
   Plugin 'rking/ag.vim'
+  Plugin 'ajh17/VimCompletesMe'
+  Plugin 'mhinz/vim-signify'
   call vundle#end()
+
+  " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
+  let g:NERDTreeDirArrows = 1
+  let g:NERDTreeShowHidden = 1
 
   " git-gutter http://git.io/vimgitgutter
   let g:gitgutter_realtime = 1
@@ -202,6 +204,30 @@ if 1 " boolean for plugin loading
   \   'mode': 'WizMode',
   \ },
   \ }
+
+  " vimcompletesme
+" omnifuncs
+augroup omnifuncs
+  au!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  " use python3: https://stackoverflow.com/questions/28043652/vim-unknown-function-pythoncompletecomplete
+  autocmd FileType python setlocal omnifunc=python3complete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+augroup end
+
+" completions
+let b:vcm_tab_complete = 'omni'
+set omnifunc=syntaxcomplete#Complete
+" select the completion with enter
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" close preview on completion complete
+augroup completionhide
+  au!
+  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup end
 
   function! WizMod()
     return &ft =~ 'help\|vimfiler' ? '' : &modified ? '»' : &modifiable ? '' : ''
