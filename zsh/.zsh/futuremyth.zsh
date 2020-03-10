@@ -14,7 +14,7 @@ then
     echo -en "\e]PC32657c" #blue
     echo -en "\e]P5646086" #darkmagenta
     echo -en "\e]PD535071" #magenta
-    echo -en "\e]P662a086" #darkcyan
+    echo -en "\e]P662a8b2" #darkcyan
     echo -en "\e]PE58929b" #cyan
     echo -en "\e]P7dceef1" #lightgrey
     echo -en "\e]PFbeced0" #white
