@@ -69,3 +69,6 @@ l() {
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
+tmush() {
+	ssh -t "$@" 'tmux attach || tmux new'
+}
