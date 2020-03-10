@@ -29,6 +29,7 @@ bang pdf      = zathura %s
 bang man      = urxvtc -e man %s
 bang ddg      = firefox https://duckduckgo.com/?q="%s"
 bang calc     = urxvtc -e bc
+bang buku     = urxvtc -e buku -a %s
 bang ?        = echo "interrobang ignored \"%s\""
 
 tab default   = percontation "%s" %s | sort -u
