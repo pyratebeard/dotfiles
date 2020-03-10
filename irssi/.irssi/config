@@ -16,7 +16,16 @@ servers = (
   },
   {
     address = "pyratebouncer";
-    chatnet = "geekshed";
+    chatnet = "rizon";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "snoonet";
     password = "";
     port = "1666";
     use_tls = "no";
@@ -34,7 +43,7 @@ servers = (
   },
   {
     address = "pyratebouncer";
-    chatnet = "rizon";
+    chatnet = "geekshed";
     password = "";
     port = "1666";
     use_tls = "no";
@@ -45,9 +54,10 @@ servers = (
 
 chatnets = {
   nixers = { type = "IRC"; nick = "beard"; };
+  rizon = { type = "IRC"; nick = "pyratebeard"; };
+  snoonet = { type = "IRC"; nick = "pyratebeard"; };
   freenode = { type = "IRC"; nick = "pyratebeard"; };
   geekshed = { type = "IRC"; nick = "pyratebeard"; };
-  rizon = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = ( { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; } );
