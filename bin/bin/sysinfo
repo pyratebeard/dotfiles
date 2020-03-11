@@ -14,9 +14,9 @@ battery=/sys/class/power_supply/BAT1
 distro="arch linux"
 kernel=$(uname -r)
 pkgs=$(pacman -Qqs | wc -l)
-colors='boneyard'
-font='tamzen 9'
-wm='awesome'
+colors='futuremyth'
+font='tamzen'
+wm='2bwm'
 upgrade=$(sudo pacman -Sy >/dev/null ; pacman -Qu | wc -l)
 
 #█▓▒░ progress bar
