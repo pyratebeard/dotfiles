@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # vars
 WIFI_DEV="wlp3s0"
-CONNECTION_FILE=$1
+CONNECTION_FILE_PATH="$HOME/lib/doc/wifi/"
+CONNECTION_FILE=$CONNECTION_FILE_PATH$1
 CONNECTION=$(echo ${CONNECTION_FILE} | awk -F\/ '{print $NF}')
 
 if [ ! $1 ] ; then
@@ -33,19 +34,30 @@ fi
 
 # get an ip
 echo "starting dhcpcd"
-sudo dhcpcd ${WIFI_DEV} >/dev/null 2>&1
+sudo dhcpcd -b -4 ${WIFI_DEV} >/dev/null 2>&1
 
-# when remote bring ip vpn
-if [ ${CONNECTION} != "home" ] ; then
+function use_vpn() {
 	echo "not at home, starting vpn"
+	sleep 20
 	sudo openvpn --config lib/key/wht-rht-obj.ovpn --daemon >/dev/null 2>&1
-	sudo systemd-tty-ask-password-agent >/dev/null
-	sleep 5
+	sudo systemd-tty-ask-password-agent
+	echo "waiting for vpn..."
+	sleep 60
+	sudo cp $HOME/tmp/opendns /etc/resolv.conf
+	sudo ip route add 192.168.0.0/24 via 10.8.0.13 dev tun0
+	while :
 	ping -q -c1 fortkickass >/dev/null
 	if [ $? -eq 0 ] ; then
 		echo "vpn is up"
+		break
 	else
-		echo "vpn is not up... disconnecting now"
-		$HOME/bin/disconnect
+		echo "still waiting..."
+		sleep 2
 	fi	
-fi
+}
+# when remote bring ip vpn
+case "${CONNECTION}" in
+	home) ;; #|artoo) ;;
+	*) use_vpn ;;
+esac
+
