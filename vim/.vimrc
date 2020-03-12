@@ -138,7 +138,7 @@ if 1 " boolean for plugin loading
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
-  Plugin 'airblade/vim-gitgutter'
+  Plugin 'tpope/vim-fugitive'
   Plugin 'scrooloose/nerdtree'
   Plugin 'vimwiki/vimwiki'
   Plugin 'itchyny/lightline.vim'
