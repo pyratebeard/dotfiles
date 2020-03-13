@@ -1,0 +1,13 @@
+#!/usr/bin/zsh
+
+ipCmd=$(dig +short myip.opendns.com @resolver1.opendns.com)
+ipFile="/tmp/current_ip"
+
+if [ ! -f $ipFile ] ; then
+	echo "$ipCmd" > $ipFile
+fi
+
+if [[ $ipCmd != $(cat $ipFile) ]] ; then
+	echo "vpn ip has changed to $ipCmd" | mutt -s "vpn ip" root@pyratebeard.net
+	echo "$ipCmd" > $ipFile
+fi
