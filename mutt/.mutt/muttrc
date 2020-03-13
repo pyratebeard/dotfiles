@@ -23,7 +23,7 @@ set certificate_file = "~/.mutt/certificates"
 set folder = imaps://imap.domain
 set spoolfile = +INBOX
 set record  = "~/.mutt/sent"
-mailboxes = =INBOX =INBOX/action
+mailboxes = =INBOX
 set mail_check = 120
 
 # colours
