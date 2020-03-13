@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+
+if [ "$1" = "" ] ; then
+	echo "which language, gb or us?"
+	exit 0
+else
+	lang=$1
+fi
+
+kill $(pidof xcape)
+setxkbmap -option
+setxkbmap -option ctrl:nocaps $lang
+xcape -e 'Control_L=Escape'
+
+echo "keyboard is switched to $lang"
