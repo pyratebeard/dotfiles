@@ -8,7 +8,7 @@
 set font      = -misc-tamzen-medium-r-normal-*-17-120-100-100-c-0-iso8859-1
 #set geometry  = top
 set geometry  = 500x30+20+20
-set colors	  = #dceef1 #202224 #535071 #202224 #cd6e42 #3d4047
+set colors	  = #dceef1 #202224 #535071 #202224 #cd6e42 #42454d
 set border    = 3px #76b660
 set bangchar  = !
 set run_hook  = %s

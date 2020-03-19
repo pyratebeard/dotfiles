@@ -36,40 +36,5 @@ urxvt.saveLines: 9999
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 
-! futuremyth colours
-! special
-*.foreground:   #dceef1
-*.background:   #161719
-*.cursorColor:  #dceef1
+#include "/home/pyratebeard/dot/urxvt-colors/futuremyth"
 
-! black
-*.color0:       #202224
-*.color8:       #3d4047
-
-! red
-*.color1:       #8d3636
-*.color9:       #813939
-
-! green
-*.color2:       #76b660
-*.color10:      #629052
-
-! yellow
-*.color3:       #cd6e42
-*.color11:      #b36846
-
-! blue
-*.color4:       #33708c
-*.color12:      #32657c
-
-! magenta
-*.color5:       #646086
-*.color13:      #535071
-
-! cyan
-*.color6:       #62a8b2
-*.color14:      #58929b
-
-! white
-*.color7:       #dceef1
-*.color15:      #beced0

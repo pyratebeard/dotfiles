@@ -1,0 +1,37 @@
+! futuremyth colours
+! special
+*.foreground:   #dceef1
+*.background:   #161719
+*.cursorColor:  #dceef1
+
+! black
+*.color0:       #202224
+*.color8:       #42454d
+
+! red
+*.color1:       #8d3636
+*.color9:       #813939
+
+! green
+*.color2:       #7cc464
+*.color10:      #6ca758
+
+! yellow
+*.color3:       #cd6e42
+*.color11:      #b36846
+
+! blue
+*.color4:       #408eb1
+*.color12:      #33708c
+
+! magenta
+*.color5:       #5f5a86
+*.color13:      #535071
+
+! cyan
+*.color6:       #62a8b2
+*.color14:      #58929b
+
+! white
+*.color7:       #dceef1
+*.color15:      #a2b0b1
