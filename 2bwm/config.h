@@ -61,6 +61,21 @@ static void maxwithborders(const Arg *arg)
 	Arg arg3 = {.i=TWOBWM_MAXIMIZE_HORIZONTALLY};
 	maxvert_hor(&arg3);
 }
+///---Sloppy focus behavior---///
+/*
+ * Command to execute when switching from sloppy focus to click to focus
+ * The strings "Sloppy" and "Click" will be passed as the last argument
+ * If NULL this is ignored
+ */
+static const char *sloppy_switch_cmd[] = {};
+//static const char *sloppy_switch_cmd[] = { "notify-send", "toggle sloppy", NULL };
+static void toggle_sloppy(const Arg *arg)
+{
+	is_sloppy = !is_sloppy;
+	if (arg->com != NULL && LENGTH(arg->com) > 0) {
+		start(arg);
+	}
+}
 ///---Shortcuts---///
 /* Check /usr/include/X11/keysymdef.h for the list of all keys
  * 0x000000 is for no modkey
@@ -199,6 +214,7 @@ static key keys[] = {
     {  MOD |CONTROL,      XK_q,          twobwm_exit,       {.i=0}},
     {  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},
     {  MOD ,              XK_space,      halfandcentered,   {.i=0}},
+    {  MOD ,              XK_s,          toggle_sloppy,     {.com = sloppy_switch_cmd}},
     // Change current workspace
        DESKTOPCHANGE(     XK_1,                             0)
        DESKTOPCHANGE(     XK_2,                             1)
