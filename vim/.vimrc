@@ -145,6 +145,7 @@ if 1 " boolean for plugin loading
   Plugin 'rking/ag.vim'
   Plugin 'ajh17/VimCompletesMe'
   Plugin 'mhinz/vim-signify'
+  Plugin 'junegunn/goyo.vim'
   call vundle#end()
 
   " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
