@@ -80,6 +80,9 @@ nnoremap <C-c> :noh<CR>
 nnoremap <F8> :setl noai<CR>
 nnoremap <F9> :setl ai<CR>
 
+" goyo
+nnoremap <C-w>g :Goyo<CR>
+
 " columns
 " 80 soft 120 hard
 let &colorcolumn="80"
