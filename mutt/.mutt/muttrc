@@ -28,7 +28,7 @@ set mail_check = 120
 
 # colours
 color normal default default
-color indicator magenta black
+color indicator cyan black
 color tree default default
 color status white black
 

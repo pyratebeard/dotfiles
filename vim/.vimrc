@@ -112,7 +112,7 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme futuremyth
+colorscheme downtime
 filetype off
 
 " stop unnecessary rendering

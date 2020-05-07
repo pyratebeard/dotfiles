@@ -44,7 +44,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # set nice background.
-xsetroot -solid '#42454d'
+xsetroot -solid '#4e495a'
 
 # set nice pointer cursor.
 xsetroot -cursor_name left_ptr &

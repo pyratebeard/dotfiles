@@ -5,5 +5,5 @@
 	username = pyratebeard
 	signingkey = 0xC7877C715113A16D
 [color "status"]
-	untracked = blue
-	changed = cyan
+	untracked = blue bold
+	changed = blue
