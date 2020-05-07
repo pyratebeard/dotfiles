@@ -242,8 +242,8 @@ augroup end
   endfunction
 
   function! WizGit()
-    if &ft !~? 'help\|vimfiler' && exists("*fugitive#head")
-      return fugitive#head()
+    if &ft !~? 'help\|vimfiler' && exists("*FugitiveHead")
+      return FugitiveHead()
     endif
     return ''
   endfunction
