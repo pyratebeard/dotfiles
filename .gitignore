@@ -5,6 +5,7 @@ cmus/.cmus/search-history
 cmus/.cmus/playlists
 cmus/.cmus/autosave
 irssi/.irssi/away.log
+irssi/.irssi/config.autosave
 mpd/.config/mpd/mpd.log
 mpd/.mpd/database
 mpd/.mpd/log
@@ -13,6 +14,7 @@ mpd/.mpd/pid
 mutt/.mutt/cache/
 mutt/.mutt/sent
 newsboat/.newsboat/cache.db
+newsboat/.newsboat/cache.db.lock
 newsboat/.newsboat/history.cmdline
 newsboat/.newsboat/history.search
 newsboat/.newsboat/urls
