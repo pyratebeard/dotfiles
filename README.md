@@ -92,6 +92,17 @@ IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
 ### SCREENSHOTS
+
+#### downtime theme
+![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/downtime.png)
+- zsh
+- tmux
+- vim
+- cava
+- rtv
+- firefox
+
+#### futuremyth theme
 ![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/futuremyth.png)
 - zsh
 - tmux
