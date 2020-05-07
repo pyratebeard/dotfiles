@@ -19,8 +19,24 @@ script() {
   tmux new -s main -n '~'
 }
 
+getnews() {
+	curl 'https://newsapi.org/v2/top-headlines' -s -G \
+	-d sources=$1 \
+	-d pageSize=5 \
+	-d apiKey=$NEWS_API_KEY | jq -r '.articles[] | .title, .url, ""' | tr -d '\t'
+}
+
 set -o vi
 cat ~/tmp/pyratebeard_ansi_md
+
 if [[ ${PTS} -lt "2" ]] ; then 
   script
+fi
+
+if [[ ${TMUX_PANE} == '%0' ]] ; then
+	echo -e "\n// WELCOME $(whoami | tr 'a-z' 'A-Z')\n"
+	echo -e "\nIRISH NEWS HEADLINES:"
+	getnews the-irish-times
+	echo -e "\nHACKER NEWS HEADLINES:"
+	getnews hacker-news
 fi
