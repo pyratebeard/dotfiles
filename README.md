@@ -94,7 +94,7 @@ SCREENSHOT | [scrot]()
 ### SCREENSHOTS
 
 #### downtime theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/downtime.png)
+![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/downtime.png)
 - zsh
 - tmux
 - vim
@@ -103,7 +103,7 @@ SCREENSHOT | [scrot]()
 - firefox
 
 #### futuremyth theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/public/scrots/futuremyth.png)
+![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/futuremyth.png)
 - zsh
 - tmux
 - vim
