@@ -189,7 +189,7 @@ if 1 " boolean for plugin loading
   " lightline
   set laststatus=2
   let g:lightline = {
-  \ 'colorscheme': 'venganza',
+  \ 'colorscheme': 'downtime',
   \ 'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ] ],
