@@ -50,6 +50,7 @@ alias docker-compose="sudo docker-compose"
 alias ncmpcpp="ncmpcpp -q"
 alias song="ncmpcpp --current-song='$7%a - $8{%n} {%t} $R [{%l}] ' | cut -d '%' -f 1"
 alias jobs="jobs -l"
+alias dnf="sudo dnf"
 
 email() {
   echo $3 | mutt -s $2 $1
