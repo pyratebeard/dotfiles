@@ -2,6 +2,9 @@
 # ░▄▀░░▀▀█░█▀█░░
 # ░▀▀▀░▀▀▀░▀░▀░░
 
+# set hostname
+HOSTNAME=$(hostname -s)
+
 # load configs
 for config (~/.zsh/*.zsh) source $config
 setopt auto_cd
