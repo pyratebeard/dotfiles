@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WIFI_DEV="wlp3s0"
+WIFI_DEV=$(iw dev | awk '$1=="Interface"{print $2}')
 
 killit() {
 	if $(pidof ${1} >/dev/null) ; then
