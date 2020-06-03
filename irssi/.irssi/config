@@ -7,12 +7,21 @@ utf8 = "on";
 servers = (
   {
     address = "pyratebouncer";
-    chatnet = "nixers";
+    chatnet = "unixchat";
     password = "";
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
     autoconnect = "yes";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "freenode";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
   },
   {
     address = "pyratebouncer";
@@ -26,15 +35,6 @@ servers = (
   {
     address = "pyratebouncer";
     chatnet = "snoonet";
-    password = "";
-    port = "1666";
-    use_tls = "no";
-    tls_verify = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "pyratebouncer";
-    chatnet = "freenode";
     password = "";
     port = "1666";
     use_tls = "no";
@@ -67,20 +67,40 @@ servers = (
     use_tls = "no";
     tls_verify = "no";
     autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "darkscience";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "blitzed";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
   }
 );
 
 chatnets = {
-  nixers = { type = "IRC"; nick = "beard"; };
+  unixchat = { type = "IRC"; nick = "beard"; };
+  freenode = { type = "IRC"; nick = "pyratebeard"; };
   rizon = { type = "IRC"; nick = "pyratebeard"; };
   snoonet = { type = "IRC"; nick = "pyratebeard"; };
-  freenode = { type = "IRC"; nick = "pyratebeard"; };
   geekshed = { type = "IRC"; nick = "pyratebeard"; };
   quakenet = { type = "IRC"; nick = "pyratebeard"; };
   undernet = { type = "IRC"; nick = "pyratebeard"; };
+  darkscience = { type = "IRC"; nick = "pyratebeard"; };
+  blitzed = { type = "IRC"; nick = "pyratebeard"; };
 };
 
-channels = ( { name = "#unix"; chatnet = "nixers"; autojoin = "Yes"; } );
+channels = ( { name = "#unix"; chatnet = "unixchat"; autojoin = "Yes"; } );
 
 aliases = {
   emote = "exec -o emote";
