@@ -95,11 +95,11 @@ abstracts = {
 
   # private message in query
   # privmsgnick = "{msgnick $*}";
-  privmsgnick = "%g<%N %|";
+  privmsgnick = "%g:%N %|";
 
   # own private message in query
   #ownprivmsgnick = "{privmsgnick $*}";
-  ownprivmsgnick = "%r>%N %|";
+  ownprivmsgnick = "%r:%N %|";
   #ownprivnick = "$*";
 
 
