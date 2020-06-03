@@ -1,2 +1,2 @@
 #pkill ssh-agent ; pkill gpg-agent
-i3lock -u -c \#3d4047
+i3lock -u -c \#4e495a
