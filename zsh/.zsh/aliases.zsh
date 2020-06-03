@@ -51,6 +51,11 @@ alias ncmpcpp="ncmpcpp -q"
 alias song="ncmpcpp --current-song='$7%a - $8{%n} {%t} $R [{%l}] ' | cut -d '%' -f 1"
 alias jobs="jobs -l"
 alias dnf="sudo dnf"
+alias irc="TERM=screen dtach -A /tmp/irc irssi"
+
+alias -s md=vim
+alias -s {png,jpg,jpeg}=sxiv
+alias -s pdf=zathura
 
 email() {
   echo $3 | mutt -s $2 $1
@@ -72,4 +77,13 @@ md() {
 }
 tmush() {
 	ssh -t "$@" 'tmux attach || tmux new'
+}
+
+screencast() {
+	RESOLUTION=$(xrandr | grep "*" | awk '{print $1}')
+	ffmpeg -f x11grab -s $RESOLUTION -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y $HOME/lib/vid/recordings/screencasts/$(date +%Y%m%d)-${1}
+}
+
+raise() {
+	$(hidden -c | awk -F\: '{print $2}' | tr -d "'")
 }
