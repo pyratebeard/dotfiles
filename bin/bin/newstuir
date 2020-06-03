@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source ~/src/warez/tuir/bin/activate
+screen=TERM tuir $1
+

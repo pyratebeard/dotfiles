@@ -2,8 +2,42 @@
 # ░█░█░█▀▀░█▄█░▀▀█░█▀▄░█░█░█▀█░░█░░░
 # ░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░▀░▀░░▀░░░
 auto-reload yes
-color info blue black
-color listfocus_unread color5 black
-color listfocus color1 black
+
+browser w3m
 save-path ~/tmp
+notify-program notify-send
+player mpv
+
+# interface
 text-width 0
+max-items 20
+
+# interface colours
+color info blue black
+color listfocus_unread color6 color0
+color listfocus color12 color0
+
+# feed headers colours
+highlight feedlist ".*-----.*" color13 default
+
+# article colours
+highlight article "^Feed:.*" color5 default
+highlight article "^Title:.*" color6 default
+highlight article "^Author:.*" color4 default
+highlight article "^Date:.*" color5 default
+highlight article "^Link:.*" color10 default
+
+# key bindings
+bind-key j down
+bind-key k up
+bind-key h quit
+bind-key l open
+
+# macros
+macro ; open-in-browser
+macro m set browser "mpv %u" ; open-in-browser ; set browser w3m
+macro r set browser "~/bin/newstuir %u" ; open-in-browser ; set browser w3m
+
+# podboat
+download-path "~/lib/aud/podcasts/%h/%n"
+max-downloads 3

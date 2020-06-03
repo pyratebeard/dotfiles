@@ -1,0 +1,43 @@
+---------------blogs
+https://log.pyratebeard.net/index.xml "~pyratebeard" "blogs"
+http://feeds.xero.nu/rss/blog/newest "~xero" "blogs"
+https://venam.nixers.net/blog/feed.xml "~venam" "blogs"
+https://lonesysadmin.net/feed/ "~lonesysadmin" "blogs"
+http://feeds.feedburner.com/blogspot/UGWd?format-xml "~pcg" "blogs" "comics"
+
+---------newsletters
+https://nixers.net/newsletter/feed.xml "~nixers" "newsletters"
+https://www.archlinux.org/feeds/news/ "~arch" "newsletters"
+https://pluralistic.net/feed/ "~cory - pluralistic" "newsletters"
+https://fedoramagazine.org/feed/ "~fedora magazine" "newsletters"
+https://itsfoss.com/feed/ "~it's foss" "newsletters"
+
+--------------reddit
+https://reddit.com/r/vim.rss "~vim" "reddit"
+https://reddit.com/r/zsh.rss "~zsh" "reddit"
+https://reddit.com/r/privacy.rss "~privacy" "reddit"
+https://reddit.com/r/opensource.rss "~opensource" "reddit"
+https://reddit.com/r/comicbooks.rss "~comicbooks" "reddit" "comics"
+
+------------podcasts
+https://podcast.nixers.net/feed/feed.xml "~nixers" "podcasts"
+https://error.show/rss "~user error" "podcasts"
+https://selfhosted.show/rss "~selfhosted" "podcasts"
+http://www.2600.com/oth-broadband.xml "~off the hook" "podcasts"
+http://feeds.feedburner.com/doctorow_podcast "~cory doctorow" "podcasts"
+
+-------------youtube
+https://invidio.us/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
+https://invidio.us/feed/channel/UCfhSB16X9MXhzSFe_H7XbHg "~bryan jenks" "youtube"
+https://invidio.us/feed/channel/UCXPHFM88IlFn68OmLwtPmZA "~greg hurrell" "youtube"
+https://invidio.us/feed/channel/UC2eYFnH61tmytImy1mTYvhA "~luke smith" "youtube"
+https://invidio.us/feed/channel/UCeUMZ4t3ezEJFhXHJg9rshQ "~bangertv" "youtube"
+https://invidio.us/feed/channel/UCRcgy6GzDeccI7dkbbBna3Q "~lemmino" "youtube"
+https://invidio.us/feed/channel/UCpFFItkfZz1qz5PpHpqzYBw "~nexpo" "youtube"
+
+---------------music
+https://media.defcon.org/DEF%20CON%20rss/defcon-18-music.rss "~defcon" "music"
+
+----------------code
+https://www.kernel.org/feeds/kdist.xml "~kernel releases" "code"
+https://code.briarproject.org/briar/briar/-/tags?format=atom "~briar - tags" "code"

@@ -17,7 +17,7 @@ newsboat/.newsboat/cache.db
 newsboat/.newsboat/cache.db.lock
 newsboat/.newsboat/history.cmdline
 newsboat/.newsboat/history.search
-newsboat/.newsboat/urls
+newsboat/.newsboat/queue
 ncmpcpp/.ncmpcpp/error.log
 tmux/.tmux/plugins/
 vim/.vim/bundle/
