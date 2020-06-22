@@ -52,6 +52,7 @@ alias song="ncmpcpp --current-song='$7%a - $8{%n} {%t} $R [{%l}] ' | cut -d '%' 
 alias jobs="jobs -l"
 alias dnf="sudo dnf"
 alias irc="TERM=screen dtach -A /tmp/irc irssi"
+alias ap="ansible-playbook"
 
 alias -s md=vim
 alias -s {png,jpg,jpeg}=sxiv
@@ -75,8 +76,11 @@ l() {
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
+webman() {
+	curl "$@" | pandoc -s -f html -t man | man -l -
+}
 tmush() {
-	ssh -t "$@" 'tmux attach || tmux new'
+	ssh -t "$@" 'tmux attach || tmux new' || ssh "$@"
 }
 
 screencast() {
@@ -85,5 +89,5 @@ screencast() {
 }
 
 raise() {
-	$(hidden -c | awk -F\: '{print $2}' | tr -d "'")
+	$(hidden -c | awk -F\: '{print $NF}' | tr -d "'")
 }
