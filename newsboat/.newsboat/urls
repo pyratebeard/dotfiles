@@ -25,6 +25,8 @@ https://error.show/rss "~user error" "podcasts"
 https://selfhosted.show/rss "~selfhosted" "podcasts"
 http://www.2600.com/oth-broadband.xml "~off the hook" "podcasts"
 http://feeds.feedburner.com/doctorow_podcast "~cory doctorow" "podcasts"
+http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss "~priv, sec, osint" "podcasts"
+https://feeds.feedburner.com/xplainthexmen "~x-plain the x-men" "podcasts"
 
 -------------youtube
 https://invidio.us/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
