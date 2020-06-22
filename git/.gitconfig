@@ -6,4 +6,4 @@
 	signingkey = 0xC7877C715113A16D
 [color "status"]
 	untracked = blue bold
-	changed = blue
+	changed = yellow bold
