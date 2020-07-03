@@ -11,5 +11,9 @@ elif [ "$cmd" == "n" ] ; then
 elif [ "$cmd" == "s" ] ; then
 	/usr/bin/cmus-remote -s
 elif [ "$cmd" == "song" ] ; then
-   /usr/bin/notify-send -u 'normal' "$(cmus-remote -Q | grep -E "tag artist |tag album |tag title " | awk '{$1=""; print $0}')"
+	if [[ $(cmus-remote -Q | grep tag) ]] ; then
+		/usr/bin/notify-send -u 'normal' "$(cmus-remote -Q | grep -E "tag artist |tag album |tag title " | awk '{$1=""; print $0}')"
+	else
+		/usr/bin/notify-send -u 'normal' 'no song details available'
+	fi
 fi
