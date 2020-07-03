@@ -52,8 +52,8 @@ set sort=reverse-threads
 set sort_aux=date-received
 
 # handling for multi-part and html messages
-alternative_order text/plain text/html
 auto_view text/html
+alternative_order text/plain text/html
 
 # sidebar
 set sidebar_visible = no
