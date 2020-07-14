@@ -13,13 +13,6 @@ audio_vol() {
 	fi
 }
 
-getnews() {
-	curl 'https://newsapi.org/v2/top-headlines' -s -G \
-	-d sources=$1 \
-	-d pageSize=5 \
-	-d apiKey=$NEWS_API_KEY | jq -r '.articles[] | .title, .url, ""' | tr -d '\t'
-}
-
 # script run on first terminal
 script() {
 	cat ~/tmp/pyratebeard_ansi_md
@@ -27,11 +20,7 @@ script() {
 		audio_vol
 		tmux new -s main -n '~'
 		if [[ ${TMUX_PANE} == '%0' ]] ; then
-			echo -e "\n// WELCOME $(whoami | tr 'a-z' 'A-Z')\n"
-			echo -e "\nIRISH NEWS HEADLINES:"
-			getnews the-irish-times
-			echo -e "\nHACKER NEWS HEADLINES:"
-			getnews hacker-news
+			~/bin/greetings
 		fi
 	fi
 }

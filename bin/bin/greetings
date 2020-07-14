@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+email() {
+	local -r mail_dir="$HOME/lib/doc/email"
+
+	echo -e "\n\e[35m----pyratebeard mail\e[0m"
+	local -r pyratebeard_mail=$(ls -1 ${mail_dir}/pyratebeard/INBOX/new/ | wc -l)
+	echo -e "you have \e[1;32m${pyratebeard_mail}\e[0m new mail(s)"
+
+	echo -e "\n\e[35m-------octotech mail\e[0m"
+	local -r octotech_mail=$(ls -1 ${mail_dir}/octotech/INBOX/new/ | wc -l)
+	echo -e "you have \e[1;32m${octotech_mail}\e[0m new mail(s)"
+}
+
+# not currently used by keeping for future reference
+getnews() {
+	local -r api_key=$(pass websites/newsapi/key)
+	curl 'https://newsapi.org/v2/top-headlines' -s -G \
+	-d sources=$1 \
+	-d pageSize=5 \
+	-d apiKey="${api_key}" | jq -r 'def default: "\u001b[0m"; def grey: "\u001b[1;30m"; .articles[] | .title, grey + .url, "" + default' | tr -d '\t'
+}
+
+boats() {
+	if [ -f ~/.newsboat/cache.db.lock ] ; then
+		echo "\n\e[30mwaiting for newsboat refresh...\e[0m" 
+		sleep 10
+	fi
+	local unread_count=$(sqlite3 ~/.newsboat/cache.db "select count(unread) from rss_item where unread = 1;")
+	local queued_pods=$(cat ~/.newsboat/queue | wc -l)
+	echo -e "\n\e[35m------------newsboat\e[0m"
+	echo -e "you have \e[1;32m${unread_count}\e[0m unread items"
+	echo -e "\n\e[35m-------------podboat\e[0m"
+	echo -e "you have \e[1;32m${queued_pods}\e[0m queued podcasts"
+}
+
+main() {
+	echo -e "\n\e[35m-----today's weather\e[0m"
+	curl "wttr.in/dublin?format=%l:+%f+%C\n"
+	email
+	boats
+}
+
+main
