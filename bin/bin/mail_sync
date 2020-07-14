@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mail_dir="$HOME/lib/doc/email"
+
+offlineimap -f INBOX >/dev/null 2>&1
+sleep 5
+
+for inbox in pyratebeard octotech ; do
+	new_mail=$(ls -l ${mail_dir}/${inbox}/INBOX/new | wc -l)
+	let new_mail=new_mail-1
+	if [ ${new_mail} -gt 0 ] ; then
+		/usr/bin/notify-send -u 'normal' "${new_mail} new mail(s) for ${inbox}"
+	fi
+done
