@@ -24,6 +24,13 @@ https://reddit.com/r/privacy.rss "~privacy" "reddit"
 https://reddit.com/r/opensource.rss "~opensource" "reddit"
 https://reddit.com/r/comicbooks.rss "~comicbooks" "reddit" "comics"
 
+-------------twitter
+https://nitter.net/rikkuness/rss "~rikkuness" "twitter"
+https://nitter.net/moongoosedani/rss "~moongoosedani" "twitter"
+https://nitter.net/dogspacesuit/rss "~dogspacesuit" "twitter"
+https://nitter.net/_glasshalfphil/rss "~_glasshalfphil" "twitter"
+https://nitter.net/fontvirus/rss "~fontvirus" "twitter"
+
 ------------podcasts
 https://podcast.nixers.net/feed/feed.xml "~nixers" "podcasts"
 https://error.show/rss "~user error" "podcasts"
@@ -53,3 +60,7 @@ https://code.briarproject.org/briar/briar/-/tags?format=atom "~briar - tags" "co
 ------------security
 https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml "~nvd all" "security"
 https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml "~nvd analysed" "security"
+
+------news headlines
+https://www.irishtimes.com/cmlink/news-1.1319192 "~irish times" "news headlines"
+http://feeds.bbci.co.uk/news/rss.xml "~bbc top stories" "news headlines"
