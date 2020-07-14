@@ -3,8 +3,8 @@
 # ░▀░▀░▀▀▀░░▀░░░▀░░░
 
 # set password
-set my_pass = "`pass email/pyratebeard/passwd`"
-set my_smtp_url = "`pass email/pyratebeard/smtp_url`"
+set my_pass = "`pass email/octotech/passwd`"
+set my_smtp_url = "`pass email/octotech/smtp_url`"
 
 # imap
 unset imap_passive
@@ -16,15 +16,15 @@ set smtp_authenticators=”login”
 set smtp_pass = $my_pass
 
 # user details
-set from = ""
-set realname = "pyratebeard"
+set from = "dudley@octo.tech"
+set realname = "Dudley Burrows"
 
 # mailbox
 set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/"
 set certificate_file = "~/.mutt/certificates"
 set mbox_type = Maildir
-set folder = "~/lib/doc/email/pyratebeard"
+set folder = "~/lib/doc/email/octotech"
 set spoolfile = +INBOX
 set record  = "~/.mutt/sent"
 mailboxes = =INBOX
