@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PRIM_GEO=$(xrandr | grep primary | awk '{ print $4 }' | cut -d+ -f1)
+X=$(echo ${PRIM_GEO} | cut -dx -f1)
+Y=$(echo ${PRIM_GEO} | cut -dx -f2)
+HALF_X=$(( ${X} / 4 ))
+HALF_Y=$(( ${Y} / 2 ))
+
+CUR_GEO=$(grep "^set geometry" ~/.interrobangrc | cut -d= -f2 | tr -d ' ')
+CUR_SIZE=$(echo ${CUR_GEO} | cut -d+ -f1)
+
+interrobang -o "set geometry = ${CUR_SIZE}+${HALF_X}+${HALF_Y}"

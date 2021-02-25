@@ -22,7 +22,7 @@ static const uint8_t offsets[] = {10,10,20,20};
  *2)fixedcol         3)unkilcol
  *4)fixedunkilcol    5)outerbordercol
  *6)emptycol         */
-static const char *colors[] = {"#929eb5","#212021","#8fbed3","#e29e84","#888aa9","#4e495a","#212021"};
+static const char *colors[] = {"#807b64","#131313","#3f3639","#271f1f","#1e1b1c","#2b2b2d","#202020"};
 /* if this is set to true the inner border and outer borders colors will be swapped */
 static const bool inverted_colors = true;
 ///---Cursor---///
@@ -35,7 +35,7 @@ static const bool inverted_colors = true;
 /*0) Outer border size. If you put this negative it will be a square.
  *1) Full borderwidth    2) Magnet border size
  *3) Resize border size  */
-static const uint8_t borders[] = {4,8,4,4};
+static const uint8_t borders[] = {4,10,6,6};
 /* Windows that won't have a border.
  * It uses substring comparison with what is found in the WM_NAME
  * attribute of the window. You can test this using `xprop WM_NAME`
@@ -43,7 +43,7 @@ static const uint8_t borders[] = {4,8,4,4};
 #define LOOK_INTO "WM_NAME"
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
-static const char *menucmd[]   = { "interrobang", NULL };
+static const char *menucmd[]   = { "/home/pyratebeard/bin/multi-interrobang", NULL };
 static const char *terminal[]  = { "urxvtc", NULL };
 static const char *lock[]  = { "/home/pyratebeard/bin/lock", NULL };
 ///--Custom foo---///
