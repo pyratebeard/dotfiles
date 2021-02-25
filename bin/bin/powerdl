@@ -1,0 +1,25 @@
+#!/bin/bash
+
+mixcloud_url="https://www.mixcloud.com/Gentlemanofmetal/"
+mixcloud_show_prefix="powerzone-show-"
+powerzone_url="https://powerzonemetal.uk/"
+powerzone_show_prefix=""
+powerzone_dir="$HOME/lib/music/powerzone"
+
+show_num=$(curl -s ${powerzone_url} | grep "<h4>Show #" | head -n1 | awk -F\# '$2>0 {print substr($2,1,3)}')
+if [[ ! $(find ${powerzone_dir} -name "powerzone-*${show_num}-*.mp3" | wc -l) -eq 0 ]] ; then
+	echo "file exists"
+	exit 0
+fi
+
+if [[ ${show_num} =~ ^[0-9]+([.][0-9]+)?$ ]] ; then
+	powerzone_show_prefix="shows/show-"
+else
+	powerzone_show_prefix="shows/"
+fi
+mixcloud_show_url=$(curl -s "${powerzone_url}${powerzone_show_prefix}${show_num}/" | grep mixcloud | grep feed | awk -F\= '{print $5}' | awk -F\& '{print $1}' | sed 's/%3A/\:/' | sed 's&%2F&/&g')
+download_filename=$(echo ${mixcloud_show_url} | awk -F\/ '{print $5}')
+
+youtube-dl -q -o "${powerzone_dir}/${download_filename}" "${mixcloud_show_url}"
+ffmpeg -loglevel quiet -i ${powerzone_dir}/${download_filename} -metadata title="${download_filename}" -metadata artist="powerzone" -metadata album="powerzone" -metadata track="${show_num}" -metadata genre="metal" "${powerzone_dir}/${download_filename}.mp3"
+rm -f "${powerzone_dir}/${download_filename}"

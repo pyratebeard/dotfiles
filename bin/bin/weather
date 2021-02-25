@@ -1,0 +1,13 @@
+#!/bin/sh
+
+weather() {
+	local -r location="$(curl -s "https://ipvigilante.com/" | jq -r '.data.city_name')"
+	wttr=$(curl -s "wttr.in/${location}?format=%l:+%f+%C\n" | tr '[:upper:]' '[:lower:]')
+	if [[ ${wttr} == "unknown location"* ]] ; then
+		echo -e "weather is ${light_red}unavailable${reset}" > /tmp/weather
+	else
+		echo -e "${wttr}" > /tmp/weather
+	fi
+}
+
+weather

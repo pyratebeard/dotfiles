@@ -1,14 +1,27 @@
 #!/usr/bin/env bash
 
-mail_dir="$HOME/lib/doc/email"
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+mail_dir="$HOME/lib/documents/email"
+log_file="/var/log/mail_sync.log"
+cached_key=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}} END{if($0!=""){print CACHED} else {print "none"}}')
 
-offlineimap -f INBOX >/dev/null 2>&1
-sleep 5
+log() {
+	echo "$(date +%H:%M:%S): ${1}" >> ${log_file}
+}
 
-for inbox in pyratebeard octotech ; do
-	new_mail=$(ls -l ${mail_dir}/${inbox}/INBOX/new | wc -l)
-	let new_mail=new_mail-1
-	if [ ${new_mail} -gt 0 ] ; then
-		/usr/bin/notify-send -u 'normal' "${new_mail} new mail(s) for ${inbox}"
-	fi
-done
+if [[ "${cached_key}" == "1" ]] ; then
+	log "INFO: gpg key cached, beginning sync"
+	offlineimap -f INBOX >/dev/null 2>&1
+	sleep 5
+	
+	for inbox in pyratebeard ; do
+		new_mail=$(ls -l ${mail_dir}/${inbox}/INBOX/new | wc -l)
+		let new_mail=new_mail-1
+		if [ ${new_mail} -gt 0 ] ; then
+			/usr/bin/notify-send -u 'normal' "${new_mail} new mail(s) for ${inbox}"
+		fi
+	done
+else
+	log "ERROR: no gpg key cached"
+fi
+

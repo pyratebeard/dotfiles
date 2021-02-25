@@ -1,0 +1,27 @@
+# keep an eye on external ip for vpn
+*/30 * * * * $HOME/bin/checkip
+
+# daily backup of specified items
+0 4 * * * $HOME/bin/daily_backup
+
+# check email every hour and notify. full sync daily
+0 * * * * $HOME/bin/mail_sync
+0 1 * * * offlineimap
+
+# update rss a few times a day
+0 8 * * * $HOME/bin/boat_sync
+0 11 * * * $HOME/bin/boat_sync
+0 14 * * * $HOME/bin/boat_sync
+
+# change bg every hour
+#0 * * * * $HOME/bin/bgchange
+
+# check weather twice a day
+0 8 * * * $HOME/bin/weather
+0 14 * * * $HOME/bin/weather
+
+# download latest powerzone show
+0 8 * * fri $HOME/bin/powerdl
+
+# weekly comic pack download
+0 19 * * thu $HOME/tmp/comic_download/comicdl.sh
