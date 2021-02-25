@@ -1,14 +1,14 @@
----------------blogs
+───────────────blogs
 https://log.pyratebeard.net/index.xml "~pyratebeard" "blogs"
 http://feeds.xero.nu/rss/blog/newest "~xero" "blogs"
 https://venam.nixers.net/blog/feed.xml "~venam" "blogs"
 https://lonesysadmin.net/feed/ "~lonesysadmin" "blogs"
-http://feeds.feedburner.com/blogspot/UGWd?format-xml "~pcg" "blogs" "comics"
 http://comicsbulletin.com/feed/ "~comics bulletin" "blogs" "comics"
 http://www.previewsworld.com/Rss/1/1/71 "~previews world" "blogs" "comics"
 https://www.comicsbeat.com/feed/ "~the beat" "blogs" "comics"
+https://www.digitalrights.ie/feed/ "~digital rights ireland" "blogs"
 
----------newsletters
+─────────newsletters
 https://nixers.net/newsletter/feed.xml "~nixers" "newsletters"
 https://www.archlinux.org/feeds/news/ "~arch" "newsletters"
 https://pluralistic.net/feed/ "~cory - pluralistic" "newsletters"
@@ -16,51 +16,63 @@ https://fedoramagazine.org/feed/ "~fedora magazine" "newsletters"
 https://itsfoss.com/feed/ "~it's foss" "newsletters"
 http://feeds.feedburner.com/ncrl "~comic list - this week" "newsletters" "comics"
 http://feeds.feedburner.com/comiclistnextweek "~comic list - next week" "newsletters" "comics"
+http://www.metalstorm.net/rss/news.xml "~metalstorm" "newsletters" "music"
 
---------------reddit
+──────────────reddit
+https://reddit.com/r/unixporn.rss "~unixporn" "reddit"
 https://reddit.com/r/vim.rss "~vim" "reddit"
 https://reddit.com/r/zsh.rss "~zsh" "reddit"
 https://reddit.com/r/privacy.rss "~privacy" "reddit"
 https://reddit.com/r/opensource.rss "~opensource" "reddit"
 https://reddit.com/r/comicbooks.rss "~comicbooks" "reddit" "comics"
 
--------------twitter
+────────────mastodon
+https://mastodon.social/@pyratebeard.rss "~pyratebeard" "mastodon"
+https://mastodon.social/@eff.rss "~eff" "mastodon"
+https://fosstodon.org/@mort.rss "~mort" "mastodon"
+https://mastodon.social/@x0rz.rss "~x0rz" "mastodon"
+https://infosec.exchange/@0xmrtn.rss "~0xmrtn" "mastodon"
+
+─────────────twitter
 https://nitter.net/rikkuness/rss "~rikkuness" "twitter"
 https://nitter.net/moongoosedani/rss "~moongoosedani" "twitter"
 https://nitter.net/dogspacesuit/rss "~dogspacesuit" "twitter"
 https://nitter.net/_glasshalfphil/rss "~_glasshalfphil" "twitter"
 https://nitter.net/fontvirus/rss "~fontvirus" "twitter"
+https://nitter.net/pyratebeard/lists/tech/rss "~tech list" "twitter" "tech"
 
-------------podcasts
+────────────podcasts
 https://podcast.nixers.net/feed/feed.xml "~nixers" "podcasts"
 https://error.show/rss "~user error" "podcasts"
+https://thenew.show/rss "~the new show" "podcasts"
 https://selfhosted.show/rss "~selfhosted" "podcasts"
 http://www.2600.com/oth-broadband.xml "~off the hook" "podcasts"
 http://feeds.feedburner.com/doctorow_podcast "~cory doctorow" "podcasts"
 http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss "~priv, sec, osint" "podcasts"
 https://feeds.feedburner.com/xplainthexmen "~x-plain the x-men" "podcasts"
 
--------------youtube
-https://invidio.us/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
-https://invidio.us/feed/channel/UCfhSB16X9MXhzSFe_H7XbHg "~bryan jenks" "youtube"
-https://invidio.us/feed/channel/UCXPHFM88IlFn68OmLwtPmZA "~greg hurrell" "youtube"
-https://invidio.us/feed/channel/UC2eYFnH61tmytImy1mTYvhA "~luke smith" "youtube"
-https://invidio.us/feed/channel/UCeUMZ4t3ezEJFhXHJg9rshQ "~bangertv" "youtube"
-https://invidio.us/feed/channel/UCRcgy6GzDeccI7dkbbBna3Q "~lemmino" "youtube"
-https://invidio.us/feed/channel/UCpFFItkfZz1qz5PpHpqzYBw "~nexpo" "youtube"
-https://invidio.us/feed/channel/UCPtGiHoQzw9nkijm_lJohAg "~previews world" "youtube" "comics"
+─────────────youtube
+https://invidious.snopyta.org/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
+https://invidious.snopyta.org/feed/channel/UCfhSB16X9MXhzSFe_H7XbHg "~bryan jenks" "youtube"
+https://invidious.snopyta.org/feed/channel/UCXPHFM88IlFn68OmLwtPmZA "~greg hurrell" "youtube"
+https://invidious.snopyta.org/feed/channel/UC2eYFnH61tmytImy1mTYvhA "~luke smith" "youtube"
+https://invidious.snopyta.org/feed/channel/UCeUMZ4t3ezEJFhXHJg9rshQ "~bangertv" "youtube"
+https://invidious.snopyta.org/feed/channel/UCRcgy6GzDeccI7dkbbBna3Q "~lemmino" "youtube"
+https://invidious.snopyta.org/feed/channel/UCpFFItkfZz1qz5PpHpqzYBw "~nexpo" "youtube"
+https://invidious.snopyta.org/feed/channel/UCQ-EfYqpcN0zOQPAPgG6rhQ "~xero" "youtube"
 
----------------music
+───────────────music
 https://media.defcon.org/DEF%20CON%20rss/defcon-18-music.rss "~defcon" "music"
 
-----------------code
+────────────────code
 https://www.kernel.org/feeds/kdist.xml "~kernel releases" "code"
 https://code.briarproject.org/briar/briar/-/tags?format=atom "~briar - tags" "code"
 
-------------security
+────────────security
 https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml "~nvd all" "security"
 https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml "~nvd analysed" "security"
 
-------news headlines
+────────────────news
 https://www.irishtimes.com/cmlink/news-1.1319192 "~irish times" "news headlines"
 http://feeds.bbci.co.uk/news/rss.xml "~bbc top stories" "news headlines"
+https://soylentnews.org/index.rss "~soylent news" "news headlines"
