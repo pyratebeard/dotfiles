@@ -23,3 +23,14 @@ tmux/.tmux/plugins/
 vim/.vim/bundle/
 vim/.vim/.netrwhist
 vim/.vim/undo/
+bin/bin/drist2
+bin/bin/qmake
+bin/bin/wormhole
+bin/bin/securebak
+bin/bin/toot
+bin/bin/drist
+bin/bin/packerio
+bin/bin/daily_backup
+bin/bin/timer
+bin/bin/drist1
+bin/bin/xonotic
