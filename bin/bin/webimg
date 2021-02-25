@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# requires `identify` from imagemagick
+
+img="/tmp/webimg"
+image=$(xsel -b)
+
+if [ -f ${img} ] ; then
+	rm -f ${img}
+fi
+
+function notify() {
+	msg=$1
+	notify-send -u 'normal' "webimg: ${msg}"
+}
+
+function show_img() {
+	if [[ ${image} = *w3mtmp* ]] ; then
+		img=${image}
+	elif [[ ${image} =~ .*gif$ ]] ; then
+		img="${img}.gif"
+		curl -s "${image}" --output ${img}
+	else
+		image="${image/http\:/https\:}"
+		curl -s "${image}" --output ${img}
+	fi
+
+	if identify ${img} >/dev/null 2>1 ; then
+		if identify ${img} | grep GIF >/dev/null 2>1 ; then
+			mv "${img}" $(echo "${img}".gif)
+			img="${img}.gif"
+		fi
+		sxiv -ba "${img}" 2>/dev/null
+	else
+		notify "not an image file"
+		exit 1
+	fi
+}
+
+[ $# -eq 1 ] && image="$1" ; show_img || show_img
+
+rm -f ${img}
