@@ -1,5 +1,5 @@
 [general]
-accounts = pyratebeard,octotech
+accounts = pyratebeard
 pythonfile = ~/.offlineimap.py
 
 [Account pyratebeard]
@@ -8,7 +8,7 @@ remoterepository = pyratebeard-remote
 
 [Repository pyratebeard-local]
 type = Maildir
-localfolders = ~/lib/doc/email/pyratebeard
+localfolders = ~/lib/documents/email/pyratebeard
 
 [Repository pyratebeard-remote]
 type = IMAP
@@ -16,20 +16,5 @@ remotehosteval = get_imap("pyratebeard")
 remoteuser = root@pyratebeard.net
 remotepasseval = get_pass("pyratebeard")
 ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-bundle.crt
-
-[Account octotech]
-localrepository = octotech-local
-remoterepository = octotech-remote
-
-[Repository octotech-local]
-type = Maildir
-localfolders = ~/lib/doc/email/octotech
-
-[Repository octotech-remote]
-type = IMAP
-remotehosteval = get_imap("octotech")
-remoteuser = dudley@octo.tech
-remotepasseval = get_pass("octotech")
-ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-bundle.crt
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+readonly = false
