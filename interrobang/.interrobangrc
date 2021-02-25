@@ -5,38 +5,39 @@
 ## BASIC CONFIGURATION
 
 #set font      = fixed
-set font      = -misc-tamzen-medium-r-normal-*-17-120-100-100-c-0-iso8859-1
-#set geometry  = top
-set geometry  = 500x30+20+20
-set colors	  = #fbf6f6 #212021 #888aa9 #212021 #b8d680 #4e495a
-set border    = 3px #929eb5
+set font      = -misc-tamzen-medium-r-normal-*-15-*-*-*-*-*-*-*
+set geometry  = 1000x30+30+30
+# colors 0=fg 1=bg 2=unmatch_fg 3=unmatch_bg 4=match_fg 5=match_bg
+set colors	  = #baba9e #2b2b2d #3d3a3b #131313 #bbbbbb #753747
+set border    = 6px #3d3a3b
 set bangchar  = !
-set run_hook  = %s
-#set run_hook  = %s || (notify-send "Error: command not found";interrobang)
+set run_hook  = %s || (notify-send "drak: command not found";interrobang)
 #set autocomp  = 1
 set list      = true
 set last      = true
 set margin    = -80
-#set shell     = /bin/sh
-#set flags     = -c
+set shell     = /usr/bin/zsh
+set flags     = -ic
 
 
 ## COMMON BANGS AND COMPLETITON OPTIONS
 
-bang term     = urxvtc -e %s
-bang web      = firefox %s
+bang term     = urxvtc -hold -e %s
+bang web      = qutebrowser %s
 bang pdf      = zathura %s
 bang man      = urxvtc -e man %s
-bang ddg      = firefox https://duckduckgo.com/?q="%s"
-bang calc     = urxvtc -e bc
+bang ddg      = qutebrowser https://duckduckgo.com/?q="%s"
+bang calc     = notify-send "$(echo '%s' | bc -l)"
 bang buku     = urxvtc -e buku %s
 bang mpv      = urxvtc -e mpv "%s"
 bang at		  = urxvtc -e at "%s"
 bang ?        = echo "interrobang ignored \"%s\""
+bang quit	  = case "%s" in shutdown) sudo systemctl poweroff ;; reboot) sudo systemctl reboot ;; logout) killall xinit ;; cancel) exit ;; esac
 
 tab default   = percontation "%s" %s | sort -u
 tab calc      = str="%s%s"; echo "!calc $(echo ${str#\!calc} | bc -l)"
 tab ?         = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.interrobangrc
+tab quit	  = echo -e "cancel\nshutdown\nreboot\nlogout" | grep "^%s%s"
 
 
 ## EXAMPLES OF COMPLEX COMPLETION OR SCRIPTING
