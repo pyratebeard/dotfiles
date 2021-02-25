@@ -2,7 +2,7 @@
 
 # vars
 WIFI_DEV=$(iw dev | awk '$1=="Interface"{print $2}')
-CONNECTION_FILE_PATH="$HOME/lib/doc/wifi/"
+CONNECTION_FILE_PATH="$HOME/lib/documents/wifi/"
 CONNECTION_FILE="${CONNECTION_FILE_PATH}${1}"
 CONNECTION=$(echo ${CONNECTION_FILE} | awk -F\/ '{print $NF}')
 VPN_KEY_PATH="$HOME/lib/key"

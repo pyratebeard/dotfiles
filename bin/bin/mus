@@ -2,7 +2,9 @@
 
 cmd=$1
 
-if [ -z "$cmd" ] ; then
+if [ "$TERM" == "screen-256color" ] ; then
+	dtach -A /tmp/mus cmus
+elif [ -z "$cmd" ] ; then
 	urxvtc -e dtach -A /tmp/mus cmus
 elif [ "$cmd" == "p" ] ; then
 	/usr/bin/cmus-remote -u
