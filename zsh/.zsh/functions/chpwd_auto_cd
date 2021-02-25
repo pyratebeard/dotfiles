@@ -1,2 +1,2 @@
 emulate -L zsh
-ls -lA --color=auto
+ls -lAhF --color=auto

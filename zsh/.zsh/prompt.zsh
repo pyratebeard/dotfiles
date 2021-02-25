@@ -48,6 +48,10 @@ GIT_PROMPT() {
     return
   fi
   ref=$(git name-rev --name-only HEAD | sed 's!remotes/!!' 2> /dev/null)
+  if [[ ${ref} == "tags"* ]] ; then
+	branch=$(git branch | grep -e "^*" | tr -d "*")
+	ref="${branch/ /} ${ref}"
+  fi
   dirty="" && [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && dirty=$ICO_DIRTY
   stat=$(git status | sed -n 2p)
   case "$stat" in
@@ -69,7 +73,7 @@ GIT_PROMPT() {
       echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
     tiny)
-      echo "%F{magenta} [%F{yellow}"${ref}${dirty}${stat}"%F{magenta}]"
+      echo "%F{5} [%F{13}"${ref}${dirty}${stat}"%F{5}]"
     ;;
     *)
       echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
@@ -93,8 +97,9 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 ;;
 # tiny
 tiny)
-PROMPT='${COLOR_NORMAL} % : '
-RPROMPT='%~ $(GIT_PROMPT) %F{magenta}${HOSTNAME}${COLOR_NORMAL}'
+PROMPT='%F{3} %%${COLOR_NORMAL} '
+RPROMPT='%F{15}%~ $(GIT_PROMPT) %F{8}${HOSTNAME}${COLOR_NORMAL}'
+;;
 ;;
 # classic
 *)

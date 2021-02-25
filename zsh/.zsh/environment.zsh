@@ -5,6 +5,7 @@
 
 # paths
 export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin
+export GOPATH=$HOME/src/go
 
 # preferred editor for local and remote sessions
 export EDITOR=vim
