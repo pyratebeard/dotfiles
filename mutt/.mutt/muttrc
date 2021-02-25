@@ -24,7 +24,7 @@ set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/"
 set certificate_file = "~/.mutt/certificates"
 set mbox_type = Maildir
-set folder = "~/lib/doc/email/pyratebeard"
+set folder = "~/lib/documents/email/pyratebeard"
 set spoolfile = +INBOX
 set record  = "~/.mutt/sent"
 mailboxes = =INBOX
@@ -32,9 +32,13 @@ set mail_check = 120
 
 # colours
 color normal default default
-color indicator cyan black
+color indicator white magenta
 color tree default default
 color status white black
+color index white color8 "~T"
+color index color10 default "~U"
+color index red black "~D"
+color index color5 default "~F"
 
 # pgp
 source "~/.mutt/gpg.rc"
@@ -58,8 +62,10 @@ set sort_aux=date-received
 unset markers
 
 # handling for multi-part and html messages
+set mailcap_path = ~/.mailcap"
 auto_view text/html
-alternative_order text/plain text/html
+alternative_order text/html text/plain
+set display_filter = "~/bin/mailfmt"
 
 # sidebar
 set sidebar_visible = no
