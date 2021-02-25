@@ -100,7 +100,6 @@ tiny)
 PROMPT='%F{3} %%${COLOR_NORMAL} '
 RPROMPT='%F{15}%~ $(GIT_PROMPT) %F{8}${HOSTNAME}${COLOR_NORMAL}'
 ;;
-;;
 # classic
 *)
 PROMPT='%F{cyan}${USERNAME}@%F{white}[${HOSTNAME}]$(GIT_PROMPT)%F{white} : %~# '
