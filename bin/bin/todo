@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# z3bra - (c) wtfpl 2014
+# Manage a todo list
+# The file is just plain text, with one line per task
+# This script just provide "shorter" commands to append to the file and display
+# its content. For more complex tasks, use other tools like `sed`.
+
+#Where's the file ?
+TODO=${TODO:-$HOME/.todo}
+
+list() {
+	# WHOA MUCH CLEVER!!
+	test -f $TODO && nl $TODO
+}
+
+append() {
+	# append all arguments "as-is" to the file
+	echo "$*" >> ${TODO}
+}
+
+delete() {
+	test -n "$1" || exit 1
+	sed -i "${1}d" $TODO
+}
+
+# delete line "$2" (see delete() function)
+test "$1" = '-d' && delete "$2" && exit 0
+
+# append arguments to the file, or print it otherwise
+test -n "$*" && append $* || list
+
+exit 0
