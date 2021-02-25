@@ -1,0 +1,234 @@
+#!/usr/bin/env bash
+#            ██
+#           ░██                ██   ██
+#   ██████  ░██       ██████  ░░██ ██
+#  ░░░░░░██ ░██████  ██░░░░██  ░░███
+#   ███████ ░██░░░██░██   ░██   ░██
+#  ██░░░░██ ░██  ░██░██   ░██   ██
+# ░░████████░██  ░██░░██████   ██
+#  ░░░░░░░░ ░░   ░░  ░░░░░░   ░░
+#
+#  author ▓▒ pyratebeard
+#    code ▓▒ https://git.pyratebeard.net/
+#
+# TODO
+# * add rkhunter check
+# * add clamav check
+# * server details
+
+basename="${0##*/}"
+
+# colours
+black="\e[30m"
+red="\e[31m"
+green="\e[32m"
+yellow="\e[33m"
+blue="\e[34m"
+magenta="\e[35m"
+cyan="\e[36m"
+white="\e[37m"
+light_black="\e[1;30m"
+light_red="\e[1;31m"
+light_green="\e[1;32m"
+light_yellow="\e[1;33m"
+light_blue="\e[1;34m"
+light_magenta="\e[1;35m"
+light_cyan="\e[1;36m"
+light_white="\e[1;37m"
+lighter_black="\e[38;5;241m"
+reset="\e[0m"
+
+display_tasks=0
+
+usage() {
+	echo "Usage: ${basename} [-b] [-h] [-m] [-t] [-r] [-s <hostname>] [-w]
+
+	-b: backups
+	-h: help (this page)
+	-m: mail
+	-t: tasking
+	-r: rss
+	-s: show <hostname> details, use 'all' to show all
+	-w: weather
+"
+}
+
+heading() {
+	header="$(echo ${1} | sed -e 's/\(.\)/\1 /g')"
+	echo -e "${lighter_black}┌─── ${light_magenta}${header}${reset}"
+	echo -e "${lighter_black}└────────────────────────── ─ ─ ${reset}"
+}
+
+tasking() {
+	heading ${FUNCNAME[0]}
+	local -r tasking_file="$HOME/lib/documents/pyratewiki/tasking.md"
+	local due_count=0
+	local overdue_count=0
+	declare -a due_tasks
+	declare -a overdue_tasks
+	while IFS= read -r line ; do
+		date="$(echo "${line}" | awk -F: '{print $NF}')"
+		if [[ ${date} -eq $(date +%Y%m%d) ]] ; then
+			(( due_count=due_count+1 ))
+			due_tasks+="${line}\n"
+		elif [[ ${date} -lt $(date +%Y%m%d) ]] ; then
+			(( overdue_count=overdue_count+1 ))
+			overdue_tasks+="${line}\n"
+		fi
+	done < <(awk '/due:/ && !/[X]/' < "${tasking_file}")
+
+	echo -e "you have ${light_green}${due_count}${reset} task(s) due today"
+	if [[ ${display_tasks} -eq 1 ]] && [[ ${due_count} -gt 0 ]] ; then
+		echo -e "${due_tasks}"
+	fi
+	if [[ ${overdue_count} -eq 0 ]] ; then
+		echo -e "there are ${light_green}${overdue_count}${reset} task(s) overdue"
+	else
+		echo -e "there are ${red}${overdue_count}${reset} task(s) overdue"
+		if [[ ${display_tasks} -eq 1 ]] ; then
+			echo -e "${overdue_tasks}"
+		fi
+	fi
+	echo
+}
+
+# check nightly backups
+backups() {
+	heading ${FUNCNAME[0]}
+	local -r backup_log="/var/log/securebak/securebak.log"
+
+	for backup in email buku ; do
+		if grep -E "^$(date +%Y%m%dT04):.*${backup}.*successful" "${backup_log}" >/dev/null ; then
+			echo -e "schway! ${backup} was ${light_green}successful${reset}"
+		elif grep -E "^$(date +%Y%m%dT04):.*${backup}.*failed" "${backup_log}" >/dev/null ; then
+			echo -e "frak! ${backup} ${red}failed${reset}"
+		else
+			echo -e "drek, ${backup} ${red}didn't run${reset}"
+		fi
+	done
+	echo
+}
+
+# weather in current location
+weather() {
+	heading ${FUNCNAME[0]}
+	#local -r location="$(curl -s "https://ipvigilante.com/" | jq -r '.data.city_name')"
+	#wttr=$(curl -s "wttr.in/${location}?format=%l:+%f+%C\n" | tr '[:upper:]' '[:lower:]')
+	#if [[ ${wttr} == "unknown location"* ]] ; then
+	#	echo -e "weather is ${red}unavailable${reset}"
+	#else
+	#	echo -e "${wttr}"
+	#fi
+	if [ -f /tmp/weather ] ; then
+		cat /tmp/weather
+	else
+		$HOME/bin/weather
+	fi
+	echo
+}
+
+# you've got mail
+mail() {
+	heading ${FUNCNAME[0]}
+	local -r mail_dir="$HOME/lib/documents/email"
+
+	local -r pyratebeard_mail=$(find "${mail_dir}"/pyratebeard/INBOX/new/ -type f | wc -l)
+	echo -e "you have ${light_green}${pyratebeard_mail}${reset} new mail(s)"
+	echo
+}
+
+# not currently used but keeping for future reference
+getnews() {
+	local -r api_key=$(pass websites/newsapi/key)
+	curl 'https://newsapi.org/v2/top-headlines' -s -G \
+	-d sources="$1" \
+	-d pageSize=5 \
+	-d apiKey="${api_key}" | jq -r 'def default: "\u001b[0m"; def grey: "\u001b[1;30m"; .articles[] | .title, grey + .url, "" + default' | tr -d '\t'
+}
+
+rss() {
+	heading ${FUNCNAME[0]}
+	if [ -f ~/.newsboat/cache.db.lock ] ; then
+		echo -e "${light_black}waiting for newsboat refresh...${reset}" 
+		sleep 10
+	fi
+	local unread_count
+	unread_count=$(sqlite3 ~/.newsboat/cache.db "select count(unread) from rss_item where unread = 1;")
+	local queued_pods
+	queued_pods=$(wc -l ~/.newsboat/queue | awk '{print $1}')
+	echo -e "there are ${blue}${unread_count}${reset} unread items"
+	echo -e "you have ${blue}${queued_pods}${reset} queued podcast"
+	echo
+}
+
+servers() {
+	echo -e "${cyan}
+    ┐─┐┬─┐┬─┐┐ ┬┬─┐┬─┐┐─┐
+    └─┐├─ │┬┘│┌┘├─ │┬┘└─┐
+    ──┘┴─┘┆└┘└┘ ┴─┘┆└┘──┘
+${reset}"
+	local server="$1"
+	if [ "${server}" == "all" ] ; then
+		for node in blacksun grimoire pyratetube octoweb octomail mordhaus ; do
+			heading "${node}"
+			uptime=$(ssh -q "${node}" "uptime -p | cut -b4- | sed 's/\(,\|ear\|eek\(s\)\|ay\(s\)\|our\(s\)\|inute\(s\)\)//g'")
+			echo -e "uptime is ${uptime}"
+			echo
+		done
+	else
+		heading "${server}"
+		uptime=$(ssh -q "${server}" "uptime -p | cut -b4- | sed 's/\(,\|ear\|eek(s)\|ay(s)\|our(s)\|inute(s)\)//g'")
+
+		echo -e "uptime is ${uptime}"
+		echo
+	fi
+}
+
+main() {
+ 	echo -e "${cyan}
+     a h o y, ${yellow}$(whoami)
+${reset}"
+# ██    ▄  █ ████▄ ▀▄    ▄ ▄
+# █ █  █   █ █   █   █  █ █
+# █▄▄█ ██▀▀█ █   █    ▀█ █
+# █  █ █   █ ▀████    █  █
+#    █    █         ▄▀
+#   █    ▀  ${yellow}$(whoami)${cyan}  ▀
+#  ▀
+#     ┳━┓┳ ┳┏━┓┓ ┳
+#     ┃━┫┃━┫┃ ┃┗┏┛
+#     ┛ ┇┇ ┻┛━┛ ┇
+#      ┳━┓┳ ┳┏━┓o
+#      ┃━┫┃━┫┃ ┃┃
+#      ┛ ┇┇ ┻┛━┛┇
+#	 かいぞく
+# ░█▀█░█░█░█▀█░█░█░
+# ░█▀█░█▀█░█░█░░█░░
+# ░▀░▀░▀░▀░▀▀▀░░▀░░
+#
+	#echo -e "  greetings, ${white}\033[7m $(whoami) ${reset}\n"
+
+	tasking
+	backups
+	weather
+	mail
+	rss
+	echo
+}
+
+if [ $# -eq 0 ] ; then
+	main
+else
+	while getopts ":bhmtrws:" opt ; do
+		case ${opt} in
+			b) backups ;;
+			h) usage ;;
+			m) mail ;;
+			t) display_tasks=1 ; tasking ;;
+			r) rss ;;
+			w) weather ;;
+			s) servers "${OPTARG}" ;;
+			*) usage ;;
+		esac
+	done
+fi
