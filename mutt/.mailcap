@@ -26,8 +26,10 @@
 # Note that rtv returns a list of urls for imgur albums, so we don't put quotes
 # around the `%s`
 image/x-imgur-album; feh -g 640x480  -. %s; test=test -n "$DISPLAY"
-image/gif; mpv '%s' --autofit=640x480 --loop=inf; test=test -n "$DISPLAY"
-image/*; feh -g 640x480 -. '%s'; test=test -n "$DISPLAY"
+#image/gif; mpv '%s' --autofit=640x480 --loop=inf; test=test -n "$DISPLAY"
+image/gif; webimg -a '%s' ; test=test -n "$DISPLAY"
+image/*; webimg '%s' ; test=test -n "$DISPLAY"
+#image/*; feh -g 640x480 -. '%s'; test=test -n "$DISPLAY"
 
 # Youtube videos are assigned a custom mime-type, which can be streamed with
 # vlc or youtube-dl.
@@ -68,3 +70,7 @@ video/*; mpv '%s' --autofit=640x480 --loop=inf; test=test -n "$DISPLAY"
 # Ascii videos
 # video/x-youtube; youtube-dl -q -o - '%s' | mplayer -cache 8192 -vo caca -quiet -; needsterminal
 # video/*; wget '%s' -O - | mplayer -cache 8192 -vo caca -quiet -; needsterminal
+#text/html; /usr/bin/firefox %s >/dev/null 2>&1; needsterminal
+#text/html; /usr/bin/w3m -I %{charset} -T text/html; copiusoutput
+#text/html; /usr/bin/lynx -dump -force_html -width=96 '%s'; needsterminal; copiusoutput
+text/html; /home/pyratebeard/bin/htmldump -c %{charset} '%s'; copiousoutput
