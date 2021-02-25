@@ -112,7 +112,7 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme downtime
+colorscheme mutiny
 filetype off
 
 " stop unnecessary rendering
@@ -179,8 +179,8 @@ if 1 " boolean for plugin loading
 
   " vimwiki https://vimwiki.github.io
   let pyratewiki = {}
-  let pyratewiki.path = '~/lib/doc/pyratewiki'
-  let pyratewiki.path_html = '~/lib/doc/pyratewiki/html'
+  let pyratewiki.path = '~/lib/documents/pyratewiki'
+  let pyratewiki.path_html = '~/lib/documents/pyratewiki/html'
   let pyratewiki.syntax = 'markdown'
   let pyratewiki.ext = '.md'
 
@@ -189,13 +189,12 @@ if 1 " boolean for plugin loading
   " lightline
   set laststatus=2
   let g:lightline = {
-  \ 'colorscheme': 'downtime',
+  \ 'colorscheme': 'mutiny',
   \ 'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ] ],
   \   'right': [ [ 'percent', 'lineinfo' ],
-  \              [ 'fileencoding', 'filetype' ],
-  \              [ 'fileformat', 'syntastic' ] ]
+  \              [ 'fileencoding', 'filetype' ] ]
   \ },
   \ 'component_function': {
   \   'modified': 'WizMod',
@@ -207,6 +206,8 @@ if 1 " boolean for plugin loading
   \   'fileencoding': 'WizEncoding',
   \   'mode': 'WizMode',
   \ },
+  \ 'separator': {'left': '▓▒░', 'right': '░▒▓' },
+  \ 'subseparator': { 'left': '▒', 'right': '░' }
   \ }
 
   " vimcompletesme
