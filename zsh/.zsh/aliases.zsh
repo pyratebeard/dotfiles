@@ -15,9 +15,9 @@ alias fuck='sudo $(fc -ln -1)'
 alias v="vim"
 alias vi="vim"
 alias emacs="vim"
-alias git="hub"
-alias g="hub"
+alias g="git"
 alias ga="git add"
+alias gb="git branch | grep \*"
 alias gc="git commit -S -m"
 alias gs="git status"
 alias gd="git diff"
@@ -28,7 +28,7 @@ alias gp="git push"
 alias gu="git unstage"
 alias gg="git log --graph"
 alias gco="git checkout"
-alias gpr="hub pull-request"
+alias gpr="git request-pull"
 alias ag="ag --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
 alias rock="mpd .mpd/mpd.conf ; ncmpcpp"
@@ -51,8 +51,26 @@ alias ncmpcpp="ncmpcpp -q"
 alias song="ncmpcpp --current-song='$7%a - $8{%n} {%t} $R [{%l}] ' | cut -d '%' -f 1"
 alias jobs="jobs -l"
 alias dnf="sudo dnf"
-alias irc="TERM=screen dtach -A /tmp/irc irssi"
+alias irc="TERM=screen-256color dtach -A /tmp/irc irssi"
 alias ap="ansible-playbook"
+alias tf="terraform"
+alias tfi="terraform init"
+alias tfa="terraform apply --auto-approve"
+alias tfp="terraform plan"
+alias tfd="terraform destroy"
+alias tor="cd ~/src/warez/tor/ ; ./start-tor-browser.desktop"
+alias failover="sudo ip link set enp5s0 down"
+alias failback="sudo ip link set enp5s0 up"
+alias netctl="sudo netctl"
+alias feh="feh -g 640x480"
+alias rum.sh="nc rum.sh 9999"
+alias headsetbatt="bluetooth_battery 34:DF:2A:5F:04:2C"
+alias connect-headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"
+alias moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"
+alias cointop="$HOME/src/go/bin/cointop --hide-statusbar"
+alias nodisturb="/usr/bin/notify-send 'DUNST_COMMAND_PAUSE'"
+alias disturb="/usr/bin/notify-send 'DUNST_COMMAND_RESUME'"
+alias sacc="PAGER=less sacc"
 
 alias -s md=vim
 alias -s {png,jpg,jpeg}=sxiv
@@ -69,9 +87,9 @@ c() {
   done
 }
 # colorised less
-l() {
-  pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
-}
+#l() {
+#  pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
+#}
 # read markdown files like manpages
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
@@ -79,15 +97,20 @@ md() {
 webman() {
 	curl "$@" | pandoc -s -f html -t man | man -l -
 }
-tmush() {
-	ssh -t "$@" 'tmux attach || tmux new' || ssh "$@"
+nam() {
+	pandoc -s -t man "$*" | man -l -
+}
+ssux() {
+	TERM=screen ssh -t "$@" 'tmux attach || tmux new' || ssh "$@"
 }
 
 screencast() {
 	RESOLUTION=$(xrandr | grep "*" | awk '{print $1}')
-	ffmpeg -f x11grab -s $RESOLUTION -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y $HOME/lib/vid/recordings/screencasts/$(date +%Y%m%d)-${1}
+	ffmpeg -f x11grab -s $RESOLUTION -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y $HOME/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${1}
 }
 
-raise() {
-	$(hidden -c | awk -F\: '{print $NF}' | tr -d "'")
+webcapture() {
+	NUM=$(ls -l $HOME/tmp/*webcapture*|wc -l)
+	NUM=$(( NUM + 1 ))
+	ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -ss 0:0:2 -frames 1 $HOME/tmp/$(date +%Y%m%d)-webcapture-${NUM}.png
 }
