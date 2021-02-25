@@ -3,8 +3,11 @@
 ! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
 ! fonts
-urxvt*font: xft:tamzen:size=13:antialias=false, \
-			xft:Symbola:size=11:antialias=true:hinting=full
+!urxvt*font: xft:Gohu GohuFont:size=8:antialias=true, \
+!			xft:gohu gohufont:size=11:antialias=false, \
+urxvt*font: xft:tamzen:pixelsize=15:antialias=false, \
+			xft:Symbola:pixelsize=11:antialias=true:hinting=full, \
+			xft:Kochi Gothic:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -16,6 +19,10 @@ urxvt*lineSpace: -1
 urxvt*scrollBar: false
 urxvt*cursorUnderline: false
 urxvt*cursorBlink: true
+
+! style
+urxvt*fading: 10
+urxvt*fadeColor: #1e1b1c
 
 ! clipboard
 urxvt.perl-ext-common: default,clipboard,keyboard-select
@@ -36,5 +43,5 @@ urxvt.saveLines: 9999
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 
-#include "/home/pyratebeard/dot/urxvt-colors/downtime"
+#include "/home/pyratebeard/dot/urxvt-colors/mutiny"
 
