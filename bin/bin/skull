@@ -1,0 +1,51 @@
+#!/bin/bash
+#          ██              ██  ██          ████
+#         ░██             ░██ ░██         █░░░ █
+#   ██████░██  ██ ██   ██ ░██ ░██  ██████░    ░█
+#  ██░░░░ ░██ ██ ░██  ░██ ░██ ░██ ██░░░░    ███
+# ░░█████ ░████  ░██  ░██ ░██ ░██░░█████   █░░
+#  ░░░░░██░██░██ ░██  ░██ ░██ ░██ ░░░░░██ █
+#  ██████ ░██░░██░░██████ ███ ███ ██████ ░██████
+# ░░░░░░  ░░  ░░  ░░░░░░ ░░░ ░░░ ░░░░░░  ░░░░░░
+#
+# ANSI color scheme script by pyratebeard
+# original `ghosts` script by pfh
+#
+# Initializing mod by lolilolicon from Archlinux
+#
+
+black=$'\e[30m'
+red=$'\e[31m'
+green=$'\e[32m'
+yellow=$'\e[33m'
+blue=$'\e[34m'
+magenta=$'\e[35m'
+cyan=$'\e[36m'
+white=$'\e[37m'
+reset=$'\e[0m'
+
+if [ $# -eq 0 ] ; then
+	COLOUR="${white}"
+else
+	case $1 in
+		black)		COLOUR="${black}"	;;
+		red)		COLOUR="${red}"		;;
+		green)		COLOUR="${green}"	;;
+		yellow)		COLOUR="${yellow}"	;;
+		blue)		COLOUR="${blue}"	;;
+		magenta)	COLOUR="${magenta}"	;;
+		cyan)		COLOUR="${cyan}"	;;
+		*)			COLOUR="${white}"	;;
+	esac
+fi
+
+cat << EOF
+${COLOUR}
+    ▄█████▄  
+   ▄███████▄ 
+  ░██ ░█ ░██ 
+  ░░███████  
+   ░░█░█░█   
+    ░ ░ ░    
+${reset}
+EOF
