@@ -44,18 +44,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # set nice background.
-xsetroot -solid '#4e495a'
+xsetroot -solid '#1e1b1c'
 
 # set nice pointer cursor.
 xsetroot -cursor_name left_ptr &
 unclutter &
 
-# load resources.
-xrdb -load ~/.Xdefaults
+# start light-locker
+light-locker &
 
 # start window manager in the background. If it dies, X still lives.
 2bwm &
 
+# load resources.
+xrdb -load ~/.Xdefaults
+
 # Start a terminal in the foreground. If this dies, X dies.
 urxvtd &
-exec urxvt
+exec urxvt -T controlterm
