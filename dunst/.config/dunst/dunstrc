@@ -19,7 +19,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = none
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -33,7 +33,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-20+20"
+    geometry = "300x5+810+100"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -55,7 +55,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
     padding = 8
@@ -68,7 +68,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#212021"
+    frame_color = "#deb14f"
 
     # Define a color for the separator.
     # possible values are:
@@ -76,7 +76,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#3d3a3b"
 
     # Sort messages by urgency.
     sort = yes
@@ -89,7 +89,7 @@
 
     ### Text ###
 
-    font = Deja Vu Sans Mono for Powerline 10
+    font = saxMono 9
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -249,22 +249,24 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#8fbed3"
-    foreground = "#212021"
+    background = "#3d3a3b"
+    foreground = "#baba9e"
+	frame_color = "#2b2b2d"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#b8d680"
-    foreground = "#212021"
+    background = "#2b2b2d"
+    foreground = "#bbbbbb"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#e29e84"
-    foreground = "#212021"
+    background = "#883c43"
+    foreground = "#bbbbbb"
+	frame_color = "#bb6767"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
