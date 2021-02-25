@@ -1,9 +1,12 @@
 # this is git's per-user configuration file.
+[init]
+	defaultbranch = main
 [user]
 	email = root@pyratebeard.net
 	name = pyratebeard
 	username = pyratebeard
 	signingkey = 0xC7877C715113A16D
 [color "status"]
-	untracked = blue bold
-	changed = yellow bold
+	added = green bold
+	changed = cyan
+	untracked = yellow bold
