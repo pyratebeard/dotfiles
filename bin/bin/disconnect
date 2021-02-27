@@ -9,6 +9,7 @@ killit() {
 	fi
 }
 
+sudo umount -a --types nfs,nfs4
 sudo ip link set ${WIFI_DEV} down
 killit wpa_supplicant 
 killit dhcpcd
