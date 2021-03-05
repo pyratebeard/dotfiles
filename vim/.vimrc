@@ -83,6 +83,9 @@ nnoremap <F9> :setl ai<CR>
 " goyo
 nnoremap <C-w>g :Goyo<CR>
 
+" open shell in current buffer dir
+nnoremap <leader>z :cd %:p:h <bar>!zsh<CR>
+
 " columns
 " 80 soft 120 hard
 let &colorcolumn="80"
