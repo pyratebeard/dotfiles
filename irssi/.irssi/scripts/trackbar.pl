@@ -565,7 +565,7 @@ sub update_config {
 }
 
 Irssi::settings_add_str('trackbar', 'trackbar_string', is_utf8() ? "\x{2500}" : '-');
-Irssi::settings_add_str('trackbar', 'trackbar_style', '%K');
+Irssi::settings_add_str('trackbar', 'trackbar_style', '%X7E');
 Irssi::settings_add_str('trackbar', 'trackbar_ignore_windows', '');
 Irssi::settings_add_bool('trackbar', 'trackbar_use_status_window', 1);
 Irssi::settings_add_bool('trackbar', 'trackbar_print_timestamp', 0);
