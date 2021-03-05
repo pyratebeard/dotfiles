@@ -16,11 +16,12 @@ audio_vol() {
 # script run on first terminal
 script() {
 	cat ~/tmp/pyratebeard_ansi_md
-	if [[ ${PTS} -lt "2" ]] ; then 
+	if [[ ${PTS} -eq "2" ]] ; then
 		audio_vol
 		tmux new -s main -n '~'
+		hashwall -f '#131313' -b '#1e1b1c'  -s 12
 		if [[ ${TMUX_PANE} == '%0' ]] ; then
-			~/bin/greetings
+			~/bin/ahoy
 		fi
 	fi
 }
