@@ -50,8 +50,8 @@ hi Statement    term=NONE cterm=NONE ctermfg=251  ctermbg=NONE
 hi StatusLine   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi String       term=NONE cterm=NONE ctermfg=11   ctermbg=NONE
 hi TabLineSel   term=NONE cterm=NONE ctermfg=251  ctermbg=NONE
-hi Todo         term=NONE cterm=NONE ctermfg=0    ctermbg=11
-hi Type         term=NONE cterm=NONE ctermfg=4   ctermbg=NONE
+hi Todo         term=NONE cterm=NONE ctermfg=3    ctermbg=5
+hi Type         term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
 hi VertSplit    term=NONE cterm=NONE ctermfg=236  ctermbg=0
 hi Visual       term=NONE cterm=NONE ctermfg=16   ctermbg=11
 hi WarningMsg   term=NONE cterm=NONE ctermfg=13   ctermbg=NONE
