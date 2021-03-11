@@ -13,10 +13,8 @@
     dunst           > notification daemon
     irssi           > irc client
     gpg             > gpg agent config
-    mpd             > audio player daemon
     mutt            > email client
     newsboat        > rss reader
-    ncmpcpp         > ui for mpd
     tmux            > terminal multiplexer
     urxvt           > terminal emulator
     vim             > text editor
@@ -77,7 +75,7 @@ Because I work in the terminal I try to use as many terminal based applications 
 
 APP | PKG
 --- | ---
-AUDIO | [ncmpcpp](http://rybczak.net/ncmpcpp/) ([mpd](https://www.musicpd.org/) backend)
+AUDIO | [cmus](https://cmus.github.io/)
 IRC | [irssi](https://irssi.org/)
 EMAIL | [mutt](http://www.mutt.org/)
 RSS | [newsboat](https://newsboat.org/)
@@ -92,6 +90,26 @@ IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
 SCREENSHOT | [scrot]()
 
 ### SCREENSHOTS
+
+#### mutiny theme
+![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/mutiny-02.png)
+- 2bwm
+- zsh
+- urxvt
+- tmux
+- vim
+- irssi
+- interrobang
+- dunst
+
+![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/mutiny-03.png)
+- 2bwm
+- zsh
+- urxvt
+- cmus
+- sacc
+- sxiv
+- cava
 
 #### downtime theme
 ![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/downtime.png)
@@ -109,6 +127,14 @@ SCREENSHOT | [scrot]()
 - vim
 - cmus
 - firefox
+
+#### blaquebeard theme
+![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/blaquebeard.png)
+- zsh
+- tmux
+- vim
+- ncmpcpp/mpd
+- rtv
 
 ### CITATIONS
 Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
