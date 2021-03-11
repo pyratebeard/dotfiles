@@ -34,3 +34,5 @@ bin/bin/daily_backup
 bin/bin/timer
 bin/bin/drist1
 bin/bin/xonotic
+bin/bin/kubectl
+bin/bin/doctl
