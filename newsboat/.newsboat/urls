@@ -20,6 +20,7 @@ http://www.metalstorm.net/rss/news.xml "~metalstorm" "newsletters" "music"
 
 ──────────────reddit
 https://reddit.com/r/unixporn.rss "~unixporn" "reddit"
+https://reddit.com/r/unixart.rss "~unixart" "reddit"
 https://reddit.com/r/vim.rss "~vim" "reddit"
 https://reddit.com/r/zsh.rss "~zsh" "reddit"
 https://reddit.com/r/privacy.rss "~privacy" "reddit"
