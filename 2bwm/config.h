@@ -46,6 +46,7 @@ static const char *ignore_names[] = {"bar", "xclock"};
 static const char *menucmd[]   = { "/home/pyratebeard/bin/multi-interrobang", NULL };
 static const char *terminal[]  = { "urxvtc", NULL };
 static const char *lock[]  = { "/home/pyratebeard/bin/lock", NULL };
+static const char *ptt[] = { "/home/pyratebeard/bin/ptt", NULL };
 ///--Custom foo---///
 static void halfandcentered(const Arg *arg)
 {
@@ -210,6 +211,8 @@ static key keys[] = {
     {  MOD ,              XK_w,          start,             {.com = menucmd}},
     {  MOD ,              XK_Return,     start,             {.com = terminal}},
     {  MOD ,              XK_z,          start,             {.com = lock}},
+    // Toggle ptt
+    {  MOD ,              XK_p,          start,             {.com = ptt}},
     // Exit or restart 2bwm
     {  MOD |CONTROL,      XK_q,          twobwm_exit,       {.i=0}},
     {  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},
