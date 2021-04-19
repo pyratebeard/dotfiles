@@ -75,6 +75,7 @@ alias sacc="PAGER=less sacc"
 alias -s md=vim
 alias -s {png,jpg,jpeg}=sxiv
 alias -s pdf=zathura
+alias -s mp4=mpv
 
 email() {
   echo $3 | mutt -s $2 $1
