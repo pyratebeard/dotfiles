@@ -25,6 +25,15 @@ servers = (
   },
   {
     address = "pyratebouncer";
+    chatnet = "libera";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
     chatnet = "rizon";
     password = "";
     port = "1666";
@@ -91,6 +100,7 @@ servers = (
 chatnets = {
   unixchat = { type = "IRC"; nick = "pyrate"; };
   freenode = { type = "IRC"; nick = "pyratebeard"; };
+  libera = { type = "IRC"; nick = "pyratebeard"; };
   rizon = { type = "IRC"; nick = "pyratebeard"; };
   snoonet = { type = "IRC"; nick = "pyratebeard"; };
   geekshed = { type = "IRC"; nick = "pyratebeard"; };
