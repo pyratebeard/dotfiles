@@ -1,25 +1,23 @@
 ```
+  ┳━┓┏━┓┏┓┓┳━┓o┳  ┳━┓┓━┓
+  ┃ ┃┃ ┃ ┃ ┣━ ┃┃  ┣━ ┗━┓
+  ┇━┛┛━┛ ┇ ┇  ┇┇━┛┻━┛━━┛
 
-    ░█▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀░░
-    ░█░█░█░█░░█░░█▀▀░░█░░█░░░█▀▀░▀▀█░░
-    ░▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░
+    about ┄┬┄ custom config files
+   author ┄┼┄ pyratebeard <root@pyratebeard.net>
+     code ┄┴┄ https://gitlab.com/pyratebeard/dotfiles
 
-    ABOUT     custom Linux configuration files
-    AUTHOR    pyratebeard <root@pyratebeard.net>
-    CODE      https://gitlab.com/pyratebeard/dotfiles
-
-    2bwm            > window manager
-    cmus            > music player
-    dunst           > notification daemon
-    irssi           > irc client
-    gpg             > gpg agent config
-    mutt            > email client
-    newsboat        > rss reader
-    tmux            > terminal multiplexer
-    urxvt           > terminal emulator
-    vim             > text editor
-    zsh             > shell
-
+     2bwm ┄┬┄ window manager
+     cmus ┄┼┄ music player
+    dunst ┄┼┄ notification daemon
+    irssi ┄┼┄ irc client
+      gpg ┄┼┄ gpg agent config
+     mutt ┄┼┄ email client
+ newsboat ┄┼┄ rss reader
+     tmux ┄┼┄ terminal multiplexer
+    urxvt ┄┼┄ terminal emulator
+      vim ┄┼┄ text editor
+      zsh ┄┴┄ shell
 ```
 
 ### CONTENTS
@@ -35,7 +33,7 @@
 
 In the world of Linux everything is a file and you can create a incredibly personalised environment by modifying your dotfiles.
 
-This is known as 'ricing' and can become very, very obsessive...
+This is known as 'ricing' and can become very, [very obsessive](https://pyratebeard.net/scrots.html)...
 
 ### MANAGING
 
@@ -137,9 +135,10 @@ SCREENSHOT | [scrot]()
 - rtv
 
 ### CITATIONS
-Thanks to all at [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for posting their setups and giving me ideas.
+Thanks to [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for all the inspiration and guidance, in particular a shoutout to [xero](https://github.com/xero/dotfiles) for having such schway dots!
 
-Also thanks to [xero](https://github.com/xero/dotfiles) for having such well documented dotfiles they enabled me to make an awesome set up, and it convinced me to release my files!
+### LICENCE
+As an advocate of the [kopimi](https://en.wikipedia.org/wiki/Piratbyr%C3%A5n#Kopimi) mind set this repo is released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ### DISCLAIMER
 Feel free to clone or fork my repo but you use these files at your own risk!
