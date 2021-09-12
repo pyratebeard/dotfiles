@@ -27,6 +27,7 @@ set mbox_type = Maildir
 set folder = "~/lib/documents/email/pyratebeard"
 set spoolfile = +INBOX
 set record  = "~/.mutt/sent"
+set postponed = "~/.mutt/postponed"
 mailboxes = =INBOX
 set mail_check = 120
 
