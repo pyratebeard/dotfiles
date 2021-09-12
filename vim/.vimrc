@@ -152,27 +152,14 @@ if 1 " boolean for plugin loading
   Plugin 'ajh17/VimCompletesMe'
   Plugin 'mhinz/vim-signify'
   Plugin 'junegunn/goyo.vim'
+  Plugin 'gregsexton/gitv'
   call vundle#end()
 
   " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
   let g:NERDTreeDirArrows = 1
   let g:NERDTreeShowHidden = 1
-
-  " git-gutter http://git.io/vimgitgutter
-  let g:gitgutter_realtime = 1
-  let g:gitgutter_eager = 1
-  let g:gitgutter_diff_args = '-w'
-  let g:gitgutter_sign_added = '+'
-  let g:gitgutter_sign_modified = '~'
-  let g:gitgutter_sign_removed = '-'
-  let g:gitgutter_sign_removed_first_line = '^'
-  let g:gitgutter_sign_modified_removed = ':'
-  let g:gitgutter_max_signs = 1500
-  highlight clear SignColumn
-  highlight GitGutterAdd ctermfg=green ctermbg=237
-  highlight GitGutterChange ctermfg=yellow ctermbg=237
-  highlight GitGutterDelete ctermfg=red ctermbg=237
-  highlight GitGutterChangeDelete ctermfg=red ctermbg=237
+  " smaller default window size
+  let g:NERDTreeWinSize = 25
 
   " ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
   let g:ag_prg="ag -i --vimgrep"
@@ -188,6 +175,11 @@ if 1 " boolean for plugin loading
   let pyratewiki.ext = '.md'
 
   let g:vimwiki_list = [pyratewiki]
+
+  " vim-signify (diffs)
+  let g:signify_sign_add = '░'
+  let g:signify_sign_change = '░'
+  let g:signify_sign_delete = '░'
 
   " lightline
   set laststatus=2
