@@ -3,10 +3,8 @@
 ! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
 ! fonts
-!urxvt*font: xft:Gohu GohuFont:size=8:antialias=true, \
-!			xft:gohu gohufont:size=11:antialias=false, \
 urxvt*font: xft:tamzen:pixelsize=15:antialias=false, \
-			xft:Symbola:pixelsize=11:antialias=true:hinting=full, \
+			xft:Unicode:pixelsize=16:antialias=true:hinting=full, \
 			xft:Kochi Gothic:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
@@ -24,19 +22,12 @@ urxvt*cursorBlink: true
 urxvt*fading: 10
 urxvt*fadeColor: #1e1b1c
 
-! clipboard
-urxvt.perl-ext-common: default,clipboard,keyboard-select
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-c:   perl:clipboard:copy
-urxvt.keysym.C-v:   perl:clipboard:paste
-urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-urxvt.clipboard.copycmd:  xsel -ib
-urxvt.clipboard.pastecmd: xsel -ob
-
-! clickable urls
-urxvt.perl-ext-common: default,matcher,resize-font
-urxvt.url-launcher: /usr/bin/xdg-open
-urxvt.matcher.button: 1
+! yankable urls
+! `pacman -S urxvt-perls`
+urxvt.perl-ext-common: default,url-select
+urxvt.keysym.M-u: perl:url-select:select_next
+urxvt.url-select.launcher: /home/pyratebeard/bin/mario
+urxvt.url-select.underline: true
 
 ! misc
 urxvt.saveLines: 9999
