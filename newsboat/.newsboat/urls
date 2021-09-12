@@ -1,5 +1,5 @@
 ───────────────blogs
-https://log.pyratebeard.net/index.xml "~pyratebeard" "blogs"
+https://log.pyratebeard.net/rss.xml "~pyratebeard" "blogs"
 http://feeds.xero.nu/rss/blog/newest "~xero" "blogs"
 https://venam.nixers.net/blog/feed.xml "~venam" "blogs"
 https://lonesysadmin.net/feed/ "~lonesysadmin" "blogs"
@@ -19,18 +19,17 @@ http://feeds.feedburner.com/comiclistnextweek "~comic list - next week" "newslet
 http://www.metalstorm.net/rss/news.xml "~metalstorm" "newsletters" "music"
 
 ──────────────reddit
-https://reddit.com/r/unixporn.rss "~unixporn" "reddit"
 https://reddit.com/r/unixart.rss "~unixart" "reddit"
 https://reddit.com/r/vim.rss "~vim" "reddit"
 https://reddit.com/r/zsh.rss "~zsh" "reddit"
 https://reddit.com/r/privacy.rss "~privacy" "reddit"
 https://reddit.com/r/opensource.rss "~opensource" "reddit"
 https://reddit.com/r/comicbooks.rss "~comicbooks" "reddit" "comics"
+https://reddit.com/r/comicbookcollecting.rss "~comicbookcollecting" "reddit" "comics"
 
 ────────────mastodon
 https://mastodon.social/@pyratebeard.rss "~pyratebeard" "mastodon"
 https://mastodon.social/@eff.rss "~eff" "mastodon"
-https://fosstodon.org/@mort.rss "~mort" "mastodon"
 https://mastodon.social/@x0rz.rss "~x0rz" "mastodon"
 https://infosec.exchange/@0xmrtn.rss "~0xmrtn" "mastodon"
 
@@ -56,7 +55,6 @@ https://feeds.feedburner.com/xplainthexmen "~x-plain the x-men" "podcasts"
 https://invidious.snopyta.org/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
 https://invidious.snopyta.org/feed/channel/UCfhSB16X9MXhzSFe_H7XbHg "~bryan jenks" "youtube"
 https://invidious.snopyta.org/feed/channel/UCXPHFM88IlFn68OmLwtPmZA "~greg hurrell" "youtube"
-https://invidious.snopyta.org/feed/channel/UC2eYFnH61tmytImy1mTYvhA "~luke smith" "youtube"
 https://invidious.snopyta.org/feed/channel/UCeUMZ4t3ezEJFhXHJg9rshQ "~bangertv" "youtube"
 https://invidious.snopyta.org/feed/channel/UCRcgy6GzDeccI7dkbbBna3Q "~lemmino" "youtube"
 https://invidious.snopyta.org/feed/channel/UCpFFItkfZz1qz5PpHpqzYBw "~nexpo" "youtube"
