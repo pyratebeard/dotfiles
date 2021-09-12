@@ -16,15 +16,6 @@ servers = (
   },
   {
     address = "pyratebouncer";
-    chatnet = "freenode";
-    password = "";
-    port = "1666";
-    use_tls = "no";
-    tls_verify = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "pyratebouncer";
     chatnet = "libera";
     password = "";
     port = "1666";
@@ -82,6 +73,24 @@ servers = (
     chatnet = "darkscience";
     password = "";
     port = "1666";
+    use_tls = "yes";
+    tls_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "bitreich";
+    password = "";
+    port = "1666";
+    use_tls = "yes";
+    tls_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "oftc";
+    password = "";
+    port = "1666";
     use_tls = "no";
     tls_verify = "no";
     autoconnect = "no";
@@ -99,7 +108,6 @@ servers = (
 
 chatnets = {
   unixchat = { type = "IRC"; nick = "pyrate"; };
-  freenode = { type = "IRC"; nick = "pyratebeard"; };
   libera = { type = "IRC"; nick = "pyratebeard"; };
   rizon = { type = "IRC"; nick = "pyratebeard"; };
   snoonet = { type = "IRC"; nick = "pyratebeard"; };
@@ -108,6 +116,8 @@ chatnets = {
   undernet = { type = "IRC"; nick = "pyratebeard"; };
   darkscience = { type = "IRC"; nick = "pyratebeard"; };
   blitzed = { type = "IRC"; nick = "pyratebeard"; };
+  bitreich = { type = "IRC"; nick = "pyratebeard"; };
+  oftc = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = ( { name = "#unix"; chatnet = "unixchat"; autojoin = "Yes"; } );
@@ -134,7 +144,7 @@ settings = {
     indent = "13";
   };
   "fe-common/core" = {
-    theme = "mutiny.theme";
+    theme = "mutiny2.theme";
     autolog_path = "/var/log/irc/$tag/$0.log";
     autolog = "yes";
     hilight_nick_matches_everywhere = "yes";
@@ -146,6 +156,8 @@ settings = {
     awl_shared_sbar = "OFF";
     awl_detach = "(status)";
     awl_sort = "server";
+    awl_block = "15";
+    fancy_abbrev = "head";
   };
 };
 logs = { };
@@ -243,3 +255,7 @@ statusbar = {
     };
   };
 };
+keyboard = (
+  { key = "meta-z"; id = "previous_window"; data = ""; },
+  { key = "meta-x"; id = "next_window"; data = ""; }
+);

@@ -570,7 +570,7 @@ Irssi::settings_add_str('trackbar', 'trackbar_ignore_windows', '');
 Irssi::settings_add_bool('trackbar', 'trackbar_use_status_window', 1);
 Irssi::settings_add_bool('trackbar', 'trackbar_print_timestamp', 0);
 Irssi::settings_add_bool('trackbar', 'trackbar_require_seen', 0);
-Irssi::settings_add_bool('trackbar', 'trackbar_all_manual', 0);
+Irssi::settings_add_bool('trackbar', 'trackbar_all_manual', 1);
 
 update_config();
 
