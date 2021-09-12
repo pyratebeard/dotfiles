@@ -24,20 +24,25 @@ set flags     = -ic
 
 bang term     = urxvtc -hold -e %s
 bang web      = qutebrowser %s
-bang pdf      = zathura %s
+bang pdf      = zathura "%s"
+bang vid      = mpv "%s"
 bang man      = urxvtc -e man %s
-bang ddg      = qutebrowser https://duckduckgo.com/?q="%s"
+bang ddg      = qutebrowser "https://duckduckgo.com/?q=%s"
 bang calc     = notify-send "$(echo '%s' | bc -l)"
-bang buku     = urxvtc -e buku %s
+bang ba       = urxvtc -e buku -a %s
+bang bt       = urxvtc -hold --e buku --np -t %s
+bang bo       = urxvtc -e buku -o %s
 bang mpv      = urxvtc -e mpv "%s"
-bang at		  = urxvtc -e at "%s"
+bang todo     = urxvtc -hold -e watch todo
 bang ?        = echo "interrobang ignored \"%s\""
-bang quit	  = case "%s" in shutdown) sudo systemctl poweroff ;; reboot) sudo systemctl reboot ;; logout) killall xinit ;; cancel) exit ;; esac
+bang quit     = case "%s" in shutdown) sudo systemctl poweroff ;; reboot) sudo systemctl reboot ;; logout) killall xinit ;; cancel) exit ;; esac
+bang uh       = urxvtc -e $(hidden -c | grep -i "%s" | awk -F: '{print $NF}' | tr -d "'")
 
 tab default   = percontation "%s" %s | sort -u
 tab calc      = str="%s%s"; echo "!calc $(echo ${str#\!calc} | bc -l)"
 tab ?         = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.interrobangrc
-tab quit	  = echo -e "cancel\nshutdown\nreboot\nlogout" | grep "^%s%s"
+tab quit      = echo -e "cancel\nshutdown\nreboot\nlogout" | grep "^%s%s"
+tab uh        = for i in $(hidden | awk '{print $NF}' | tr '[:upper:]' '[:lower:]') ; do echo "!uh $i" ; done
 
 
 ## EXAMPLES OF COMPLEX COMPLETION OR SCRIPTING
