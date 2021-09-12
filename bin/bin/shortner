@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -X PUT -d "${1}" s.rum.sh
