@@ -38,7 +38,8 @@ alias pacman="sudo pacman"
 alias update="pacman -Syu"
 alias systemctl="sudo systemctl"
 alias :q="sudo systemctl poweroff"
-alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+#alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; sudo df -h -x tmpfs -x devtmpfs;'
+alias disks='echo "┌──┄";echo "├┄ m o u n t . p o i n t s"; echo "└──┄┄────┄┄"; lsblk -a; echo ""; echo "┌──┄";echo "├┄ d i s k . u s a g e"; echo "└──┄┄────┄┄"; sudo df -h -x tmpfs -x devtmpfs;'
 alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
 alias gifview="gifview -a"
 alias reboot="sudo reboot"
@@ -65,12 +66,16 @@ alias netctl="sudo netctl"
 alias feh="feh -g 640x480"
 alias rum.sh="nc rum.sh 9999"
 alias headsetbatt="bluetooth_battery 34:DF:2A:5F:04:2C"
-alias connect-headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"
+alias headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"
+alias bton="echo 'power on' | bluetoothctl"
+alias btoff="echo 'power off' | bluetoothctl"
 alias moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"
 alias cointop="$HOME/src/go/bin/cointop --hide-statusbar"
-alias nodisturb="/usr/bin/notify-send 'DUNST_COMMAND_PAUSE'"
-alias disturb="/usr/bin/notify-send 'DUNST_COMMAND_RESUME'"
+alias nodisturb="dunstctl set-paused true"
+alias disturb="dunstctl set-paused false"
 alias sacc="PAGER=less sacc"
+alias buku="buku --np"
+alias tin="NNTPSERVER=eu.newsdemon.com ~/src/warez/tin/tin-latest/src/tin -r -A"
 
 alias -s md=vim
 alias -s {png,jpg,jpeg}=sxiv
@@ -80,6 +85,7 @@ alias -s mp4=mpv
 email() {
   echo $3 | mutt -s $2 $1
 }
+
 # colorised cat
 c() {
   for file in "$@"
@@ -87,31 +93,48 @@ c() {
     pygmentize -O style=sourcerer -f console256 -g "$file" 
   done
 }
+
 # colorised less
 #l() {
 #  pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
 #}
+
 # read markdown files like manpages
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
+
+# read webpage as manpage
 webman() {
-	curl "$@" | pandoc -s -f html -t man | man -l -
+	curl -L "$@" | pandoc -s -f html -t man | man -l -
 }
+
+# read anything as manpage
 nam() {
 	pandoc -s -t man "$*" | man -l -
 }
+
+# connect to tmux on ssh
 ssux() {
 	TERM=screen ssh -t "$@" 'tmux attach || tmux new' || ssh "$@"
 }
 
+# record the primary screen
 screencast() {
-	RESOLUTION=$(xrandr | grep "*" | awk '{print $1}')
-	ffmpeg -f x11grab -s $RESOLUTION -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y $HOME/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${1}
+	RESOLUTION=$(xrandr | grep "*" | awk '{print $1}' | head -n1)
+	echo "recording..."
+	ffmpeg -f x11grab -s ${RESOLUTION} -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${1}.webm
 }
 
+# take picture with webcam
 webcapture() {
 	NUM=$(ls -l $HOME/tmp/*webcapture*|wc -l)
 	NUM=$(( NUM + 1 ))
 	ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -ss 0:0:2 -frames 1 $HOME/tmp/$(date +%Y%m%d)-webcapture-${NUM}.png
+}
+
+# sets terminal title
+# useful for unhide
+title() {
+	printf "\033]2;${1}\007"
 }

@@ -11,6 +11,9 @@ export GOPATH=$HOME/src/go
 export EDITOR=vim
 export VISUAL=vim
 
+# lynx colours
+export LYNX_LSS=$HOME/.config/lynx/lynx.lss
+
 # language
 export LC_COLLATE=en_GB.UTF-8
 export LC_CTYPE=en_GB.UTF-8
