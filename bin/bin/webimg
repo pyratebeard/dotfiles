@@ -1,4 +1,7 @@
 #!/bin/sh
+# ┓ ┳┳━┓┳━┓o┏┏┓┏━┓
+# ┃┃┃┣━ ┃━┃┃┃┃┃┃ ┳
+# ┗┻┇┻━┛┇━┛┇┛ ┇┇━┛
 #
 # requires `identify` from imagemagick
 
@@ -22,11 +25,12 @@ function show_img() {
 		curl -s "${image}" --output ${img}
 	else
 		image="${image/http\:/https\:}"
+		image="${image/\/imgur/\/i\.imgur}"
 		curl -s "${image}" --output ${img}
 	fi
 
-	if identify ${img} >/dev/null 2>1 ; then
-		if identify ${img} | grep GIF >/dev/null 2>1 ; then
+	if identify ${img} 2>&1 1>/dev/null ; then
+		if identify ${img} | grep GIF 2>&1 1>/dev/null ; then
 			mv "${img}" $(echo "${img}".gif)
 			img="${img}.gif"
 		fi
