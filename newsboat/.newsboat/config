@@ -10,21 +10,32 @@ player mpv
 
 # interface
 text-width 0
-max-items 20
+max-items 50
 
 # interface colours
-color info white black
-color listfocus_unread color7 color5
-color listfocus color0 color15
+color info color11 black
+color listfocus color7 color8
+color listfocus_unread color3 color8
+color listnormal color7 default
 color listnormal_unread color10 default
 
 # feedlist format and colours
-feedlist-format "%?T? │ %2i  %t & ├───  %t?"
-highlight feedlist ".*─────.*" color59 default
+highlight feedlist "┣." color5 default
+highlight feedlist "━" color5 default
+highlight feedlist "┃" color5 default
+highlight feedlist "■" color59 default
+highlight feedlist "▓" color5 default
+highlight feedlist "▒" color5 default
+highlight feedlist "░" color5 default
+highlight feedlist " [1-9]. " color15 default
+# the 'whitespace' here is digraphs #188 (ctrl-k 14)
+highlight feedlist "⋯[a-z].*⋯" color15 default
+feedlist-format "%?l?▓ %=2i  %t &▓▓▒▒░░⋯%t⋯░░▒▒?"
 
 # article format and colours
 #articlelist-format "%?T? │ %2i %f  %t?"
-articlelist-format " │ %2i  %t"
+highlight articlelist "▓" color5 default
+articlelist-format "▓ %2i  %t"
 highlight article "^Feed:.*" color5 default
 highlight article "^Title:.*" color3 default
 highlight article "^Author:.*" color7 default
@@ -45,6 +56,8 @@ macro i set browser "~/bin/webimg" ; open-in-browser ; set browser lynx
 macro y set browser "youtube-dl -o '~/lib/videos/youtube/sort_out/%(title)s.%(ext)s' '%u'" ; open-in-browser ; set browser lynx
 
 # podboat
-download-path "~/lib/audio/podcasts/%h/%n"
+download-path "~/lib/audio/podcasts/%n"
+download-filename-format "%n-%t"
 max-downloads 3
-player "mpv --no-audio-display"
+player "mpv --profile=quick --no-audio-display"
+podlist-format "%4i %-10S %b
