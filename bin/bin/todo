@@ -21,7 +21,11 @@ append() {
 
 delete() {
 	test -n "$1" || exit 1
-	sed -i "${1}d" $TODO
+	ed $TODO << EOF >/dev/null
+${1}d
+w
+q
+EOF
 }
 
 # delete line "$2" (see delete() function)
