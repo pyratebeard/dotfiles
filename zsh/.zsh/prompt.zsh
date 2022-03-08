@@ -98,7 +98,12 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 # tiny
 tiny)
 #PROMPT='%F{3} %%${COLOR_NORMAL} '
-PROMPT='%F{3} ──── ─${COLOR_NORMAL} '
+# change prompt colour if started from vim
+if [[ -v VIMRUNTIME ]] ; then
+	PROMPT='%F{9} ──── ─${COLOR_NORMAL} '
+else
+	PROMPT='%F{3} ──── ─${COLOR_NORMAL} '
+fi
 RPROMPT='%F{15}%~ $(GIT_PROMPT) %F{11}${HOSTNAME}${COLOR_NORMAL}'
 ;;
 # classic
