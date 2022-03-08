@@ -5,7 +5,8 @@
 
     about ┄┬┄ custom config files
    author ┄┼┄ pyratebeard <root@pyratebeard.net>
-     code ┄┴┄ https://gitlab.com/pyratebeard/dotfiles
+     code ┄┼┄ https://git.pyratebeard.net/dotfiles
+   mirror ┄┴┄ http://s.rum.sh/dot
 
      2bwm ┄┬┄ window manager
      cmus ┄┼┄ music player
