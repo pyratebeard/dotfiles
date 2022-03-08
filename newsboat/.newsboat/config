@@ -7,6 +7,7 @@ browser lynx
 save-path ~/tmp
 notify-program /usr/bin/notify-send
 player mpv
+confirm-mark-feed-read no
 
 # interface
 text-width 0
@@ -59,5 +60,5 @@ macro y set browser "youtube-dl -o '~/lib/videos/youtube/sort_out/%(title)s.%(ex
 download-path "~/lib/audio/podcasts/%n"
 download-filename-format "%n-%t"
 max-downloads 3
-player "mpv --profile=quick --no-audio-display"
+player "mpv --profile=quick --no-audio-display --input-ipc-server=/tmp/mpvsock"
 podlist-format "%4i %-10S %b
