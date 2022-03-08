@@ -2,26 +2,29 @@
 */30 * * * * $HOME/bin/checkip
 
 # daily backup of specified items
-0 4 * * * $HOME/bin/daily_backup
+0 4 * * * $HOME/bin/sdd -d
 
 # check email every hour and notify. full sync daily
 0 * * * * $HOME/bin/mail_sync
 0 1 * * * offlineimap
 
 # update rss a few times a day
-0 8 * * * $HOME/bin/boat_sync
-0 11 * * * $HOME/bin/boat_sync
-0 14 * * * $HOME/bin/boat_sync
+0 8,11,14 * * * $HOME/bin/boat_sync
 
 # change bg every hour
 #0 * * * * $HOME/bin/bgchange
 
 # check weather twice a day
-0 8 * * * $HOME/bin/weather
-0 14 * * * $HOME/bin/weather
+0 8,14 * * * $HOME/bin/weather
 
 # download latest powerzone show
 0 8 * * fri $HOME/bin/powerdl
 
 # weekly comic pack download
 0 19 * * thu $HOME/tmp/comic_download/comicdl.sh
+
+# daily readlist bookmark list generator
+0 23 * * * $HOME/src/pyratestart/genreadlist.sh
+
+# hourly src git repo fetch
+0 * * * * $HOME/bin/src_fetch

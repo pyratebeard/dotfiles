@@ -47,6 +47,7 @@ hi SignColumn   term=NONE cterm=NONE ctermfg=NONE ctermbg=235
 hi Special      term=NONE cterm=NONE ctermfg=2    ctermbg=NONE
 hi SpecialKey   term=NONE cterm=NONE ctermfg=3    ctermbg=NONE
 hi SpellBad     term=NONE cterm=NONE ctermfg=15   ctermbg=1
+hi SpellCap     term=NONE cterm=NONE ctermfg=15   ctermbg=4
 hi Statement    term=NONE cterm=NONE ctermfg=251  ctermbg=NONE
 hi StatusLine   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi String       term=NONE cterm=NONE ctermfg=11   ctermbg=NONE
