@@ -1,10 +1,11 @@
 # AUTOCOMPLETION
+fpath=($HOME/.zsh/completion $fpath)
 autoload -Uz compinit
-compinit
-autoload -U ~/.zsh/completion/*(:t)
+compinit -u
+#autoload -U ~/.zsh/completion/*(:t)
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' format 'completing %F{10}%d%F{white}'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
