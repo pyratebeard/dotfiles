@@ -1,0 +1,18 @@
+#compdef ssux
+
+_ssux() {
+	local -a hosts
+	IFS=$'\n' hosts=($(\
+		awk '/^Host [A-Za-z]+/ {print $2}' \
+		$HOME/.ssh/config \
+		$HOME/.ssh/hosts.conf \
+		$HOME/.ssh/local.conf \
+		$HOME/.ssh/lxc.conf))
+	local -a known
+	known=($(awk '/^[A-Za-z]+/ {print $1}' $HOME/.ssh/known_hosts | awk -F, '{print $1}' | sort | uniq))
+	_describe -t hosts 'hosts' hosts
+	_describe -t known 'known' known
+	return 0
+}
+
+_ssux
