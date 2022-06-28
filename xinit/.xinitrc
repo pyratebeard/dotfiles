@@ -62,3 +62,4 @@ xrdb -load ~/.Xdefaults
 # Start a terminal in the foreground. If this dies, X dies.
 urxvtd &
 exec urxvt -T controlterm
+xrandr --output HDMI-1 --rotate left
