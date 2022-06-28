@@ -8,7 +8,7 @@ remoterepository = pyratebeard-remote
 
 [Repository pyratebeard-local]
 type = Maildir
-localfolders = ~/lib/documents/email/pyratebeard
+localfolders = ~/var/mbox/pyratebeard
 
 [Repository pyratebeard-remote]
 type = IMAP
