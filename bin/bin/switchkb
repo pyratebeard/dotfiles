@@ -9,7 +9,11 @@ fi
 
 kill $(pidof xcape)
 setxkbmap -option
-setxkbmap -option ctrl:nocaps $lang
+if [[ "$lang" == "colemak" ]] ; then
+	setxkbmap -option ctrl:nocaps us -variant colemak-ctrl
+else
+	setxkbmap -option ctrl:nocaps $lang
+fi
 xcape -e 'Control_L=Escape'
 
 echo "keyboard is switched to $lang"

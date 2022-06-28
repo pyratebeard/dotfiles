@@ -1,0 +1,92 @@
+#!/usr/bin/zsh
+
+#DM_CMD=$(dmenu -m 0 -fn tamzen:pixelsize=15 -i -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -l 10)
+
+dm_bin() {
+	bin_arr=()
+	while IFS= read -r line; do
+		bin_arr+=( "$line" )
+	done < <( find $HOME/bin )
+
+	choice=$(printf '%s\n' "${bin_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'bin: ')
+	
+	if [ "$choice" ] ; then
+		#cmd="printf '%s\n' "${bin_arr[@]}" | grep $HOME/bin/$choice | head -n1" 
+		cmd="$HOME/bin/${choice} $@"
+		urxvt -geometry 1x1+3000+1920 -e zsh -c "$cmd"
+	fi
+}
+
+dm_func() {
+	func_arr=()
+	while IFS= read -r line; do
+		func_arr+=( "$line" )
+	done < <( find $HOME/.zsh/functions )
+
+	choice=$(printf '%s\n' "${func_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'functions: ')
+	
+	if [ "$choice" ] ; then
+		#cmd="printf '%s\n' "${func_arr[@]}" | grep $HOME/bin/$choice | head -n1" 
+		cmd="$HOME/.zsh/functions/${choice} $@"
+		urxvt -geometry 1x1+3000+1920 -e zsh -c "$cmd"
+	fi
+}
+
+dm_aliases() {
+	source $HOME/.zsh/aliases.zsh
+	alias_arr=()
+	while IFS= read -r line; do
+		alias_arr+=( "$line" )
+	done < <( alias )
+
+	choice=$(printf '%s\n' "${alias_arr[@]}" | awk -F= '{print $1}' | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'submenu: ')
+	
+	if [ "$choice" ] ; then
+		cmd=$(printf '%s\n' "${alias_arr[@]}" | grep ^$choice | head -n1 | sed 's/=/%/' | awk -F% '{ print $NF }' | tr -d "'")
+		urxvt -e zsh -c "$cmd"
+		#echo $cmd
+	fi
+}
+
+dm_hidden() {
+	hide_arr=()
+	while IFS= read -r line; do
+		hide_arr+=( "$line" )
+	done < <(hidden -c)
+
+	choice=$(printf '%s\n' "${hide_arr[@]}" | awk -F: '{print $1}' | tr -d "'" | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'submenu: ')
+	
+	if [ "$choice" ] ; then
+		cmd=$(printf '%s\n' "${hide_arr[@]}" | grep "^'$choice'" | awk -F: '{ print $NF }' | tr -d "'")
+		urxvt -e zsh -c "$cmd"
+		#echo $cmd
+	fi
+}
+
+dm_man() {
+	man_arr=()
+	while IFS= read -r line; do
+		man_arr+=( "$line" )
+	done < <(man -k .)
+
+	choice=$(printf '%s\n' "${man_arr[@]}" | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'manpage: ')
+	
+	if [ "$choice" ] ; then
+		cmd=$(printf '%s\n' "${man_arr[@]}" | grep ^$choice | awk '{print $1}')
+		urxvt -e zsh -c "source $HOME/.zsh/colored-man-pages.zsh ; man ${cmd}"
+	fi
+}
+
+select_arr=("run" "bin" "functions" "aliases" "hidden" "man" "scratch")
+submenu=$(printf '%s\n' "${select_arr[@]}" | dmenu -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'submenu: ')
+
+case $submenu in
+	run) dmenu_run -i -l 10 -m 0 -fn tamzen:pixelsize=15 -nb '#2b2b2d' -nf '#baba9e' -sb '#753747' -sf '#bbbbbb' -p 'rundmc: ' ;;
+	bin) dm_bin ;;
+	functions) dm_func ;;
+	aliases) dm_aliases ;;
+	hidden) dm_hidden ;;
+	man) dm_man ;;
+	scratch) urxvtc -e zsh -c "less $HOME/.vimrc" ;;
+	*) exit ;;
+esac

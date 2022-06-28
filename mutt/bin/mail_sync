@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-mail_dir="$HOME/lib/documents/email"
-log_file="/var/log/mail_sync.log"
+export PYTHONDONTWRITEBYTECODE=1
+mail_dir="$HOME/var/mbox"
+log_file="$HOME/var/log/mail_sync.log"
 cached_key=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}} END{if($0!=""){print CACHED} else {print "none"}}')
 
 log() {
@@ -25,3 +26,4 @@ else
 	log "ERROR: no gpg key cached"
 fi
 
+[ -d $HOME/__pycache__ ] && rm -rf $HOME/__pycache__

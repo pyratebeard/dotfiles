@@ -1,4 +1,0 @@
-#!/bin/sh
-perc=$1
-
-amixer set Master ${perc}%

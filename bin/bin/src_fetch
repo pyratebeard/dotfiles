@@ -1,0 +1,15 @@
+#!/bin/sh
+
+find $HOME/src \
+	-mindepth 1 \
+	-maxdepth 2 \
+	-type d \
+	-not -path '*/warez/*' \
+	-not -path '*/suit/*' \
+	-not -path '*/node_modules/*' \
+	-not -path '*/perl5/*' \
+	-not -path '*/\.git' \
+	-exec zsh -c "cd '{}' ; pwd ; \
+					[ -d .git ] \
+					&& grep '\[remote ' .git/config >/dev/null \
+					&& git fetch -q 2>&1" \;

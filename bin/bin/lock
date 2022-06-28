@@ -1,2 +1,2 @@
 #pkill ssh-agent ; pkill gpg-agent
-light-locker-command --lock
+i3lock -u -c \#1e1b1c

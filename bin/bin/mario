@@ -18,7 +18,7 @@ iso_type() {
 vimify() {
 	timestamp=$(date +%s)
 	curl -L -o /tmp/mario-${timestamp} "${1}"
-	urxvtc -hold -e vim /tmp/mario-${timestamp}
+	urxvt -cd /home/pyratebeard -hold -e vim -u ~/tmp/mario.vimrc /tmp/mario-${timestamp}
 	#rm -f /tmp/mario-${timestamp}
 }
 
@@ -28,14 +28,12 @@ plumbit() {
 		Audio) /usr/bin/mpv "${url}" ;;
 		POSIX) urxvtc -hold -e curl -s ${url} ;;
 		ISO) iso_type ;;
-		#HTML) urxvtc -hold -e lynx -lss=~/.config/lynx/lynx.lss "${url}" ;;
 		HTML|XML) qutebrowser "${url}" ;;
-		#Unicode|Bourne-Again|ASCII|C|Python) curl -L -o /tmp/mario.sh "${url}" ; urxvtc -hold -e vim /tmp/mario.sh ; rm -f /tmp/mario.sh ;;
 		Unicode|Bourne-Again|ASCII|C|Python) vimify "${url}" ;;
-		#Unicode|Bourne-Again|ASCII|C|Python) urxvtc -hold -e curl -Ls "${url}" ;;
 		PDF) curl -L -o /tmp/mario.pdf "${url}" ; zathura /tmp/mario.pdf ; rm -f /tmp/mario.pdf ;;
 		*) /usr/bin/notify-send -u 'normal' "mario: unknown filetype ${filetype}" ;;
 	esac
 }
 
-[[ "${url}" == *"youtube"* ]] && mpv "${url}" || plumbit
+vidreg="(youtu|watch?v=)"
+(([[ "${url}" =~ $vidreg ]] && mpv "${url}") || ([[ "${url}" == *"gallery"* ]] && qutebrowser "${url}")) || plumbit
