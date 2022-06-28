@@ -33,8 +33,7 @@
     term="urxvtc -hold -e "                                                   \
                                                                               \
     reboot="sudo reboot"                                                      \
-    systemctl="sudo systemctl"                                                \
-    :q="sudo systemctl poweroff"
+    systemctl="sudo systemctl"
 
 
 # ▓▓▒░ info
@@ -162,6 +161,7 @@
     gopher="PAGER=less sacc g.nixers.net/1/~pyratebeard/startpage.gph"        \
     buku="buku --np"                                                          \
     tin="NNTPSERVER=eu.newsdemon.com ~/src/warez/tin/tin-latest/src/tin -r -A"\
+    drawterm="drawterm -h 9p.sdf.org -a 9p.sdf.org -u pyratebeard"            \
                                                                               \
     kb="keybase"                                                              \
     irc="TERM=screen-256color dtach -A /tmp/irc irssi"                        \
@@ -203,4 +203,8 @@
     # read anything as manpage
     nam() {
         pandoc -s -t man "$*" | man -l -
+    }
+
+    :q() {
+        [[ -v SSH_TTY ]] && echo dumpshock || sudo systemctl poweroff
     }
