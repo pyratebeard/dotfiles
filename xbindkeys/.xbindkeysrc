@@ -1,0 +1,106 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.7
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+#"xterm -geom 49x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+## close dunst notifications
+"/usr/bin/dunstctl close-all"
+  alt + space
+
+## cmus
+### open cmus
+"urxvtc -e dtach -A /tmp/mus cmus"
+  alt + m
+### toggle music pause
+"/usr/bin/cmus-remote -u"
+  alt + c
+### next track
+"/usr/bin/cmus-remote -n"
+  alt + b
+### show track details
+"/usr/bin/notify-send -u 'normal' "$(cmus-remote -Q | grep -E 'tag artist |tag album |tag title ' | awk '{$1=""; print $0}')""
+  alt + t
+
+## mpv
+### pause running mpv process
+"echo '{"command":["cycle", "pause"]}'|socat - /tmp/mpvsock"
+  alt + p
+
+## volume
+"curvol=$(awk -F"[][]" '/%/ {print $2}' <(amixer get Master) | tr -d '%' | head -n1) ; curvol=$(( curvol - 10 )) ; amixer set Master "${curvol}%""
+  alt + Page_Down
+"curvol=$(awk -F"[][]" '/%/ {print $2}' <(amixer get Master) | tr -d '%' | head -n1) ; curvol=$(( curvol + 10 )) ; amixer set Master "${curvol}%""
+  alt + Page_Up
+
+## open ranger
+"urxvtc -hold -e ranger $HOME"
+  release+alt+shift + r
+
+## ptt
+#"/usr/bin/amixer set Capture cap >/dev/null"
+#  alt + p
+#"/usr/bin/amixer set Capture nocap >/dev/null"
+#  release+alt + p
+"/home/pyratebeard/bin/ptt"
+  alt + p
+
+## vi navigation
+"/usr/bin/xte 'key j'"
+  release+alt + n
+
+"/usr/bin/xte 'key k'"
+  release+alt + e
+
+##################################
+# End of xbindkeys configuration #
+##################################
