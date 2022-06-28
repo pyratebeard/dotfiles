@@ -61,7 +61,8 @@ Uninstall vim configuration
 
 `stow -D vim`
 
-etc...
+Start from a different target directory
+`sudo stow -t / cron`
 
 ### TERMINAL
 Ever since I started using Linux I have loved working in the terminal. I find it faster and easier than most graphical interfaces.
