@@ -11,7 +11,7 @@ confirm-mark-feed-read no
 
 # interface
 text-width 0
-max-items 50
+max-items 10
 
 # interface colours
 color info color11 black

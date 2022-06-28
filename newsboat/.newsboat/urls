@@ -43,17 +43,17 @@ https://nitter.net/pyratebeard/lists/tech/rss "~tech list" "twitter" "tech"
 
 podcasts
 https://podcast.nixers.net/feed/feed.xml "~nixers" "podcasts"
-https://error.show/rss "~user error" "podcasts"
-https://selfhosted.show/rss "~selfhosted" "podcasts"
 http://www.2600.com/oth-broadband.xml "~off the hook" "podcasts"
 http://feeds.feedburner.com/doctorow_podcast "~cory doctorow" "podcasts"
 http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss "~priv, sec, osint" "podcasts"
 https://feeds.feedburner.com/xplainthexmen "~x-plain the x-men" "podcasts"
 https://myhauntedhead.libsyn.com/rss "~my haunted head" "podcasts"
 https://bigpunchstudios.squarespace.com/jlacast?format=rss "~the jlacast" "podcasts" "comics"
-https://rss.acast.com/filmstobeburiedwith "~films to be buried with" "podcasts"
+https://latenightlinux.com/feed/all "~late night linux" "podcasts"
+https://destinationlinux.org/feed/mp3 "~destination linux" "podcasts"
+https://www.smashingsecurity.com/rss "~smashing security" "podcasts"
 
-youtube
+videos
 https://invidious.snopyta.org/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
 https://invidious.snopyta.org/feed/channel/UCeUMZ4t3ezEJFhXHJg9rshQ "~bangertv" "youtube"
 https://invidious.snopyta.org/feed/channel/UCRcgy6GzDeccI7dkbbBna3Q "~lemmino" "youtube"
@@ -62,6 +62,7 @@ https://invidious.snopyta.org/feed/channel/UCQ-EfYqpcN0zOQPAPgG6rhQ "~xero" "you
 https://invidious.snopyta.org/feed/channel/UCPWjCY320JFSGqTlaD8ktqA "~sideshowmonkeyart" "youtube" "art"
 https://invidious.snopyta.org/feed/channel/UC0-xeMXO_Vu8_wqqKf_Nipg "~david finch" "youtube" "art"
 https://invidious.snopyta.org/feed/channel/UC8bW15a945PVgNYGdUkzLhg "~robert marzullo" "youtube" "art"
+https://tilvids.com/feeds/videos.xml?videoChannelId=2775 "~veronica explains" "peertube" "tech"
 
 music
 https://media.defcon.org/DEF%20CON%20rss/defcon-18-music.rss "~defcon" "music"
@@ -78,3 +79,4 @@ news
 https://www.irishtimes.com/cmlink/news-1.1319192 "~irish times" "news headlines"
 http://feeds.bbci.co.uk/news/rss.xml "~bbc top stories" "news headlines"
 https://soylentnews.org/index.rss "~soylent news" "news headlines"
+https://www.phoronix.com/rss.php "~phoronix" "news tech"
