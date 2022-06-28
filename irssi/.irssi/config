@@ -21,7 +21,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -30,7 +30,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -39,7 +39,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -48,7 +48,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -66,7 +66,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -75,7 +75,7 @@ servers = (
     port = "1666";
     use_tls = "yes";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -93,7 +93,7 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "pyratebouncer";
@@ -102,7 +102,16 @@ servers = (
     port = "1666";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "pyratebouncer";
+    chatnet = "ircd";
+    password = "";
+    port = "1666";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "yes";
   }
 );
 
