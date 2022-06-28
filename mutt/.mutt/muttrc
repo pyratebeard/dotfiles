@@ -24,12 +24,15 @@ set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/"
 set certificate_file = "~/.mutt/certificates"
 set mbox_type = Maildir
-set folder = "~/lib/documents/email/pyratebeard"
+set folder = "~/var/mbox/pyratebeard"
 set spoolfile = +INBOX
-set record  = "~/.mutt/sent"
-set postponed = "~/.mutt/postponed"
+set record  = "+INBOX.Sent"
+set postponed = "+INBOX.Drafts"
 mailboxes = =INBOX
 set mail_check = 120
+set collapse_unread = no
+set sort = threads
+set sort_aux = reverse-date-received
 
 # colours
 color normal default default
@@ -38,12 +41,15 @@ color tree default default
 color status white black
 color index white color8 "~T"
 color index color10 default "~U"
+color index color15 default "~O"
 color index red black "~D"
-color index color5 default "~F"
+color index color14 default "~F"
+color index color3 default "~g"
+color index color0 color3 "~G"
 
 # pgp
 source "~/.mutt/gpg.rc"
-set pgp_autosign = no
+set pgp_autosign = yes
 set pgp_use_gpg_agent = yes
 
 # compose
@@ -66,7 +72,7 @@ unset markers
 set mailcap_path = ~/.mailcap"
 auto_view text/html
 alternative_order text/html text/plain
-set display_filter = "~/bin/mailfmt"
+set display_filter = "~/bin/mailfmtshort"
 
 # sidebar
 set sidebar_visible = no
