@@ -84,7 +84,20 @@ nnoremap <F9> :setl ai<CR>
 nnoremap <C-w>g :Goyo<CR>
 
 " open shell in current buffer dir
-nnoremap <leader>z :cd %:p:h <bar>!zsh<CR>
+nnoremap <leader>z :cd %:p:h <bar>!zsh<CR><CR>
+
+" list buffers and wait for number
+nnoremap <leader>b :ls<CR>:b
+
+" wrap and spellcheck when writing
+nnoremap <C-w>w :set wrap<CR>:Spell<CR>
+
+" fzf
+"nnoremap <leader>f :cd $HOME/src <bar>FZF<CR>
+nnoremap <leader>f :cd $HOME/src <bar>FZF<CR>
+
+" list registers
+nnoremap <leader>r :registers<CR>
 
 " columns
 " 80 soft 120 hard
@@ -105,6 +118,13 @@ command Spell :setlocal spell! spell?
 
 " make current buffer executable
 command Chmodx :!chmod a+x %
+
+" git commit shortcut
+command Gc Git commit -S
+command Gf Git fetch
+command Gp Git push
+command -nargs=* Gco Git checkout
+command Gm Git merge
 
 " INTERFACE
 " show matching brackets/parenthesis
@@ -135,6 +155,11 @@ set foldminlines=99
 " highlight line
 set cursorline
 
+" MACROS
+" target blank links
+" used in blog md files
+let @t='{target="_blank" rel="noreferrer"}'
+
 " PLUGINS
 filetype plugin indent on
 " to install from the shell run:
@@ -152,7 +177,8 @@ if 1 " boolean for plugin loading
   Plugin 'ajh17/VimCompletesMe'
   Plugin 'mhinz/vim-signify'
   Plugin 'junegunn/goyo.vim'
-  Plugin 'gregsexton/gitv'
+  Plugin 'rbong/vim-flog'
+  Plugin 'ctrlpvim/ctrlp.vim'
   call vundle#end()
 
   " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
@@ -168,13 +194,13 @@ if 1 " boolean for plugin loading
   nnoremap \ :Ag<SPACE>
 
   " vimwiki https://vimwiki.github.io
-  let pyratewiki = {}
-  let pyratewiki.path = '~/lib/documents/pyratewiki'
-  let pyratewiki.path_html = '~/lib/documents/pyratewiki/html'
-  let pyratewiki.syntax = 'markdown'
-  let pyratewiki.ext = '.md'
+  let grimoire = {}
+  let grimoire.path = '~/lib/documents/grimoire'
+  let grimoire.path_html = '~/lib/documents/grimoire/html'
+  let grimoire.syntax = 'markdown'
+  let grimoire.ext = '.md'
 
-  let g:vimwiki_list = [pyratewiki]
+  let g:vimwiki_list = [grimoire]
 
   " vim-signify (diffs)
   let g:signify_sign_add = '░'
