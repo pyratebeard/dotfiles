@@ -43,10 +43,9 @@ static const uint8_t borders[] = {4,10,6,6};
 #define LOOK_INTO "WM_NAME"
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
-static const char *menucmd[]   = { "/home/pyratebeard/bin/multi-interrobang", NULL };
+static const char *menucmd[]   = { "/home/pyratebeard/bin/rundmc", NULL };
 static const char *terminal[]  = { "urxvtc", NULL };
 static const char *lock[]  = { "/home/pyratebeard/bin/lock", NULL };
-static const char *ptt[] = { "/home/pyratebeard/bin/ptt", NULL };
 ///--Custom foo---///
 static void halfandcentered(const Arg *arg)
 {
@@ -61,6 +60,13 @@ static void maxwithborders(const Arg *arg)
 	maxhalf(&arg2);
 	Arg arg3 = {.i=TWOBWM_MAXIMIZE_HORIZONTALLY};
 	maxvert_hor(&arg3);
+}
+static void doubledown(const Arg *arg)
+{
+	Arg arg2 = {.i=TWOBWM_MAXHALF_UNFOLD_VERTICAL};
+	maxhalf(&arg2);
+	Arg arg3 = {.i=TWOBWM_MAXHALF_UNFOLD_HORIZONTAL};
+	maxhalf(&arg3);
 }
 ///---Sloppy focus behavior---///
 /*
@@ -153,8 +159,10 @@ static key keys[] = {
     {  MOD ,              XK_End,        resizestep_aspect, {.i=TWOBWM_RESIZE_KEEP_ASPECT_SHRINK}},
     // Maximize (ignore offset and no EWMH atom)
     //{  MOD ,              XK_x,          maximize,          {}},
-	// Maximize with borders
+    // Maximize with borders
     {  MOD ,              XK_x,          maxwithborders,          {.i=0}},
+    // Unfold vert and horz
+    {  MOD ,              XK_d,          doubledown,              {.i=0}},
     // Full screen (disregarding offsets and adding EWMH atom)
     {  MOD |SHIFT ,       XK_x,          fullscreen,        {}},
     // Maximize vertically
@@ -211,8 +219,6 @@ static key keys[] = {
     {  MOD ,              XK_w,          start,             {.com = menucmd}},
     {  MOD ,              XK_Return,     start,             {.com = terminal}},
     {  MOD ,              XK_z,          start,             {.com = lock}},
-    // Toggle ptt
-    {  MOD ,              XK_p,          start,             {.com = ptt}},
     // Exit or restart 2bwm
     {  MOD |CONTROL,      XK_q,          twobwm_exit,       {.i=0}},
     {  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},
@@ -234,7 +240,7 @@ static key keys[] = {
 static Button buttons[] = {
     {  MOD        ,XCB_BUTTON_INDEX_1,     mousemotion,   {.i=TWOBWM_MOVE}, false},
     {  MOD        ,XCB_BUTTON_INDEX_3,     mousemotion,   {.i=TWOBWM_RESIZE}, false},
-    {  0          ,XCB_BUTTON_INDEX_3,     start,         {.com = menucmd}, true},
+    {  0          ,XCB_BUTTON_INDEX_3,     start,         {.com = terminal}, true},
     {  MOD|SHIFT,  XCB_BUTTON_INDEX_1,     changeworkspace, {.i=0}, false},
     {  MOD|SHIFT,  XCB_BUTTON_INDEX_3,     changeworkspace, {.i=1}, false},
     {  MOD|ALT,    XCB_BUTTON_INDEX_1,     changescreen,    {.i=1}, false},
