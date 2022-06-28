@@ -16,7 +16,7 @@ set smtp_authenticators=”login”
 set smtp_pass = $my_pass
 
 # user details
-set from = ""
+set from = "root@pyratebeard.net"
 set realname = "pyratebeard"
 
 # mailbox
