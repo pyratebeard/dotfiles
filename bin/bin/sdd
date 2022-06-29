@@ -1,0 +1,163 @@
+#!/bin/sh
+#               ██      ██
+#              ░██     ░██
+#   ██████     ░██     ░██
+#  ██░░░░   ██████  ██████
+# ░░█████  ██░░░██ ██░░░██
+#  ░░░░░██░██  ░██░██  ░██
+#  ██████ ░░██████░░██████
+# ░░░░░░   ░░░░░░  ░░░░░░
+#  s e c u r e  d e d u p
+#
+#  author ▓▒ pyratebeard
+#    code ▓▒ https://git.pyratebeard.net/scripts/file/sdd.html
+
+BASENAME="${0##*/}"
+DEDUP_PATH="$HOME/src/warez/dedup"
+DEDUP_DIR="/var/dedup"
+DEDUP_KEY="$HOME/lib/keys/dedup.key"
+ARCHIVE_NAME="$(date +%Y%m%d)"
+
+usage() {
+	echo "Usage: ${BASENAME} [-p <file|dir>] [-u <file|dir>]
+
+	-d: (daily) run daily via cron to backup important items
+	-f: (full) packs \$HOME to external drive (/mnt/dedup)
+	-h: (help) prints this page
+	-l: (list) print all backup repos and latest archive
+	-p: (pack) backup file or directory
+	-r: (rclone) upload all repos to cloud storage
+	-u: (unpack) restore file or directory
+"
+}
+
+pager() {
+	# notify in irc channel
+	# https://serverfault.com/a/259877
+	msg="${1}"
+	irc_serv="irc.local"
+	irc_port="6667"
+	irc_nick="pager"
+	irc_chan="#pager"
+
+	echo -e "USER ${irc_nick} guest tolmoon tolsun\nNICK ${irc_nick}\nJOIN ${irc_chan}\nPRIVMSG ${irc_chan} :$(date +%T) ${BASENAME} : ${msg}\nQUIT\n" | \
+		nc ${irc_serv} ${irc_port}
+
+	# notify using ntfy
+	curl -d "${msg}" https://pager.pyratebeard.net/sdd
+}
+
+fnd_latest() {
+	item="${1}"
+	latest=$(find ${DEDUP_DIR}/${item}/archive -type f \
+				-exec stat -c '%X %n' {} \; | \
+				sort -nr | \
+				awk -F\/ 'NR==1 {print $NF}')
+	return ${latest}
+}
+
+list() {
+	local repos=$(find ${DEDUP_DIR}/* -maxdepth 1 -type d -prune -printf '%f\n')
+	for r in ${repos} ; do
+		fnd_latest ${r}
+		echo "${r}: ${latest}"
+	done
+}
+
+pack() {
+	pack_path="$(readlink -f ${1})"
+	pack_item="$(echo $pack_path | awk -F\/ '{print $NF}')"
+	# trim period from hidden {file,dir}
+	pack_item="${pack_item#.*}"
+	# trim file extension
+	pack_item="${pack_item%.*}"
+
+	[ -d ${DEDUP_DIR}/${pack_item} ] || \
+		${DEDUP_PATH}/dup-init \
+		-k ${DEDUP_KEY} \
+		-E XChaCha20-Poly1305 \
+		${DEDUP_DIR}/${pack_item}
+
+	fnd_latest ${pack_item}
+	[[ ${latest} == ${ARCHIVE_NAME} ]] && exit 0
+
+	sudo tar -pcf - ${pack_path} | \
+		${DEDUP_PATH}/dup-pack \
+		-k ${DEDUP_KEY} \
+		-r ${DEDUP_DIR}/${pack_item} \
+		${ARCHIVE_NAME}
+}
+
+unpack(){
+	unpack_item=${1}
+	fnd_latest ${unpack_item}
+	${DEDUP_PATH}/dup-unpack \
+	-k ${DEDUP_KEY} \
+	-r ${DEDUP_DIR}/${unpack_item} \
+	${latest} | \
+		sudo tar -C / -pxf -
+}
+
+upload() {
+	storage=${1}
+
+	rclone copy ${DEDUP_DIR}/ ${storage}:dedup
+}
+
+daily() {
+	buku_dir="$HOME/lib/documents/buku"
+	backup_list=(
+		"$HOME/var/mbox"
+		"${buku_dir}/buku.db"
+		"$HOME/lib/documents/work/octotech"
+		"$HOME/lib/keys"
+		"$HOME/.password-store"
+		"$HOME/dot"
+		"$HOME/.zhistory"
+		"$HOME/.todo"
+		"$HOME/lib/documents/grimoire"
+	)
+	storage_list=(
+		"mega"
+	)
+
+	if [ -f "${buku_dir}/buku.db" ] ; then
+		rm -f ${buku_dir}/buku.db
+	fi
+	buku -e ${buku_dir}/buku.db >/dev/null
+	
+	for item in ${backup_list[@]} ; do
+		pack ${item} || pager "packing of ${item} failed"
+	done
+
+	for storage in ${storage_list[@]} ; do
+		upload ${storage} || pager "upload to ${storage} failed"
+	done
+}
+
+full_bak() {
+	DEDUP_DIR="/mnt/dedup"
+
+	sudo tar -pcf - ${HOME} | \
+		${DEDUP_PATH}/dup-pack \
+		-k ${DEDUP_KEY} \
+		-r ${DEDUP_DIR}/$(hostname -s)-home \
+		$(date +%Y%m%d)
+}
+
+if [ $# -eq 0 ] ; then
+	usage
+else
+	while getopts ":dflp:r:u:" opt ; do
+		case ${opt} in
+			d) daily ;;
+			f) full_bak ;;
+			h) usage ;;
+			l) list ;;
+			p) pack "${OPTARG}" ;;
+			r) upload ${OPTARG} ;;
+			u) unpack "${OPTARG}" ;;
+			*) usage ;;
+		esac
+	done
+fi
