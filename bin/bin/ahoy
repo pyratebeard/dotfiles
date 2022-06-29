@@ -55,86 +55,57 @@ usage() {
 
 heading() {
 	header="$(echo ${1} | sed -e 's/\(.\)/\1 /g')"
-	echo -e "${lighter_black}┌─── ${light_magenta}${header}${reset}"
-	echo -e "${lighter_black}└────────────────────────── ─ ─ ${reset}"
+	echo -e "${blue}├┄ ${light_white}${header}${reset}"
 }
 
 tasking() {
 	heading ${FUNCNAME[0]}
-	local -r tasking_file="$HOME/lib/documents/pyratewiki/tasking.md"
-	local due_count=0
-	local overdue_count=0
-	declare -a due_tasks
-	declare -a overdue_tasks
-	while IFS= read -r line ; do
-		date="$(echo "${line}" | awk -F: '{print $NF}')"
-		if [[ ${date} -eq $(date +%Y%m%d) ]] ; then
-			(( due_count=due_count+1 ))
-			due_tasks+="${line}\n"
-		elif [[ ${date} -lt $(date +%Y%m%d) ]] ; then
-			(( overdue_count=overdue_count+1 ))
-			overdue_tasks+="${line}\n"
-		fi
-	done < <(awk '/due:/ && !/[X]/' < "${tasking_file}")
+	total_tasks=$(cat $HOME/.todo | wc -l)
 
-	echo -e "you have ${light_green}${due_count}${reset} task(s) due today"
-	if [[ ${display_tasks} -eq 1 ]] && [[ ${due_count} -gt 0 ]] ; then
-		echo -e "${due_tasks}"
-	fi
-	if [[ ${overdue_count} -eq 0 ]] ; then
-		echo -e "there are ${light_green}${overdue_count}${reset} task(s) overdue"
-	else
-		echo -e "there are ${red}${overdue_count}${reset} task(s) overdue"
-		if [[ ${display_tasks} -eq 1 ]] ; then
-			echo -e "${overdue_tasks}"
-		fi
-	fi
-	echo
+	echo -e "${blue}│${reset}you have ${light_green}${total_tasks}${reset} task(s)"
 }
 
 # check nightly backups
 backups() {
 	heading ${FUNCNAME[0]}
-	local -r backup_log="/var/log/securebak/securebak.log"
-
-	for backup in email buku ; do
-		if grep -E "^$(date +%Y%m%dT04):.*${backup}.*successful" "${backup_log}" >/dev/null ; then
-			echo -e "schway! ${backup} was ${light_green}successful${reset}"
-		elif grep -E "^$(date +%Y%m%dT04):.*${backup}.*failed" "${backup_log}" >/dev/null ; then
-			echo -e "frak! ${backup} ${red}failed${reset}"
-		else
-			echo -e "drek, ${backup} ${red}didn't run${reset}"
+	local backup_success=0
+	local failed=""
+	_repos=$(find /var/dedup/* -maxdepth 1 -type d -prune -printf '%f\n')
+	for r in ${_repos} ; do
+		_latest=$(find /var/dedup/${r}/archive -type f \
+					-exec stat -c '%X %n' {} \; | \
+					sort -nr | \
+					awk -F\/ 'NR==1 {print $NF}')
+		if [[ "${_latest}" -lt $(date +%Y%m%d) ]] ; then
+			backup_success=$(( backup_success + 1 ))
+			failed+="${r} "
 		fi
 	done
-	echo
+	[[ ${backup_success} -gt 0 ]] \
+		&& echo -e "${blue}│${reset}frak! ${failed}${red}failed${reset}" \
+		|| echo -e "${blue}│${reset}schway! backup ${light_green}successful${reset}"
 }
 
 # weather in current location
 weather() {
 	heading ${FUNCNAME[0]}
-	#local -r location="$(curl -s "https://ipvigilante.com/" | jq -r '.data.city_name')"
-	#wttr=$(curl -s "wttr.in/${location}?format=%l:+%f+%C\n" | tr '[:upper:]' '[:lower:]')
-	#if [[ ${wttr} == "unknown location"* ]] ; then
-	#	echo -e "weather is ${red}unavailable${reset}"
-	#else
-	#	echo -e "${wttr}"
-	#fi
 	if [ -f /tmp/weather ] ; then
-		cat /tmp/weather
+		wttr=$(cat /tmp/weather | awk -F\: '{print $2}' | cut -c 2-)
+		echo -e "${blue}│${reset}${wttr}"
 	else
 		$HOME/bin/weather
 	fi
-	echo
 }
 
 # you've got mail
 mail() {
 	heading ${FUNCNAME[0]}
-	local -r mail_dir="$HOME/lib/documents/email"
+	local -r mail_dir="$HOME/var/mbox"
 
 	local -r pyratebeard_mail=$(find "${mail_dir}"/pyratebeard/INBOX/new/ -type f | wc -l)
-	echo -e "you have ${light_green}${pyratebeard_mail}${reset} new mail(s)"
-	echo
+	local -r unread_mail=$(find "${mail_dir}"/pyratebeard/INBOX/cur/ -type f ! -name "*S" | wc -l)
+	echo -e "${blue}│${reset}you have ${light_green}${pyratebeard_mail}${reset} new mail(s)"
+	echo -e "${blue}│${reset}you have ${light_green}${unread_mail}${reset} unread mail(s)"
 }
 
 # not currently used but keeping for future reference
@@ -149,16 +120,15 @@ getnews() {
 rss() {
 	heading ${FUNCNAME[0]}
 	if [ -f ~/.newsboat/cache.db.lock ] ; then
-		echo -e "${light_black}waiting for newsboat refresh...${reset}" 
+		echo -e "${blue}│${reset}${light_black}waiting for newsboat refresh...${reset}" 
 		sleep 10
 	fi
 	local unread_count
 	unread_count=$(sqlite3 ~/.newsboat/cache.db "select count(unread) from rss_item where unread = 1;")
 	local queued_pods
 	queued_pods=$(wc -l ~/.newsboat/queue | awk '{print $1}')
-	echo -e "there are ${blue}${unread_count}${reset} unread items"
-	echo -e "you have ${blue}${queued_pods}${reset} queued podcast"
-	echo
+	echo -e "${blue}│${reset}there are ${light_green}${unread_count}${reset} unread items"
+	echo -e "${blue}│${reset}you have ${light_green}${queued_pods}${reset} queued podcasts"
 }
 
 servers() {
@@ -169,7 +139,7 @@ servers() {
 ${reset}"
 	local server="$1"
 	if [ "${server}" == "all" ] ; then
-		for node in blacksun grimoire pyratetube octoweb octomail mordhaus ; do
+		for node in blacksun grimoire pyratetube mordhaus ; do
 			heading "${node}"
 			uptime=$(ssh -q "${node}" "uptime -p | cut -b4- | sed 's/\(,\|ear\|eek\(s\)\|ay\(s\)\|our\(s\)\|inute\(s\)\)//g'")
 			echo -e "uptime is ${uptime}"
@@ -185,9 +155,12 @@ ${reset}"
 }
 
 main() {
- 	echo -e "${cyan}
-     a h o y, ${yellow}$(whoami)
-${reset}"
+ 	echo -e "${blue}│${magenta} ┳━┓┳ ┳┏━┓┓ ┳
+${blue}│${magenta} ┃━┫┃━┫┃ ┃┗┏┛
+${blue}│${magenta} ┛ ┇┇ ┻┛━┛ ┇
+${blue}└──┄┄────┄┄───┐${yellow}
+  $(whoami) ${blue}│
+┌──┄┄────┄┄───┘${reset}"
 # ██    ▄  █ ████▄ ▀▄    ▄ ▄
 # █ █  █   █ █   █   █  █ █
 # █▄▄█ ██▀▀█ █   █    ▀█ █
@@ -209,11 +182,15 @@ ${reset}"
 	#echo -e "  greetings, ${white}\033[7m $(whoami) ${reset}\n"
 
 	tasking
+	echo -e "${blue}│${reset}"
 	backups
+	echo -e "${blue}│${reset}"
 	weather
+	echo -e "${blue}│${reset}"
 	mail
+	echo -e "${blue}│${reset}"
 	rss
-	echo
+	echo -e "${blue}└──┄┄────┄┄${reset}"
 }
 
 if [ $# -eq 0 ] ; then

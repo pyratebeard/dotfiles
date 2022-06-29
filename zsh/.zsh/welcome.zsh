@@ -15,14 +15,12 @@ audio_vol() {
 
 # script run on first terminal
 script() {
-	cat ~/tmp/pyratebeard_ansi_md
 	if [[ ${PTS} -eq "2" ]] ; then
 		audio_vol
-		tmux new -s main -n '~'
 		hashwall -f '#131313' -b '#1e1b1c'  -s 12
-		if [[ ${TMUX_PANE} == '%0' ]] ; then
-			~/bin/ahoy
-		fi
+		xrandr --output HDMI-2 --primary --output DVI-D-1 --rotate left
+		tmux new -s main -n 'vim'
+		[[ ${TMUX_PANE} == "%0" ]] && $HOME/bin/ahoy
 	fi
 }
 

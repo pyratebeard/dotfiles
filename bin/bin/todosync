@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LOCAL_TODO="$HOME/.todo"
+REMOTE_TODO="storage/documents/markor/todo.txt"
+REMOTE_HOST="artoo"
+DAEMON_RESTART="SVDIR=/data/data/com.termux/files/usr/var/service sv restart todod"
+
+exec inotifywait -e close_write -m $LOCAL_TODO|while read TODOFILE; do 
+	echo rsyncing
+	rsync -e "ssh -i $HOME/.ssh/todod" $LOCAL_TODO $REMOTE_HOST:$REMOTE_TODO
+	ssh -i $HOME/.ssh/todod $REMOTE_HOST "${DAEMON_RESTART}"
+	echo finished rsync
+done
