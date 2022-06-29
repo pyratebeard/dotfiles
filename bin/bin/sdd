@@ -10,7 +10,7 @@
 #  s e c u r e  d e d u p
 #
 #  author ▓▒ pyratebeard
-#    code ▓▒ https://git.pyratebeard.net/scripts/file/sdd.html
+#    code ▓▒ https://git.pyratebeard.net/dotfiles/file/bin/bin/sdd.html
 
 BASENAME="${0##*/}"
 DEDUP_PATH="$HOME/src/warez/dedup"
@@ -105,7 +105,7 @@ upload() {
 }
 
 daily() {
-	buku_dir="$HOME/lib/documents/buku"
+	buku_dir="$HOME/var/bkmrks"
 	backup_list=(
 		"$HOME/var/mbox"
 		"${buku_dir}/buku.db"
