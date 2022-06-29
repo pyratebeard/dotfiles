@@ -73,7 +73,7 @@ servers = (
     chatnet = "darkscience";
     password = "";
     port = "1666";
-    use_tls = "yes";
+    use_tls = "no";
     tls_verify = "no";
     autoconnect = "yes";
   },
@@ -82,7 +82,7 @@ servers = (
     chatnet = "bitreich";
     password = "";
     port = "1666";
-    use_tls = "yes";
+    use_tls = "no";
     tls_verify = "no";
     autoconnect = "no";
   },
@@ -129,7 +129,9 @@ chatnets = {
   oftc = { type = "IRC"; nick = "pyratebeard"; };
 };
 
-channels = ( { name = "#unix"; chatnet = "unixchat"; autojoin = "Yes"; } );
+channels = (
+	{ name = "#unix"; chatnet = "unixchat"; autojoin = "Yes"; }
+);
 
 aliases = {
   emote = "exec -o emote";
