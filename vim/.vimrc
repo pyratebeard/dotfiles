@@ -184,8 +184,12 @@ if 1 " boolean for plugin loading
   " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643
   let g:NERDTreeDirArrows = 1
   let g:NERDTreeShowHidden = 1
+  let g:NERDTreeMinimalUI = 1
   " smaller default window size
   let g:NERDTreeWinSize = 25
+  let g:webdevicons_enable_nerdtree = 1
+  let g:NERDTreeDirArrowExpandable = '▓'
+  let g:NERDTreeDirArrowCollapsible = '░'
 
   " ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
   let g:ag_prg="ag -i --vimgrep"

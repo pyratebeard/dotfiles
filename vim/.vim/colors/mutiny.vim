@@ -30,7 +30,7 @@ hi DiffAdd      term=NONE cterm=NONE ctermfg=2    ctermbg=235
 hi DiffChange   term=NONE cterm=NONE ctermfg=11   ctermbg=235
 hi DiffDelete   term=NONE cterm=NONE ctermfg=1    ctermbg=235
 hi DiffText     term=NONE cterm=NONE ctermfg=1    ctermbg=235
-hi Directory    term=NONE cterm=NONE ctermfg=7    ctermbg=NONE
+hi Directory    term=NONE cterm=NONE ctermfg=4    ctermbg=NONE
 hi Error        term=NONE cterm=NONE ctermfg=238  ctermbg=1
 hi ErrorMsg     term=NONE cterm=NONE ctermfg=1    ctermbg=16
 hi FoldColumn   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
