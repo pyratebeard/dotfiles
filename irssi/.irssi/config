@@ -127,6 +127,7 @@ chatnets = {
   blitzed = { type = "IRC"; nick = "pyratebeard"; };
   bitreich = { type = "IRC"; nick = "pyratebeard"; };
   oftc = { type = "IRC"; nick = "pyratebeard"; };
+  ircd = { type = "IRC"; nick = "pyratebeard"; };
 };
 
 channels = (
@@ -261,6 +262,14 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      placement = "top";
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
