@@ -59,7 +59,7 @@ hi Visual       term=NONE cterm=NONE ctermfg=16   ctermbg=11
 hi WarningMsg   term=NONE cterm=NONE ctermfg=1    ctermbg=NONE
 hi LineNr       term=NONE cterm=NONE ctermfg=241  ctermbg=235
 hi CursorLineNr term=NONE cterm=NONE ctermfg=241  ctermbg=233
-hi Pmenu        term=NONE cterm=NONE ctermfg=249  ctermbg=NONE
+hi Pmenu        term=NONE cterm=NONE ctermfg=249  ctermbg=235
 hi PmenuSel     term=NONE cterm=NONE ctermfg=3    ctermbg=5
 hi PmenuSbar    term=NONE cterm=NONE ctermfg=238  ctermbg=241
 hi PmenuThumb   term=NONE cterm=NONE ctermfg=238  ctermbg=13
