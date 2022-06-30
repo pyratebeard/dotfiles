@@ -1,24 +1,41 @@
 ```
-  ┳━┓┏━┓┏┓┓┳━┓o┳  ┳━┓┓━┓
-  ┃ ┃┃ ┃ ┃ ┣━ ┃┃  ┣━ ┗━┓
-  ┇━┛┛━┛ ┇ ┇  ┇┇━┛┻━┛━━┛
+      ██            ██     ████ ██  ██
+     ░██           ░██    ░██░ ░░  ░██
+     ░██  ██████  ██████ ██████ ██ ░██  █████   ██████
+  ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░
+ ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████
+░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██
+░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████
+ ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░
 
-    about ┄┬┄ custom config files
-   author ┄┼┄ pyratebeard <root@pyratebeard.net>
-     code ┄┼┄ https://git.pyratebeard.net/dotfiles
-   mirror ┄┴┄ http://s.rum.sh/dot
+ about       ░▓█ custom config files and scripts
+ author      ░▓█ pyratebeard <root@pyratebeard.net>
+ code        ░▓█ https://git.pyratebeard.net/dotfiles
+ mirror      ░▓█ http://s.rum.sh/dot
 
-     2bwm ┄┬┄ window manager
-     cmus ┄┼┄ music player
-    dunst ┄┼┄ notification daemon
-    irssi ┄┼┄ irc client
-      gpg ┄┼┄ gpg agent config
-     mutt ┄┼┄ email client
- newsboat ┄┼┄ rss reader
-     tmux ┄┼┄ terminal multiplexer
-    urxvt ┄┼┄ terminal emulator
-      vim ┄┼┄ text editor
-      zsh ┄┴┄ shell
+ 2bwm        ░▓█ window manager
+ bin         ░▓█ custom scripts
+ cmus        ░▓█ music player
+ cron        ░▓█ command scheduler
+ dmenu       ░▓█ application launcher
+ dunst       ░▓█ notification daemon
+ git         ░▓█ version control system
+ gpg         ░▓█ encrypt and sign tool
+ latexmk     ░▓█ latex doc generator
+ lightdm     ░▓█ display manager
+ lynx        ░▓█ terminal web browser
+ mpv         ░▓█ video player
+ mutt        ░▓█ email client
+ newsboat    ░▓█ rss reader
+ qutebrowser ░▓█ web browser
+ tmux        ░▓█ terminal multiplexer
+ tuir        ░▓█ reddit client
+ urxvt       ░▓█ terminal emulator
+ vim         ░▓█ text editor
+ xbindkeys   ░▓█ key grabbing tool
+ xinit       ░▓█ x system initialiser
+ zathura     ░▓█ pdf viewer
+ zsh         ░▓█ shell
 ```
 
 ### CONTENTS
@@ -62,6 +79,7 @@ Uninstall vim configuration
 `stow -D vim`
 
 Start from a different target directory
+
 `sudo stow -t / cron`
 
 ### TERMINAL
@@ -70,24 +88,6 @@ Ever since I started using Linux I have loved working in the terminal. I find it
 I have tried a number of terminal emulators over the years but I'm currently using [urxvt](). I have recently started using [zsh](http://zsh.sourceforge.net/) over [bash](https://www.gnu.org/software/bash/) for my shell.
 
 I've also come to love [tmux](https://tmux.github.io/) for running multiple sessions in one window.
-
-Because I work in the terminal I try to use as many terminal based applications as I can. Here is a list of my current chosen apps:
-
-APP | PKG
---- | ---
-AUDIO | [cmus](https://cmus.github.io/)
-IRC | [irssi](https://irssi.org/)
-EMAIL | [mutt](http://www.mutt.org/)
-RSS | [newsboat](https://newsboat.org/)
-EDITOR | [vim](http://www.vim.org/)
-
-Here are some other commands I run from the terminal:
-
-APP | PKG
---- | ---
-VIDEO PLAYER | [mpv](https://mpv.io/)
-IMAGE VIEWER | [sxiv](https://github.com/muennich/sxiv)
-SCREENSHOT | [scrot]()
 
 ### SCREENSHOTS
 
