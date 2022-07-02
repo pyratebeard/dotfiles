@@ -54,12 +54,14 @@ unclutter &
 light-locker &
 
 # start window manager in the background. If it dies, X still lives.
-2bwm &
+#2bwm &
 
 # load resources.
 xrdb -load ~/.Xdefaults
 
 # Start a terminal in the foreground. If this dies, X dies.
-urxvtd &
-exec urxvt -T controlterm
-xrandr --output HDMI-1 --rotate left
+#urxvtd &
+#exec urxvt -T controlterm
+#xrandr --output HDMI-1 --rotate left
+urxvtd -q -f -o &
+exec herbstluftwm --locked
