@@ -82,10 +82,6 @@
 "curvol=$(awk -F"[][]" '/%/ {print $2}' <(amixer get Master) | tr -d '%' | head -n1) ; curvol=$(( curvol + 10 )) ; amixer set Master "${curvol}%""
   alt + Page_Up
 
-## open ranger
-"urxvtc -hold -e ranger $HOME"
-  release+alt+shift + r
-
 ## ptt
 #"/usr/bin/amixer set Capture cap >/dev/null"
 #  alt + p

@@ -59,6 +59,8 @@ light-locker &
 # load resources.
 xrdb -load ~/.Xdefaults
 
+xbindkeys
+
 # Start a terminal in the foreground. If this dies, X dies.
 #urxvtd &
 #exec urxvt -T controlterm
