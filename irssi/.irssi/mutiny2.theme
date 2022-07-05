@@ -274,6 +274,7 @@ formats = {
 
     daychange = " %Y date %b┄┄─┤ %Wday changed to %w%%Y%%m%%d";
     config_reloaded = "%Y conf %b┄┄─┤ %Wreloaded";
+    config_modified = "%Y conf %b┄┄─┤ %Wmodified";
     server_changed = "%Y serv %b┄┄─┤ %Wchanged to %w$1 %G$2%W";
     looking_up = "%wlooking up %w{server $0}";
     connecting = "%wconnecting to {server $0} [%B$1] port %Y$2";
