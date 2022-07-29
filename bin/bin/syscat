@@ -57,37 +57,49 @@ fi
 pkgnum=`pacman -Q|wc -l`
 birthd=`sed -n '1s/^\[\([0-9-]*\).*$/\1/p' /var/log/pacman.log | tr - .`
 
-#${c00}▓▒  │ ${f1}os ${f0}........... $f2$system
-#${c08}  ▒░│ ${f1}name ${f0}......... $f2$host
-#${c01}▓▒  │ ${f1}birth day${f0}..... $f2$birthd
-#${c09}  ▒░│ ${f1}packages ${f0}..... $f2$pkgnum
-#${c02}▓▒  │ 
-#${c10}  ▒░│ ${f1}wm ${f0}........... $f2$wmname
-#${c03}▓▒  │ ${f1}shell ${f0}........ $f2$SHELL
-#${c11}  ▒░│ ${f1}terminal ${f0}..... $f2$TERM
-#${c04}▓▒  │ ${f1}term font ${f0}.... $f2$termfn $fnsize
-#${c12}  ▒░│ ${f1}term colors ${f0}.. $f2$termco
-#${c05}▓▒  │ 
-#${c13}  ▒░│ ${f1}kernel ${f0}....... $f2$kernel
-#${c06}▓▒  │ ${f1}processor ${f0}.... $f2$cpuspe
-#${c14}  ▒░│ 
-#${c07}▓▒  │ ${f1}web log ${f0}...... $f2$myblog
-#${c15}  ▒░│ ${f1}git repos ${f0}.... $f2$gitdir
+main() {
 cat << EOF
-${c00}▓▒  │ ${f1}host ${f0}......... $f2$host
-${c08}  ▒░│ ${f1}up ${f0}........... $f2$up
-${c01}▓▒  │ 
-${c09}  ▒░│ ${f1}os ${f0}........... $f2$system
-${c02}▓▒  │ ${f1}birth ${f0}........ $f2$birthd
-${c10}  ▒░│ 
-${c03}▓▒  │ ${f1}wm ${f0}........... $f2$wmname
-${c11}  ▒░│ ${f1}shell ${f0}........ $f2$SHELL
-${c04}▓▒  │ ${f1}term ${f0}......... $f2$TERM
-${c12}  ▒░│ ${f1}font ${f0}......... $f2$termfn $fnsize
-${c05}▓▒  │ ${f1}colors ${f0}....... $f2$termco
-${c13}  ▒░│ 
-${c06}▓▒  │ ${f1}kernel ${f0}....... $f2$kernel
-${c14}  ▒░│ ${f1}processor ${f0}.... $f2$cpuspe
-${c07}▓▒  │ 
-${c15}  ▒░│ ${f1}homepage ${f0}..... $f2$homepage
+${c00}▓▒  ${f0}│ ${f1}host ${f0}......... $f2$host
+${c08}  ▒░${f0}│ ${f1}up ${f0}........... $f2$up
+${c01}▓▒  ${f0}│ 
+${c09}  ▒░${f0}│ ${f1}os ${f0}........... $f2$system
+${c02}▓▒  ${f0}│ ${f1}birth ${f0}........ $f2$birthd
+${c10}  ▒░${f0}│ 
+${c03}▓▒  ${f0}│ ${f1}wm ${f0}........... $f2$wmname
+${c11}  ▒░${f0}│ ${f1}shell ${f0}........ $f2$SHELL
+${c04}▓▒  ${f0}│ ${f1}term ${f0}......... $f2$TERM
+${c12}  ▒░${f0}│ ${f1}font ${f0}......... $f2$termfn $fnsize
+${c05}▓▒  ${f0}│ ${f1}colors ${f0}....... $f2$termco
+${c13}  ▒░${f0}│ 
+${c06}▓▒  ${f0}│ ${f1}kernel ${f0}....... $f2$kernel
+${c14}  ▒░${f0}│ ${f1}processor ${f0}.... $f2$cpuspe
+${c07}▓▒  ${f0}│ ${f1}memory ${f0}....... $f2$ram
+${c15}  ▒░${f0}│ ${f1}homepage ${f0}..... $f2$homepage
 EOF
+}
+
+mini() {
+cat << EOF
+${f1}host ${f0}...... $f2$host
+${f1}sys ${f0}....... $f2$system
+${f1}wm ${f0}........ $f2$wmname
+${f1}shell ${f0}..... $f2$SHELL
+${f1}term ${f0}...... $f2$TERM
+${f1}font ${f0}...... $f2$termfn $fnsize
+${f1}colours ${f0}... $f2$termco
+${f1}kernel ${f0}.... $f2$kernel
+${f1}load ${f0}...... $f2$load
+EOF
+}
+
+
+if [ $# -eq 0 ] ; then
+	mini
+else
+	opt="$1"
+	case ${opt} in
+		mini) mini ;;
+		main) main ;;
+		*) mini ;;
+	esac
+fi

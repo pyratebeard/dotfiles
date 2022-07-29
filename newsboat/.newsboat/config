@@ -16,18 +16,18 @@ max-items 10
 # interface colours
 color info color11 black
 color listfocus color7 color8
-color listfocus_unread color3 color8
+color listfocus_unread color11 color8
 color listnormal color7 default
-color listnormal_unread color10 default
+color listnormal_unread color12 default
 
 # feedlist format and colours
-highlight feedlist "┣." color5 default
-highlight feedlist "━" color5 default
-highlight feedlist "┃" color5 default
+highlight feedlist "┣." color241 default
+highlight feedlist "━" color241 default
+highlight feedlist "┃" color241 default
 highlight feedlist "■" color59 default
-highlight feedlist "▓" color5 default
-highlight feedlist "▒" color5 default
-highlight feedlist "░" color5 default
+highlight feedlist "▓" color241 default
+highlight feedlist "▒" color241 default
+highlight feedlist "░" color241 default
 highlight feedlist " [1-9]. " color15 default
 # the 'whitespace' here is digraphs #188 (ctrl-k 14)
 highlight feedlist "⋯[a-z].*⋯" color15 default

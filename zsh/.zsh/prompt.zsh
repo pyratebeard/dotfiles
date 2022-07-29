@@ -73,7 +73,7 @@ GIT_PROMPT() {
       echo "${COLOR_NORMAL}─["${ref}${dirty}${stat}"]"
     ;;
     tiny)
-      echo "%F{5} [%F{13}"${ref}${dirty}${stat}"%F{5}]"
+      echo "%F{241} [%F{244}"${ref}${dirty}${stat}"%F{241}]"
     ;;
     *)
       echo "${USER_LEVEL}─[${COLOR_NORMAL}"${ref}${dirty}${stat}"${USER_LEVEL}]"
@@ -102,9 +102,9 @@ tiny)
 if [[ -v VIMRUNTIME ]] ; then
 	PROMPT='%F{9} ──── ─${COLOR_NORMAL} '
 else
-	PROMPT='%F{3} ──── ─${COLOR_NORMAL} '
+	PROMPT='%F{11} ──── ─${COLOR_NORMAL} '
 fi
-RPROMPT='%F{15}%~ $(GIT_PROMPT) %F{11}${HOSTNAME}${COLOR_NORMAL}'
+RPROMPT='%F{15}%~ $(GIT_PROMPT) ${COLOR_NORMAL}'
 ;;
 # classic
 *)

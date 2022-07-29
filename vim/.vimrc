@@ -135,7 +135,7 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme mutiny
+colorscheme oldriceputin
 filetype off
 
 " stop unnecessary rendering
@@ -179,6 +179,7 @@ if 1 " boolean for plugin loading
   Plugin 'junegunn/goyo.vim'
   Plugin 'rbong/vim-flog'
   Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'itspriddle/vim-shellcheck.vim'
   call vundle#end()
 
   " nerdtree - workaround for https://github.com/scrooloose/nerdtree/issues/643

@@ -3,7 +3,7 @@
 ! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
 ! fonts
-urxvt*font: xft:tamzen:pixelsize=15:antialias=false, xft:Unifont:pixelsize=16:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
+urxvt*font: xft:tamzen:pixelsize=15:antialias=false, xft:Unifont:pixelsize=16:antialias=true:hinting=full, xft:Symbola:pixelsize=18:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -18,7 +18,7 @@ urxvt*cursorBlink: true
 
 ! style
 urxvt*fading: 10
-urxvt*fadeColor: #1e1b1c
+urxvt*fadeColor: #1f1d1b
 
 ! extensions
 urxvt.perl-ext-common: default,resize-font,url-select
@@ -34,5 +34,5 @@ urxvt.saveLines: 9999
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 
-#include "/home/pyratebeard/dot/urxvt-colors/mutiny"
+#include "/home/pyratebeard/dot/urxvt-colors/oldriceputin"
 
