@@ -93,7 +93,7 @@
 
     ### Text ###
 
-    font = saxMono 9
+    font = BPmono 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -253,9 +253,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3d3a3b"
+    background = "#555"
     foreground = "#baba9e"
-	frame_color = "#2b2b2d"
+	frame_color = "#807b64"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon

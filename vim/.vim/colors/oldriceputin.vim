@@ -26,12 +26,12 @@ hi FoldColumn   term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Folded       term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Function     term=NONE cterm=NONE ctermfg=15   ctermbg=NONE
 hi Identifier   term=NONE cterm=NONE ctermfg=9   ctermbg=NONE
-hi IncSearch    term=NONE cterm=NONE ctermfg=0    ctermbg=3
+hi IncSearch    term=NONE cterm=NONE ctermfg=237    ctermbg=11
 hi MatchParen   term=NONE cterm=NONE ctermfg=7    ctermbg=3
 hi NonText      term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
 hi Normal       term=NONE cterm=NONE ctermfg=251  ctermbg=NONE
 hi PreProc      term=NONE cterm=NONE ctermfg=11   ctermbg=NONE
-hi Search       term=NONE cterm=NONE ctermfg=0    ctermbg=11
+hi Search       term=NONE cterm=NONE ctermfg=11    ctermbg=241
 hi SignColumn   term=NONE cterm=NONE ctermfg=NONE ctermbg=237
 hi Special      term=NONE cterm=NONE ctermfg=10    ctermbg=NONE
 hi SpecialKey   term=NONE cterm=NONE ctermfg=12    ctermbg=NONE

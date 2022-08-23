@@ -4,7 +4,7 @@
 #   qute://help/settings.html
 
 # Uncomment this to still load settings configured via autoconfig.yml
-# config.load_autoconfig()
+config.load_autoconfig(False)
 
 # Maximum time (in minutes) between two history items for them to be
 # considered being from the same browsing session. Items with less time
@@ -99,7 +99,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - true
 #   - false
 #   - ask
-config.set('content.notifications', False, 'https://www.reddit.com')
+config.set('content.notifications.enabled', False, 'https://www.reddit.com')
 
 # Number of commands to save in the command history. 0: no history / -1:
 # unlimited
@@ -143,7 +143,7 @@ c.downloads.remove_finished = 100
 
 # CSS border value for hints.
 # Type: String
-c.hints.border = '3px solid #2b2b2d'
+c.hints.border = '1px solid #9c353e'
 
 # Characters used for hint strings.
 # Type: UniqueCharString
@@ -187,7 +187,7 @@ c.url.default_page = 'https://start.pyratebeard.net'
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://searx.be/?q={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
@@ -196,47 +196,47 @@ c.url.start_pages = 'https://start.pyratebeard.net'
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
 # Type: List of QtColor, or QtColor
-c.colors.completion.fg = ['#baba9e', '#baba9e', '#baba9e']
+c.colors.completion.fg = ['#d3cab3', '#d3cab3', '#d3cab3']
 
 # Background color of the completion widget for even rows.
 # Type: QssColor
-c.colors.completion.even.bg = '#3d3a3b'
+c.colors.completion.even.bg = '#454545'
 
 # Foreground color of completion widget category headers.
 # Type: QtColor
-c.colors.completion.category.fg = '#baba9e'
+c.colors.completion.category.fg = '#d3cab3'
 
 # Top border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.border.top = '#131313'
+c.colors.completion.category.border.top = '#1f1d1b'
 
 # Bottom border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.border.bottom = '#131313'
+c.colors.completion.category.border.bottom = '#1f1d1b'
 
 # Background color of the selected completion item.
 # Type: QssColor
-c.colors.completion.item.selected.bg = '#956c74'
+c.colors.completion.item.selected.bg = '#a3535e'
 
 # Background color for the download bar.
 # Type: QssColor
-c.colors.downloads.bar.bg = '#131313'
+c.colors.downloads.bar.bg = '#1f1d1b'
 
 # Color gradient start for download text.
 # Type: QtColor
-c.colors.downloads.start.fg = '#bbbbbb'
+c.colors.downloads.start.fg = '#c9b09a'
 
 # Color gradient start for download backgrounds.
 # Type: QtColor
-c.colors.downloads.start.bg = '#6e6461'
+c.colors.downloads.start.bg = '#8b6268'
 
 # Color gradient end for download text.
 # Type: QtColor
-c.colors.downloads.stop.fg = '#131313'
+c.colors.downloads.stop.fg = '#1f1d1b'
 
 # Color gradient stop for download backgrounds.
 # Type: QtColor
-c.colors.downloads.stop.bg = '#909798'
+c.colors.downloads.stop.bg = '#a4b810'
 
 # Color gradient interpolation system for download backgrounds.
 # Type: ColorSystem
@@ -249,24 +249,24 @@ c.colors.downloads.system.bg = 'rgb'
 
 # Foreground color for downloads with errors.
 # Type: QtColor
-c.colors.downloads.error.fg = '#bbbbbb'
+c.colors.downloads.error.fg = '#fbf0d2'
 
 # Background color for downloads with errors.
 # Type: QtColor
-c.colors.downloads.error.bg = '#883c43'
+c.colors.downloads.error.bg = '#bb6055'
 
 # Font color for hints.
 # Type: QssColor
-c.colors.hints.fg = '#bbbbbb'
+c.colors.hints.fg = '#fbf0d2'
 
 # Background color for hints. Note that you can use a `rgba(...)` value
 # for transparency.
 # Type: QssColor
-c.colors.hints.bg = '#131313'
+c.colors.hints.bg = '#1f1d1b'
 
 # Font color for the matched part of hints.
 # Type: QtColor
-c.colors.hints.match.fg = '#deb14f'
+c.colors.hints.match.fg = '#dab733'
 
 # Background color of the keyhint widget.
 # Type: QssColor
@@ -274,53 +274,53 @@ c.colors.keyhint.bg = 'rgba(0, 0, 0, 80%)'
 
 # Foreground color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.fg = '#bbbbbb'
+c.colors.statusbar.normal.fg = '#fbf0d2'
 
 # Background color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.bg = '#171717'
+c.colors.statusbar.normal.bg = '#1f1d1b'
 
 # Foreground color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.fg = '#131313'
+c.colors.statusbar.insert.fg = '#1f1d1b'
 
 # Background color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.bg = '#899e3b'
+c.colors.statusbar.insert.bg = '#80964d'
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.fg = '#baba9e'
+c.colors.statusbar.command.fg = '#d3cab3'
 
 # Background color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.bg = '#3d3a3b'
+c.colors.statusbar.command.bg = '#454545'
 
 # Default foreground color of the URL in the statusbar.
 # Type: QssColor
-c.colors.statusbar.url.fg = '#bbbbbb'
+c.colors.statusbar.url.fg = '#fbf0d2'
 
 # Foreground color of the URL in the statusbar on error.
 # Type: QssColor
-c.colors.statusbar.url.error.fg = '#bb6767'
+c.colors.statusbar.url.error.fg = '#c94539'
 
 # Foreground color of the URL in the statusbar on successful load
 # (http).
 # Type: QssColor
-c.colors.statusbar.url.success.http.fg = '#d2d074'
+c.colors.statusbar.url.success.http.fg = '#756583'
 
 # Foreground color of the URL in the statusbar on successful load
 # (https).
 # Type: QssColor
-c.colors.statusbar.url.success.https.fg = '#d2d074'
+c.colors.statusbar.url.success.https.fg = '#aabb46'
 
 # Foreground color of the URL in the statusbar when there's a warning.
 # Type: QssColor
-c.colors.statusbar.url.warn.fg = '#909798'
+c.colors.statusbar.url.warn.fg = '#c94539'
 
 # Color gradient start for the tab indicator.
 # Type: QtColor
-c.colors.tabs.indicator.start = '#131313'
+c.colors.tabs.indicator.start = '#1f1d1b'
 
 # Foreground color of unselected odd tabs.
 # Type: QtColor
@@ -328,7 +328,7 @@ c.colors.tabs.odd.fg = '#626262'
 
 # Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.bg = '#2b2b2d'
+c.colors.tabs.odd.bg = '#181512'
 
 # Foreground color of unselected even tabs.
 # Type: QtColor
@@ -336,23 +336,23 @@ c.colors.tabs.even.fg = '#626262'
 
 # Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.bg = '#2b2b2d'
+c.colors.tabs.even.bg = '#181512'
 
 # Foreground color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.fg = '#131313'
+c.colors.tabs.selected.odd.fg = '#1f1d1b'
 
 # Background color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = '#deb14f'
+c.colors.tabs.selected.odd.bg = '#aabb46'
 
 # Foreground color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.fg = '#131313'
+c.colors.tabs.selected.even.fg = '#1f1d1b'
 
 # Background color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = '#deb14f'
+c.colors.tabs.selected.even.bg = '#aabb46'
 
 # Default font families to use. Whenever "default_family" is used in a
 # font setting, it's replaced with the fonts listed here. If set to an

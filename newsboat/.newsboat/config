@@ -18,7 +18,7 @@ color info color11 black
 color listfocus color7 color8
 color listfocus_unread color11 color8
 color listnormal color7 default
-color listnormal_unread color12 default
+color listnormal_unread color13 default
 
 # feedlist format and colours
 highlight feedlist "┣." color241 default
@@ -35,10 +35,10 @@ feedlist-format "%?l?▓ %=2i  %t &▓▓▒▒░░⋯%t⋯░░▒▒?"
 
 # article format and colours
 #articlelist-format "%?T? │ %2i %f  %t?"
-highlight articlelist "▓" color5 default
+highlight articlelist "▓" color241 default
 articlelist-format "▓ %2i  %t"
-highlight article "^Feed:.*" color5 default
-highlight article "^Title:.*" color3 default
+highlight article "^Feed:.*" color1 default
+highlight article "^Title:.*" color6 default
 highlight article "^Author:.*" color7 default
 highlight article "^Date:.*" color15 default
 highlight article "^Link:.*" color15 color236

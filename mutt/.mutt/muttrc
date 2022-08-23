@@ -36,7 +36,7 @@ set sort_aux = reverse-date-received
 
 # colours
 color normal default default
-color indicator white color8
+color indicator color11 color8
 color tree default default
 color status white black
 color index white color8 "~T"
