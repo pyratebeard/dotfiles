@@ -8,7 +8,7 @@ set color_win_fg=15
 set color_win_bg=default
 
 # Command line color.
-set color_cmdline_bg=0
+set color_cmdline_bg=236
 set color_cmdline_fg=7
 
 # Color of error messages displayed on the command line.
@@ -21,7 +21,7 @@ set color_info=3
 set color_separator=4
 
 # Color of window titles (topmost line of the screen).
-set color_win_title_bg=0
+set color_win_title_bg=236
 set color_win_title_fg=11
 
 # Color of the album row shown in the track window
@@ -36,12 +36,12 @@ set color_statusline_fg=7
 set color_win_cur=10
 
 # Color of the line displaying currently playing track.
-set color_titleline_bg=0
+set color_titleline_bg=236
 set color_titleline_fg=3
 
 # Color of the selected row which is also the currently playing track in active window.
 set color_win_cur_sel_bg=5
-set color_win_cur_sel_fg=7
+set color_win_cur_sel_fg=3
 
 # Color of the selected row which is also the currently playing track in inactive window.
 set color_win_inactive_cur_sel_bg=0

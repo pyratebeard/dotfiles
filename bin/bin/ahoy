@@ -55,14 +55,14 @@ usage() {
 
 heading() {
 	header="$(echo ${1} | sed -e 's/\(.\)/\1 /g')"
-	echo -e "${blue}├┄ ${light_white}${header}${reset}"
+	echo -e "${lighter_black}├┄ ${light_white}${header}${reset}"
 }
 
 tasking() {
 	heading ${FUNCNAME[0]}
 	total_tasks=$(cat $HOME/.todo | wc -l)
 
-	echo -e "${blue}│${reset}you have ${light_green}${total_tasks}${reset} task(s)"
+	echo -e "${lighter_black}│${reset}you have ${light_green}${total_tasks}${reset} task(s)"
 }
 
 # check nightly backups
@@ -82,8 +82,8 @@ backups() {
 		fi
 	done
 	[[ ${backup_success} -gt 0 ]] \
-		&& echo -e "${blue}│${reset}frak! ${failed}${red}failed${reset}" \
-		|| echo -e "${blue}│${reset}schway! backup ${light_green}successful${reset}"
+		&& echo -e "${lighter_black}│${reset}frak! ${failed}${red}failed${reset}" \
+		|| echo -e "${lighter_black}│${reset}schway! backup ${light_green}successful${reset}"
 }
 
 # weather in current location
@@ -91,7 +91,7 @@ weather() {
 	heading ${FUNCNAME[0]}
 	if [ -f /tmp/weather ] ; then
 		wttr=$(cat /tmp/weather | awk -F\: '{print $2}' | cut -c 2-)
-		echo -e "${blue}│${reset}${wttr}"
+		echo -e "${lighter_black}│${reset}${wttr}"
 	else
 		$HOME/bin/weather
 	fi
@@ -104,8 +104,8 @@ mail() {
 
 	local -r pyratebeard_mail=$(find "${mail_dir}"/pyratebeard/INBOX/new/ -type f | wc -l)
 	local -r unread_mail=$(find "${mail_dir}"/pyratebeard/INBOX/cur/ -type f ! -name "*S" | wc -l)
-	echo -e "${blue}│${reset}you have ${light_green}${pyratebeard_mail}${reset} new mail(s)"
-	echo -e "${blue}│${reset}you have ${light_green}${unread_mail}${reset} unread mail(s)"
+	echo -e "${lighter_black}│${reset}you have ${light_green}${pyratebeard_mail}${reset} new mail(s)"
+	echo -e "${lighter_black}│${reset}you have ${light_green}${unread_mail}${reset} unread mail(s)"
 }
 
 # not currently used but keeping for future reference
@@ -120,15 +120,15 @@ getnews() {
 rss() {
 	heading ${FUNCNAME[0]}
 	if [ -f ~/.newsboat/cache.db.lock ] ; then
-		echo -e "${blue}│${reset}${light_black}waiting for newsboat refresh...${reset}" 
+		echo -e "${lighter_black}│${reset}${light_black}waiting for newsboat refresh...${reset}" 
 		sleep 10
 	fi
 	local unread_count
 	unread_count=$(sqlite3 ~/.newsboat/cache.db "select count(unread) from rss_item where unread = 1;")
 	local queued_pods
 	queued_pods=$(wc -l ~/.newsboat/queue | awk '{print $1}')
-	echo -e "${blue}│${reset}there are ${light_green}${unread_count}${reset} unread items"
-	echo -e "${blue}│${reset}you have ${light_green}${queued_pods}${reset} queued podcasts"
+	echo -e "${lighter_black}│${reset}there are ${light_green}${unread_count}${reset} unread items"
+	echo -e "${lighter_black}│${reset}you have ${light_green}${queued_pods}${reset} queued podcasts"
 }
 
 servers() {
@@ -155,19 +155,27 @@ ${reset}"
 }
 
 main() {
- 	echo -e "${blue}│${magenta} ┳━┓┳ ┳┏━┓┓ ┳
-${blue}│${magenta} ┃━┫┃━┫┃ ┃┗┏┛
-${blue}│${magenta} ┛ ┇┇ ┻┛━┛ ┇
-${blue}└──┄┄────┄┄───┐${yellow}
-  $(whoami) ${blue}│
-┌──┄┄────┄┄───┘${reset}"
-# ██    ▄  █ ████▄ ▀▄    ▄ ▄
-# █ █  █   █ █   █   █  █ █
-# █▄▄█ ██▀▀█ █   █    ▀█ █
-# █  █ █   █ ▀████    █  █
-#    █    █         ▄▀
-#   █    ▀  ${yellow}$(whoami)${cyan}  ▀
-#  ▀
+# 	echo -e "${blue}│${magenta} ┳━┓┳ ┳┏━┓┓ ┳
+#${blue}│${magenta} ┃━┫┃━┫┃ ┃┗┏┛
+#${blue}│${magenta} ┛ ┇┇ ┻┛━┛ ┇
+#${blue}└──┄┄────┄┄───┐${yellow}
+#  $(whoami) ${blue}│
+#┌──┄┄────┄┄───┘${reset}"
+#${lighter_black}┊ ${light_blue}██    ▄  █ ████▄ ▀▄    ▄ ▄
+#${lighter_black}┊ ${light_blue}█ █  █   █ █   █   █  █ █
+#${lighter_black}│ ${light_blue}▓▄▄█ ▓▓▀▀█ ▓   █    ▀█ █
+#${lighter_black}┊ ${light_blue}▓  ▒ ▓   ▓ ▀▓▓▒▒    ▓  ▒
+#${lighter_black}│ ${light_blue}   ▒    ▒         ▄▀
+#${lighter_black}├───${light_blue}▒${lighter_black}────${light_blue}▀${lighter_black}┄┄ ${light_yellow}$(whoami)${light_blue} ▀
+#${lighter_black}│ ${light_blue} ▀${reset}"
+	echo -e "
+${lighter_black}┊ ${light_blue} ██  █ █ ██  █ █ ${reset}${light_black}   ▄█████▄
+${lighter_black}┊ ${light_blue} █ █ █ █ █ █ █ █ ${reset}${light_black}  ▄███████▄
+${lighter_black}│ ${light_blue} ▓ █ ▓ █ ▓ █ ▓ █ ${reset}${light_black} ░██ ░█ ░██
+${lighter_black}┊ ${light_blue} ▓▓▓ ▓▓▓ ▓ ▓  ▓  ${reset}${light_black} ░░███████
+${lighter_black}│ ${light_blue} ▒ ▒ ▒ ▒ ▒▒▒  ▒  ${reset}${light_black}  ░░█░█░█
+${lighter_black}├────${light_blue}▒${lighter_black}─${light_blue}▒${lighter_black}┄ ${light_yellow}$(whoami) ${reset}${light_black}░ ░ ░
+${lighter_black}│    ${light_blue}▒ ▒${reset}"
 #     ┳━┓┳ ┳┏━┓┓ ┳
 #     ┃━┫┃━┫┃ ┃┗┏┛
 #     ┛ ┇┇ ┻┛━┛ ┇
@@ -182,15 +190,15 @@ ${blue}└──┄┄────┄┄───┐${yellow}
 	#echo -e "  greetings, ${white}\033[7m $(whoami) ${reset}\n"
 
 	tasking
-	echo -e "${blue}│${reset}"
+	echo -e "${lighter_black}│${reset}"
 	backups
-	echo -e "${blue}│${reset}"
+	echo -e "${lighter_black}│${reset}"
 	weather
-	echo -e "${blue}│${reset}"
+	echo -e "${lighter_black}│${reset}"
 	mail
-	echo -e "${blue}│${reset}"
+	echo -e "${lighter_black}│${reset}"
 	rss
-	echo -e "${blue}└──┄┄────┄┄${reset}"
+	echo -e "${lighter_black}└──┄┄────┄┄${reset}"
 }
 
 if [ $# -eq 0 ] ; then

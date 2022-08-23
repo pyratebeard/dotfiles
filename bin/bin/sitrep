@@ -20,12 +20,16 @@ OFFLINE="${Bla}${On_Red} offline ${RCol}"
 
 [ "${1}" == full ] && \
 	servers=(
+		"greyskull"
+		"nublar"
 		"blacksun"
 		"mainframe"
 		"laundry"
 		"mordhaus"
 	) || \
 	servers=(
+		"greyskull"
+		"nublar"
 		"blacksun"
 		"mainframe"
 	)

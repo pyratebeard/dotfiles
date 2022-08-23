@@ -21,7 +21,7 @@ endif
 let g:colors_name="mutiny"
 
 hi ColorColumn  term=NONE cterm=NONE ctermfg=NONE ctermbg=234
-hi Comment      term=NONE cterm=NONE ctermfg=5    ctermbg=NONE
+hi Comment      term=NONE cterm=NONE ctermfg=239    ctermbg=NONE
 hi Constant     term=NONE cterm=NONE ctermfg=3    ctermbg=NONE
 hi Conditional  term=NONE cterm=NONE ctermfg=255  ctermbg=NONE
 hi Cursor       term=NONE cterm=NONE ctermfg=242  ctermbg=NONE

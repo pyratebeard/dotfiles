@@ -81,7 +81,7 @@
                                                                         alias \
     pac="sudo pacman"                                                         \
     pacman="sudo pacman"                                                      \
-    update="sudo paccache -r ; pacman -Syu"
+    update="sudo paccache -r ; pacman -S --noconfirm archlinux-keyring ; pacman -Syu"
 
 
 # ▓▓▒░ net
@@ -148,6 +148,7 @@
     mixer="alsamixer"                                                         \
     news="newsboat"                                                           \
     gifview="gifview -a"                                                      \
+    mail="mutt -F ~/.mutt/muttrc-imap"                                        \
                                                                               \
     headsetbatt="bluetooth_battery 34:DF:2A:5F:04:2C"                         \
     headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"                 \

@@ -199,13 +199,13 @@ abstracts = {
   # used for anything.
   sbend = "";
 
-  topicsbstart = "%Y┄─┄$*";
+  topicsbstart = " %Wtopic %Y┄┄─┤$*";
   topicsbend = "$*";
 
   prompt = "          %b└──┄┄%n ";
   # prompt = " %K└╼ ";
 
-  sb = " %n %W$*%c %n";
+  sb = "          %Y│%n %W$*%c %n";
   sbmode = " %b[%y%y+%C$*%b]";
   sbaway = " %g/* zZzZ */%n";
   sbservertag = ":%g$0%n";
@@ -245,9 +245,9 @@ formats = {
 
     servertag = "         %b│%n ";
 
-    join = "%Y join %b┄┄─┤ %n{channick $0} %b(%b{nickhost %b$1}%b)%W joined %w$2";
-    part = "%Y part %b┄┄─┤ %n{channick $0} %b(%b{nickhost %b$1}%b)%W left %w$2 {reason %b$3}";
-    quit = "%Y quit %b┄┄─┤ %Wsignoff: %n{channick $0}%b {reason %b$2}";
+    join = "%Y join %b┄┄─┤ %n{channick $0} %W(%w{nickhost %w$1}%W) joined %w$2";
+    part = "%Y part %b┄┄─┤ %n{channick $0} %W(%w{nickhost %w$1}%W) left %w$2 {reason %b$3}";
+    quit = "%Y quit %b┄┄─┤ %Wsignoff: %n{channick $0} %W{reason %b$2%W}";
     kick = "%r kick %b┄┄─┤ %n{channick $0} was kicked by $2 %W{reason %b$3}";
     quit_once = "{channel $3} {channick $0} {chanhost $1} %kquit {reason %C$2}";
 
@@ -285,6 +285,7 @@ formats = {
 	current_channel =  "         %b│ %Wcurrent channel {channel %Y$0}";
 	chanlist_header = "         %b│ %Wyou are in the following channels";
 	chanlist_line = "         %b│ %#{channel %G$[-10]0} %|%W+$1 %w$2";
+	server_list = "         %b│ %#{server %G$[-10]0} %|%W+$1 %w$2 %m$4";
   };
   "fe-common/irc" = {
     chanmode_change = "%Y mode %b┄┄─┤ %w{channick $1}%W by %w$2";
@@ -315,8 +316,8 @@ formats = {
   "Irssi::Script::adv_windowlist" = {
     awl_mouse = "no";
     awl_display_key = "$H $N $C %8▓░$S";
-    awl_display_key_active = "$H%9%6%9%k $N $C %8▓░$S";
-    awl_display_header = "";
+    awl_display_key_active = "$H%x0b%9%X7b $N $C %9%k%8▓░$S";
+    awl_display_header = "%9%x7g%9%X7o $C %8%k▓░";
     awl_separator = " ";
     awl_detach = "(status)";
   };
