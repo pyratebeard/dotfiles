@@ -1,0 +1,61 @@
+#!/bin/sh
+#                              ██
+#                             ░██
+#   ███     ██  ██████████   ██████
+#  ░░██  █ ░██ ░░██░░██░░██ ░░░██░
+#   ░██ ███░██  ░██ ░██ ░██   ░██
+#   ░████░████  ░██ ░██ ░██   ░██
+#   ███░ ░░░██  ███ ░██ ░██   ░░██
+#  ░░░    ░░░  ░░░  ░░  ░░     ░░
+# w e e k l y   m u s i c   t o o t
+
+# output of cmus-status-display script
+music_list="$HOME/.cmus/wmt.txt"
+
+# toot command path
+toot="$HOME/src/warez/toot/bin/toot"
+
+# sort list by number of plays
+weekmusic=$(sort $music_list | uniq -c | sort -nr | \
+			awk '{$1=""; print $0}' | \
+			tr '[:upper:]' '[:lower:]' | \
+			sed 's/^/\*\ /')
+
+# generate toot and count characters
+char=$(cat <<wmt | wc -m
+(automated) #weeklymusictoot
+
+this week i listened to:
+
+$weekmusic
+wmt
+)
+
+# if characters is more than 500 the toot will fail
+# we delete the last entry in the list until
+# there are less than 500 chars
+until [ ${char} -lt 500 ] ; do
+weekmusic=$(echo "$weekmusic" | sed '$d')
+cat <<wmt
+$weekmusic
+wmt
+char=$(cat <<wmt | wc -m
+(automated) #weeklymusictoot
+
+this week i listened to:
+
+$weekmusic
+wmt
+)
+sleep 1
+done
+
+# generate toot then delete list for next week
+# if it fails page me
+cat <<wmt | $toot post && rm -f ${music_list} || curl -d "wmt failed to send" https://pager.pyratebeard.net/wmt
+(automated) #weeklymusictoot
+
+this week i have been listening to:
+
+$weekmusic
+wmt
