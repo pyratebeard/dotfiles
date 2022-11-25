@@ -48,10 +48,13 @@ xsetroot -solid '#2b2f2e'
 
 # set nice pointer cursor.
 xsetroot -cursor_name left_ptr &
-unclutter &
+unclutter -b
+
+# start clipmenud
+clipmenud &
 
 # start light-locker
-light-locker &
+#light-locker &
 
 # start window manager in the background. If it dies, X still lives.
 #2bwm &
@@ -59,11 +62,14 @@ light-locker &
 # load resources.
 xrdb -load ~/.Xdefaults
 
-xbindkeys
+# set up monitors
+xrandr --output DVI-D-1 --primary --output HDMI-2 --right-of DVI-D-1 --rotate left
 
-# Start a terminal in the foreground. If this dies, X dies.
-#urxvtd &
-#exec urxvt -T controlterm
-#xrandr --output HDMI-1 --rotate left
-urxvtd -q -f -o &
-exec herbstluftwm --locked
+# start urxvtd (specify LANG so fonts work correctly - remember â)
+LANG=en_US.UTF-8 urxvtd -q -o -f
+
+# start url shortner for mail
+#lxc-start urlshort
+
+# finally start wm
+exec herbstluftwm
