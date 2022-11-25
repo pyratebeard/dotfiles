@@ -1,8 +1,8 @@
 # keep an eye on external ip for vpn
-*/30 * * * * $HOME/bin/checkip
+#*/30 * * * * $HOME/bin/checkip
 
 # daily backup of specified items
-0 4 * * * $HOME/bin/sdd -d
+0 14 * * * $HOME/bin/sdd -d
 
 # check email every hour and notify. full sync daily
 0 * * * * $HOME/bin/mail_sync
@@ -18,13 +18,16 @@
 0 8,14 * * * $HOME/bin/weather
 
 # download latest powerzone show
-0 8 * * fri $HOME/bin/powerdl
+#0 8 * * fri $HOME/bin/powerdl
 
 # weekly comic pack download
-0 19 * * thu $HOME/tmp/comic_download/comicdl.sh
+#0 19 * * thu $HOME/tmp/comic_download/comicdl.sh
 
 # daily readlist bookmark list generator
 0 23 * * * $HOME/src/pyratestart/genreadlist.sh
 
 # hourly src git repo fetch
-0 * * * * $HOME/bin/src_fetch
+#0 * * * * $HOME/bin/src_fetch
+
+# weekly music toot
+0 17 * * fri $HOME/bin/wmt
