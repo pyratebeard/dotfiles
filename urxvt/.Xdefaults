@@ -3,7 +3,7 @@
 ! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
 ! fonts
-urxvt*font: xft:tamzen:pixelsize=15:antialias=false, xft:Unifont:pixelsize=16:antialias=true:hinting=full, xft:Symbola:pixelsize=18:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
+urxvt*font: xft:trigon:pixelsize=15:antialias=false, xft:Unifont:pixelsize=17:antialias=true:hinting=full, xft:Symbola:pixelsize=17:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
