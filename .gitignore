@@ -4,6 +4,7 @@ cmus/.cmus/lib.pl
 cmus/.cmus/search-history
 cmus/.cmus/playlists
 cmus/.cmus/autosave
+cmus/.cmus/wmt.txt
 irssi/.irssi/away.log
 irssi/.irssi/config.autosave
 mpd/.config/mpd/mpd.log
