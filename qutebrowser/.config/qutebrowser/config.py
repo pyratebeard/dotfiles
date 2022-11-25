@@ -187,7 +187,7 @@ c.url.default_page = 'https://start.pyratebeard.net'
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://searx.be/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://qwant.com/?q={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
