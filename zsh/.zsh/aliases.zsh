@@ -68,6 +68,7 @@
     gu="git unstage"                                                          \
     gg="git log --graph"                                                      \
     gco="git checkout"                                                        \
+    gsm="git status -sbuno"                                                   \
     gpr="git request-pull"                                                    \
     ggg="git graphgpg"
 
@@ -122,9 +123,10 @@
 
     # record the primary screen
     screencast() {
+		test $1 && NAME=$1 || NAME="screencast"
         RESOLUTION=$(xrandr | grep "*" | awk '{print $1}' | head -n1)
-        echo "recording..."
-        ffmpeg -f x11grab -s ${RESOLUTION} -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${1}.webm
+        echo "recording to ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm"
+        ffmpeg -f x11grab -s ${RESOLUTION} -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm
     }
 
     # take picture with webcam
@@ -165,7 +167,7 @@
     drawterm="drawterm -h 9p.sdf.org -a 9p.sdf.org -u pyratebeard"            \
                                                                               \
     kb="keybase"                                                              \
-    irc="TERM=screen-256color dtach -A /tmp/irc irssi"                        \
+    irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"              \
     tor="cd ~/src/warez/tor/ ; ./start-tor-browser.desktop"                   \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
