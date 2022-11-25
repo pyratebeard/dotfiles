@@ -25,7 +25,7 @@ vimify() {
 plumbit() {
 	case ${filetype} in
 		JPEG|PNG|GIF) /home/pyratebeard/bin/webimg "${url}" ;;
-		Audio) /usr/bin/mpv "${url}" ;;
+		Audio|WebM) /usr/bin/mpv "${url}" ;;
 		POSIX) urxvtc -hold -e curl -s ${url} ;;
 		ISO) iso_type ;;
 		HTML|XML) qutebrowser "${url}" ;;

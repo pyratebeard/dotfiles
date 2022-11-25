@@ -1,2 +1,3 @@
 #pkill ssh-agent ; pkill gpg-agent
 i3lock -u -c \#1e1b1c
+#i3lock -u -i /home/pyratebeard/dchs3.png -c \#2b2f2e
