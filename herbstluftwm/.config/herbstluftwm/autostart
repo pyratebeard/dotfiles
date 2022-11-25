@@ -95,12 +95,16 @@ hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
 	key="${tag_keys[$i]}"
+	layoutfile=/home/pyratebeard/dot/herbstluftwm/layout-${key}
     if ! [ -z "$key" ] ; then
         hc keybind "$Mod-$key" \
 			chain , silent substitute M tags."$i".my_monitor \
 					focus_monitor M \
 				, use_index "$i"
         hc keybind "$Mod-Shift-$key" move_index "$i"
+		if [ -f ${layoutfile} ] ; then
+			hc load ${i} "$(cat ${layoutfile})"
+		fi
     fi
 done
 
@@ -177,6 +181,7 @@ hc attr theme.floating.outer_color black
 hc attr theme.active.inner_color '#111'
 hc attr theme.active.outer_color '#131313'
 hc attr theme.background_color '#1e1b1c'
+hc attr theme.padding_left 14
 
 hc set window_gap 2
 hc set frame_padding 0
@@ -199,6 +204,14 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
+
+hc rule class=qutebrowser tag=1
+hc rule class=firefox tag=1
+hc rule class=Chromium tag=3
+hc rule class=teams-for-linux tag=3
+hc rule class=Gimp floating=true
+hc rule class="Tor Browser" floating=true
+hc rule class=xfreerdp floating=true
 
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
