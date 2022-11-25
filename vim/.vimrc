@@ -52,6 +52,10 @@ set softtabstop=4
 " enable auto indentation
 set autoindent
 
+" split directions
+set splitright
+set splitbelow
+
 " remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 set list
@@ -84,7 +88,11 @@ nnoremap <F9> :setl ai<CR>
 nnoremap <C-w>g :Goyo<CR>
 
 " open shell in current buffer dir
-nnoremap <leader>z :cd %:p:h <bar>!zsh<CR><CR>
+nnoremap <leader>z :cd %:h <bar>:vert term<CR>
+nnoremap <leader>Z :cd %:h <bar>:term<CR>
+
+" start webserver
+"nnoremap <leader>h :!busybox httpd -f -h . -p 8080
 
 " list buffers and wait for number
 nnoremap <leader>b :ls<CR>:b
@@ -94,7 +102,7 @@ nnoremap <C-w>w :set wrap<CR>:Spell<CR>
 
 " fzf
 "nnoremap <leader>f :cd $HOME/src <bar>FZF<CR>
-nnoremap <leader>f :cd $HOME/src <bar>FZF<CR>
+nnoremap <leader>f :cd %:p:h <bar>FZF<CR>
 
 " list registers
 nnoremap <leader>r :registers<CR>
@@ -121,6 +129,7 @@ command Chmodx :!chmod a+x %
 
 " git commit shortcut
 command Gc Git commit -S
+command Gac Git commit -a -S -m "updates"
 command Gf Git fetch
 command Gp Git push
 command -nargs=* Gco Git checkout
