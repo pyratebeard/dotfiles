@@ -1,0 +1,28 @@
+#!/bin/sh
+# use shortner running on lxc container urlshort
+
+w=$(tput cols)
+if [ -z "$w" ] || [ "$w" -gt 120 ] ; then
+	w=120
+fi
+
+tmp1=$(mktemp -p /tmp mailfmt.XXXXXXXX)
+tmp2=$(mktemp -p /tmp mailfmt.XXXXXXXX)
+trap "rm -f $tmp1 $tmp2" EXIT QUIT INT
+
+# trim mutt [-- Attachment --] headers
+grep -vE -- '\[-- .* --\]$' | fmt -s -w $w | tee $tmp1 > $tmp2
+
+grep -oE '[hH][tT]{2}[pP][sS]?://([^/?#><"]+)([^?#><"]*)(\?([^#><"]*))?(#(.*))?' $tmp1 | sort | uniq | while read url; do
+	if [ "$(echo $url | wc -c)" -gt $w ]; then
+		# shorten url
+		short=$(curl -sS -X PUT -d "$url" http://s.rum.sh)
+	
+		# escape special chars in url for passing it to sed
+		escape=$(printf '%s\n' "$url" | sed 's/[]\/$*.^[]/\\&/g')
+	
+		# replace url with short link (using space as sed separator)
+		sed -i "s $escape $short g" $tmp2
+	fi
+done
+cat $tmp2
