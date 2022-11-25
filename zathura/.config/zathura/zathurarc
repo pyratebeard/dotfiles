@@ -1,14 +1,15 @@
-set default-bg	"#131313"
-set default-fg	"#bbbbbb"
+set default-bg	"#1f1d1b"
+set default-fg	"#d3cab3"
 
-set statusbar-bg	"#131313"
-set statusbar-fg	"#baba9e"
+set statusbar-bg	"#1f1d1b"
+set statusbar-fg	"#c9b09a"
 
-set inputbar-bg	"#131313"
-set inputbar-fg	"#baba9e"
+set inputbar-bg	"#1f1d1b"
+set inputbar-fg	"#c9b09a"
 
-set recolor-lightcolor	"#1d1d1d"
-set recolor-darkcolor	"#c2c2c2"
+set recolor-lightcolor	"#1f1d1b"
+set recolor-darkcolor	"#fbf0d2"
 
 set recolor true
 set guioptions c
+set show-recent 0
