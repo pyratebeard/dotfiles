@@ -150,8 +150,8 @@ abstracts = {
   wallop_action = "%K * $*%n ";
 
   # netsplits
-  netsplit = "%W split %X7m┄┄─┤ %n\"$*\"%n";
-  netjoin = "%W njoin %X7m┄┄─┤ %n\"$*\"%n";
+  netsplit = "%Wsplit %X7m┄┄─┤ %n\"$*\"%n";
+  netjoin = "%Wnjoin %X7m┄┄─┤ %n\"$*\"%n";
 
   # /names list
   names_prefix = "%X7m│%n $1";
