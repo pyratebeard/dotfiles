@@ -10,7 +10,7 @@ fi
 kill $(pidof xcape)
 setxkbmap -option
 if [[ "$lang" == "colemak" ]] ; then
-	setxkbmap -option ctrl:nocaps us -variant colemak-ctrl
+	setxkbmap -option ctrl:nocaps colemak-ctrl
 else
 	setxkbmap -option ctrl:nocaps $lang
 fi
