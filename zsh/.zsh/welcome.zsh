@@ -13,16 +13,14 @@ audio_vol() {
 	fi
 }
 
-# script run on first terminal
 script() {
-	if [[ ${PTS} -eq "2" ]] ; then
-		audio_vol
-		hashwall -f '#131313' -b '#1e1b1c'  -s 12
-		xrandr --output HDMI-2 --primary --output DVI-D-1 --rotate left
-		tmux new -s main -n 'vim'
-		[[ ${TMUX_PANE} == "%0" ]] && $HOME/bin/ahoy
-	fi
+	audio_vol
+	[[ $(ps -ef | grep xbindkeys | grep -v grep | wc -l) -eq 0 ]] && xbindkeys
+	tmux new -s main
 }
 
-set -o vi
-script
+tmux list-sessions >/dev/null 2>&1 || script
+# run on first tmux pane
+if [[ $TMUX_PANE == "%0" ]] ; then
+	$HOME/bin/ahoy
+fi
