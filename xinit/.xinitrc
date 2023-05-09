@@ -10,7 +10,8 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # set caps to escape
-setxkbmap -option ctrl:nocaps
+setxkbmap -option ctrl:nocaps colemak-ctrl
+xmodmap ~/.xmodmap
 xcape -e 'Control_L=Escape'
 
 # add fonts
@@ -63,7 +64,7 @@ clipmenud &
 xrdb -load ~/.Xdefaults
 
 # set up monitors
-xrandr --output DVI-D-1 --primary --output HDMI-2 --right-of DVI-D-1 --rotate left
+xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate left --output DVI-D-1 --primary --mode 1920x1080 --pos 0x336 --rotate normal
 
 # start urxvtd (specify LANG so fonts work correctly - remember â)
 LANG=en_US.UTF-8 urxvtd -q -o -f
