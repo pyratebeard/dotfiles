@@ -128,6 +128,7 @@ command Spell :setlocal spell! spell?
 command Chmodx :!chmod a+x %
 
 " git commit shortcut
+command Ga Git add %
 command Gc Git commit -S
 command Gac Git commit -a -S -m "updates"
 command Gf Git fetch
