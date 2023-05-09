@@ -1,4 +1,5 @@
 blogs
+https://www.stashmycomics.com/user-rss.asp?w=s&usercode=clengrorneq "~stash" "comics"
 https://log.pyratebeard.net/rss.xml "~pyratebeard" "blogs"
 http://feeds.xero.nu/rss/blog/newest "~xero" "blogs"
 https://venam.nixers.net/blog/feed.xml "~venam" "blogs"
@@ -7,6 +8,7 @@ http://comicsbulletin.com/feed/ "~comics bulletin" "blogs" "comics"
 http://www.previewsworld.com/Rss/1/1/71 "~previews world" "blogs" "comics"
 https://www.comicsbeat.com/feed/ "~the beat" "blogs" "comics"
 https://www.digitalrights.ie/feed/ "~digital rights ireland" "blogs"
+https://drkhsh.at/rss.xml "~drkhsh" "blogs"
 
 newsletters
 https://nixers.net/newsletter/feed.xml "~nixers" "newsletters"
