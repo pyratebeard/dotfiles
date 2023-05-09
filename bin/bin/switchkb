@@ -11,6 +11,7 @@ kill $(pidof xcape)
 setxkbmap -option
 if [[ "$lang" == "colemak" ]] ; then
 	setxkbmap -option ctrl:nocaps colemak-ctrl
+	xmodmap ~/.xmodmap
 else
 	setxkbmap -option ctrl:nocaps $lang
 fi
