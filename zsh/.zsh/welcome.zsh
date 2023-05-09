@@ -21,6 +21,7 @@ script() {
 
 tmux list-sessions >/dev/null 2>&1 || script
 # run on first tmux pane
-if [[ $TMUX_PANE == "%0" ]] ; then
+if [[ $TMUX_PANE == "%0" ]] && [[ ! -v VIMRUNTIME ]]; then
 	$HOME/bin/ahoy
 fi
+cat ~/tmp/logo5

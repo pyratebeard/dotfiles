@@ -106,6 +106,14 @@
                                                                               \
     docker="sudo docker"                                                      \
     docker-compose="sudo docker-compose"                                      \
+    dtail="docker logs -tf --tail='50'"                                       \
+    dps="docker ps"                                                           \
+    dpsa="docker ps -a"                                                       \
+    dstart="docker start"                                                     \
+    dstop="docker stop"                                                       \
+    drm="docker rm"                                                           \
+    drmi="docker rmi"                                                         \
+    dcomp="docker-compose -f ./docker-compose.yml"                            \
                                                                               \
     tf="terraform"                                                            \
     tfi="terraform init"                                                      \
@@ -167,12 +175,14 @@
     drawterm="drawterm -h 9p.sdf.org -a 9p.sdf.org -u pyratebeard"            \
                                                                               \
     kb="keybase"                                                              \
-    irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"              \
-    tor="cd ~/src/warez/tor/ ; ./start-tor-browser.desktop"                   \
+    irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"                   \
+    tor="cd ~/src/warez/browsers/tor/ ; ./start-tor-browser.desktop"          \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
     moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"                 \
-    cointop="$HOME/src/go/bin/cointop --hide-statusbar"
+    cointop="$HOME/src/go/bin/cointop --hide-statusbar"                       \
+                                                                              \
+    prometheus="ssh -NfD 9090 prometheus"
 
 
 # ▓▓▒░ fun(ctions)
@@ -184,7 +194,8 @@
     # connect to tmux on ssh
     # host autocomplete - $HOME/.zsh/completion/_ssux
     ssux() {
-        TERM=screen ssh -t "$@" 'tmux attach || tmux new' || ssh "$@"
+        test $# -gt 0 && SYSTEM="$@" || SYSTEM=$(tmux list-windows | awk '/*/{print $2}' | tr -d '*')
+        TERM=screen ssh -t "${SYSTEM}" 'tmux attach || tmux new' || ssh "${SYSTEM}"
     }
 
     # sets terminal title

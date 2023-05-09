@@ -99,7 +99,7 @@ PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 tiny)
 #PROMPT='%F{3} %%${COLOR_NORMAL} '
 # change prompt colour if started from vim
-if [[ -v VIMRUNTIME ]] ; then
+if [[ -v VIMRUNTIME || -v SSH_TTY ]] ; then
 	PROMPT='%F{9} ──── ─${COLOR_NORMAL} '
 else
 	PROMPT='%F{11} ──── ─${COLOR_NORMAL} '

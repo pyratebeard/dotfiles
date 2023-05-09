@@ -7,5 +7,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # funtoo keychain
-eval $(keychain -q --agents ssh,gpg --nogui --eval $SSH_KEY_DIR/*.prv 0xC7877C715113A16D)
-
+eval $(keychain -q --agents gpg --nogui --eval 0xC7877C715113A16D)
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ] ; then
+	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
