@@ -100,8 +100,12 @@ unpack(){
 
 upload() {
 	storage=${1}
-
-	rclone copy ${DEDUP_DIR}/ ${storage}:dedup
+	echo "$(date +%Y%m%dT%T) : starting sync" >> $HOME/var/log/sdd
+	rclone sync ${DEDUP_DIR}/ ${storage}:securededup
+	echo "$(date +%Y%m%dT%T) : finished sync" >> $HOME/var/log/sdd
+	echo "$(date +%Y%m%dT%T) : starting cleanup" >> $HOME/var/log/sdd
+	rclone cleanup ${storage}:securededup
+	echo "$(date +%Y%m%dT%T) : finished cleanup" >> $HOME/var/log/sdd
 }
 
 daily() {
@@ -116,9 +120,10 @@ daily() {
 		"$HOME/.zhistory"
 		"$HOME/.todo"
 		"$HOME/lib/documents/grimoire"
+		"$HOME/lib/images/pictures"
 	)
 	storage_list=(
-		"mega"
+		"backblaze"
 	)
 
 	if [ -f "${buku_dir}/buku.db" ] ; then
