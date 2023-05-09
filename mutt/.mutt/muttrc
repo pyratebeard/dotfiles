@@ -44,8 +44,8 @@ color index color6 default "~U"
 color index color15 default "~O"
 color index red black "~D"
 color index color14 default "~F"
-color index color3 default "~g"
-color index color0 color3 "~G"
+color index color13 default "~g"
+color index color0 color13 "~G"
 
 # pgp
 source "~/.mutt/gpg.rc"
@@ -59,6 +59,7 @@ set askbcc = yes
 set autoedit = yes
 set edit_headers = yes
 set text_flowed
+set signature = ~/.mutt/signature
 
 # display
 set index_format = "%4C %Z %-30.30L %M %s"
