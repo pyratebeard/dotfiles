@@ -12,6 +12,8 @@
 # output of cmus-status-display script
 music_list="$HOME/.cmus/wmt.txt"
 
+[ -f ${music_list} ] || exit 1
+
 # toot command path
 toot="$HOME/src/warez/toot/bin/toot"
 

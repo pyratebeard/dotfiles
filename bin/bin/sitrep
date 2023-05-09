@@ -30,8 +30,7 @@ OFFLINE="${Bla}${On_Red} offline ${RCol}"
 	servers=(
 		"greyskull"
 		"nublar"
-		"blacksun"
-		"mainframe"
+		"laundry"
 	)
 
 for server in ${servers[@]} ; do

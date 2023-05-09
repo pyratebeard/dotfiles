@@ -31,7 +31,8 @@ highlight feedlist "░" color241 default
 highlight feedlist " [1-9]. " color15 default
 # the 'whitespace' here is digraphs #188 (ctrl-k 14)
 highlight feedlist "⋯[a-z].*⋯" color15 default
-feedlist-format "%?l?▓ %=2i  %t &▓▓▒▒░░⋯%t⋯░░▒▒?"
+feedlist-format "%?l?▓ %=2i  %t &▓▓▒▒░░ %t ░░▒▒?"
+
 
 # article format and colours
 #articlelist-format "%?T? │ %2i %f  %t?"

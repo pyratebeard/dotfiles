@@ -26,7 +26,7 @@ colors=$(grep urxvt-colors ~/.Xdefaults | awk -F\/ '{print $NF}' | tr -d '"')
 font=$(grep -Ei "^urxvt\*font" ~/.Xdefaults | awk -F: '{print $3}')
 font_size=$(grep -Ei "^urxvt\*font" ~/.Xdefaults | grep -Eo '[0-9]{1,2}' | head -n1)
 #wm=$XDG_SESSION_DESKTOP
-wm='2bwm'
+wm=`xprop -root _NET_WM_NAME|cut -d\" -f2`
 
 #\\ progress bar
 draw()

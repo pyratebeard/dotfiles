@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source ~/src/warez/tuir/bin/activate
+source ~/src/warez/social_media/tuir/bin/activate
 screen=TERM tuir $1
 
