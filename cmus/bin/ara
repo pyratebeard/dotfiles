@@ -1,0 +1,24 @@
+#!/bin/bash
+#    ██████   ██████  ██████
+#   ░░░░░░██ ░░██░░█ ░░░░░░██
+#    ███████  ░██ ░   ███████
+#   ██░░░░██  ░██    ██░░░░██
+#  ░░████████░███   ░░████████
+#   ░░░░░░░░ ░░░     ░░░░░░░░
+# a d d  r a n d o m  a l b u m
+
+# default to adding one album
+[ $# -eq 0 ] && num=1 || num=$1
+
+# set path to music and read into array
+library_dir="$HOME/lib/music/"
+readarray -d '' library < <(find ${library_dir} -mindepth 2 -maxdepth 2 -type d -print0)
+
+# get some randomness
+RANDOM=$$$(date +%s)
+
+# add _n_ random albums to cmus library
+for n in $(seq 1 ${num}) ; do
+	random_album=${library[$RANDOM % ${#library[@]}]}
+	cmus-remote -C "add ${random_album}"
+done
