@@ -15,7 +15,7 @@ music_list="$HOME/.cmus/wmt.txt"
 [ -f ${music_list} ] || exit 1
 
 # toot command path
-toot="$HOME/src/warez/toot/bin/toot"
+toot="$HOME/src/warez/social_media/toot/bin/toot"
 
 # sort list by number of plays
 weekmusic=$(sort $music_list | uniq -c | sort -nr | \
