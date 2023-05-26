@@ -18,15 +18,15 @@ iso_type() {
 vimify() {
 	timestamp=$(date +%s)
 	curl -L -o /tmp/mario-${timestamp} "${1}"
-	urxvt -cd /home/pyratebeard -hold -e vim -u ~/tmp/mario.vimrc /tmp/mario-${timestamp}
-	#rm -f /tmp/mario-${timestamp}
+	LANG=en_US.UTF-8 urxvt -cd /home/pyratebeard -hold -e vim /tmp/mario-${timestamp}
+	rm -f /tmp/mario-${timestamp}
 }
 
 plumbit() {
 	case ${filetype} in
 		JPEG|PNG|GIF) /home/pyratebeard/bin/webimg "${url}" ;;
 		Audio|WebM) /usr/bin/mpv "${url}" ;;
-		POSIX) urxvtc -hold -e curl -s ${url} ;;
+		POSIX) LANG=en_US.UTF-8 urxvt -hold -e curl -s ${url} ;;
 		ISO) iso_type ;;
 		HTML|XML) qutebrowser "${url}" ;;
 		Unicode|Bourne-Again|ASCII|C|Python) vimify "${url}" ;;
