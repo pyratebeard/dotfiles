@@ -1,0 +1,10 @@
+#!/bin/sh
+PE=""
+BIN="/usr/bin"
+
+for p in pinentry-tty pinentry-curses pinentry ; do
+	command -v ${BIN}/${p} >/dev/null && PE="${BIN}/${p}"
+	break
+done
+
+exec ${PE} "$@"
