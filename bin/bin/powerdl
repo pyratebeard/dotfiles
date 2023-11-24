@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 mixcloud_url="https://www.mixcloud.com/Gentlemanofmetal/"
 mixcloud_show_prefix="powerzone-show-"

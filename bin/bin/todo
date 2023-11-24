@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # z3bra - (c) wtfpl 2014
 # Manage a todo list
