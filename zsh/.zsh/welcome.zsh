@@ -1,4 +1,6 @@
 # WELCOME
+## don't run this if over ssh (i.e. a server)
+[[ -v SSH_TTY ]] && exit 0
 
 PTS=$(ps -U $USER | awk '{ print $2 }' | grep "pts/" | uniq | wc -l)
 
@@ -24,4 +26,4 @@ tmux list-sessions >/dev/null 2>&1 || script
 if [[ $TMUX_PANE == "%0" ]] && [[ ! -v VIMRUNTIME ]]; then
 	$HOME/bin/ahoy
 fi
-cat ~/tmp/logo5
+#cat ~/tmp/logo5
