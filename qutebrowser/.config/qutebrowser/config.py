@@ -101,6 +101,10 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - ask
 config.set('content.notifications.enabled', False, 'https://www.reddit.com')
 
+# unbind bookmark and quickmark
+config.unbind('m')
+config.unbind('M')
+
 # Number of commands to save in the command history. 0: no history / -1:
 # unlimited
 # Type: Int
@@ -187,7 +191,7 @@ c.url.default_page = 'https://start.pyratebeard.net'
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://qwant.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://ddg.gg/?q={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
