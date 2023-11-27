@@ -107,6 +107,9 @@ nnoremap <leader>f :cd %:p:h <bar>FZF<CR>
 " list registers
 nnoremap <leader>r :registers<CR>
 
+" swap ' and ` for marks
+nnoremap ' `
+nnoremap ` '
 " columns
 " 80 soft 120 hard
 let &colorcolumn="80"
