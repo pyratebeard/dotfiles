@@ -100,11 +100,11 @@ abstracts = {
 
   # private message in query
   # privmsgnick = "{msgnick $*}";
-  privmsgnick = "%M$*%Y │ %N";
+  privmsgnick = " %m$*%X7m │ %N";
 
   # own private message in query
   #ownprivmsgnick = "{privmsgnick $*}";
-  ownprivmsgnick = "%m$*%Y │ %Y";
+  ownprivmsgnick = " %W$*%X7m │ %y";
   #ownprivnick = "$*";
 
 
@@ -254,6 +254,7 @@ formats = {
 
     nick_changed = "        %X7m┄┼┄%W %n{channick $0} %Y>> %w{channick $1}";
     your_nick_changed = "        %X7m┄┼┄%W %n{channick $0} %Y>> %w{channick $1}";
+    your_nick = "%W nick %X7m┄┄─┤ %n{channick $0}";
 
     pubmsg = "{pubmsgnick $2 {pubnick $[-7]0}}$1";
 
@@ -269,7 +270,7 @@ formats = {
 
     pubmsg_channel = "{pubmsgnick {pubnick %g$[-7]0}$2}$1";
     msg_private_query = "{privmsgnick $[-7]0}$2";
-    new_topic = "%X7m┌─┄┄─────┘%n\n%X7m│ %wtopic %M'$2' %Nset by%y $0\n%c└─┄┄─┄┄──┐ ";
+    new_topic = "%X7m┌─┄┄─────┘%n\n%X7m│ %wtopic %M'$2' %Nset by%y $0\n%X7m└─┄┄─┄┄──┐ ";
 
     endofnames = "%X7m└─┄┄─┄┄──┐ %WTotal: {hilight $2} ops, {hilight $3} halfops, {hilight $4} voices, {hilight $5} normal%n";
 
@@ -283,16 +284,20 @@ formats = {
     disconnected = "%wdisconnected from {server $0} %b{reason $1}";
     server_quit = "%wdisconnected from {server $0} %b{reason $1}";
     connection_lost = "%wconnection lost to {server $0}";
-	current_channel =  "         %c│ %Wcurrent channel {channel %Y$0}";
-	chanlist_header = "         %c│ %Wyou are in the following channels";
-	chanlist_line = "         %c│ %#{channel %G$[-10]0} %|%W+$1 %w$2";
+    server_reconnect_removed = "%wremoved reconnection to server {server $0} port {hilight $1}";
+    no_away_msgs = "%wno new messages in awaylog";
+    current_channel =  "         %X7m│ %Wcurrent channel {channel %Y$0}";
+    chanlist_header = "         %X7m│ %Wyou are in the following channels";
+    chanlist_line = "         %X7m│ %#{channel %G$[-10]0} %|%W+$1 %w$2";
+
+    not_enough_params = "         %X7m│ %Wnot enough parameters given";
   };
   "fe-common/irc" = {
     chanmode_change = "%W mode %X7m┄┄─┤ %w{channick $1}%W by %w$2";
     server_chanmode_change = "%W mode %X7m┄┄─┤ %w{channick $1}%W (%w$2%W)";
     usermode_change = "%wmode {mode $0}%w for {nick $1}";
 
-	action_core = "%c$[-8] %b│ %c$1";
+    action_core = "%c$[-8] %b│ %c$1";
     own_action = "{ownaction $[-8]0}$1";
     action_private = "{pvtaction $[-8]0}$1";
     action_private_query = "{pvtaction_query $[-8]0} $2";
@@ -303,11 +308,11 @@ formats = {
     topic_info = "         %X7m│ %Wset by %y$0 %w(%b$1%w)";
     channel_created = "         %X7m│ %bcreated %W$1";
     channel_synced = "%W sync %X7m┄┄─┤%b in {hilight $1} secs";
-	url = "         %c│ %Wurl: %g$1";
-	notice_private = "         %c│{notice $0{pvtnotice_host $1}}$2";
-	notice_public = "%c│pubnot{notice $0{pubnotice_host $1}}$2";
-	notice_server = "%c│servnot{servernotice $0}$1";
-	own_notice = "%c│ownnot{ownnotice notice $0}$1";
+    url = "         %X7m│ %Wurl: %g$1";
+    notice_private = "         %X7m│{notice $0{pvtnotice_host $1}}$2";
+    notice_public = "%X7m│pubnot{notice $0{pubnotice_host $1}}$2";
+    notice_server = "%X7m│servnot{servernotice $0}$1";
+    own_notice = "%X7m│ownnot{ownnotice notice $0}$1";
   };
   "fe-common/irc/dcc" = {
     dcc_unknown_ctcp = "{dcc DCC unknown ctcp {hilight $0} from {nick $1} [$2]}";
