@@ -11,13 +11,19 @@
 #  author ▓▒ pyratebeard
 #    code ▓▒ https://git.pyratebeard.net/dotfiles/file/zsh/.zsh/aliases.zsh.html
 
-    alias sudo='sudo ' # hack to allow aliases with sudo
+# ▓▓▒░ root
+# check for doas so aliases can be used on different systems
+# add whitespace for hack to make aliases woth with {sudo,doas}
+command -v doas >/dev/null && \
+    alias sudo='doas ' || \
+    alias sudo='sudo '
 
 # ▓▓▒░ sys
                                                                         alias \
     ll="ls -lahF --color=auto"                                                \
     ls="ls -hF --color=auto"                                                  \
     lsl="ls -lhF --color=auto"                                                \
+    llrt="ls -lahFrt --color=auto"                                            \
                                                                               \
     cp="cp -r"                                                                \
     rmrf="rm -rf"                                                             \
@@ -89,6 +95,7 @@
                                                                         alias \
     ss="sudo ss"                                                              \
     netctl="sudo netctl"                                                      \
+    openvpn="sudo openvpn"                                                    \
     iip="ip a s $(ip r | grep default | grep -oP '(?<=dev )[^ ]*')"           \
     failover="sudo ip link set enp5s0 down"                                   \
     failback="sudo ip link set enp5s0 up"
@@ -176,13 +183,12 @@
                                                                               \
     kb="keybase"                                                              \
     irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"                   \
-    tor="cd ~/src/warez/browsers/tor/ ; ./start-tor-browser.desktop"          \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
     moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"                 \
     cointop="$HOME/src/go/bin/cointop --hide-statusbar"                       \
                                                                               \
-    prometheus="ssh -NfD 9090 prometheus"
+    command -v gmake && make='gmake' # for openbsd
 
 
 # ▓▓▒░ fun(ctions)
@@ -219,6 +225,6 @@
         pandoc -s -t man "$*" | man -l -
     }
 
-    :q() {
-        [[ -v SSH_TTY ]] && echo dumpshock || sudo systemctl poweroff
+    :q!() {
+        [[ -v SSH_TTY ]] && echo dumpshock || sudo halt -p
     }
