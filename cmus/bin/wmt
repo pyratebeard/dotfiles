@@ -20,7 +20,7 @@ toot="$HOME/src/warez/social_media/toot/bin/toot"
 # sort list by number of plays
 weekmusic=$(sort $music_list | uniq -c | sort -nr | \
 			awk '{$1=""; print $0}' | \
-			tr '[:upper:]' '[:lower:]' | \
+			#tr '[:upper:]' '[:lower:]' | \
 			sed 's/^/\*\ /')
 
 # generate toot and count characters
