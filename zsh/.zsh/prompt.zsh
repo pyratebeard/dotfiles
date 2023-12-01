@@ -100,7 +100,7 @@ tiny)
 #PROMPT='%F{3} %%${COLOR_NORMAL} '
 # change prompt colour if started from vim
 if [[ -v VIMRUNTIME ]] ; then
-	PROMPT='%F{13} ──── ─${COLOR_NORMAL} '
+	PROMPT='%F{9} ──── ─${COLOR_NORMAL} '
 # change prompt to show hostname if over ssh
 elif [[ -v SSH_TTY ]] ; then
 	PROMPT='%F{13} ${HOSTNAME}%F{3}_ ${COLOR_NORMAL}'
