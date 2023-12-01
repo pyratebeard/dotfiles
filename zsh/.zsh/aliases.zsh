@@ -96,7 +96,8 @@ command -v doas >/dev/null && \
     ss="sudo ss"                                                              \
     netctl="sudo netctl"                                                      \
     openvpn="sudo openvpn"                                                    \
-    iip="ip a s $(ip r | grep default | grep -oP '(?<=dev )[^ ]*')"           \
+    # need ot find a better way to do this
+    #iip="ip a s $(ip r | grep default | grep -oP '(?<=dev )[^ ]*')"           \
     failover="sudo ip link set enp5s0 down"                                   \
     failback="sudo ip link set enp5s0 up"
 
