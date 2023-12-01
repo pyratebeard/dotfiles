@@ -1,2 +1,6 @@
 emulate -L zsh
-ls -lAhF --color=auto
+# have to do a similar thing here
+# as in aliases.zsh
+command -v gls >/dev/null && \
+    gls -lAhF --color=auto || \
+    ls -lAhF --color=auto
