@@ -18,10 +18,26 @@ command -v doas >/dev/null && \
     alias sudo='doas ' || \
     alias sudo='sudo '
 
+# ▓▓▒░ unix
+# openbsd's ls(1) doesn't provide the `--color` option.
+# i have grown to like this and spent a long time
+# trying to find a work around, but none exists tiko.
+# so i succumbed to installing coreutils and doing this
+command -v gls >/dev/null && \
+    alias ls="gls -hF --color=auto" || \
+    alias ls="ls -hF --color=auto"
+
+# i also need dircolors(1) from coreutils for zsh autocompletion
+command -v gdircolors >/dev/null && alias dircolors="gdircolors"
+
+# i make use of some funky shit in my log makefiles
+# which isn't possible using the openbsd make(1)
+command -v gmake >/dev/null && alias make='gmake'
+
+
 # ▓▓▒░ sys
                                                                         alias \
     ll="ls -lahF --color=auto"                                                \
-    ls="ls -hF --color=auto"                                                  \
     lsl="ls -lhF --color=auto"                                                \
     llrt="ls -lahFrt --color=auto"                                            \
                                                                               \
@@ -187,10 +203,7 @@ command -v doas >/dev/null && \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
     moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"                 \
-    cointop="$HOME/src/go/bin/cointop --hide-statusbar"                       \
-                                                                              \
-    command -v gmake && make='gmake' # for openbsd
-
+    cointop="$HOME/src/go/bin/cointop --hide-statusbar"
 
 # ▓▓▒░ fun(ctions)
 
