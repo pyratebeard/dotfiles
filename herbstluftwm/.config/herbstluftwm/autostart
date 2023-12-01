@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 #  ██                     ██                ██    ██           ████   ██
 # ░██                    ░██               ░██   ░██          ░██░   ░██
@@ -30,6 +30,8 @@ Alt=Mod1
 
 # minimize and unminimise windows
 bash /home/pyratebeard/bin/herbstluftwm-min_max
+
+hc keybind $Mod-Control-s spawn bash /home/pyratebeard/bin/herbstluftwm-miniscratch
 
 # run menu
 hc keybind $Mod-w	spawn /usr/bin/zsh /home/pyratebeard/bin/rundmc
@@ -206,7 +208,7 @@ hc unlock
 herbstclient set tree_style '╾│ ├└╼─┐'
 
 hc rule class=qutebrowser tag=1
-hc rule class=firefox tag=3
+hc rule class=firefox tag=1
 hc rule class=Chromium tag=3
 hc rule class=teams-for-linux tag=3
 hc rule class=Gimp floating=true
