@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+# A script allowing to minimize and un-minimize clients in a LIFO way
+# (last minimized client will be un-minimized first).
+# 
+# `chmod +x unminimize.sh` then call it or add it to `autostart`.
+
+
+Mod=${Mod:-Mod4}
+Minimizekey=Shift-s
+Unminimizekey=Ctrl-s
+# get the absolute path of this script, to call it when minimizing
+SCRIPT_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/$(basename "${BASH_SOURCE[0]}")
+
+hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}
+
+scratchclient=$(hc foreach CLIENT clients. and , echo CLIENT , sprintf ATTRSTR %c.title CLIENT substitute ATTRVALUE ATTRSTR echo ATTRVALUE | \
+      grep -B1 '^scratchpad$' | head -n1 | awk -F. '{print $NF}')
+# 
+# initialize minimize and unminimize shortcuts
+#
+init() {
+
+
+   # minimize current window
+   #hc keybind $Mod-$Minimizekey spawn "$SCRIPT_PATH" minimize
+
+   # unminimize last window of a tag
+   # if the `my_minimized_age` attribute does not exist (i.e. the window has not been
+   #  minimized with this script), use arbitrary order to unminimize
+   LANG=en_US.UTF-8 urxvt -title scratchpad -cd /home/pyratebeard -e vim ~/tmp/scratch &
+   sleep 1
+   scratchclient=$(hc foreach CLIENT clients. and , echo CLIENT , sprintf ATTRSTR %c.title CLIENT substitute ATTRVALUE ATTRSTR echo ATTRVALUE | \
+         grep -B1 '^scratchpad$' | head -n1 | awk -F. '{print $NF}')
+echo $scratchclient
+   hc bring $scratchclient
+   hc set_attr clients.$scratchclient.floating true
+   hc jumpto $scratchclient
+}
+
+
+# 
+# minimize focused client
+#
+minimize() {
+
+   hc set_attr clients.$scratchclient.minimized true
+
+}
+maximize() {
+
+   hc set_attr clients.$scratchclient.minimized false
+   hc bring $scratchclient
+   hc jumpto $scratchclient
+
+}
+
+if hc foreach CLIENT clients. and , echo CLIENT , sprintf ATTRSTR %c.title CLIENT substitute ATTRVALUE ATTRSTR echo ATTRVALUE | \
+      grep -B1 '^scratchpad$'; then
+	if [[ $(hc get_attr clients.$scratchclient.minimized) == "false" ]] ; then
+		minimize
+	else
+		maximize
+	fi
+else
+	init
+fi
+#[ $(hc get_attr $scratchclient.minimized) == "false" ] && minimize || init
+#if [ "$1" = "minimize" ] ; then minimize ; else init ; fi
