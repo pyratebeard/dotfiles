@@ -195,15 +195,15 @@ command -v gmake >/dev/null && alias make='gmake'
     sacc="PAGER=less sacc"                                                    \
     gopher="PAGER=less sacc g.nixers.net/1/~pyratebeard/startpage.gph"        \
     buku="buku --np"                                                          \
-    tin="NNTPSERVER=eu.newsdemon.com ~/src/warez/tin/tin-latest/src/tin -r -A"\
+    tin="NNTPSERVER=eu.newsdemon.com ~/.local/src/warez/tin/tin-latest/src/tin -r -A"\
     drawterm="drawterm -h 9p.sdf.org -a 9p.sdf.org -u pyratebeard"            \
                                                                               \
     kb="keybase"                                                              \
     irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"                   \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
-    moebius="cd $HOME/src/warez/moebius ; /usr/bin/npm start"                 \
-    cointop="$HOME/src/go/bin/cointop --hide-statusbar"
+    moebius="cd $HOME/.local/src/warez/moebius ; /usr/bin/npm start"                 \
+    cointop="$HOME/.local/src/go/bin/cointop --hide-statusbar"
 
 # ▓▓▒░ fun(ctions)
 

@@ -24,7 +24,7 @@
 #0 19 * * thu $HOME/tmp/comic_download/comicdl.sh
 
 # daily readlist bookmark list generator
-0 23 * * * $HOME/src/pyratestart/genreadlist.sh
+0 23 * * * $HOME/.local/src/pyratestart/genreadlist.sh
 
 # hourly src git repo fetch
 #0 * * * * $HOME/bin/src_fetch
