@@ -3,6 +3,7 @@ PE=""
 BIN="/usr/bin"
 
 for p in pinentry-tty pinentry-curses pinentry ; do
+	echo ${p}
 	command -v ${BIN}/${p} >/dev/null && PE="${BIN}/${p}"
 	break
 done
