@@ -55,6 +55,7 @@ https://bigpunchstudios.squarespace.com/jlacast?format=rss "~the jlacast" "podca
 https://latenightlinux.com/feed/all "~late night linux" "podcasts"
 https://destinationlinux.org/feed/mp3 "~destination linux" "podcasts"
 https://www.smashingsecurity.com/rss "~smashing security" "podcasts"
+https://linuxmatters.sh/episode/index.xml "~linux matters" "podcasts"
 
 videos
 https://invidious.snopyta.org/feed/channel/UC3s0BtrBJpwNDaflRSoiieQ "~hak5" "youtube"
@@ -66,6 +67,7 @@ https://invidious.snopyta.org/feed/channel/UCPWjCY320JFSGqTlaD8ktqA "~sideshowmo
 https://invidious.snopyta.org/feed/channel/UC0-xeMXO_Vu8_wqqKf_Nipg "~david finch" "youtube" "art"
 https://invidious.snopyta.org/feed/channel/UC8bW15a945PVgNYGdUkzLhg "~robert marzullo" "youtube" "art"
 https://tilvids.com/feeds/videos.xml?videoChannelId=2775 "~veronica explains" "peertube" "tech"
+https://invidious.snopyta.org/feed/channel/UCEFW1E8QzP-hKxjO2Rj68wg "~nat's what i reckon" "youtube" "comedy"
 
 music
 https://media.defcon.org/DEF%20CON%20rss/defcon-18-music.rss "~defcon" "music"

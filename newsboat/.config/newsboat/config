@@ -2,6 +2,7 @@
 # ░█░█░█▀▀░█▄█░▀▀█░█▀▄░█░█░█▀█░░█░░░
 # ░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░▀░▀░░▀░░░
 auto-reload no
+reload-threads 100
 
 browser lynx
 save-path ~/tmp
