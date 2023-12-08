@@ -3,6 +3,9 @@
 # ░▄▀▄░░█░░█░█░░█░░░█░░░
 # ░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░░
 
+# stop raidsync from hogging system
+sudo sysctl -w dev.raid.speed_limit_max=1000
+
 # merge in defaults and keymaps
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -61,10 +64,11 @@ clipmenud &
 #2bwm &
 
 # load resources.
-xrdb -load ~/.Xdefaults
+xrdb -load ~/.config/urxvt/.Xdefaults
 
 # set up monitors
-xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate left --output DVI-D-1 --primary --mode 1920x1080 --pos 0x336 --rotate normal
+#xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate left --output DVI-D-1 --primary --mode 1920x1080 --pos 0x336 --rotate normal
+xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-D-1 --primary --mode 1920x1080  --rotate normal
 
 # start urxvtd (specify LANG so fonts work correctly - remember â)
 LANG=en_US.UTF-8 urxvtd -q -o -f

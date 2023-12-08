@@ -24,7 +24,7 @@ if [[ ! -v SSH_TTY ]] ; then
 	tmux list-sessions >/dev/null 2>&1 || script
 	# run on first tmux pane
 	if [[ $TMUX_PANE == "%0" ]] && [[ ! -v VIMRUNTIME ]]; then
-		$HOME/bin/ahoy
+		$HOME/.local/bin/ahoy
 	fi
 	#cat ~/tmp/logo5
 fi

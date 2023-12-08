@@ -3,6 +3,16 @@
 # timestamps
 #HIST_STAMPS=mm/dd/yyyy
 
+export XDG_CONFIG_HOME="$HOME"/.config/
+export XAPPLRESDIR="$XDG_CONFIG_HOME"/urxvt/
+export GOPATH="$HOME"/.local/lib/go
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_CACHE_HOME="$HOME"/.local/cache
+export XDG_STATE_HOME="$HOME"/.local/state
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/tmp}"
+#export ZDOTDIR="$HOME"/.config/zsh
+export GNUPGHOME="$XDG_DATA_HOME"/gpg
+
 # paths
 export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/src/go
