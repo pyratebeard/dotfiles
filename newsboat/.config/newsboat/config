@@ -54,8 +54,8 @@ bind-key l open
 # macros
 macro ; open-in-browser
 macro m set browser "mpv --profile=quick %u" ; open-in-browser ; set browser lynx
-macro r set browser "~/bin/newstuir %u" ; open-in-browser ; set browser lynx
-macro i set browser "~/bin/webimg" ; open-in-browser ; set browser lynx
+macro r set browser "~/.local/bin/newstuir %u" ; open-in-browser ; set browser lynx
+macro i set browser "~/.local/bin/webimg" ; open-in-browser ; set browser lynx
 macro y set browser "youtube-dl -o '~/lib/videos/youtube/sort_out/%(title)s.%(ext)s' '%u'" ; open-in-browser ; set browser lynx
 
 # podboat
