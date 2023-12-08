@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-monitor=$(xrandr | awk '/primary/ {print $1}')
-
-for dev in $(xsetwacom --list devices | awk -F"id:" '{print $2}' | awk '{print $1}') ; do
-	xsetwacom --set "${dev}" MapToOutput "${monitor}"
-done

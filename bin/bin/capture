@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-[ -z $1 ] && filename="capture" || filename=$1
-
-/usr/bin/scrot -s $HOME/tmp/$(date +%Y%m%d)-${filename}.png
