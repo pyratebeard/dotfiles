@@ -43,7 +43,6 @@
  - [managing](#managing)
  - [how to use](#using)
  - [terminal](#terminal)
- - [screenshots](#screenshots)
  - [citations](#citations)
  - [disclaimer](#disclaimer)
 
@@ -88,53 +87,6 @@ Ever since I started using Linux I have loved working in the terminal. I find it
 I have tried a number of terminal emulators over the years but I'm currently using [urxvt](). I have recently started using [zsh](http://zsh.sourceforge.net/) over [bash](https://www.gnu.org/software/bash/) for my shell.
 
 I've also come to love [tmux](https://tmux.github.io/) for running multiple sessions in one window.
-
-### SCREENSHOTS
-
-#### mutiny theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/mutiny-02.png)
-- 2bwm
-- zsh
-- urxvt
-- tmux
-- vim
-- irssi
-- interrobang
-- dunst
-
-![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/mutiny-03.png)
-- 2bwm
-- zsh
-- urxvt
-- cmus
-- sacc
-- sxiv
-- cava
-
-#### downtime theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/downtime.png)
-- zsh
-- tmux
-- vim
-- cava
-- rtv
-- firefox
-
-#### futuremyth theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/futuremyth.png)
-- zsh
-- tmux
-- vim
-- cmus
-- firefox
-
-#### blaquebeard theme
-![](https://gitlab.com/pyratebeard/dotfiles/raw/master/scrots/blaquebeard.png)
-- zsh
-- tmux
-- vim
-- ncmpcpp/mpd
-- rtv
 
 ### CITATIONS
 Thanks to [unixporn](http://reddit.com/r/unixporn) and [nixers](https://www.nixers.net/) for all the inspiration and guidance, in particular a shoutout to [xero](https://github.com/xero/dotfiles) for having such schway dots!
