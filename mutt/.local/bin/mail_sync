@@ -2,8 +2,8 @@
 
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 export PYTHONDONTWRITEBYTECODE=1
-mail_dir="$HOME/var/mbox"
-log_file="$HOME/var/log/mail_sync.log"
+mail_dir="$HOME/.local/var/mbox"
+log_file="$HOME/.local/var/log/mail_sync.log"
 cached_key=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}} END{if($0!=""){print CACHED} else {print "none"}}')
 
 log() {

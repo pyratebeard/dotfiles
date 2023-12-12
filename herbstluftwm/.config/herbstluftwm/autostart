@@ -34,14 +34,14 @@ bash /home/pyratebeard/bin/herbstluftwm-min_max
 hc keybind $Mod-Control-s spawn bash /home/pyratebeard/bin/herbstluftwm-miniscratch
 
 # run menu
-hc keybind $Mod-w	spawn /usr/bin/zsh /home/pyratebeard/bin/rundmc
+hc keybind $Mod-w	spawn /usr/bin/zsh /home/pyratebeard/.local/bin/rundmc
 
 # lock screen
-hc keybind $Mod-z	spawn bash /home/pyratebeard/bin/lock
+hc keybind $Mod-z	spawn bash /home/pyratebeard/.local/bin/lock
 
 # dynamic window gap
-hc keybind $Mod-9	spawn bash /home/pyratebeard/bin/herbstluftwm-remove-gap
-hc keybind $Mod-0	spawn bash /home/pyratebeard/bin/herbstluftwm-add-gap
+hc keybind $Mod-9	spawn bash /home/pyratebeard/.local/bin/herbstluftwm-remove-gap
+hc keybind $Mod-0	spawn bash /home/pyratebeard/.local/bin/herbstluftwm-add-gap
 
 # generic actions
 hc keybind $Mod-Shift-q quit

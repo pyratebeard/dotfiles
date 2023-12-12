@@ -6,7 +6,7 @@ dm_bin() {
 	bin_arr=()
 	while IFS= read -r line; do
 		bin_arr+=( "$line" )
-	done < <( find $HOME/bin )
+	done < <( find $HOME/.local/bin )
 
 	choice=$(printf '%s\n' "${bin_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'bin: ')
 	

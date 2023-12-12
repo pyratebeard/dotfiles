@@ -24,7 +24,7 @@ set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/"
 set certificate_file = "~/.mutt/certificates"
 set mbox_type = Maildir
-set folder = "~/var/mbox/pyratebeard"
+set folder = "~/.local/var/mbox/pyratebeard"
 set spoolfile = +INBOX
 set record  = "+INBOX.Sent"
 set postponed = "+INBOX.Drafts"
@@ -73,7 +73,7 @@ unset markers
 set mailcap_path = ~/.mailcap"
 auto_view text/html
 alternative_order text/html text/plain
-set display_filter = "~/bin/mailfmtshort"
+set display_filter = "~/.local/bin/mailfmtshort"
 
 # sidebar
 set sidebar_visible = no
