@@ -29,7 +29,7 @@ Mod=Mod4
 Alt=Mod1
 
 # minimize and unminimise windows
-bash /home/pyratebeard/bin/herbstluftwm-min_max
+bash /home/pyratebeard/.local/bin/herbstluftwm-min_max
 
 hc keybind $Mod-Control-s spawn bash /home/pyratebeard/bin/herbstluftwm-miniscratch
 
