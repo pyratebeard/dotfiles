@@ -3,7 +3,7 @@
 ! ░▀░▀░▀▀░░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░░
 
 ! fonts
-urxvt*font: xft:trigon:pixelsize=15:antialias=false, xft:Unifont:pixelsize=17:antialias=true:hinting=full, xft:Symbola:pixelsize=17:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
+urxvt*font: xft:trigon:pixelsize=15:antialias=false, xft:Symbola:pixelsize=17:antialias=true:hinting=full, xft:Unifont:pixelsize=17:antialias=true:hinting=full, xft:Kochi Gothic:antialias=false
 urxvt*boldFont: 
 urxvt*italicFont: 
 urxvt*bolditalicFont: 
@@ -26,7 +26,7 @@ urxvt.perl-ext-common: default,resize-font,url-select
 ! yankable urls
 ! `pacman -S urxvt-perls`
 urxvt.keysym.M-u: perl:url-select:select_next
-urxvt.url-select.launcher: /home/pyratebeard/bin/mario
+urxvt.url-select.launcher: /home/pyratebeard/.local/bin/mario
 urxvt.url-select.underline: true
 
 ! misc
