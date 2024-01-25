@@ -1,10 +1,5 @@
 irssi/.irssi/away.log
 irssi/.irssi/config.autosave
-mpd/.config/mpd/mpd.log
-mpd/.mpd/database
-mpd/.mpd/log
-mpd/.mpd/state
-mpd/.mpd/pid
 mutt/.mutt/cache/
 mutt/.mutt/sent
 ncmpcpp/.ncmpcpp/error.log
