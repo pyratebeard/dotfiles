@@ -19,7 +19,7 @@
 output()
 {
 	# write status to ~/cmus-status.txt (not very useful though)
-	echo "$*" >> ~/.cmus/wmt.txt 2>&1
+	echo "$*" >> ~/.config/cmus/wmt.txt 2>&1
 
 	# WMI (http://wmi.modprobe.de/)
 	#wmiremote -t "$*" &> /dev/null
@@ -35,7 +35,7 @@ done
 if test -n "$_file" && test -n "$_title" && [[ "$_status" == "playing" ]] ; then
 	if [[ $(cmus-remote -Q | grep "set play_library" | awk '{print $NF}') == "false" ]] ; then
 		_underscore=$(echo $_title | sed 's/\ /_/g')
-		_playlist=$(grep -i -e "$_title\|$_underscore" ~/.cmus/playlists/* | awk -F: '{print $1}' | awk -F/ '{print $NF}' | head -n1)
+		_playlist=$(grep -i -e "$_title\|$_underscore" ~/.config/cmus/playlists/* | awk -F: '{print $1}' | awk -F/ '{print $NF}' | head -n1)
 		test -n "$_playlist" && output "custom $_playlist playlist"
 	elif [[ $(cmus-remote -Q | grep "set play_library" | awk '{print $NF}') == "true" ]] ; then
 		output "$_album by $_artist"

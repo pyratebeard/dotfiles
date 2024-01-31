@@ -10,7 +10,7 @@
 # w e e k l y   m u s i c   t o o t
 
 # output of cmus-status-display script
-music_list="$HOME/.cmus/wmt.txt"
+music_list="$HOME/.config/cmus/wmt.txt"
 
 [ -f ${music_list} ] || exit 1
 
