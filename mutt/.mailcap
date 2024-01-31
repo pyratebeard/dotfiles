@@ -73,4 +73,4 @@ video/*; mpv '%s' --autofit=640x480 --loop=inf; test=test -n "$DISPLAY"
 #text/html; /usr/bin/firefox %s >/dev/null 2>&1; needsterminal
 #text/html; /usr/bin/w3m -I %{charset} -T text/html; copiusoutput
 #text/html; /usr/bin/lynx -dump -force_html -width=96 '%s'; needsterminal; copiusoutput
-text/html; /home/pyratebeard/bin/htmldump -c %{charset} '%s'; copiousoutput
+text/html; /home/pyratebeard/.local/bin/htmldump -c %{charset} '%s'; copiousoutput
