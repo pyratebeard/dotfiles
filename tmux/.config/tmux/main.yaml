@@ -1,0 +1,11 @@
+session_name: main
+start_directory: "~"
+windows:
+  - window_name: irc
+    panes:
+      - shell_command:
+          - irc
+  - window_name: vim
+    panes:
+      - shell_command:
+          - tmux set-hook -g after-new-window 'command-prompt -I "" "rename-window '%%'"'
