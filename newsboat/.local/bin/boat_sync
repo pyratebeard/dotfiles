@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-/usr/bin/newsboat -x reload
-sleep 10

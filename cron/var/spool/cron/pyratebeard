@@ -8,9 +8,6 @@
 0 * * * * $HOME/bin/mail_sync
 0 1 * * * offlineimap
 
-# update rss a few times a day
-0 8,11,14 * * * $HOME/bin/boat_sync
-
 # change bg every hour
 #0 * * * * $HOME/bin/bgchange
 

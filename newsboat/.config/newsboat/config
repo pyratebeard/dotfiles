@@ -9,6 +9,7 @@ save-path ~/tmp
 notify-program /usr/bin/notify-send
 player mpv
 confirm-mark-feed-read no
+refresh-on-startup yes
 
 # interface
 text-width 0
