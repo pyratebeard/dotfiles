@@ -3,34 +3,33 @@
 # ░▀░▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░░░▀░░░░
 
 # setup
-ncmpcpp_directory = "~/.ncmpcpp"
+ncmpcpp_directory = "~/.config/ncmpcpp"
 external_editor = "/usr/bin/vim"
 
 # mpd settings
 mpd_crossfade_time = "3"
 mpd_music_dir = "~/lib/music"
-mpd_host = "127.0.0.1"
+mpd_host = "~/.config/mpd/socket"
 mpd_port = "6601"
 
 # visualizer
 visualizer_look = "▒░"
 visualizer_color = "cyan,blue,magenta,yellow"
 visualizer_in_stereo = "yes"
-visualizer_fifo_path = "~/.mpd/mpd.fifo"
-visualizer_sync_interval = "10"
+visualizer_data_source = "~/.mpd/mpd.fifo"
 visualizer_output_name = "mpd spectrum"
 visualizer_type = "spectrum"
 
 # display settings
-song_columns_list_format = "(3f)[white]{n} (40)[white]{t|f} (25)[white]{a} (30)[white]{b} (4f)[white]{l}"
+song_columns_list_format = "(25)[15]{a} (40)[14]{t|f} (4f)[16]{l}"
 song_status_format = "$7%a $6$b> $6%t $6$b> $2%b$6"
 statusbar_color = "white"
 main_window_color = "cyan"
 header_visibility = "no"
-statusbar_visibility = "no"
+statusbar_visibility = "yes"
 colors_enabled = "yes"
-now_playing_prefix = "$2$b"
-now_playing_suffix = "$9$/b"
+now_playing_prefix = "$5$b▒░ "
+now_playing_suffix = " ░▒"
 autocenter_mode = "yes"
 centered_cursor = "yes"
 progressbar_color = "black"
@@ -39,7 +38,7 @@ progressbar_look = "▒▓░"
 titles_visibility = "no"
 mouse_support = "no"
 discard_colors_if_item_is_selected = "yes"
-user_interface = "alternative"
+user_interface = "classic"
 playlist_display_mode = "columns"
 search_engine_display_mode = "columns"
 

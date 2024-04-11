@@ -2,7 +2,7 @@ irssi/.irssi/away.log
 irssi/.irssi/config.autosave
 mutt/.mutt/cache/
 mutt/.mutt/sent
-ncmpcpp/.ncmpcpp/error.log
+ncmpcpp/.config/ncmpcpp/error.log
 tmux/.tmux/plugins/
 vim/.vim/bundle/
 vim/.vim/.netrwhist
