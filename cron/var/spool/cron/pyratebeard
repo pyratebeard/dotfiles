@@ -4,9 +4,9 @@
 #░██   ██ ░██   ░██   ░██ ░██  ░██
 #░░█████ ░███   ░░██████  ███  ░██
 # ░░░░░  ░░░     ░░░░░░  ░░░   ░░
-# rsync code four times a weekday at 20past between 0900 - 1700
+# rsync src code four times a weekday at 20past between 0900 - 1700
 # "At minute 20 past every 3th hour from 9 through 17 on every day-of-week from Monday through Friday."
-20 9-17/2 * * 1-5 /usr/bin/rsync -a ~src/ kinakuta:/crypt.kk/src
+20 9-17/2 * * 1-5 $HOME/.local/bin/ketchup
 
 # check email every hour and notify. full sync daily
 0 * * * * $HOME/.local/bin/mail_sync
