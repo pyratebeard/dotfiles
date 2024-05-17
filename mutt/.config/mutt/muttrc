@@ -20,9 +20,9 @@ set from = "root@pyratebeard.net"
 set realname = "pyratebeard"
 
 # mailbox
-set header_cache = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/"
-set certificate_file = "~/.mutt/certificates"
+set header_cache = "$XDG_CONFIG_HOME/mutt/cache/headers"
+set message_cachedir = "$XDG_CONFIG_HOME/mutt/cache/"
+set certificate_file = "$XDG_CONFIG_HOME/mutt/certificates"
 set mbox_type = Maildir
 set folder = "~/.local/var/mbox/pyratebeard"
 set spoolfile = +INBOX
@@ -36,7 +36,7 @@ set sort_aux = reverse-date-received
 
 # colours
 color normal default default
-color indicator color11 color8
+color indicator white color8
 color tree default default
 color status white black
 color index white color8 "~T"
@@ -44,11 +44,11 @@ color index color6 default "~U"
 color index color15 default "~O"
 color index red black "~D"
 color index color14 default "~F"
-color index color13 default "~g"
-color index color0 color13 "~G"
+color index color3 default "~g"
+color index color0 color3 "~G"
 
 # pgp
-source "~/.mutt/gpg.rc"
+source "$XDG_CONFIG_HOME/mutt/gpg.rc"
 set pgp_autosign = yes
 set pgp_use_gpg_agent = yes
 
@@ -59,7 +59,7 @@ set askbcc = yes
 set autoedit = yes
 set edit_headers = yes
 set text_flowed
-set signature = ~/.mutt/signature
+set signature = $XDG_CONFIG_HOME/mutt/signature
 
 # display
 set index_format = "%4C %Z %-30.30L %M %s"
@@ -70,7 +70,7 @@ set sort_aux=date-received
 unset markers
 
 # handling for multi-part and html messages
-set mailcap_path = ~/.mailcap"
+set mailcap_path = $XDG_CONFIG_HOME/mutt/mailcap"
 auto_view text/html
 alternative_order text/html text/plain
 set display_filter = "~/.local/bin/mailfmtshort"

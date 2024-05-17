@@ -1,14 +1,10 @@
 [general]
 accounts = pyratebeard
-pythonfile = ~/.offlineimap.py
+pythonfile = $XDG_CONFIG_HOME/offlineimap.py
 
 [Account pyratebeard]
-localrepository = pyratebeard-local
 remoterepository = pyratebeard-remote
-
-[Repository pyratebeard-local]
-type = Maildir
-localfolders = ~/var/mbox/pyratebeard
+localrepository = pyratebeard-local
 
 [Repository pyratebeard-remote]
 type = IMAP
@@ -18,3 +14,7 @@ remotepasseval = get_pass("pyratebeard")
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 readonly = false
+
+[Repository pyratebeard-local]
+type = Maildir
+localfolders = ~/.local/var/mbox/pyratebeard
