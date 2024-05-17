@@ -1,0 +1,10 @@
+#compdef lxat
+
+_lxat() {
+	local -a running
+	IFS=$'\n' running=($(lxc-ls -f | grep RUNNING | awk '{print $1}'))
+	_describe -t running 'running containers' running
+	return 0
+}
+
+_lxat

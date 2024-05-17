@@ -17,14 +17,18 @@ if [[ ! -v SSH_TTY ]] ; then
 	
 	script() {
 		audio_vol
+		sudo mount -a
 		[[ $(ps -ef | grep xbindkeys | grep -v grep | wc -l) -eq 0 ]] && xbindkeys
-		tmux new -s main
+		[ ! -f /tmp/tmux.lock ] && {
+			~src/warez/tmuxp/bin/tmuxp load ~/.config/tmux/main.yaml && \
+				touch /tmp/tmux.lock
+			}
 	}
 	
 	tmux list-sessions >/dev/null 2>&1 || script
 	# run on first tmux pane
-	if [[ $TMUX_PANE == "%0" ]] && [[ ! -v VIMRUNTIME ]]; then
-		$HOME/.local/bin/ahoy
-	fi
+	#if [[ $TMUX_PANE == "%0" ]] && [[ ! -v VIMRUNTIME ]]; then
+	#	$HOME/.local/bin/ahoy
+	#fi
 	#cat ~/tmp/logo5
 fi

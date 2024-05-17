@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+test $1 && NAME=$1 || NAME="screencast"
+RESOLUTION=$(xrandr | grep "*" | awk '{print $1}' | head -n1)
+echo "recording to ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm"
+ffmpeg -f x11grab -s ${RESOLUTION} -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm

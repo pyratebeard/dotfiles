@@ -10,6 +10,10 @@
 #
 #  author ▓▒ pyratebeard
 #    code ▓▒ https://git.pyratebeard.net/dotfiles/file/zsh/.zsh/aliases.zsh.html
+# colours
+red="\e[31m"
+green="\e[32m"
+reset="\e[0m"
 
 # ▓▓▒░ root
 # check for doas so aliases can be used on different systems
@@ -83,7 +87,7 @@ command -v gmake >/dev/null && alias make='gmake'
     gc="git commit -S -m"                                                     \
     gs="git status -sb"                                                       \
     gd="git diff"                                                             \
-    gf="git fetch"                                                            \
+    gf="git fetch && git log --pretty=format:'%C(always,yellow)%h%Creset %s %Cred%d' ..@{u}" \
     gm="git merge"                                                            \
     gr="git rebase"                                                           \
     gp="git push"                                                             \
@@ -95,8 +99,9 @@ command -v gmake >/dev/null && alias make='gmake'
     ggg="git graphgpg"
 
     gcl() {
-        git clone "$1"
-        cd ${1##*/}
+        git clone "${@}"
+        test -n "${2}" && _dir=${2} || _dir=${1##*/}
+        cd ${_dir%.git}
     }
 
 
@@ -155,7 +160,7 @@ command -v gmake >/dev/null && alias make='gmake'
 
     # record the primary screen
     screencast() {
-		test $1 && NAME=$1 || NAME="screencast"
+        test $1 && NAME=$1 || NAME="screencast"
         RESOLUTION=$(xrandr | grep "*" | awk '{print $1}' | head -n1)
         echo "recording to ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm"
         ffmpeg -f x11grab -s ${RESOLUTION} -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y ${HOME}/lib/videos/recordings/screencasts/$(date +%Y%m%d)-${NAME}.webm
@@ -240,5 +245,17 @@ command -v gmake >/dev/null && alias make='gmake'
     }
 
     :q!() {
-        [[ -v SSH_TTY ]] && echo dumpshock || sudo halt -p
+        [[ -v SSH_TTY ]] && echo dumpshock || {
+            ping -q -c1 pigley >/dev/null 2>&1 && {
+                echo -e "${red}lab still online${reset}"
+                vared -p 'shutdown? [Y/n]: ' -c sdwn
+                case ${sdwn} in
+                    y|Y) labdown ;;
+                    n) ;;
+                    *) labdown ;;
+                esac
+            } || echo -e "${green}lab offline${reset}"
+            rm -f /tmp/tmux.lock
+            sudo halt -p
+        }
     }

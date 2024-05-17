@@ -14,8 +14,8 @@ setopt PROMPT_SUBST
 autoload -Uz colors && colors
 
 # autoload zsh functions
-fpath=(~/.zsh/functions $fpath)
-autoload -U ~/.zsh/functions/*(:t)
+fpath=(~/.config/zsh/functions $fpath)
+autoload -U ~/.config/zsh/functions/*(:t)
 
 # enable auto-execution of functions
 typeset -ga chpwd_functions
