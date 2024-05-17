@@ -11,7 +11,7 @@
 [ $# -eq 0 ] && num=1 || num=$1
 
 # set path to music and read into array
-library_dir="$HOME/lib/music/"
+library_dir="/media/music/"
 readarray -d '' library < <(find ${library_dir} -mindepth 2 -maxdepth 2 -type d -print0)
 
 # get some randomness
