@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-#DM_CMD=$(dmenu -m 0 -fn trigon:pixelsize=15 -i -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -l 10)
+#DM_CMD=$(dmenu -m 0 -fn gohu:size=11 -i -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -l 10)
 
 dm_bin() {
 	bin_arr=()
@@ -8,12 +8,12 @@ dm_bin() {
 		bin_arr+=( "$line" )
 	done < <( find $HOME/.local/bin )
 
-	choice=$(printf '%s\n' "${bin_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'bin: ')
+	choice=$(printf '%s\n' "${bin_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'bin: ')
 	
 	if [ "$choice" ] ; then
 		#cmd="printf '%s\n' "${bin_arr[@]}" | grep $HOME/bin/$choice | head -n1" 
 		cmd="$HOME/bin/${choice} $@"
-		urxvt -geometry 1x1+3000+1920 -e zsh -c "$cmd"
+		urxvt -title dmenu -e zsh -c "herbstclient set_attr clients.focus.minimized true ; $cmd"
 	fi
 }
 
@@ -23,12 +23,12 @@ dm_func() {
 		func_arr+=( "$line" )
 	done < <( find $HOME/.zsh/functions )
 
-	choice=$(printf '%s\n' "${func_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'functions: ')
+	choice=$(printf '%s\n' "${func_arr[@]}" | awk -F/ '{print $NF}' | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'functions: ')
 	
 	if [ "$choice" ] ; then
 		#cmd="printf '%s\n' "${func_arr[@]}" | grep $HOME/bin/$choice | head -n1" 
 		cmd="$HOME/.zsh/functions/${choice} $@"
-		urxvt -geometry 1x1+3000+1920 -e zsh -c "$cmd"
+		urxvt -title dmenu -e zsh -c "herbstclient set_attr clients.focus.minimized true ; $cmd"
 	fi
 }
 
@@ -39,11 +39,11 @@ dm_aliases() {
 		alias_arr+=( "$line" )
 	done < <( alias )
 
-	choice=$(printf '%s\n' "${alias_arr[@]}" | awk -F= '{print $1}' | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
+	choice=$(printf '%s\n' "${alias_arr[@]}" | awk -F= '{print $1}' | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
 	
 	if [ "$choice" ] ; then
 		cmd=$(printf '%s\n' "${alias_arr[@]}" | grep ^$choice | head -n1 | sed 's/=/%/' | awk -F% '{ print $NF }' | tr -d "'")
-		urxvt -e zsh -c "$cmd"
+		urxvt -title dmenu -e zsh -c "herbstclient set_attr clients.focus.minimized true ; $cmd"
 		#echo $cmd
 	fi
 }
@@ -54,7 +54,7 @@ dm_hidden() {
 		hide_arr+=( "$line" )
 	done < <(hidden -c)
 
-	choice=$(printf '%s\n' "${hide_arr[@]}" | awk -F: '{print $1}' | tr -d "'" | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
+	choice=$(printf '%s\n' "${hide_arr[@]}" | awk -F: '{print $1}' | tr -d "'" | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
 	
 	if [ "$choice" ] ; then
 		cmd=$(printf '%s\n' "${hide_arr[@]}" | grep "^'$choice'" | awk -F: '{ print $NF }' | tr -d "'")
@@ -69,7 +69,7 @@ dm_man() {
 		man_arr+=( "$line" )
 	done < <(man -k .)
 
-	choice=$(printf '%s\n' "${man_arr[@]}" | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'manpage: ')
+	choice=$(printf '%s\n' "${man_arr[@]}" | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'manpage: ')
 	
 	if [ "$choice" ] ; then
 		cmd=$(printf '%s\n' "${man_arr[@]}" | grep ^$choice | awk '{print $1}')
@@ -83,10 +83,10 @@ dm_pom() {
 }
 
 select_arr=("run" "bin" "functions" "aliases" "hidden" "man" "pom" "scratch" "clipmenu")
-submenu=$(printf '%s\n' "${select_arr[@]}" | dmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
+submenu=$(printf '%s\n' "${select_arr[@]}" | dmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'submenu: ')
 
 case $submenu in
-	run) dmenu_run -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'rundmc: ' ;;
+	run) dmenu_run -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'rundmc: ' ;;
 	bin) dm_bin ;;
 	functions) dm_func ;;
 	aliases) dm_aliases ;;
@@ -94,6 +94,6 @@ case $submenu in
 	man) dm_man ;;
 	pom) dm_pom ;;
 	scratch) urxvtc -e zsh -c "less $HOME/.vimrc" ;;
-	clipmenu) clipmenu -i -l 10 -m 0 -fn trigon:pixelsize=15 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'clipmenu: ' ;;
+	clipmenu) clipmenu -i -l 10 -m 0 -fn gohu:size=11 -nb '#1f1d1b' -nf '#d3cab3' -sb '#454545' -sf '#dab733' -p 'clipmenu: ' ;;
 	*) exit ;;
 esac
