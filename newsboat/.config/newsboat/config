@@ -5,7 +5,7 @@ auto-reload no
 reload-threads 100
 
 browser lynx
-save-path ~/tmp
+save-path ~/.local/tmp
 notify-program /usr/bin/notify-send
 player mpv
 confirm-mark-feed-read no

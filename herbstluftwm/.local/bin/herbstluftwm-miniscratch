@@ -28,7 +28,7 @@ init() {
    # unminimize last window of a tag
    # if the `my_minimized_age` attribute does not exist (i.e. the window has not been
    #  minimized with this script), use arbitrary order to unminimize
-   LANG=en_US.UTF-8 urxvt -title scratchpad -cd /home/pyratebeard -e vim ~/tmp/scratch &
+   LANG=en_US.UTF-8 urxvt -title scratchpad -cd /home/pyratebeard -e vim ~/.local/tmp/scratch &
    sleep 1
    scratchclient=$(hc foreach CLIENT clients. and , echo CLIENT , sprintf ATTRSTR %c.title CLIENT substitute ATTRVALUE ATTRSTR echo ATTRVALUE | \
          grep -B1 '^scratchpad$' | head -n1 | awk -F. '{print $NF}')

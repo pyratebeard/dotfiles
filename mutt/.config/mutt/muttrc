@@ -110,4 +110,4 @@ bind index,pager <F6> sidebar-next-new
 bind index,pager B sidebar-toggle-visible
 
 # macros
-macro attach W "<save-entry><bol>~/tmp/<eol>"
+macro attach W "<save-entry><bol>~/.local/tmp/<eol>"
