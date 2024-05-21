@@ -87,15 +87,8 @@
 #  alt + p
 #"/usr/bin/amixer set Capture nocap >/dev/null"
 #  release+alt + p
-"/home/pyratebeard/bin/ptt"
+"/home/pyratebeard/.local/bin/ptt"
   alt + p
-
-## vi navigation
-"/usr/bin/xte 'key j'"
-  release+alt + n
-
-"/usr/bin/xte 'key k'"
-  release+alt + e
 
 ##################################
 # End of xbindkeys configuration #
