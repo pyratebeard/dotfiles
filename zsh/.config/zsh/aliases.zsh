@@ -187,7 +187,7 @@ command -v gmake >/dev/null && alias make='gmake'
     mixer="alsamixer"                                                         \
     news="newsboat"                                                           \
     gifview="gifview -a"                                                      \
-    mail="mutt -F ~/.mutt/muttrc-imap"                                        \
+    lab="ssh pigley 'pcs'"                                                    \
                                                                               \
     headsetbatt="bluetooth_battery 34:DF:2A:5F:04:2C"                         \
     headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"                 \
@@ -242,6 +242,22 @@ command -v gmake >/dev/null && alias make='gmake'
     # read anything as manpage
     nam() {
         pandoc -s -t man "$*" | man -l -
+    }
+
+    mkcd() {
+        mkdir -p "$1" && cd "$1"
+    }
+
+    labup() {
+        /usr/bin/wol 00:23:24:b3:03:cb
+        /usr/bin/wol 00:23:24:b5:75:61
+    }
+
+    labdown() {
+        ssh pigley 'for r in $(pcs resource --hide-inactive | awk "{print \$2}") ; do pcs resource disable --wait $r ; done'
+        for node in pigley goatley ; do
+            ssh $node "systemctl poweroff"
+        done
     }
 
     :q!() {
