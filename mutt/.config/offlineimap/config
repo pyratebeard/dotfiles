@@ -1,6 +1,6 @@
 [general]
 accounts = pyratebeard
-pythonfile = $XDG_CONFIG_HOME/offlineimap.py
+pythonfile = $XDG_CONFIG_HOME/offlineimap/offlineimap.py
 
 [Account pyratebeard]
 remoterepository = pyratebeard-remote
