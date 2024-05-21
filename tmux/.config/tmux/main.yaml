@@ -2,9 +2,19 @@ session_name: main
 start_directory: "~"
 windows:
   - window_name: irc
+    layout: main-horizontal
+    options:
+      main-pane-height: 50%
     panes:
       - shell_command:
           - irc
+        focus: true
+      - shell_command:
+          - ahoy
+          - todo
+      - shell_command:
+          - mail_sync
+          - mutt
   - window_name: vim
     panes:
       - shell_command:
