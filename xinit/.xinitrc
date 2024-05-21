@@ -8,7 +8,7 @@ sudo sysctl -w dev.raid.speed_limit_max=1000
 
 # merge in defaults and keymaps
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+usermodmap=$XDG_CONFIG_HOME/xmodmap/.xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
