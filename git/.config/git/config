@@ -6,9 +6,12 @@
 	name = pyratebeard
 	username = pyratebeard
 	signingkey = 0xC7877C715113A16D
+	useconfigonly = true
 [alias]
 	graphgpg = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%C(blue)%x20(%ce)%x20%C(cyan)[gpg:%GK%x20%G?]%C(reset)%n%x20%s%n"
 [color "status"]
 	added = green bold
 	changed = cyan
 	untracked = yellow bold
+[includeif "gitdir:~src/suit/"]
+	path = ~/.config/git/config.suit
