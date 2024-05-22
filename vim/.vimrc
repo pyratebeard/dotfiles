@@ -213,8 +213,8 @@ if 1 " boolean for plugin loading
 
   " vimwiki https://vimwiki.github.io
   let grimoire = {}
-  let grimoire.path = '~/lib/documents/grimoire'
-  let grimoire.path_html = '~/lib/documents/grimoire/html'
+  let grimoire.path = '~src/grimoire'
+  let grimoire.path_html = '~src/grimoire/html'
   let grimoire.syntax = 'markdown'
   let grimoire.ext = '.md'
 
