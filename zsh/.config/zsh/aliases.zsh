@@ -67,6 +67,7 @@ command -v gmake >/dev/null && alias make='gmake'
     psef="ps -ef"                                                             \
     jobs="jobs -l"                                                            \
     \?is="whereis"                                                            \
+    history="history -i"                                                      \
     disks='echo "┌──┄";echo "├┄ m o u n t . p o i n t s"; echo "└──┄┄────┄┄"; lsblk -a; echo ""; echo "┌──┄";echo "├┄ d i s k . u s a g e"; echo "└──┄┄────┄┄"; sudo df -h -x tmpfs -x devtmpfs;' \
     ag="ag --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'" \
     tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
