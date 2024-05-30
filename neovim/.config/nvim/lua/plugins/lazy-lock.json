@@ -1,0 +1,17 @@
+{
+  "fzf-lua": { "branch": "main", "commit": "b92220ec838c195eb1c711daa69c905b1d7b8d8c" },
+  "gitsigns.nvim": { "branch": "main", "commit": "af3fdad8ddcadbdad835975204f6503310526fd9" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "d98f537c3492e87b6dc6c2e3f66ac517528f406f" },
+  "lazy.nvim": { "branch": "main", "commit": "24fa2a97085ca8a7220b5b078916f81e316036fd" },
+  "lush.nvim": { "branch": "main", "commit": "7c0e27f50901481fe83b974493c4ea67a4296aeb" },
+  "nvim-web-devicons": { "branch": "master", "commit": "b77921fdc44833c994fdb389d658ccbce5490c16" },
+  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "shipwright.nvim": { "branch": "master", "commit": "e596ab48328c31873f4f4d2e070243bf9de16ff3" },
+  "telescope-file-browser.nvim": { "branch": "master", "commit": "4d5fd21bae12ee6e9a79232e1c377f43c419d0c5" },
+  "telescope-live-grep-args.nvim": { "branch": "master", "commit": "4122e146d199c0d6d1cfb359c76bc1250d522460" },
+  "telescope-undo.nvim": { "branch": "main", "commit": "95b61c01ea3a4c9e8747731148e905bbcf0ccaee" },
+  "telescope.nvim": { "branch": "master", "commit": "2df52609a1632de5d77a0b2416db6ad9cf32e463" },
+  "vim-flog": { "branch": "master", "commit": "2f0836128cac9368176a564b237382d1766723f0" },
+  "vim-fugitive": { "branch": "master", "commit": "4f59455d2388e113bd510e85b310d15b9228ca0d" },
+  "vimwiki": { "branch": "dev", "commit": "69318e74c88ef7677e2496fd0a836446ceac61e8" }
+}

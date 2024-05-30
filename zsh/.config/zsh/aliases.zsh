@@ -75,9 +75,9 @@ command -v gmake >/dev/null && alias make='gmake'
 
 # ▓▓▒░ almighty text editor
                                                                         alias \
-    v="vim"                                                                   \
-    vi="vim"                                                                  \
-    emacs="vim"
+    v="nvim"                                                                   \
+    vi="nvim"                                                                  \
+    emacs="nvim"
 
 
 # ▓▓▒░ git
@@ -177,7 +177,7 @@ command -v gmake >/dev/null && alias make='gmake'
 
 # ▓▓▒░ suffix
                                                                      alias -s \
-    md=vim                                                                    \
+    md=nvim                                                                    \
     {png,jpg,jpeg}=sxiv                                                       \
     pdf=zathura                                                               \
     mp4=mpv
