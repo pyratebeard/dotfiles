@@ -14,6 +14,7 @@ export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/tmp}"
 export GNUPGHOME="$XDG_DATA_HOME"/gpg
 export CARGO_HOME="$HOME"/.local/lib/cargo
 export RUSTUP_HOME="$HOME"/.local/lib/rustup
+export TIN_HOMEDIR="$XDG_CONFIG_HOME"/tin
 
 # paths
 export GOPATH=$HOME/.local/lib/go
@@ -23,6 +24,9 @@ export TF_PLUGIN_CACHE_DIR=$XDG_CACHE_HOME/tf_plugin
 # preferred editor for local and remote sessions
 export EDITOR=vim
 export VISUAL=vim
+
+# password store
+export PASSWORD_STORE_DIR=$HOME/.local/src/password-store
 
 # lynx colours
 export LYNX_LSS=$HOME/.config/lynx/lynx.lss
