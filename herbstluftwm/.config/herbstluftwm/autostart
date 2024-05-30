@@ -44,7 +44,7 @@ hc keybind $Mod-9	spawn bash /home/pyratebeard/.local/bin/herbstluftwm-remove-ga
 hc keybind $Mod-0	spawn bash /home/pyratebeard/.local/bin/herbstluftwm-add-gap
 
 # scrot
-hc keybind $Mod-q spawn scrot -e 'mv $f ~/lib/images/misc/scrots/pyratebeard/'
+hc keybind $Mod-q spawn scrot -e 'mv $f ~trove/images/misc/scrots/pyratebeard/'
 
 # generic actions
 hc keybind $Mod-Shift-q quit
