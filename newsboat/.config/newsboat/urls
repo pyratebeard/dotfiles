@@ -77,6 +77,7 @@ http://www.hrhmag.com/category/event-news/hrh-vikings/feed "~hrh vikings" "music
 code
 https://www.kernel.org/feeds/kdist.xml "~kernel releases" "code"
 https://code.briarproject.org/briar/briar/-/tags?format=atom "~briar - tags" "code"
+https://freshcode.club/feed/tin.xml "~tin" "code"
 
 security
 https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml "~nvd all" "security"
