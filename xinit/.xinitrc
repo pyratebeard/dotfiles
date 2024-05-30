@@ -8,14 +8,12 @@ sudo sysctl -w dev.raid.speed_limit_max=1000
 
 # merge in defaults and keymaps
 userresources=$HOME/.Xresources
-usermodmap=$XDG_CONFIG_HOME/xmodmap/.xmodmap
+usermodmap=$HOME/.config/xmodmap/.xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # set caps to escape
 setxkbmap -option ctrl:nocaps colemak-ctrl
-xmodmap ~/.xmodmap
-xcape -e 'Control_L=Escape'
 
 # add fonts
 xset +fp /usr/share/fonts/local
@@ -39,6 +37,7 @@ fi
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+xcape -e 'Control_L=Escape'
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
