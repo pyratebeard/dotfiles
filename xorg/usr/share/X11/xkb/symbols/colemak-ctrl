@@ -1,0 +1,7 @@
+// colemak-ctrl
+partial alphanumeric_keys
+xkb_symbols "colemak-ctrl" {
+    include "us(colemak)"
+    key <CAPS> { [ Control_L, Control_L, Control_L, Control_L ] };
+};
+
