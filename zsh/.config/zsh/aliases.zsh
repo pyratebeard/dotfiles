@@ -188,7 +188,6 @@ command -v gmake >/dev/null && alias make='gmake'
     mixer="alsamixer"                                                         \
     news="newsboat"                                                           \
     gifview="gifview -a"                                                      \
-    lab="ssh pigley 'pcs'"                                                    \
                                                                               \
     headsetbatt="bluetooth_battery 34:DF:2A:5F:04:2C"                         \
     headset="echo 'connect 34:DF:2A:5F:04:2C' | bluetoothctl"                 \
@@ -249,27 +248,15 @@ command -v gmake >/dev/null && alias make='gmake'
         mkdir -p "$1" && cd "$1"
     }
 
-    labup() {
-        /usr/bin/wol 00:23:24:b3:03:cb
-        /usr/bin/wol 00:23:24:b5:75:61
-    }
-
-    labdown() {
-        ssh pigley 'for r in $(pcs resource --hide-inactive | awk "{print \$2}") ; do pcs resource disable --wait $r ; done'
-        for node in pigley goatley ; do
-            ssh $node "systemctl poweroff"
-        done
-    }
-
     :q!() {
         [[ -v SSH_TTY ]] && echo dumpshock || {
             ping -q -c1 pigley >/dev/null 2>&1 && {
                 echo -e "${red}lab still online${reset}"
                 vared -p 'shutdown? [Y/n]: ' -c sdwn
                 case ${sdwn} in
-                    y|Y) labdown ;;
+                    y|Y) lab down ;;
                     n) ;;
-                    *) labdown ;;
+                    *) lab down ;;
                 esac
             } || echo -e "${green}lab offline${reset}"
             rm -f /tmp/tmux.lock
