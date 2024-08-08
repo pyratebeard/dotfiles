@@ -155,7 +155,7 @@ r.noremap("n", "Q", "<nop>", "")
 -- nnoremap <C-w>w :set wrap<CR>:Spell<CR>
 f.cmd("Sp", "setlocal spell! spell?", { desc = "toggle spell check" })
 r.noremap("n", "<leader>s", ":Sp<cr>", "toggle spell check")
-r.noremap("n", "<leader>ww", ":set wrap<cr>:Sp<cr>", "wrap and toggle spell check")
+r.noremap("n", "<leader>sw", ":set wrap<cr>:Sp<cr>", "wrap and toggle spell check")
 
 -- make current buffer executable
 f.cmd("Chmodx", "!chmod a+x %", { desc = "make current buffer executable" })
