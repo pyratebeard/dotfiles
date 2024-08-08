@@ -6,6 +6,8 @@ mail_dir="$HOME/.local/var/mbox"
 log_file="$HOME/.local/var/log/mail_sync.log"
 cached_key=$(gpg-connect-agent 'keyinfo --list' /bye 2>/dev/null | awk 'BEGIN{CACHED=0} /^S/ {if($7==1){CACHED=1}} END{if($0!=""){print CACHED} else {print "none"}}')
 
+[ -f ${log_file} || touch ${log_file}
+[ -d ${mail_dir} || mkdir -p ${mail_dir}/pyratebeard/
 log() {
 	echo "$(date +%H:%M:%S): ${1}" >> ${log_file}
 }
