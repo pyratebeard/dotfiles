@@ -41,6 +41,7 @@ discard_colors_if_item_is_selected = "yes"
 user_interface = "classic"
 playlist_display_mode = "columns"
 search_engine_display_mode = "columns"
+display_volume_level = yes
 
 # cheat sheet
 # %l - length
