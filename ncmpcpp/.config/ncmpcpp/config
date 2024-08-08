@@ -8,7 +8,7 @@ external_editor = "/usr/bin/vim"
 
 # mpd settings
 mpd_crossfade_time = "3"
-mpd_music_dir = "~/lib/music"
+mpd_music_dir = "/media/music"
 mpd_host = "~/.config/mpd/socket"
 mpd_port = "6601"
 
