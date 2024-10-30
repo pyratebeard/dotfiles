@@ -1,7 +1,6 @@
 blogs
-https://www.stashmycomics.com/user-rss.asp?w=s&usercode=clengrorneq "~stash" "comics"
 https://log.pyratebeard.net/rss.xml "~pyratebeard" "blogs"
-http://feeds.xero.nu/rss/blog/newest "~xero" "blogs"
+https://feeds.x-e.ro/rss/blog/newest "~xero" "blogs"
 https://venam.nixers.net/blog/feed.xml "~venam" "blogs"
 https://lonesysadmin.net/feed/ "~lonesysadmin" "blogs"
 http://comicsbulletin.com/feed/ "~comics bulletin" "blogs" "comics"
@@ -31,19 +30,19 @@ https://reddit.com/r/comicbooks.rss "~comicbooks" "reddit" "comics"
 https://reddit.com/r/comicbookcollecting.rss "~comicbookcollecting" "reddit" "comics"
 
 mastodon
-https://mastodon.social/@pyratebeard.rss "~pyratebeard" "mastodon"
+https://harbour.cafe/@pyratebeard.rss "~pyratebeard" "mastodon"
 https://mastodon.social/@eff.rss "~eff" "mastodon"
 https://mastodon.social/@x0rz.rss "~x0rz" "mastodon"
 https://infosec.exchange/@0xmrtn.rss "~0xmrtn" "mastodon"
 
-twitter
-https://nitter.net/rikkuness/rss "~rikkuness" "twitter"
-https://nitter.net/moongoosedani/rss "~moongoosedani" "twitter"
-https://nitter.net/dogspacesuit/rss "~dogspacesuit" "twitter"
-https://nitter.net/_glasshalfphil/rss "~_glasshalfphil" "twitter"
-https://nitter.net/fontvirus/rss "~fontvirus" "twitter"
-https://nitter.net/doctorow/rss "~doctorow" "twitter"
-https://nitter.net/pyratebeard/lists/tech/rss "~tech list" "twitter" "tech"
+#twitter
+#https://nitter.net/rikkuness/rss "~rikkuness" "twitter"
+#https://nitter.net/moongoosedani/rss "~moongoosedani" "twitter"
+#https://nitter.net/dogspacesuit/rss "~dogspacesuit" "twitter"
+#https://nitter.net/_glasshalfphil/rss "~_glasshalfphil" "twitter"
+#https://nitter.net/fontvirus/rss "~fontvirus" "twitter"
+#https://nitter.net/doctorow/rss "~doctorow" "twitter"
+#https://nitter.net/pyratebeard/lists/tech/rss "~tech list" "twitter" "tech"
 
 podcasts
 https://podcast.nixers.net/feed/feed.xml "~nixers" "podcasts"
@@ -80,8 +79,10 @@ https://code.briarproject.org/briar/briar/-/tags?format=atom "~briar - tags" "co
 https://freshcode.club/feed/tin.xml "~tin" "code"
 
 security
-https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml "~nvd all" "security"
-https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml "~nvd analysed" "security"
+#https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml "~nvd all" "security"
+#https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml "~nvd analysed" "security"
+https://cvefeed.io/rssfeed/latest.xml "~latest cve" "security"
+https://cvefeed.io/rssfeed/severity/high.xml "~high/critical cve" "security"
 
 news
 https://www.irishtimes.com/cmlink/news-1.1319192 "~irish times" "news headlines"
