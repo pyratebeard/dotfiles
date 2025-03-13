@@ -20,7 +20,7 @@ if [[ ! -v SSH_TTY ]] ; then
 		sudo mount -a
 		[[ $(ps -ef | grep xbindkeys | grep -v grep | wc -l) -eq 0 ]] && xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/.xbindkeysrc
 		[ ! -f /tmp/tmux.lock ] && {
-			~src/warez/tmuxp/bin/tmuxp load ~/.config/tmux/main.yaml && \
+			/usr/bin/tmuxp load ~/.config/tmux/main.yaml && \
 				touch /tmp/tmux.lock
 			}
 	}
