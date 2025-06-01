@@ -3,7 +3,7 @@
 # ░▀▀▀░▀▀▀░▀░▀░░
 
 # set hostname
-HOSTNAME=$(hostname -s)
+HOSTNAME=$(hostnamectl hostname | awk -F. '{print $1}')
 
 # load configs
 for config (~/.config/zsh/*.zsh) source $config
