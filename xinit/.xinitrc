@@ -3,20 +3,10 @@
 # ░▄▀▄░░█░░█░█░░█░░░█░░░
 # ░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░░
 
-# stop raidsync from hogging system
-sudo sysctl -w dev.raid.speed_limit_max=1000
-
 # merge in defaults and keymaps
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.config/xmodmap/.xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-
-# set caps to escape
-setxkbmap -option ctrl:nocaps colemak-ctrl
-
-# add fonts
-xset +fp /usr/share/fonts/local
 
 # beep and screen blank off
 xset b off
@@ -33,11 +23,6 @@ fi
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-xcape -e 'Control_L=Escape'
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -67,7 +52,7 @@ xrdb -load ~/.config/urxvt/.Xdefaults
 
 # set up monitors
 #xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate left --output DVI-D-1 --primary --mode 1920x1080 --pos 0x336 --rotate normal
-xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-D-1 --primary --mode 1920x1080  --rotate normal
+#xrandr --output DP-1 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-D-1 --primary --mode 1920x1080  --rotate normal
 
 # start urxvtd (specify LANG so fonts work correctly - remember â)
 LANG=en_US.UTF-8 urxvtd -q -o -f
