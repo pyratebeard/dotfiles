@@ -1,0 +1,225 @@
+#!/bin/bash
+#        ██
+#       ░██
+#      ██████ ██████████  ██   ██ ██   ██
+#     ░░░██░ ░░██░░██░░██░██  ░██░░██ ██
+#       ░██   ░██ ░██ ░██░██  ░██ ░░███
+#       ░██   ░██ ░██ ░██░██  ░██  ██░██
+#       ░░██  ███ ░██ ░██░░██████ ██ ░░██
+#        ░░  ░░░  ░░  ░░  ░░░░░░ ░░   ░░
+#           ██               ██
+#          ░██              ░██
+#  ██████ ██████  ██████   ██████ ██   ██  ██████
+# ██░░░░ ░░░██░  ░░░░░░██ ░░░██░ ░██  ░██ ██░░░░
+#░░█████   ░██    ███████   ░██  ░██  ░██░░█████
+# ░░░░░██  ░██   ██░░░░██   ░██  ░██  ░██ ░░░░░██
+# ██████   ░░██ ░░████████  ░░██ ░░██████ ██████
+#░░░░░░     ░░   ░░░░░░░░    ░░   ░░░░░░ ░░░░░░
+#
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ author ▓ xero <x@xero.style>
+# ░▓ code   ▓ https://code.x-e.ro/dotfiles
+# ░▓ mirror ▓ https://git.io/.files
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░
+
+FULL=▒
+EMPTY=░
+THEME="oldriceputin"
+if [ $THEME == "oldriceputin" ] ; then
+	#oldriceputin
+	C0="#181512"
+	C8="#454545"
+	C1="#bb6055"
+	C9="#c94539"
+	C2="#80964d"
+	C10="#aabb46"
+	C3="#8b6268"
+	C11="#dab733"
+	C4="#756583"
+	C12="#a3535e"
+	C5="#628185"
+	C13="#becc90"
+	C6="#a4b810"
+	C14="#69c884"
+	C7="#d3cab3"
+	C15="#c9b09a"
+elif [ $THEME == "zuke" ] ; then
+	#zuke
+	C0="#080808"
+	C8="#404040"
+	C1="#df5e51"
+	C9="#d43f10"
+	C2="#9ac14e"
+	C10="#a1db2f"
+	C3="#ffe534"
+	C11="#ab967c"
+	C4="#7c8494"
+	C12="#79e1b2"
+	C5="#8e73ad"
+	C13="#75c57a"
+	C6="#c4bf5f"
+	C14="#cef318"
+	C7="#bdbaa0"
+	C15="#e9ede9"
+elif [ $THEME == "slughead" ] ; then
+	# slughead
+	C0="#2a2f33"
+	C8="#4d5863"
+	C1="#dc4f41"
+	C9="#d41010"
+	C2="#14894c"
+	C10="#bae751"
+	C3="#ffea5b"
+	C11="#7ca7ab"
+	C4="#4b73ae"
+	C12="#79e1b2"
+	C5="#456180"
+	C13="#4bed67"
+	C6="#309e4f"
+	C14="#35f46b"
+	C7="#e3ebf3"
+	C15="#bbc2c8"
+elif [ $THEME == "sourcery" ] ; then
+	# sourcery
+	C0='#111111'
+	C8='#444444'
+	C1='#aa4d44'
+	C9='#fb683f'
+	C2='#619033'
+	C10='#9be733'
+	C3='#ff5050'
+	C11='#9d9b75'
+	C4='#7681a8'
+	C12='#bdcae8'
+	C5='#635273'
+	C13='#8e7a9e'
+	C6='#58813f'
+	C14='#93c03c'
+	C7='#d3d3d3'
+	C15='#c1cdc1'
+
+	#C0="#111111"
+	#C8="#444444"
+	#C1="#aa4453"
+	#C9="#f66767"
+	#C2="#728a1e"
+	#C10="#b2d631"
+	#C3="#ffcc3c"
+	#C11="#87855f"
+	#C4="#5b9299"
+	#C12="#89b9bb"
+	#C5="#84678f"
+	#C13="#8e7a9e"
+	#C6="#528b63"
+	#C14="#7fdc95"
+	#C7="#d3d3d3"
+	#C15="#c1cdc1"
+fi
+
+C237="#3a3a3a"
+C240="#585858"
+C241="#626262"
+C243="#767676"
+C244="#808080"
+
+draw() {
+	perc=$1
+	size=$2
+	inc=$((perc * size / 100))
+	out=
+	case $THEME in
+		oldriceputin) CFG=$C14 ; CBG=$C241 ;;
+		zuke) CFG=$C12 ; CBG=$C5 ;;
+		sourcery) CFG=$C10 ; CBG=$C5 ;;
+		blaqueplague) CFG=$C5 ; CBG=$C241 ;;
+	esac
+	for v in $(seq 0 $((size - 1))); do
+		test "$v" -le "$inc" &&
+			out="${out}#[fg=$CFG]${FULL}" ||
+			out="${out}#[bg=$CBG]#[fg=$C0]${EMPTY}#[bg=$C241]"
+	done
+	echo "$out"
+}
+temp() {
+	builtin type -P "sensors" &>/dev/null || exit
+	t=$(sensors | awk '/Core\ 0/ {gsub(/\+/,"",$3); gsub(/\..+/,"",$3)    ; print $3}')
+	tc=$C0
+	if [ $((t <= 50)) ]; then
+		tc=$C0
+	elif [ $((t >= 75)) ]; then
+		tc=$C1
+	fi
+	echo " #[fg=$tc]$t°c"
+}
+bat() {
+	BATPATH=/sys/class/power_supply/BAT0
+	STATUS=$BATPATH/status
+	BAT_FULL=$BATPATH/energy_full
+	BAT_NOW=$BATPATH/energy_now
+	bf=$(cat $BAT_FULL)
+	bn=$(cat $BAT_NOW)
+	bp=$((100 * bn / bf))
+	stat=$(cat $STATUS)
+	case $stat in
+	"Not charging")
+		st="="
+		;;
+	Discharging)
+		st="-"
+		;;
+	Charging)
+		st="+"
+		;;
+	esac
+	test "$bp" -lt 20 &&
+		bc=$C1 ||
+		bc=$C0
+	echo "#[fg=$C0]$st#[fg=$bc]$bp""%"
+}
+cpu() {
+	CPU_USE=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}')
+	printf "%.0f" "$CPU_USE"
+}
+ram() {
+	free | awk '/Mem:/ {print int($3/$2 * 100.0)}'
+}
+disk() {
+	df -h | grep '/$' | tr -s ' ' | cut -d ' ' -f5 | sed 's/%//'
+}
+vpn() {
+	# todo: ensure tailscale is working
+	case $THEME in
+		oldriceputin) CSTATE=$C12 ;;
+		zuke) CSTATE=$C12 ;;
+		sourcery) CSTATE=$C12 ;;
+	esac
+	tailscale ip >/dev/null 2>&1 && state=$C10 || state=$C3
+	echo "#[bg=$state]#[fg=$C241]▓▒░#[bg=$state]#[fg=0] vpn #[bg=$state]#[fg=$C237]░▒#[bg=$state]#[fg=$C237]▓#[bg=$C237]"
+}
+net() {
+	case $THEME in
+		oldriceputin) CFG=$C14 ; CBG=$C0 ;;
+		zuke) CFG=$C12 ; CBG=$C5 ;;
+		sourcery) CFG=$C12 ; CBG=$C5 ;;
+	esac
+	ping 9.9.9.9 -c 1 >/dev/null 2>&1 && state=$C10 || state=$C3
+	echo "#[bg=$state]#[fg=$C241]▓▒░#[bg=$state]#[fg=0] net #[bg=$state]#[fg=$C241]░▒#[bg=$state]#[fg=$C241]▓#[bg=$C241]"
+}
+clock() {
+	mtime=$(date +'%H%M')
+	myear=$(date +'%Y%m')
+	mday=$(date +'%d')
+	mdow=$(date +'%u')
+	echo "#[fg=$C241]#[bg=$C237] #[fg=$C243]$myear#[fg=$C15]$mday#[fg=$C243]-#[fg=$C15]$mdow #[fg=$C7]$mtime #[bg=0]#[fg=$C8]▒░"
+}
+front() {
+	echo "#[bg=$C241]#[fg=$C0]▓▒░"
+}
+separator() {
+	echo "#[bg=$C12]#[fg=$C237]░▒#[bg=$C12]#[fg=$C237]▓"
+}
+CPU_INFO=$(cpu)
+RAM_INFO=$(ram)
+DISK_INFO=$(disk)
+echo "$(front)" "#[fg=0]mem ${RAM_INFO}%" "$(draw "$RAM_INFO" 4)" "#[fg=0]cpu ${CPU_INFO}%" "$(draw "$CPU_INFO" 4)" "#[fg=0]disk ${DISK_INFO}%" "$(draw "${DISK_INFO}" 4)""$(temp)" "$(bat)" "$(net)" "$(vpn)""$(clock)"
