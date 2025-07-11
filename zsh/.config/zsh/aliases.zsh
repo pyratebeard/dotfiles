@@ -248,6 +248,18 @@ command -v gmake >/dev/null && alias make='gmake'
         mkdir -p "$1" && cd "$1"
     }
 
+		t() {
+			S=$#
+			[[ $S -eq 0 ]] || S=▒
+			[ ! -f /tmp/tmux.lock ] && {
+				/usr/bin/tmuxp load ~/.config/tmux/main.yaml && \
+					touch /tmp/tmux.lock
+				} || \
+				tmux new-session -A -s "$S"
+			tmux set-environment LC_ALL 'en_US.UTF-8'
+			tmux set-environment LANG 'en_US.UTF-8'
+		}
+
     :q!() {
         [[ -v SSH_TTY ]] && echo dumpshock || {
             ping -q -c1 pigley >/dev/null 2>&1 && {
