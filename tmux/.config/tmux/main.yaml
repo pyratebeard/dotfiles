@@ -1,4 +1,4 @@
-session_name: main
+session_name: "▒"
 start_directory: "~"
 windows:
   - window_name: irc
