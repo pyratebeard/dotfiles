@@ -161,6 +161,10 @@ r.noremap("n", "<leader>sw", ":set wrap<cr>:Sp<cr>", "wrap and toggle spell chec
 f.cmd("Chmodx", "!chmod a+x %", { desc = "make current buffer executable" })
 r.noremap("n", "<leader>x", ":Chmodx<cr>", "chmod +x buffer")
 
+-- telescope keymap
+-- https://github.com/helix-editor/helix/discussions/11537
+vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+
 -- 
 -- vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 -- nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
