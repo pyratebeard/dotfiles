@@ -242,14 +242,24 @@ end
 lazy.setup({
 	spec = {
 		--require("plugins.alpha"),
+
+		-- utilites
 		require("plugins.fzf"),
-		require("plugins.git"),
-		require("plugins.gitsigns"),
-		require("plugins.indent"),
-		require("plugins.lush"),
-		require("plugins.oldriceputin"),
 		require("plugins.telescope"),
 		require("plugins.vimwiki"),
+
+		-- git
+		require("plugins.git"),
+		require("plugins.gitsigns"),
+
+		-- ui
+		require("plugins.indent"),
+		require("plugins.lualine"),
+		require("plugins.lush"),
+
+		-- colours
+		require("plugins.oldriceputin"),
+		require("plugins.sourcery"),
 	},
 	dev = {
 		path = "~/.local/src/warez",
