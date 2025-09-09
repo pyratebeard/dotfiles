@@ -118,6 +118,7 @@ command -v gmake >/dev/null && alias make='gmake'
     ss="sudo ss"                                                              \
     netctl="sudo netctl"                                                      \
     openvpn="sudo openvpn"                                                    \
+    hs="headscale"                                                            \
     # need ot find a better way to do this
     #iip="ip a s $(ip r | grep default | grep -oP '(?<=dev )[^ ]*')"           \
     failover="sudo ip link set enp5s0 down"                                   \
@@ -207,7 +208,7 @@ command -v gmake >/dev/null && alias make='gmake'
     irc="mosh irclient -- ksh -c 'dtach -A /tmp/irc irssi'"                   \
     feh="feh -g 640x480"                                                      \
     rum.sh="nc rum.sh 9999"                                                   \
-    moebius="cd $HOME/.local/src/warez/moebius ; /usr/bin/npm start"                 \
+    moebius="cd $HOME/.local/src/warez/moebius ; /usr/bin/npm start"          \
     cointop="$HOME/.local/src/go/bin/cointop --hide-statusbar"
 
 # ▓▓▒░ fun(ctions)
