@@ -264,6 +264,7 @@ lazy.setup({
 		-- colours
 		require("plugins.oldriceputin"),
 		require("plugins.sourcery"),
+		require("plugins.goblinmode"),
 	},
 	dev = {
 		path = "~/.local/src/warez",

@@ -33,6 +33,7 @@ fi
 
 # set nice background.
 xsetroot -solid '#2b2f2e'
+feh --bg-tile ~/.local/share/wallpaper/coil-green.png
 
 # set nice pointer cursor.
 xsetroot -cursor_name left_ptr &

@@ -25,7 +25,7 @@
 
 FULL=▒
 EMPTY=░
-THEME="oldriceputin"
+THEME="goblinmode"
 if [ $THEME == "oldriceputin" ] ; then
 	#oldriceputin
 	C0="#181512"
@@ -115,6 +115,23 @@ elif [ $THEME == "sourcery" ] ; then
 	#C14="#7fdc95"
 	#C7="#d3d3d3"
 	#C15="#c1cdc1"
+elif [ $THEME == "goblinmode" ] ; then
+	C0="#111111"
+	C8="#181818"
+	C1="#aa4450"
+	C9="#ff6a6a"
+	C2="#719611"
+	C10="#b1d631"
+	C3="#ff3423"
+	C11="#949468"
+	C4="#699c9c"
+	C12="#8ba8c5"
+	C5="#746285"
+	C13="#a086b1"
+	C6="#647a45"
+	C14="#92db47"
+	C7="#d3d3d3"
+	C15="#c1cdc1"
 fi
 
 C237="#3a3a3a"
@@ -132,6 +149,7 @@ draw() {
 		oldriceputin) CFG=$C14 ; CBG=$C241 ;;
 		zuke) CFG=$C12 ; CBG=$C5 ;;
 		sourcery) CFG=$C10 ; CBG=$C5 ;;
+		goblinmode) CFG=$C10 ; CBG=$C5 ;;
 		blaqueplague) CFG=$C5 ; CBG=$C241 ;;
 	esac
 	for v in $(seq 0 $((size - 1))); do
@@ -193,6 +211,7 @@ vpn() {
 		oldriceputin) CSTATE=$C12 ;;
 		zuke) CSTATE=$C12 ;;
 		sourcery) CSTATE=$C12 ;;
+		goblinmode) CSTATE=$C12 ;;
 	esac
 	tailscale ip >/dev/null 2>&1 && state=$C10 || state=$C3
 	echo "#[bg=$state]#[fg=$C241]▓▒░#[bg=$state]#[fg=0] vpn #[bg=$state]#[fg=$C237]░▒#[bg=$state]#[fg=$C237]▓#[bg=$C237]"
@@ -202,6 +221,7 @@ net() {
 		oldriceputin) CFG=$C14 ; CBG=$C0 ;;
 		zuke) CFG=$C12 ; CBG=$C5 ;;
 		sourcery) CFG=$C12 ; CBG=$C5 ;;
+		goblinmode) CFG=$C12 ; CBG=$C5 ;;
 	esac
 	ping 9.9.9.9 -c 1 >/dev/null 2>&1 && state=$C10 || state=$C3
 	echo "#[bg=$state]#[fg=$C241]▓▒░#[bg=$state]#[fg=0] net #[bg=$state]#[fg=$C241]░▒#[bg=$state]#[fg=$C241]▓#[bg=$C241]"

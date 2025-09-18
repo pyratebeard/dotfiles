@@ -38,5 +38,5 @@ urxvt.saveLines: 9999
 urxvt.iso14755: false
 urxvt.iso14755_52: false
 
-#include "oldriceputin"
+#include "goblinmode"
 
