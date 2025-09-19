@@ -43,8 +43,8 @@ articlelist-format "▓ %2i  %t"
 highlight article "^Feed:.*" color3 default
 highlight article "^Title:.*" color14 default
 highlight article "^Author:.*" color7 default
-highlight article "^Date:.*" color15 default
-highlight article "^Link:.*" black color249
+highlight article "^Date:.*" color245 default
+highlight article "^Link:.*" color15 color238
 
 # key bindings
 bind-key j down
