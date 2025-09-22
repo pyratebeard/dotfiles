@@ -60,7 +60,7 @@ macro i set browser "~/.local/bin/webimg" ; open-in-browser ; set browser lynx
 macro y set browser "youtube-dl -o '~/lib/videos/youtube/sort_out/%(title)s.%(ext)s' '%u'" ; open-in-browser ; set browser lynx
 
 # podboat
-download-path "~/lib/audio/podcasts/%n"
+download-path "~/.local/trove/audio/podcasts/%n"
 download-filename-format "%n-%t"
 max-downloads 3
 player "mpv --profile=quick --no-audio-display --input-ipc-server=/tmp/mpvsock"
