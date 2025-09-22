@@ -116,6 +116,7 @@ elif [ $THEME == "sourcery" ] ; then
 	#C7="#d3d3d3"
 	#C15="#c1cdc1"
 elif [ $THEME == "goblinmode" ] ; then
+	CBG="#222222"
 	C0="#111111"
 	C8="#181818"
 	C1="#aa4450"
@@ -231,10 +232,13 @@ clock() {
 	myear=$(date +'%Y%m')
 	mday=$(date +'%d')
 	mdow=$(date +'%u')
-	echo "#[fg=$C241]#[bg=$C237] #[fg=$C243]$myear#[fg=$C15]$mday#[fg=$C243]-#[fg=$C15]$mdow #[fg=$C7]$mtime #[bg=0]#[fg=$C8]▒░"
+	echo "#[fg=$C241]#[bg=$C237] #[fg=$C243]$myear#[fg=$C15]$mday#[fg=$C243]-#[fg=$C15]$mdow #[fg=$C7]$mtime"
 }
 front() {
-	echo "#[bg=$C241]#[fg=$C0]▓▒░"
+	echo "#[bg=$C241]#[fg=$CBG]▓▒░"
+}
+finish() {
+	echo "#[bg=$C241]#[fg=$C0]▒░"
 }
 separator() {
 	echo "#[bg=$C12]#[fg=$C237]░▒#[bg=$C12]#[fg=$C237]▓"
@@ -242,4 +246,4 @@ separator() {
 CPU_INFO=$(cpu)
 RAM_INFO=$(ram)
 DISK_INFO=$(disk)
-echo "$(front)" "#[fg=0]mem ${RAM_INFO}%" "$(draw "$RAM_INFO" 4)" "#[fg=0]cpu ${CPU_INFO}%" "$(draw "$CPU_INFO" 4)" "#[fg=0]disk ${DISK_INFO}%" "$(draw "${DISK_INFO}" 4)""$(temp)" "$(bat)" "$(net)" "$(vpn)""$(clock)"
+echo "$(front)" "#[fg=0]mem ${RAM_INFO}%" "$(draw "$RAM_INFO" 4)" "#[fg=0]cpu ${CPU_INFO}%" "$(draw "$CPU_INFO" 4)" "#[fg=0]disk ${DISK_INFO}%" "$(draw "${DISK_INFO}" 4)""$(temp)" "$(bat)" "$(net)" "$(vpn)""$(clock)" "$(finish)"
