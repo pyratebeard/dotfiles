@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+#                                            ██
+#  ██████   ██   ██                         ░██
+# ░██░░░██ ░░██ ██  ███     ██ ██████████  ██████
+# ░██  ░██  ░░███  ░░██  █ ░██░░██░░██░░██░░░██░
+# ░██████    ░██    ░██ ███░██ ░██ ░██ ░██  ░██
+# ░██░░░     ██     ░████░████ ░██ ░██ ░██  ░██
+# ░██       ██      ███░ ░░░██ ███ ░██ ░██  ░░██
+# ░░       ░░      ░░░    ░░░ ░░░  ░░  ░░    ░░
+# p y t h o n   w e e k l y   m u s i c   t o o t
+#
+# TODO
+# - mastodon post
+
+import requests
+import datetime as dt
+from subprocess import check_output
+
+# number of recently played
+# albums to output from api
+ALBUM_LIMIT = 20
+
+# gather creds from password-store
+def get_cred(cred):
+    return (check_output("pass navidrome/" + cred, shell=True)
+            .splitlines()[0]
+            .decode('utf-8'))
+
+BASE_URL = get_cred('baseurl')
+USERNAME = get_cred('username')
+PASSWORD = get_cred('password')
+
+login_url = f'{BASE_URL}/auth/login'
+login_data = {
+    'username': USERNAME,
+    'password': PASSWORD
+}
+
+# acquire token
+try:
+    login_res = requests.post(login_url, json=login_data)
+    login_res.raise_for_status()
+    token = login_res.json().get('token')
+    if not token:
+        print("login succeeded but no token received.")
+        exit()
+except Exception as e:
+    print(f"login failed: {e}")
+    exit()
+
+headers = {
+    'X-ND-Authorization': f'Bearer {token}'
+}
+
+params = {
+    '_start': 0,
+    '_end': ALBUM_LIMIT,
+    '_sort': 'play_date',
+    '_order': 'DESC',
+    'recently_played': 'true'
+}
+
+# pull last {ALBUM_LIMIT} recently played albums
+try:
+    res = requests.get(f'{BASE_URL}/api/album',
+                            headers=headers,
+                            params=params)
+    res.raise_for_status()
+    albums = res.json()
+except Exception as e:
+    print(f"failed to fetch albums: {e}")
+    exit()
+
+# get last monday date to start new week
+today = dt.date.today()
+monday = today - dt.timedelta(days=today.weekday())
+
+# find all albums played since monday
+for a in albums:
+    play_date = dt.datetime.fromisoformat(a.get('playDate'))
+    if play_date.date() >= monday:
+        print(f"{a['name']} by {a['artist']}")
